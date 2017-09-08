@@ -1,0 +1,18 @@
+{
+    "AS_Form_e476d203b4614807abb9ab7cafccd260": {
+        "id": "AS_Form_e476d203b4614807abb9ab7cafccd260",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmDietKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "b2da036e8558476da2a9d8dd65146f04"
+        },
+        "language": "js",
+        "actions": []
+    }
+}

@@ -732,7 +732,7 @@ function addWidgetsfrmDietKA() {
             "segRecordsLbl": "Label"
         }],
         "groupCells": false,
-        "height": "55%",
+        "height": "58.09%",
         "id": "segConsumedItems",
         "isVisible": true,
         "left": "0dp",
@@ -748,7 +748,7 @@ function addWidgetsfrmDietKA() {
         "selectionBehavior": constants.SEGUI_DEFAULT_BEHAVIOR,
         "separatorRequired": false,
         "showScrollbars": false,
-        "top": "10dp",
+        "top": "-3dp",
         "viewType": constants.SEGUI_VIEW_TYPE_TABLEVIEW,
         "widgetDataMap": {
             "btnDeleteKA": "btnDeleteKA",
@@ -781,6 +781,7 @@ function frmDietKAGlobals() {
         "layoutType": kony.flex.FREE_FORM,
         "needAppMenu": true,
         "postShow": AS_Form_h998de6895dd42798982e8c2c0bee323,
+        "preShow": AS_Form_e476d203b4614807abb9ab7cafccd260,
         "skin": "slForm"
     }, {
         "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_PORTRAIT,

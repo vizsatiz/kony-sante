@@ -89,6 +89,7 @@ function addWidgetsfrmItemsKA() {
         "id": "imgSearch",
         "isVisible": true,
         "left": "10dp",
+        "onTouchStart": AS_Image_i226ffdd2b0542b1998170e079b90f48,
         "skin": "slImage",
         "src": "zoomout.png",
         "top": "10dp",

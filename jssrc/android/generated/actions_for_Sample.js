@@ -124,3 +124,11 @@ function AS_Image_g9a27dc877dc42e1ba6a245e743dd686(eventobject, x, y) {
 }
 
 function AS_Form_e476d203b4614807abb9ab7cafccd260(eventobject) {}
+
+function AS_Image_i226ffdd2b0542b1998170e079b90f48(eventobject, x, y) {
+    var searchText = frmItemsKA.tbWhere.text;
+    var where = "ITEM_NAME like '" + searchText + "%'";
+    populateItemInFrmItemsKA({
+        "whereConditionAsAString": where
+    });
+}

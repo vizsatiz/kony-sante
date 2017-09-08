@@ -139,6 +139,7 @@ function populateConsumedItems(options) {
 
         function onItemGetSuccess(consumedItems) {
             var data = [];
+            var consumedCalories = 0;
             var noOfRecords = consumedItems.length;
             for (var i = 0; i < noOfRecords; i++) {
                 var objRecord = consumedItems[i];
@@ -151,9 +152,12 @@ function populateConsumedItems(options) {
                         text: finalItem ? finalItem : '',
                     }
                 };
+                var caloriesInt = parseInt(calories);
+                consumedCalories += caloriesInt;
             }
             frmDietKA.segConsumedItems.removeAll();
             frmDietKA.segConsumedItems.data = data;
+            frmDietKA.lblTotalCal.text = consumedCalories + "/" + "1400 Cal";
         }
 
         function onItemGetFailure(err) {

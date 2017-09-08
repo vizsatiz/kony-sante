@@ -1,0 +1,42 @@
+{
+    "AS_Image_e564ba19014d4326afb66e732c69c385": {
+        "id": "AS_Image_e564ba19014d4326afb66e732c69c385",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnClickBreakfast",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmDietKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "b2da036e8558476da2a9d8dd65146f04"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__afb52ea0648148899f58ee1f3b497bac",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "frmItemsKA.lblHeader.text = \"What did you have for Breakfast?\";",
+            "parentId": null,
+            "callbackType": null
+        }, {
+            "id": "NAVIGATE_TO_FORM___ia5b8531865547cd9af42dd64f79dabf",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmItemsKA",
+            "formKUID": "a9bad7b9a1ec4714931c1337329f72c4",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": ""
+        }]
+    }
+}

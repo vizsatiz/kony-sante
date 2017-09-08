@@ -1,0 +1,11 @@
+{
+  "background_image": "iconwatchsel.png",
+  "bg_type": "image",
+  "border_color": "000000ff",
+  "border_style": "plain",
+  "border_type": 0,
+  "border_width": 0,
+  "isDefaultSkin": false,
+  "kuid": "s2c6e2fcd5794d9da7e49e126d2e85a7",
+  "wType": "FlexContainer"
+}

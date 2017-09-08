@@ -1,0 +1,30 @@
+{
+    "AS_Button_e19d02c5a3a8471aaab5c69cc120c576": {
+        "id": "AS_Button_e19d02c5a3a8471aaab5c69cc120c576",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnClickLogin",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmHomeKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "f2a1d30b0ab54c9fb9b5b2a5e66cc500"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___hc81bdf5df1d474fb0005f7bcc437b97",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmDietKA",
+            "formKUID": "b2da036e8558476da2a9d8dd65146f04",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": ""
+        }]
+    }
+}

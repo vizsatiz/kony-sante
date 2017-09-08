@@ -1,0 +1,11 @@
+{
+  "background_image": "iconbox.png",
+  "bg_type": "image",
+  "border_color": "000000ff",
+  "border_style": "plain",
+  "border_type": 0,
+  "border_width": 0,
+  "isDefaultSkin": false,
+  "kuid": "sa13f507259f4aca98f5f119a2684bfb",
+  "wType": "FlexContainer"
+}

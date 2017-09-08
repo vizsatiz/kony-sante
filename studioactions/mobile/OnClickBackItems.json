@@ -1,0 +1,30 @@
+{
+    "AS_Button_af1d2a15bcd144e0a1074315ed97ac23": {
+        "id": "AS_Button_af1d2a15bcd144e0a1074315ed97ac23",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnClickBackItems",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmItemsKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "a9bad7b9a1ec4714931c1337329f72c4"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___e4384e9f64724d408c57b1dfc5cc4198",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmDietKA",
+            "formKUID": "b2da036e8558476da2a9d8dd65146f04",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": ""
+        }]
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "AS_FlexContainer_fa66ecd33dc944c88f67470f77dfb6d5": {
+        "id": "AS_FlexContainer_fa66ecd33dc944c88f67470f77dfb6d5",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnFlxSwipe",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmHomeKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "f2a1d30b0ab54c9fb9b5b2a5e66cc500"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__e88db38c8bd8459d8782df3ef26a5280",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "frmHomeKA.flxMainScreen1KA.isVisible = false;\nfrmHomeKA.flxMainScreen2KA.isVisible = true;",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

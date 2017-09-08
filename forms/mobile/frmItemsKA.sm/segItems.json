@@ -1,0 +1,169 @@
+{
+    "@class": "com.kony.gen.viz.model.container.KVizSegment2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_data_": [
+        {
+            "btnDeleteKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": ""
+            },
+            "btnUpdateKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Update"
+            },
+            "imgTask": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "add_active.png"
+            },
+            "lblidKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "segRecordsLbl": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            }
+        },
+        {
+            "btnDeleteKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": ""
+            },
+            "btnUpdateKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Update"
+            },
+            "imgTask": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "add_active.png"
+            },
+            "lblidKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "segRecordsLbl": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            }
+        },
+        {
+            "btnDeleteKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": ""
+            },
+            "btnUpdateKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Update"
+            },
+            "imgTask": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "add_active.png"
+            },
+            "lblidKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "segRecordsLbl": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            }
+        }
+    ],
+    "_height_": {
+        "type": "string",
+        "value": "91%"
+    },
+    "_indicator_": "none",
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 2,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_top_": {
+        "type": "string",
+        "value": "45dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "counter": "02",
+    "focusedindex": null,
+    "focuseditem": null,
+    "groupcells": false,
+    "hasSections": false,
+    "id": "segItems",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "iphone": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "isvisible": true,
+    "kuid": "bfe3e99a309641e183eecdd5abdd772a",
+    "masterdata": {},
+    "name": "kony.ui.SegmentedUI2",
+    "needpageindicator": true,
+    "pageoffdotimage": "pageoffdot.png",
+    "pageondotimage": "pageondot.png",
+    "paginationconfig": {
+        "position": "bottom"
+    },
+    "parent": "flxItems",
+    "pf": "frmItemsKA",
+    "retainselection": false,
+    "rowTemplateId": "d92e1cba6eea4f849400b0416f55cbfb",
+    "rowcounter": 2,
+    "rowfocusskin": "sf03a19cc3824c478a5162e28b20944f",
+    "rowskin": "s9d8445af5a64490a136dfa835d9deeb",
+    "rowtemplate": "flxTmpAssetMainKA",
+    "screenlevelwidget": false,
+    "seccounter": 0,
+    "sectionheaderskin": "s2163d778a2049108ee497bac5ac02fe",
+    "selectedRows": null,
+    "selectedState": false,
+    "selectedindex": null,
+    "selectedindices": null,
+    "selecteditems": null,
+    "selectedsectionindex": 0,
+    "selectionbehavior": "default",
+    "separatorrequired": false,
+    "showscrollbars": false,
+    "viewtype": "tableview",
+    "wType": "Segment",
+    "widgetalignment": 5,
+    "widgetdatamap": {
+        "btnDeleteKA": "btnDeleteKA",
+        "btnUpdateKA": "btnUpdateKA",
+        "flxDetailsKA": "flxDetailsKA",
+        "flxMainAssetKA": "flxMainAssetKA",
+        "flxSwipeDetailsKA": "flxSwipeDetailsKA",
+        "flxSwipeKA": "flxSwipeKA",
+        "flxTmpAssetMainKA": "flxTmpAssetMainKA",
+        "imgTask": "imgTask",
+        "lblidKA": "lblidKA",
+        "segRecordsLbl": "segRecordsLbl"
+    },
+    "zindex": 1
+}

@@ -1,0 +1,11 @@
+{
+  "background_image": "iconprofilesel.png",
+  "bg_type": "image",
+  "border_color": "000000ff",
+  "border_style": "plain",
+  "border_type": 0,
+  "border_width": 0,
+  "isDefaultSkin": false,
+  "kuid": "s5fdcaa58b6a4b00b6fee3b8058a5f1b",
+  "wType": "FlexContainer"
+}

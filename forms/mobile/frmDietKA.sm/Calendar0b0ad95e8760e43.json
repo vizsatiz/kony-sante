@@ -1,0 +1,115 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizDateField",
+    "DNDConfig": null,
+    "Image": "sky.png",
+    "__id": "frmDietKA_Calendar0b0ad95e8760e43",
+    "__input": "Calendar0b0ad95e8760e43",
+    "__parentReadjusting__": false,
+    "_data_": null,
+    "_date_": "7/9/2017",
+    "_height_": {
+        "type": "string",
+        "value": "40dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_placeholder_": "",
+    "_skin_": "s0df3b629b31423b927a9c9bbff3203b",
+    "_top_": {
+        "type": "string",
+        "value": "7dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "250dp"
+    },
+    "advview": "default",
+    "calendaricon": "sky.png",
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "contentalignment": 8,
+    "datecomponents": [
+        7,
+        9,
+        2017,
+        0,
+        0,
+        0
+    ],
+    "dateeditable": true,
+    "dateformat": "dd/MM/yyyy",
+    "datesGroup": [],
+    "datesState": 0,
+    "day": 7,
+    "daytextalignmentincell": 5,
+    "displayedMonths": [
+        9,
+        2017
+    ],
+    "entereddate": [
+        7,
+        9,
+        2017,
+        0,
+        0,
+        0
+    ],
+    "format": "dd/MM/yyyy",
+    "formatteddate": "07/09/2017",
+    "hidedaysheader": false,
+    "hidemonthsheader": false,
+    "hour": 0,
+    "id": "Calendar0b0ad95e8760e43",
+    "info": null,
+    "invokedProperty": "rightNavigationImage",
+    "isvisible": true,
+    "kuid": "d7212fbb92114a99bf71e076d4cbf8a1",
+    "minutes": 0,
+    "month": 9,
+    "monthsinrow": 3,
+    "name": "kony.ui.Calendar",
+    "navigatorAlert": "Invalid Selection",
+    "noofmonths": 1,
+    "pagedate": "/2017",
+    "parent": "flxDateKA",
+    "pf": "frmDietKA",
+    "popupHeight": "auto",
+    "popupWidth": "auto",
+    "seconds": 0,
+    "selectdate": "//2017",
+    "startDay": 0,
+    "viewconfig": {
+        "gridConfig": {
+            "leftNavigationImage": "sky.png",
+            "rightNavigationImage": "sky.png"
+        }
+    },
+    "viewtype": "default",
+    "wType": "Calendar",
+    "widgetalignment": 5,
+    "widths": [
+        "14.2857%;",
+        "14.2857%;",
+        "14.2857%;",
+        "14.2857%;",
+        "14.2857%;",
+        "14.2857%;",
+        "14.2857%;"
+    ],
+    "year": 2017,
+    "zindex": 1
+}

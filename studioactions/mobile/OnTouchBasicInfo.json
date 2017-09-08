@@ -1,0 +1,36 @@
+{
+    "AS_Image_bb24eeb4ef7e4759ab4bd45819e596bc": {
+        "id": "AS_Image_bb24eeb4ef7e4759ab4bd45819e596bc",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnTouchBasicInfo",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmUserKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "d9ad411b7f504a78be40a0840560be3a"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___fbbddb6bc8444f8997217afdf72ceb51",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmUserDetailsKA",
+            "formKUID": "dc256a5120e94277bdb93c78d06fe85f",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": ""
+        }]
+    }
+}

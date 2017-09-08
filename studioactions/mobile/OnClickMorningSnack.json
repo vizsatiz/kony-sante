@@ -1,0 +1,42 @@
+{
+    "AS_Image_e03e5b5b40d440569bab39d6edf31204": {
+        "id": "AS_Image_e03e5b5b40d440569bab39d6edf31204",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnClickMorningSnack",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmDietKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "b2da036e8558476da2a9d8dd65146f04"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__e885a325768b48d9a1b718eaa6f3bc0d",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "frmItemsKA.lblHeader.text = \"What did you have for Morning Snack?\";",
+            "parentId": null,
+            "callbackType": null
+        }, {
+            "id": "NAVIGATE_TO_FORM___ae60b114eb564179afad230fb0761da8",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmItemsKA",
+            "formKUID": "a9bad7b9a1ec4714931c1337329f72c4",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": ""
+        }]
+    }
+}

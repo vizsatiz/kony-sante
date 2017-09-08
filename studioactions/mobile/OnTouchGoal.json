@@ -1,0 +1,36 @@
+{
+    "AS_Image_g9a27dc877dc42e1ba6a245e743dd686": {
+        "id": "AS_Image_g9a27dc877dc42e1ba6a245e743dd686",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnTouchGoal",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmUserKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "d9ad411b7f504a78be40a0840560be3a"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___i39a31c52acb408ca86bc5191763fa3b",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmSetGoalKA",
+            "formKUID": "eb705e04571040b881c76a3517bb5d66",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": ""
+        }]
+    }
+}

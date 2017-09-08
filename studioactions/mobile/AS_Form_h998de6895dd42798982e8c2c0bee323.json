@@ -1,0 +1,24 @@
+{
+    "AS_Form_h998de6895dd42798982e8c2c0bee323": {
+        "id": "AS_Form_h998de6895dd42798982e8c2c0bee323",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmDietKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "b2da036e8558476da2a9d8dd65146f04"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__c3d74b5160fc4c4696a9db4f136a9e77",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "loginWithUsernamePassword(\"tester\",\"test\", \"SanteSapIdentity\");",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

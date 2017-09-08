@@ -114,3 +114,11 @@ function OnTouchGoal(eventobject, x, y) {
 function AS_Image_g9a27dc877dc42e1ba6a245e743dd686(eventobject, x, y) {
     frmSetGoalKA.show();
 }
+
+function AS_Form_h998de6895dd42798982e8c2c0bee323(eventobject) {
+    loginWithUsernamePassword("tester", "test", "SanteSapIdentity");
+}
+
+function AS_Form_a691e86c93c34c2cb51e112833f240af(eventobject) {
+    populateItemInFrmItemsKA()
+}

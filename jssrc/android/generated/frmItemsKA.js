@@ -213,6 +213,7 @@ function frmItemsKAGlobals() {
         "id": "frmItemsKA",
         "layoutType": kony.flex.FLOW_VERTICAL,
         "needAppMenu": true,
+        "preShow": AS_Form_a691e86c93c34c2cb51e112833f240af,
         "skin": "slForm"
     }, {
         "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_PORTRAIT,

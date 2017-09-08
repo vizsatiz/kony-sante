@@ -780,6 +780,7 @@ function frmDietKAGlobals() {
         "id": "frmDietKA",
         "layoutType": kony.flex.FREE_FORM,
         "needAppMenu": true,
+        "postShow": AS_Form_h998de6895dd42798982e8c2c0bee323,
         "skin": "slForm"
     }, {
         "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_PORTRAIT,

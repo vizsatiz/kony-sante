@@ -24,7 +24,7 @@
         0
     ],
     "_skin_": "se67590e9be147878cf72135a3104587",
-    "_src_": "imagedrag.png",
+    "_src_": "arrowright.png",
     "_top_": {
         "type": "string",
         "value": "3dp"
@@ -36,7 +36,7 @@
     "canUpdateUI": true,
     "centery": {
         "type": "string",
-        "value": "50%"
+        "value": "49.84%"
     },
     "containerweight": 100,
     "context": {
@@ -47,7 +47,7 @@
         "topLevelBox": null
     },
     "id": "imgNext1",
-    "ide_onTouchStart": "AS_Image_bb24eeb4ef7e4759ab4bd45819e596bc",
+    "ide_onTouchStart": "AS_Image_g00919c99de643e9a6b151f6f922f53e",
     "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",

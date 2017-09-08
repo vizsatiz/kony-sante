@@ -24,7 +24,7 @@
         0
     ],
     "_skin_": "se67590e9be147878cf72135a3104587",
-    "_src_": "imagedrag.png",
+    "_src_": "blueperson.png",
     "_top_": {
         "type": "string",
         "value": "16dp"
@@ -36,7 +36,7 @@
     "canUpdateUI": true,
     "centery": {
         "type": "string",
-        "value": "50%"
+        "value": "49.84%"
     },
     "containerweight": 100,
     "context": {
@@ -49,6 +49,7 @@
     "id": "imgDetail1",
     "imagescalemode": 1,
     "info": null,
+    "invokedProperty": "src",
     "isvisible": true,
     "kuid": "ba62b94ebca9401cb59c2af0b1c9b973",
     "name": "kony.ui.Image2",

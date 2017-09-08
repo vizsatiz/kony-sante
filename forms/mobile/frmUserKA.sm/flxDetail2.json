@@ -36,9 +36,9 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "CopyimgDetail0h8ac16dfee8d45",
-        "CopyflxLabel0c09c00f2e0994c",
-        "CopyimgNext0gcae3b76b8ba42"
+        "imgDetail2",
+        "flxLabel2",
+        "imgNext2"
     ],
     "clipbounds": true,
     "containerweight": 100,

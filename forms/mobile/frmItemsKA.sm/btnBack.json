@@ -8,7 +8,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "8dp"
+        "value": "10dp"
     },
     "_margin_": [
         6,
@@ -36,7 +36,7 @@
     "containerweight": 100,
     "contentalignment": 5,
     "displaytext": true,
-    "focusskin": "s295cdb35c644aaf831be2239b5c7f55",
+    "focusskin": "s3e1a2bd27404a908c249f67f5bc014b",
     "id": "btnBack",
     "ide_onClick": "AS_Button_af1d2a15bcd144e0a1074315ed97ac23",
     "info": null,

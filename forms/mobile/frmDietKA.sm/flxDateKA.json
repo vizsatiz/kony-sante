@@ -38,7 +38,7 @@
     "children": [
         "Calendar0b0ad95e8760e43",
         "btnBack",
-        "btnMenu"
+        "btnSync"
     ],
     "clipbounds": true,
     "containerweight": 100,

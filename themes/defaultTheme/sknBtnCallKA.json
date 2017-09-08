@@ -1,6 +1,6 @@
 {
   "android": {
-    "background_image": "call.png",
+    "background_image": "sync.png",
     "bg_type": "image",
     "isForked": true,
     "text_shadow": {
@@ -17,7 +17,7 @@
   "border_type": 0,
   "border_width": 0,
   "desktopweb": {
-    "background_image": "call.png",
+    "background_image": "sync.png",
     "bg_type": "image",
     "bottom_left_border_color": "ffffffff",
     "bottom_left_border_style": "plain",
@@ -53,7 +53,7 @@
   "font_style": "normal",
   "font_weight": "normal",
   "ipad": {
-    "background_image": "call.png",
+    "background_image": "sync.png",
     "bg_type": "image",
     "isForked": true,
     "shadow": {
@@ -71,15 +71,20 @@
       "y": -1
     }
   },
+  "iphone": {
+    "background_image": "sync.png",
+    "bg_type": "image",
+    "isForked": true
+  },
   "isDefaultSkin": false,
   "kiosk": {
-    "background_image": "call.png",
+    "background_image": "sync.png",
     "bg_type": "image",
     "isForked": true
   },
   "kuid": "sf557914f0b64e2c93c14daca7154934",
   "spaan": {
-    "background_image": "call.png",
+    "background_image": "sync.png",
     "bg_type": "image",
     "bottom_left_border_color": "ffffffff",
     "bottom_left_border_style": "plain",
@@ -110,7 +115,7 @@
     "top_right_border_width": 0
   },
   "spaandroidtablet": {
-    "background_image": "call.png",
+    "background_image": "sync.png",
     "bg_type": "image",
     "bottom_left_border_color": "ffffffff",
     "bottom_left_border_style": "plain",
@@ -141,7 +146,7 @@
     "top_right_border_width": 0
   },
   "spabb": {
-    "background_image": "call.png",
+    "background_image": "sync.png",
     "bg_type": "image",
     "bottom_left_border_color": "ffffffff",
     "bottom_left_border_style": "plain",
@@ -172,7 +177,7 @@
     "top_right_border_width": 0
   },
   "spaip": {
-    "background_image": "call.png",
+    "background_image": "sync.png",
     "bg_type": "image",
     "bottom_left_border_color": "ffffffff",
     "bottom_left_border_style": "plain",
@@ -203,7 +208,7 @@
     "top_right_border_width": 0
   },
   "spaipad": {
-    "background_image": "call.png",
+    "background_image": "sync.png",
     "bg_type": "image",
     "bottom_left_border_color": "ffffffff",
     "bottom_left_border_style": "plain",
@@ -234,7 +239,7 @@
     "top_right_border_width": 0
   },
   "spawindowstablet": {
-    "background_image": "call.png",
+    "background_image": "sync.png",
     "bg_type": "image",
     "bottom_left_border_color": "ffffffff",
     "bottom_left_border_style": "plain",
@@ -265,7 +270,7 @@
     "top_right_border_width": 0
   },
   "spawinphone8": {
-    "background_image": "call.png",
+    "background_image": "sync.png",
     "bg_type": "image",
     "bottom_left_border_color": "ffffffff",
     "bottom_left_border_style": "plain",
@@ -296,7 +301,7 @@
     "top_right_border_width": 0
   },
   "tabrcandroid": {
-    "background_image": "call.png",
+    "background_image": "sync.png",
     "bg_type": "image",
     "isForked": true,
     "text_shadow": {
@@ -308,17 +313,17 @@
   },
   "wType": "Button",
   "watchos": {
-    "background_image": "call.png",
+    "background_image": "sync.png",
     "bg_type": "image",
     "isForked": true
   },
   "windows8": {
-    "background_image": "call.png",
+    "background_image": "sync.png",
     "bg_type": "image",
     "isForked": true
   },
   "winphone8": {
-    "background_image": "call.png",
+    "background_image": "sync.png",
     "bg_type": "image",
     "isForked": true
   }

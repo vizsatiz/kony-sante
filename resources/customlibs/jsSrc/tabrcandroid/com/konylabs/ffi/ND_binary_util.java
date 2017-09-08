@@ -258,9 +258,8 @@ public class ND_binary_util extends JSLibrary {
  	public final Object[] getBase64FromFiles( com.konylabs.vm.LuaTable inputKey0 ){
  
 		Object[] ret = null;
- java.util.Vector retval = com.kony.binary.utility.BlobStoreUtil.getBase64FromFiles( (java.util.Vector)TableLib.convertToList(inputKey0)
+ java.lang.Object val = com.kony.binary.utility.BlobStoreUtil.getBase64FromFiles( (java.util.Vector)TableLib.convertToList(inputKey0)
  );
- LuaTable val = TableLib.convertToLuaTable(retval);
  
  			ret = new Object[]{val, new Double(0)};
  		return ret;

@@ -5,7 +5,7 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "25dp"
+        "value": "23dp"
     },
     "_left_": {
         "type": "string",
@@ -24,14 +24,14 @@
         0
     ],
     "_skin_": "se67590e9be147878cf72135a3104587",
-    "_src_": "add_active.png",
+    "_src_": "purpleplus.png",
     "_top_": {
         "type": "string",
         "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "25dp"
+        "value": "23dp"
     },
     "canUpdateUI": true,
     "centery": {

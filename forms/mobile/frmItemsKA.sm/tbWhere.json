@@ -4,7 +4,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "6%"
+        "value": "40dp"
     },
     "_left_": {
         "type": "string",
@@ -50,7 +50,7 @@
     "kuid": "h4a188ad2bbd414ba6a5e5c875c40d30",
     "mode": "A",
     "name": "kony.ui.TextBox2",
-    "parent": "flxItems",
+    "parent": "flxSearchKA",
     "pf": "frmItemsKA",
     "placeholderskin": "sb71e8c9a1c84dcb96b42a1060a8d8da",
     "securetextentry": false,

@@ -1,0 +1,54 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s67ce8fd78f24e1b814816334e82d054",
+    "_text_": "Update",
+    "_width_": {
+        "type": "string",
+        "value": "62dp"
+    },
+    "canUpdateUI": true,
+    "centerx": {
+        "type": "number",
+        "value": "31"
+    },
+    "centery": {
+        "type": "string",
+        "value": "59.68%"
+    },
+    "containerId": true,
+    "containerweight": 100,
+    "contentalignment": 5,
+    "displaytext": true,
+    "focusskin": "s5f73e41b8bc45238991a6175d6aaa05",
+    "id": "btnUpdateKA",
+    "info": null,
+    "isvisible": true,
+    "kuid": "8ca6dadd60374b58a20b414c434d3105",
+    "name": "kony.ui.Button",
+    "parent": "flxSwipeDetailsKA",
+    "pf": "tmpSelectItems",
+    "wType": "Button",
+    "zindex": 1
+}

@@ -1,0 +1,30 @@
+{
+    "AS_Button_e8cce781ff194950bde21f0f3708ddf2": {
+        "id": "AS_Button_e8cce781ff194950bde21f0f3708ddf2",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnClickBackDiet",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmDietKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "b2da036e8558476da2a9d8dd65146f04"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___h223f8f3a812417aa29ed883930c6956",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmSanteKA",
+            "formKUID": "de259bb4cf594af890014c2388b3225a",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": ""
+        }]
+    }
+}

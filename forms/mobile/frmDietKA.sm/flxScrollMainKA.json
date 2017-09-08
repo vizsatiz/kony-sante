@@ -44,6 +44,7 @@
         "flxFocus4",
         "flxFocus5",
         "lblConsumedItems",
+        "lblLine",
         "segConsumedItems"
     ],
     "clipbounds": true,

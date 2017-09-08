@@ -11,10 +11,6 @@
         "type": "string",
         "value": "40dp"
     },
-    "_left_": {
-        "type": "string",
-        "value": "50dp"
-    },
     "_margin_": [
         0,
         0,
@@ -31,7 +27,7 @@
     "_skin_": "s0df3b629b31423b927a9c9bbff3203b",
     "_top_": {
         "type": "string",
-        "value": "7dp"
+        "value": "8dp"
     },
     "_width_": {
         "type": "string",
@@ -40,8 +36,12 @@
     "advview": "default",
     "calendaricon": "sky.png",
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
-    "contentalignment": 8,
+    "contentalignment": 5,
     "datecomponents": [
         7,
         9,

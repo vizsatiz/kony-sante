@@ -1,0 +1,49 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "35dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_right_": {
+        "type": "string",
+        "value": "10dp"
+    },
+    "_skin_": "sf557914f0b64e2c93c14daca7154934",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "13dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "35dp"
+    },
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "contentalignment": 5,
+    "displaytext": true,
+    "focusskin": "sf557914f0b64e2c93c14daca7154934",
+    "id": "btnSync",
+    "info": null,
+    "isvisible": true,
+    "kuid": "gc10123af5284fecb7d32939178a2a5a",
+    "name": "kony.ui.Button",
+    "parent": "flxDateKA",
+    "pf": "frmDietKA",
+    "wType": "Button",
+    "zindex": 1
+}

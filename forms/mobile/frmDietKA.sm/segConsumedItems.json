@@ -22,7 +22,7 @@
             },
             "segRecordsLbl": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
+                "text": "Milk with horlicks"
             }
         },
         {
@@ -44,7 +44,7 @@
             },
             "segRecordsLbl": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
+                "text": "Banana"
             }
         },
         {
@@ -66,13 +66,13 @@
             },
             "segRecordsLbl": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
+                "text": "Dry Fruits"
             }
         }
     ],
     "_height_": {
         "type": "string",
-        "value": "58.09%"
+        "value": "55%"
     },
     "_indicator_": "none",
     "_left_": {
@@ -94,7 +94,7 @@
     ],
     "_top_": {
         "type": "string",
-        "value": "-3dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
@@ -133,11 +133,11 @@
     "parent": "flxScrollMainKA",
     "pf": "frmDietKA",
     "retainselection": false,
-    "rowTemplateId": "d92e1cba6eea4f849400b0416f55cbfb",
+    "rowTemplateId": "e2a3562ff33a42cbb80574a319879ddc",
     "rowcounter": 2,
     "rowfocusskin": "sf03a19cc3824c478a5162e28b20944f",
     "rowskin": "s9d8445af5a64490a136dfa835d9deeb",
-    "rowtemplate": "flxTmpAssetMainKA",
+    "rowtemplate": "flxTmpAssetMain",
     "screenlevelwidget": false,
     "seccounter": 0,
     "sectionHeaderTemplateId": null,
@@ -161,7 +161,7 @@
         "flxMainAssetKA": "flxMainAssetKA",
         "flxSwipeDetailsKA": "flxSwipeDetailsKA",
         "flxSwipeKA": "flxSwipeKA",
-        "flxTmpAssetMainKA": "flxTmpAssetMainKA",
+        "flxTmpAssetMain": "flxTmpAssetMain",
         "imgTask": "imgTask",
         "lblidKA": "lblidKA",
         "segRecordsLbl": "segRecordsLbl"

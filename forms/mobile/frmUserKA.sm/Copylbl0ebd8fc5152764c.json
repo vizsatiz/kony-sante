@@ -57,7 +57,7 @@
     "isvisible": true,
     "kuid": "e685760a63474e9682eb49ee026671a4",
     "name": "kony.ui.Label",
-    "parent": "CopyflxLabel0c09c00f2e0994c",
+    "parent": "flxLabel2",
     "pf": "frmUserKA",
     "tooltip": "",
     "wType": "Label",

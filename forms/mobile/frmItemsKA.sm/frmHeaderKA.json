@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "50dp"
+        "value": "117dp"
     },
     "_left_": {
         "type": "string",
@@ -36,7 +36,8 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "flxDateKA"
+        "flxDateKA",
+        "flxSearchKA"
     ],
     "clipbounds": true,
     "containerweight": 100,

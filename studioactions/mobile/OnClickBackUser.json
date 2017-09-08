@@ -1,0 +1,24 @@
+{
+    "AS_Button_aa7bf500ed4b47a289666543657c33f5": {
+        "id": "AS_Button_aa7bf500ed4b47a289666543657c33f5",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnClickBackUser",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___g5d6492278a2486882791480b066981f",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmSanteKA",
+            "formKUID": "de259bb4cf594af890014c2388b3225a",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": ""
+        }]
+    }
+}

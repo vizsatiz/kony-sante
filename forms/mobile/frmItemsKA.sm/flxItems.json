@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "92%"
+        "value": "81%"
     },
     "_left_": {
         "type": "string",
@@ -36,8 +36,6 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "imgSearch",
-        "tbWhere",
         "lblLine",
         "segItems"
     ],

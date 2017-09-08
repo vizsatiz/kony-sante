@@ -40,7 +40,8 @@
         "imgBird1KA",
         "imgSelect",
         "imgUnselect",
-        "btnLogin"
+        "BorderButtonRound",
+        "lblNote"
     ],
     "clipbounds": true,
     "containerweight": 100,

@@ -15,10 +15,10 @@
         },
         "language": "js",
         "actions": [{
-            "id": "NAVIGATE_TO_FORM___hc81bdf5df1d474fb0005f7bcc437b97",
+            "id": "NAVIGATE_TO_FORM___cf446bb0328a4b5bb84d3b8b886a1c81",
             "type": "NAVIGATE_TO_FORM",
-            "formId": "frmDietKA",
-            "formKUID": "b2da036e8558476da2a9d8dd65146f04",
+            "formId": "frmSanteKA",
+            "formKUID": "de259bb4cf594af890014c2388b3225a",
             "mappings": {},
             "mappingsOrder": [],
             "parentId": "",

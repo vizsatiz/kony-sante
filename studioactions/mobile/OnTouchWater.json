@@ -1,0 +1,36 @@
+{
+    "AS_Image_ac616a39eb5c47af921907b0cd6736c9": {
+        "id": "AS_Image_ac616a39eb5c47af921907b0cd6736c9",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnTouchWater",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmUserKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "d9ad411b7f504a78be40a0840560be3a"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___f7aad7e9fa614151af5e083b91fcf3e3",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmFoodPreferenceKA",
+            "formKUID": "adb8f8653931451f892c5fab204bb780",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": ""
+        }]
+    }
+}

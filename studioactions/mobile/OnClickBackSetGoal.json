@@ -1,0 +1,24 @@
+{
+    "AS_Button_hc3de3c13053477e8a5d8eec945d8662": {
+        "id": "AS_Button_hc3de3c13053477e8a5d8eec945d8662",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnClickBackSetGoal",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___ad91f7a5b3724b8497272254955d7668",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmUserKA",
+            "formKUID": "d9ad411b7f504a78be40a0840560be3a",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": ""
+        }]
+    }
+}

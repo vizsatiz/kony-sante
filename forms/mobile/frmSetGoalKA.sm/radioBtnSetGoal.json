@@ -1,0 +1,93 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizRadio",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "137dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "10dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s7fb9f67437841fd8ade706243ddfa67",
+    "_top_": {
+        "type": "string",
+        "value": "14dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "333dp"
+    },
+    "android": {
+        "psp": {
+            "viewType": 0
+        }
+    },
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "groupcells": false,
+    "id": "radioBtnSetGoal",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "viewType": 0
+        }
+    },
+    "iphone": {
+        "psp": {
+            "viewType": 0
+        }
+    },
+    "isvisible": true,
+    "itemorientation": "vertical",
+    "kuid": "e7abe402bb1a4a099b51a01aa84178ad",
+    "masterdata": [
+        [
+            "rbg1",
+            "Loose Weight"
+        ],
+        [
+            "rbg2",
+            "Be Fitter"
+        ],
+        [
+            "rbg3",
+            "Gain Muscle"
+        ],
+        [
+            "rbg4",
+            "Run Better"
+        ]
+    ],
+    "name": "kony.ui.RadioButtonGroup",
+    "parent": "flxDetailsKA",
+    "pf": "frmSetGoalKA",
+    "selectedkey": "rbg1",
+    "selectedkeyvalue": [
+        "rbg1",
+        "Loose Weight"
+    ],
+    "size": 18,
+    "viewconfig": {
+        "toggleViewConfig": {
+            "viewStyle": 0
+        }
+    },
+    "viewtype": 0,
+    "wType": "RadioButtonGroup",
+    "widgetalignment": 5,
+    "zindex": 1
+}

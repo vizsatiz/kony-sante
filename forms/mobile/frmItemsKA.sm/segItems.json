@@ -22,7 +22,7 @@
             },
             "segRecordsLbl": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
+                "text": "Milk with Boost and Sugar"
             }
         },
         {
@@ -44,7 +44,7 @@
             },
             "segRecordsLbl": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
+                "text": "Dosa (Plain)"
             }
         },
         {
@@ -66,13 +66,13 @@
             },
             "segRecordsLbl": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
+                "text": "Veg Biryani"
             }
         }
     ],
     "_height_": {
         "type": "string",
-        "value": "91%"
+        "value": "97%"
     },
     "_indicator_": "none",
     "_left_": {
@@ -94,7 +94,7 @@
     ],
     "_top_": {
         "type": "string",
-        "value": "45dp"
+        "value": "5dp"
     },
     "_width_": {
         "type": "string",

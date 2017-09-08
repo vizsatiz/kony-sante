@@ -1,0 +1,62 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizTextBox2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "30dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        3,
+        0,
+        0,
+        0
+    ],
+    "_placeholder_": "23.1",
+    "_right_": {
+        "type": "string",
+        "value": "15dp"
+    },
+    "_skin_": "s894915ebeb64c37abeac02e9650d0f8",
+    "_text_": "",
+    "_width_": {
+        "type": "string",
+        "value": "167dp"
+    },
+    "android": {},
+    "autocapitalize": "none",
+    "autocomplete": false,
+    "autocorrect": false,
+    "autofilter": false,
+    "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerheight": "",
+    "containerheightmode": 1,
+    "containerweight": 100,
+    "contentalignment": 6,
+    "id": "tbxBMI",
+    "info": null,
+    "isvisible": true,
+    "keyboardtype": "A",
+    "kuid": "c534fcde263c44c58cc738cf02ca874d",
+    "mode": "A",
+    "name": "kony.ui.TextBox2",
+    "parent": "flx7",
+    "pf": "frmUserDetailsKA",
+    "placeholderskin": "s14494d2b6db4a3b876c1fe278683b10",
+    "securetextentry": false,
+    "textinputmode": "A",
+    "tooltip": "",
+    "viewtype": "default",
+    "wType": "TextField",
+    "zindex": 1
+}

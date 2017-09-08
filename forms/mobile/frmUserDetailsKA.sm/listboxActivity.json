@@ -1,0 +1,86 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizListBox",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "40dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_right_": {
+        "type": "string",
+        "value": "15dp"
+    },
+    "_skin_": "s7ea05c7c35b4a2d8a6043587abcbd1f",
+    "_width_": {
+        "type": "string",
+        "value": "169dp"
+    },
+    "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50.00%"
+    },
+    "containerweight": 100,
+    "contentalignment": 6,
+    "context": {
+        "channel": "mobile",
+        "formID": "frmUserDetailsKA",
+        "platform": "android",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "groupcells": false,
+    "id": "listboxActivity",
+    "info": null,
+    "isvisible": true,
+    "kuid": "i98bfecf567643a087ed0c60631e081f",
+    "masterdata": [
+        [
+            "lb1",
+            "Less than 30 min"
+        ],
+        [
+            "lb2",
+            "Atleast 30 min"
+        ],
+        [
+            "lb3",
+            "An hour"
+        ],
+        [
+            "lb4",
+            "Atleast 2 hours"
+        ]
+    ],
+    "name": "kony.ui.ListBox",
+    "parent": "flx8",
+    "pf": "frmUserDetailsKA",
+    "selectedkey": "lb1",
+    "selectedkeys": null,
+    "selectedkeyvalue": [
+        "lb1",
+        "Less than 30 min"
+    ],
+    "selectedkeyvalues": null,
+    "size": 18,
+    "viewconfig": {
+        "toggleViewConfig": {
+            "viewStyle": 0
+        }
+    },
+    "viewtype": 0,
+    "wType": "ListBox",
+    "zindex": 1
+}

@@ -1,0 +1,36 @@
+{
+    "AS_Image_bb24eeb4ef7e4759ab4bd45819e596bc": {
+        "id": "AS_Image_bb24eeb4ef7e4759ab4bd45819e596bc",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnTouchTrackDiet",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmUserKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "d9ad411b7f504a78be40a0840560be3a"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___h172d07a183145f8bdb90f6e2af0195b",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmDietKA",
+            "formKUID": "b2da036e8558476da2a9d8dd65146f04",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": ""
+        }]
+    }
+}

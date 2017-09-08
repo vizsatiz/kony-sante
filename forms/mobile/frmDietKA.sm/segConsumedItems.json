@@ -20,9 +20,13 @@
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             },
+            "segCalorieslbl": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
             "segRecordsLbl": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Milk with horlicks"
+                "text": "Label"
             }
         },
         {
@@ -42,9 +46,13 @@
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             },
+            "segCalorieslbl": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
             "segRecordsLbl": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Banana"
+                "text": "Label"
             }
         },
         {
@@ -64,15 +72,45 @@
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             },
+            "segCalorieslbl": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
             "segRecordsLbl": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Dry Fruits"
+                "text": "Label"
+            }
+        },
+        {
+            "btnDeleteKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": ""
+            },
+            "btnUpdateKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Update"
+            },
+            "imgTask": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "add_active.png"
+            },
+            "lblidKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "segCalorieslbl": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "segRecordsLbl": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
             }
         }
     ],
     "_height_": {
         "type": "string",
-        "value": "55%"
+        "value": "44.85%"
     },
     "_indicator_": "none",
     "_left_": {
@@ -103,12 +141,13 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "containerweight": 100,
-    "counter": "02",
+    "counter": "03",
     "focusedindex": null,
     "focuseditem": null,
     "groupcells": false,
     "hasSections": false,
     "id": "segConsumedItems",
+    "ide_onRowClick": "AS_Segment_c2e06565346b40f989ecb6100d349c6c",
     "info": null,
     "ipad": {
         "psp": {
@@ -120,7 +159,7 @@
             "indicator": "rowselect"
         }
     },
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "j2556f762d424754bcb342377a19d4a8",
     "masterdata": {},
     "name": "kony.ui.SegmentedUI2",
@@ -134,7 +173,7 @@
     "pf": "frmDietKA",
     "retainselection": false,
     "rowTemplateId": "e2a3562ff33a42cbb80574a319879ddc",
-    "rowcounter": 2,
+    "rowcounter": 3,
     "rowfocusskin": "sf03a19cc3824c478a5162e28b20944f",
     "rowskin": "s9d8445af5a64490a136dfa835d9deeb",
     "rowtemplate": "flxTmpAssetMain",
@@ -147,7 +186,7 @@
     "selectedindex": null,
     "selectedindices": null,
     "selecteditems": null,
-    "selectedsectionindex": 0,
+    "selectedsectionindex": null,
     "selectionbehavior": "default",
     "separatorrequired": false,
     "showscrollbars": false,
@@ -164,6 +203,7 @@
         "flxTmpAssetMain": "flxTmpAssetMain",
         "imgTask": "imgTask",
         "lblidKA": "lblidKA",
+        "segCalorieslbl": "segCalorieslbl",
         "segRecordsLbl": "segRecordsLbl"
     },
     "zindex": 1

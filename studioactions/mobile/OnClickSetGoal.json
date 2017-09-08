@@ -1,0 +1,36 @@
+{
+    "AS_Image_dbd032117f9c406dbf920cfaa5acb0d7": {
+        "id": "AS_Image_dbd032117f9c406dbf920cfaa5acb0d7",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnClickSetGoal",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmUserKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "d9ad411b7f504a78be40a0840560be3a"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___j5ced2d59a704f7caae08064721cc1a4",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmSetGoalKA",
+            "formKUID": "eb705e04571040b881c76a3517bb5d66",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": ""
+        }]
+    }
+}

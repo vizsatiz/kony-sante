@@ -1,0 +1,36 @@
+{
+    "AS_Segment_ic2efcbe50684de6b7c2ba03599889fe": {
+        "id": "AS_Segment_ic2efcbe50684de6b7c2ba03599889fe",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnRowClickEveningSnack",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "number",
+            "name": "sectionNumber"
+        }, {
+            "datatype": "number",
+            "name": "rowNumber"
+        }],
+        "contextObj": {
+            "name": "frmDietKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "b2da036e8558476da2a9d8dd65146f04"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___ed3bad38c5b243ce96edcbe3ee8c49e7",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmEditQuantityKA",
+            "formKUID": "c2afdd0beb44446c85f8ab15cc310235",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": ""
+        }]
+    }
+}

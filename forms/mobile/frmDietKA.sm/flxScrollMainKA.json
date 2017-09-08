@@ -39,13 +39,17 @@
     "canUpdateUI": true,
     "children": [
         "flxFocus1",
+        "segConsumedItems",
         "flxFocus2",
+        "segMorningSnack",
         "flxFocus3",
+        "segLunch",
         "flxFocus4",
+        "segEveningSnack",
         "flxFocus5",
+        "segDinner",
         "lblConsumedItems",
-        "lblLine",
-        "segConsumedItems"
+        "lblLine"
     ],
     "clipbounds": true,
     "containerweight": 100,

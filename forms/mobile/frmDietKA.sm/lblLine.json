@@ -54,7 +54,7 @@
             "wrapping": 2
         }
     },
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "a6d1f682d08147b7be2076582fe849a7",
     "name": "kony.ui.Label",
     "parent": "flxScrollMainKA",

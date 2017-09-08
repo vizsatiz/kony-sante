@@ -1,0 +1,31 @@
+{
+    "AS_Label_h32f587b823b42379e6480e0672f7116": {
+        "id": "AS_Label_h32f587b823b42379e6480e0672f7116",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnTouchStartBreakfast",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmDietKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "b2da036e8558476da2a9d8dd65146f04"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__ca3298844a5a4905b75384481877ccd4",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "if(frmDietKA.segConsumedItems.isVisible == true) {\n  frmDietKA.segConsumedItems.isVisible = false;\n} else {\n  frmDietKA.segConsumedItems.isVisible = true;\n}",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

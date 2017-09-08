@@ -37,6 +37,7 @@
     "canUpdateUI": true,
     "children": [
         "segRecordsLbl",
+        "segCalorieslbl",
         "imgTask",
         "lblidKA"
     ],

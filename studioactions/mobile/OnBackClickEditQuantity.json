@@ -1,0 +1,30 @@
+{
+    "AS_Button_h8ddb1f1327040308bc6859407b9e7ea": {
+        "id": "AS_Button_h8ddb1f1327040308bc6859407b9e7ea",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnBackClickEditQuantity",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmEditQuantityKA",
+            "type": "forms",
+            "platform": null,
+            "KUID": "c2afdd0beb44446c85f8ab15cc310235"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___e41787b8ceca4f99a8cba12bfcff0b37",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmDietKA",
+            "formKUID": "b2da036e8558476da2a9d8dd65146f04",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": ""
+        }]
+    }
+}

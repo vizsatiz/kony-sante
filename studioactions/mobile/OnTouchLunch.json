@@ -1,0 +1,31 @@
+{
+    "AS_Label_f7952a807a4c470bb77cf29c622090b7": {
+        "id": "AS_Label_f7952a807a4c470bb77cf29c622090b7",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnTouchLunch",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmDietKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "b2da036e8558476da2a9d8dd65146f04"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__fad8de3e76f94ba381406f65a33cf424",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "if(frmDietKA.segLunch.isVisible == true) {\n  frmDietKA.segLunch.isVisible = false;\n} else {\n  frmDietKA.segLunch.isVisible = true;\n}",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "AS_Label_b235dc47737a40f289ee3be74e3cef1a": {
+        "id": "AS_Label_b235dc47737a40f289ee3be74e3cef1a",
+        "type": "ACTION_SEQUENCE",
+        "name": "OnTouchStartEveningSnack",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmDietKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "b2da036e8558476da2a9d8dd65146f04"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__jdb2c1e0efcf4de5b8c7ca4b0d14e5fd",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "if(frmDietKA.segEveningSnack.isVisible == true) {\n  frmDietKA.segEveningSnack.isVisible = false;\n} else {\n  frmDietKA.segEveningSnack.isVisible = true;\n}",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

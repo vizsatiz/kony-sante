@@ -25,7 +25,9 @@
         }
     },
     "canUpdateUI": true,
-    "children": [],
+    "children": [
+        "frmMainKA"
+    ],
     "containerweight": 100,
     "currentLocale": "default",
     "desktopweb": {

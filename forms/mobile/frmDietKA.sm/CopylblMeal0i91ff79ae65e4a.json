@@ -3,8 +3,8 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "100%"
     },
     "_left_": {
         "type": "string",
@@ -47,6 +47,7 @@
     "containerweight": 100,
     "contentalignment": 4,
     "id": "CopylblMeal0i91ff79ae65e4a",
+    "ide_onTouchStart": "AS_Label_f7952a807a4c470bb77cf29c622090b7",
     "info": null,
     "ipad": {
         "psp": {

@@ -1,5 +1,5 @@
 /*
- * kony-sdk-ide Version SDK-TestDEV-8.0.0.51
+ * kony-sdk-ide Version Dev1.0.0
  */
 /**
  * Kony namespace
@@ -166,7 +166,7 @@ kony.sdk.isInitialized = false;
 kony.sdk.currentInstance = null;
 kony.sdk.isLicenseUrlAvailable = true;
 kony.sdk.constants = kony.sdk.constants || {};
-kony.sdk.version = "SDK-TestDEV-8.0.0.51";
+kony.sdk.version = "Dev1.0.0";
 kony.sdk.logger = new konyLogger();
 kony.sdk.logsdk = new konySdkLogger();
 kony.sdk.syncService = null;

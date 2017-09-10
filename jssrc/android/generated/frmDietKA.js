@@ -44,6 +44,7 @@ function addWidgetsfrmDietKA() {
     flxDateKA.setDefaultUnit(kony.flex.DP);
     var Calendar0b0ad95e8760e43 = new kony.ui.Calendar({
         "calendarIcon": "sky.png",
+        "centerX": "50%",
         "dateComponents": [7, 9, 2017, 0, 0, 0],
         "dateFormat": "dd/MM/yyyy",
         "day": 7,
@@ -52,12 +53,11 @@ function addWidgetsfrmDietKA() {
         "hour": 0,
         "id": "Calendar0b0ad95e8760e43",
         "isVisible": true,
-        "left": "50dp",
         "minutes": 0,
         "month": 9,
         "seconds": 0,
         "skin": "sknCalenderDefaultKA",
-        "top": "7dp",
+        "top": "8dp",
         "viewConfig": {
             "gridConfig": {
                 "leftNavigationImage": "sky.png",
@@ -69,19 +69,20 @@ function addWidgetsfrmDietKA() {
         "year": 2017,
         "zIndex": 1
     }, {
-        "contentAlignment": constants.CONTENT_ALIGN_BOTTOM_CENTER,
+        "contentAlignment": constants.CONTENT_ALIGN_CENTER,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {});
     var btnBack = new kony.ui.Button({
-        "focusSkin": "slButtonGlossRed",
-        "height": "23dp",
+        "focusSkin": "sknBtnBackFilterKA",
+        "height": "35dp",
         "id": "btnBack",
         "isVisible": true,
-        "left": "8dp",
-        "skin": "sknBtnBack",
+        "left": "10dp",
+        "onClick": AS_Button_e8cce781ff194950bde21f0f3708ddf2,
+        "skin": "sknBtnBackFilterKA",
         "top": "13dp",
-        "width": "23dp",
+        "width": "35dp",
         "zIndex": 1
     }, {
         "contentAlignment": constants.CONTENT_ALIGN_CENTER,
@@ -89,16 +90,15 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {});
-    var btnMenu = new kony.ui.Button({
-        "focusSkin": "slButtonGlossRed",
-        "height": "23dp",
-        "id": "btnMenu",
+    var btnSync = new kony.ui.Button({
+        "focusSkin": "sknBtnCallKA",
+        "height": "35dp",
+        "id": "btnSync",
         "isVisible": true,
-        "left": "323dp",
-        "onClick": AS_Button_h716422b321b41d9a66b0eb30201a0fe,
-        "skin": "sknBtnMenuKA",
-        "top": "12dp",
-        "width": "23dp",
+        "right": "10dp",
+        "skin": "sknBtnCallKA",
+        "top": "13dp",
+        "width": "35dp",
         "zIndex": 1
     }, {
         "contentAlignment": constants.CONTENT_ALIGN_CENTER,
@@ -106,7 +106,7 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {});
-    flxDateKA.add(Calendar0b0ad95e8760e43, btnBack, btnMenu);
+    flxDateKA.add(Calendar0b0ad95e8760e43, btnBack, btnSync);
     var lblTotalCal = new kony.ui.Label({
         "centerX": "50%",
         "height": "40dp",
@@ -154,7 +154,7 @@ function addWidgetsfrmDietKA() {
             "strikeThrough": false
         },
         "top": "0",
-        "width": "100dp",
+        "width": "110dp",
         "zIndex": 1
     }, {
         "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
@@ -167,7 +167,7 @@ function addWidgetsfrmDietKA() {
         "centerY": "50%",
         "id": "lblMeals",
         "isVisible": true,
-        "left": "20dp",
+        "left": "10dp",
         "skin": "sknLbl1C3F64CN110KA",
         "text": "Meals",
         "textStyle": {
@@ -280,9 +280,11 @@ function addWidgetsfrmDietKA() {
     flxMeal1.setDefaultUnit(kony.flex.DP);
     var lblMeal1 = new kony.ui.Label({
         "centerY": "50%",
+        "height": "100%",
         "id": "lblMeal1",
         "isVisible": true,
         "left": "10dp",
+        "onTouchStart": AS_Label_h32f587b823b42379e6480e0672f7116,
         "skin": "sknLbl000000HB35KA",
         "text": "Breakfast",
         "textStyle": {
@@ -320,15 +322,15 @@ function addWidgetsfrmDietKA() {
     });
     var imgAdd1 = new kony.ui.Image2({
         "centerY": "50%",
-        "height": "25dp",
+        "height": "23dp",
         "id": "imgAdd1",
         "isVisible": true,
         "left": "15dp",
         "onTouchStart": AS_Image_e564ba19014d4326afb66e732c69c385,
         "skin": "slImage",
-        "src": "add_active.png",
+        "src": "greenplus.png",
         "top": "0dp",
-        "width": "25dp",
+        "width": "23dp",
         "zIndex": 1
     }, {
         "imageScaleMode": constants.IMAGE_SCALE_MODE_MAINTAIN_ASPECT_RATIO,
@@ -337,6 +339,76 @@ function addWidgetsfrmDietKA() {
     }, {});
     flxMeal1.add(lblMeal1, lblCalories1, imgAdd1);
     flxFocus1.add(flxMeal1);
+    var segConsumedItems = new kony.ui.SegmentedUI2({
+        "autogrowMode": kony.flex.AUTOGROW_NONE,
+        "data": [{
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }, {
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }, {
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }, {
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }],
+        "groupCells": false,
+        "height": "44.85%",
+        "id": "segConsumedItems",
+        "isVisible": false,
+        "left": "0dp",
+        "needPageIndicator": true,
+        "onRowClick": AS_Segment_c2e06565346b40f989ecb6100d349c6c,
+        "pageOffDotImage": "pageoffdot.png",
+        "pageOnDotImage": "pageondot.png",
+        "retainSelection": false,
+        "rowFocusSkin": "seg2Focus",
+        "rowSkin": "seg2Normal",
+        "rowTemplate": flxTmpAssetMain,
+        "scrollingEvents": {},
+        "sectionHeaderSkin": "sliPhoneSegmentHeader",
+        "selectionBehavior": constants.SEGUI_DEFAULT_BEHAVIOR,
+        "separatorRequired": false,
+        "showScrollbars": false,
+        "top": "0dp",
+        "viewType": constants.SEGUI_VIEW_TYPE_TABLEVIEW,
+        "widgetDataMap": {
+            "btnDeleteKA": "btnDeleteKA",
+            "btnUpdateKA": "btnUpdateKA",
+            "flxDetailsKA": "flxDetailsKA",
+            "flxMainAssetKA": "flxMainAssetKA",
+            "flxSwipeDetailsKA": "flxSwipeDetailsKA",
+            "flxSwipeKA": "flxSwipeKA",
+            "flxTmpAssetMain": "flxTmpAssetMain",
+            "imgTask": "imgTask",
+            "lblidKA": "lblidKA",
+            "segCalorieslbl": "segCalorieslbl",
+            "segRecordsLbl": "segRecordsLbl"
+        },
+        "width": "100%",
+        "zIndex": 1
+    }, {
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {});
     var flxFocus2 = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
@@ -367,9 +439,11 @@ function addWidgetsfrmDietKA() {
     flxMeal2.setDefaultUnit(kony.flex.DP);
     var CopylblMeal0fe7aff697d1d44 = new kony.ui.Label({
         "centerY": "50%",
+        "height": "100%",
         "id": "CopylblMeal0fe7aff697d1d44",
         "isVisible": true,
         "left": "10dp",
+        "onTouchStart": AS_Label_e9eeea6f9a474ca690b9aad023a3c17f,
         "skin": "sknLbl000000HB35KA",
         "text": "Morning Snack",
         "textStyle": {
@@ -408,15 +482,15 @@ function addWidgetsfrmDietKA() {
     });
     var CopyimgAdd0e1466c6a37844b = new kony.ui.Image2({
         "centerY": "50%",
-        "height": "25dp",
+        "height": "23dp",
         "id": "CopyimgAdd0e1466c6a37844b",
         "isVisible": true,
         "left": "15dp",
         "onTouchStart": AS_Image_e03e5b5b40d440569bab39d6edf31204,
         "skin": "slImage",
-        "src": "add_active.png",
+        "src": "pinkplus.png",
         "top": "0dp",
-        "width": "25dp",
+        "width": "23dp",
         "zIndex": 1
     }, {
         "imageScaleMode": constants.IMAGE_SCALE_MODE_MAINTAIN_ASPECT_RATIO,
@@ -425,6 +499,69 @@ function addWidgetsfrmDietKA() {
     }, {});
     flxMeal2.add(CopylblMeal0fe7aff697d1d44, CopylblCalories0a89328abee6640, CopyimgAdd0e1466c6a37844b);
     flxFocus2.add(flxMeal2);
+    var segMorningSnack = new kony.ui.SegmentedUI2({
+        "autogrowMode": kony.flex.AUTOGROW_NONE,
+        "data": [{
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }, {
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }, {
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }],
+        "groupCells": false,
+        "height": "33.82%",
+        "id": "segMorningSnack",
+        "isVisible": false,
+        "left": "0dp",
+        "needPageIndicator": true,
+        "onRowClick": AS_Segment_accaa00509bb4fee9b8bc5511b27dee9,
+        "pageOffDotImage": "pageoffdot.png",
+        "pageOnDotImage": "pageondot.png",
+        "retainSelection": false,
+        "rowFocusSkin": "seg2Focus",
+        "rowSkin": "seg2Normal",
+        "rowTemplate": flxTmpAssetMain,
+        "scrollingEvents": {},
+        "sectionHeaderSkin": "sliPhoneSegmentHeader",
+        "selectionBehavior": constants.SEGUI_DEFAULT_BEHAVIOR,
+        "separatorRequired": false,
+        "showScrollbars": false,
+        "top": "0dp",
+        "viewType": constants.SEGUI_VIEW_TYPE_TABLEVIEW,
+        "widgetDataMap": {
+            "btnDeleteKA": "btnDeleteKA",
+            "btnUpdateKA": "btnUpdateKA",
+            "flxDetailsKA": "flxDetailsKA",
+            "flxMainAssetKA": "flxMainAssetKA",
+            "flxSwipeDetailsKA": "flxSwipeDetailsKA",
+            "flxSwipeKA": "flxSwipeKA",
+            "flxTmpAssetMain": "flxTmpAssetMain",
+            "imgTask": "imgTask",
+            "lblidKA": "lblidKA",
+            "segCalorieslbl": "segCalorieslbl",
+            "segRecordsLbl": "segRecordsLbl"
+        },
+        "width": "100%",
+        "zIndex": 1
+    }, {
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {});
     var flxFocus3 = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
@@ -455,9 +592,11 @@ function addWidgetsfrmDietKA() {
     flxMeal3.setDefaultUnit(kony.flex.DP);
     var CopylblMeal0i91ff79ae65e4a = new kony.ui.Label({
         "centerY": "50%",
+        "height": "100%",
         "id": "CopylblMeal0i91ff79ae65e4a",
         "isVisible": true,
         "left": "10dp",
+        "onTouchStart": AS_Label_f7952a807a4c470bb77cf29c622090b7,
         "skin": "sknLbl000000HB35KA",
         "text": "Lunch",
         "textStyle": {
@@ -496,15 +635,15 @@ function addWidgetsfrmDietKA() {
     });
     var CopyimgAdd0dd61d6546d9a48 = new kony.ui.Image2({
         "centerY": "50%",
-        "height": "25dp",
+        "height": "23dp",
         "id": "CopyimgAdd0dd61d6546d9a48",
         "isVisible": true,
         "left": "15dp",
         "onTouchStart": AS_Image_j25522113ee243539ec31ce463fc8b1f,
         "skin": "slImage",
-        "src": "add_active.png",
+        "src": "orangeplus.png",
         "top": "0dp",
-        "width": "25dp",
+        "width": "23dp",
         "zIndex": 1
     }, {
         "imageScaleMode": constants.IMAGE_SCALE_MODE_MAINTAIN_ASPECT_RATIO,
@@ -513,6 +652,69 @@ function addWidgetsfrmDietKA() {
     }, {});
     flxMeal3.add(CopylblMeal0i91ff79ae65e4a, CopylblCalories0e2db4b45fec14e, CopyimgAdd0dd61d6546d9a48);
     flxFocus3.add(flxMeal3);
+    var segLunch = new kony.ui.SegmentedUI2({
+        "autogrowMode": kony.flex.AUTOGROW_NONE,
+        "data": [{
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }, {
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }, {
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }],
+        "groupCells": false,
+        "height": "43.38%",
+        "id": "segLunch",
+        "isVisible": false,
+        "left": "0dp",
+        "needPageIndicator": true,
+        "onRowClick": AS_Segment_e9a0bbb98a5049ea859cc4a4104a58f8,
+        "pageOffDotImage": "pageoffdot.png",
+        "pageOnDotImage": "pageondot.png",
+        "retainSelection": false,
+        "rowFocusSkin": "seg2Focus",
+        "rowSkin": "seg2Normal",
+        "rowTemplate": flxTmpAssetMain,
+        "scrollingEvents": {},
+        "sectionHeaderSkin": "sliPhoneSegmentHeader",
+        "selectionBehavior": constants.SEGUI_DEFAULT_BEHAVIOR,
+        "separatorRequired": false,
+        "showScrollbars": false,
+        "top": "0dp",
+        "viewType": constants.SEGUI_VIEW_TYPE_TABLEVIEW,
+        "widgetDataMap": {
+            "btnDeleteKA": "btnDeleteKA",
+            "btnUpdateKA": "btnUpdateKA",
+            "flxDetailsKA": "flxDetailsKA",
+            "flxMainAssetKA": "flxMainAssetKA",
+            "flxSwipeDetailsKA": "flxSwipeDetailsKA",
+            "flxSwipeKA": "flxSwipeKA",
+            "flxTmpAssetMain": "flxTmpAssetMain",
+            "imgTask": "imgTask",
+            "lblidKA": "lblidKA",
+            "segCalorieslbl": "segCalorieslbl",
+            "segRecordsLbl": "segRecordsLbl"
+        },
+        "width": "100%",
+        "zIndex": 1
+    }, {
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {});
     var flxFocus4 = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
@@ -543,9 +745,11 @@ function addWidgetsfrmDietKA() {
     flxMeal4.setDefaultUnit(kony.flex.DP);
     var CopylblMeal0b76a277b6b9840 = new kony.ui.Label({
         "centerY": "50%",
+        "height": "100%",
         "id": "CopylblMeal0b76a277b6b9840",
         "isVisible": true,
         "left": "10dp",
+        "onTouchStart": AS_Label_b235dc47737a40f289ee3be74e3cef1a,
         "skin": "sknLbl000000HB35KA",
         "text": "Evening Snack",
         "textStyle": {
@@ -584,15 +788,15 @@ function addWidgetsfrmDietKA() {
     });
     var CopyimgAdd0cd926065d3af4d = new kony.ui.Image2({
         "centerY": "50.00%",
-        "height": "25dp",
+        "height": "23dp",
         "id": "CopyimgAdd0cd926065d3af4d",
         "isVisible": true,
         "left": "15dp",
         "onTouchStart": AS_Image_f8185a11f8cd49819db9bdd04e959e78,
         "skin": "slImage",
-        "src": "add_active.png",
+        "src": "purpleplus.png",
         "top": "0dp",
-        "width": "25dp",
+        "width": "23dp",
         "zIndex": 1
     }, {
         "imageScaleMode": constants.IMAGE_SCALE_MODE_MAINTAIN_ASPECT_RATIO,
@@ -601,6 +805,69 @@ function addWidgetsfrmDietKA() {
     }, {});
     flxMeal4.add(CopylblMeal0b76a277b6b9840, CopylblCalories0h2492c889b2840, CopyimgAdd0cd926065d3af4d);
     flxFocus4.add(flxMeal4);
+    var segEveningSnack = new kony.ui.SegmentedUI2({
+        "autogrowMode": kony.flex.AUTOGROW_NONE,
+        "data": [{
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }, {
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }, {
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }],
+        "groupCells": false,
+        "height": "33.92%",
+        "id": "segEveningSnack",
+        "isVisible": false,
+        "left": "0dp",
+        "needPageIndicator": true,
+        "onRowClick": AS_Segment_ic2efcbe50684de6b7c2ba03599889fe,
+        "pageOffDotImage": "pageoffdot.png",
+        "pageOnDotImage": "pageondot.png",
+        "retainSelection": false,
+        "rowFocusSkin": "seg2Focus",
+        "rowSkin": "seg2Normal",
+        "rowTemplate": flxTmpAssetMain,
+        "scrollingEvents": {},
+        "sectionHeaderSkin": "sliPhoneSegmentHeader",
+        "selectionBehavior": constants.SEGUI_DEFAULT_BEHAVIOR,
+        "separatorRequired": false,
+        "showScrollbars": false,
+        "top": "0dp",
+        "viewType": constants.SEGUI_VIEW_TYPE_TABLEVIEW,
+        "widgetDataMap": {
+            "btnDeleteKA": "btnDeleteKA",
+            "btnUpdateKA": "btnUpdateKA",
+            "flxDetailsKA": "flxDetailsKA",
+            "flxMainAssetKA": "flxMainAssetKA",
+            "flxSwipeDetailsKA": "flxSwipeDetailsKA",
+            "flxSwipeKA": "flxSwipeKA",
+            "flxTmpAssetMain": "flxTmpAssetMain",
+            "imgTask": "imgTask",
+            "lblidKA": "lblidKA",
+            "segCalorieslbl": "segCalorieslbl",
+            "segRecordsLbl": "segRecordsLbl"
+        },
+        "width": "100%",
+        "zIndex": 1
+    }, {
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {});
     var flxFocus5 = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
@@ -631,9 +898,11 @@ function addWidgetsfrmDietKA() {
     flxMeal5.setDefaultUnit(kony.flex.DP);
     var CopylblMeal0cfe15f86c75a41 = new kony.ui.Label({
         "centerY": "50%",
+        "height": "100%",
         "id": "CopylblMeal0cfe15f86c75a41",
         "isVisible": true,
         "left": "10dp",
+        "onTouchStart": AS_Label_cf64ff890a6d4a62b700f53786ef8302,
         "skin": "sknLbl000000HB35KA",
         "text": "Dinner",
         "textStyle": {
@@ -678,7 +947,7 @@ function addWidgetsfrmDietKA() {
         "left": "15dp",
         "onTouchStart": AS_Image_f01517cfb503487591070583afca4f31,
         "skin": "slImage",
-        "src": "add_active.png",
+        "src": "lavenderplus.png",
         "top": "0dp",
         "width": "25dp",
         "zIndex": 1
@@ -689,12 +958,75 @@ function addWidgetsfrmDietKA() {
     }, {});
     flxMeal5.add(CopylblMeal0cfe15f86c75a41, CopylblCalories0d0e0368543b94d, CopyimgAdd0af72f16209a94e);
     flxFocus5.add(flxMeal5);
+    var segDinner = new kony.ui.SegmentedUI2({
+        "autogrowMode": kony.flex.AUTOGROW_NONE,
+        "data": [{
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }, {
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }, {
+            "btnDeleteKA": "",
+            "btnUpdateKA": "Update",
+            "imgTask": "add_active.png",
+            "lblidKA": "Label",
+            "segCalorieslbl": "Label",
+            "segRecordsLbl": "Label"
+        }],
+        "groupCells": false,
+        "height": "44.85%",
+        "id": "segDinner",
+        "isVisible": false,
+        "left": "0dp",
+        "needPageIndicator": true,
+        "onRowClick": AS_Segment_ea62bb33a66c455b80f50c1b4baa8fdb,
+        "pageOffDotImage": "pageoffdot.png",
+        "pageOnDotImage": "pageondot.png",
+        "retainSelection": false,
+        "rowFocusSkin": "seg2Focus",
+        "rowSkin": "seg2Normal",
+        "rowTemplate": flxTmpAssetMain,
+        "scrollingEvents": {},
+        "sectionHeaderSkin": "sliPhoneSegmentHeader",
+        "selectionBehavior": constants.SEGUI_DEFAULT_BEHAVIOR,
+        "separatorRequired": false,
+        "showScrollbars": false,
+        "top": "0dp",
+        "viewType": constants.SEGUI_VIEW_TYPE_TABLEVIEW,
+        "widgetDataMap": {
+            "btnDeleteKA": "btnDeleteKA",
+            "btnUpdateKA": "btnUpdateKA",
+            "flxDetailsKA": "flxDetailsKA",
+            "flxMainAssetKA": "flxMainAssetKA",
+            "flxSwipeDetailsKA": "flxSwipeDetailsKA",
+            "flxSwipeKA": "flxSwipeKA",
+            "flxTmpAssetMain": "flxTmpAssetMain",
+            "imgTask": "imgTask",
+            "lblidKA": "lblidKA",
+            "segCalorieslbl": "segCalorieslbl",
+            "segRecordsLbl": "segRecordsLbl"
+        },
+        "width": "100%",
+        "zIndex": 1
+    }, {
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {});
     var lblConsumedItems = new kony.ui.Label({
         "height": "30dp",
         "id": "lblConsumedItems",
-        "isVisible": true,
+        "isVisible": false,
         "left": "15dp",
-        "skin": "sknCN110736464KA",
+        "skin": "sknLbl1C3F64CN110KA",
         "text": "Consumed Items:",
         "textStyle": {
             "letterSpacing": 0,
@@ -710,65 +1042,27 @@ function addWidgetsfrmDietKA() {
     }, {
         "textCopyable": false
     });
-    var segConsumedItems = new kony.ui.SegmentedUI2({
-        "autogrowMode": kony.flex.AUTOGROW_NONE,
-        "data": [{
-            "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segRecordsLbl": "Label"
-        }, {
-            "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segRecordsLbl": "Label"
-        }, {
-            "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segRecordsLbl": "Label"
-        }],
-        "groupCells": false,
-        "height": "58.09%",
-        "id": "segConsumedItems",
-        "isVisible": true,
+    var lblLine = new kony.ui.Label({
+        "height": "1dp",
+        "id": "lblLine",
+        "isVisible": false,
         "left": "0dp",
-        "needPageIndicator": true,
-        "pageOffDotImage": "pageoffdot.png",
-        "pageOnDotImage": "pageondot.png",
-        "retainSelection": false,
-        "rowFocusSkin": "seg2Focus",
-        "rowSkin": "seg2Normal",
-        "rowTemplate": flxTmpAssetMainKA,
-        "scrollingEvents": {},
-        "sectionHeaderSkin": "sliPhoneSegmentHeader",
-        "selectionBehavior": constants.SEGUI_DEFAULT_BEHAVIOR,
-        "separatorRequired": false,
-        "showScrollbars": false,
-        "top": "-3dp",
-        "viewType": constants.SEGUI_VIEW_TYPE_TABLEVIEW,
-        "widgetDataMap": {
-            "btnDeleteKA": "btnDeleteKA",
-            "btnUpdateKA": "btnUpdateKA",
-            "flxDetailsKA": "flxDetailsKA",
-            "flxMainAssetKA": "flxMainAssetKA",
-            "flxSwipeDetailsKA": "flxSwipeDetailsKA",
-            "flxSwipeKA": "flxSwipeKA",
-            "flxTmpAssetMainKA": "flxTmpAssetMainKA",
-            "imgTask": "imgTask",
-            "lblidKA": "lblidKA",
-            "segRecordsLbl": "segRecordsLbl"
+        "skin": "sknLbl5E5050LineKA",
+        "textStyle": {
+            "letterSpacing": 0,
+            "strikeThrough": false
         },
+        "top": "10dp",
         "width": "100%",
         "zIndex": 1
     }, {
+        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
-    }, {});
-    flxScrollMainKA.add(flxFocus1, flxFocus2, flxFocus3, flxFocus4, flxFocus5, lblConsumedItems, segConsumedItems);
+    }, {
+        "textCopyable": false
+    });
+    flxScrollMainKA.add(flxFocus1, segConsumedItems, flxFocus2, segMorningSnack, flxFocus3, segLunch, flxFocus4, segEveningSnack, flxFocus5, segDinner, lblConsumedItems, lblLine);
     frmMainKA.add(frmHeaderKA, flxScrollMainKA);
     frmDietKA.add(frmMainKA);
 };
@@ -780,8 +1074,7 @@ function frmDietKAGlobals() {
         "id": "frmDietKA",
         "layoutType": kony.flex.FREE_FORM,
         "needAppMenu": true,
-        "postShow": AS_Form_h998de6895dd42798982e8c2c0bee323,
-        "preShow": AS_Form_e476d203b4614807abb9ab7cafccd260,
+        "preShow": AS_Form_abb2276bdee24b82b79c67f51c5034b7,
         "skin": "slForm"
     }, {
         "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_PORTRAIT,

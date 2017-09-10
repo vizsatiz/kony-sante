@@ -47,41 +47,42 @@ function addWidgetsfrmHomeKA() {
     }, {});
     var lblTagLineKA = new kony.ui.Label({
         "centerX": "50%",
+        "height": "40dp",
         "id": "lblTagLineKA",
         "isVisible": true,
         "left": "45dp",
-        "skin": "slLabel",
+        "skin": "sknLbl3A3F77CN22KA",
         "text": "Transform yourself..",
         "textStyle": {
             "letterSpacing": 0,
             "strikeThrough": false
         },
         "top": "247dp",
-        "width": kony.flex.USE_PREFFERED_SIZE,
+        "width": "200dp",
         "zIndex": 1
     }, {
-        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
+        "contentAlignment": constants.CONTENT_ALIGN_CENTER,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
         "textCopyable": false
     });
     var lblQuoteKA = new kony.ui.Label({
-        "centerX": "50%",
+        "centerX": "50.00%",
         "id": "lblQuoteKA",
         "isVisible": true,
         "left": "26dp",
-        "skin": "slLabel",
+        "skin": "sknCN1103a3f77KA",
         "text": "A big fish to a light bird",
         "textStyle": {
             "letterSpacing": 0,
             "strikeThrough": false
         },
-        "top": "298dp",
-        "width": kony.flex.USE_PREFFERED_SIZE,
+        "top": "287dp",
+        "width": "100%",
         "zIndex": 1
     }, {
-        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
+        "contentAlignment": constants.CONTENT_ALIGN_CENTER,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
@@ -192,17 +193,32 @@ function addWidgetsfrmHomeKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {});
-    var btnLogin = new kony.ui.Button({
-        "focusSkin": "slButtonGlossRed",
+    var BorderButtonRound = new kony.ui.FlexContainer({
+        "centerX": "50%",
+        "centerY": "50%",
+        "clipBounds": true,
         "height": "50dp",
-        "id": "btnLogin",
+        "id": "BorderButtonRound",
         "isVisible": true,
-        "left": "56dp",
-        "onClick": AS_Button_e19d02c5a3a8471aaab5c69cc120c576,
-        "skin": "slButtonGlossBlue",
+        "layoutType": kony.flex.FREE_FORM,
+        "masterType": constants.MASTER_TYPE_USERWIDGET,
+        "skin": "slFbox0c0f4b80f57ce4d",
+        "top": 0,
+        "width": "70%",
+        "zIndex": 1
+    }, {}, {});
+    BorderButtonRound.setDefaultUnit(kony.flex.DP);
+    var ButtonBorder = new kony.ui.Button({
+        "bottom": "5dp",
+        "focusSkin": "ButtonBorderActive",
+        "id": "ButtonBorder",
+        "isVisible": true,
+        "left": "10dp",
+        "onClick": AS_Button_fc0e127b3016406a92ca83a27a76d680,
+        "right": "10dp",
+        "skin": "ButtonBorderNormal",
         "text": "Login",
-        "top": "234dp",
-        "width": "260dp",
+        "top": "5dp",
         "zIndex": 1
     }, {
         "contentAlignment": constants.CONTENT_ALIGN_CENTER,
@@ -210,7 +226,30 @@ function addWidgetsfrmHomeKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {});
-    flxMainScreen2KA.add(imgFish1KA, imgBird1KA, imgSelect, imgUnselect, btnLogin);
+    BorderButtonRound.add(ButtonBorder);
+    var lblNote = new kony.ui.Label({
+        "centerX": "50%",
+        "height": "30dp",
+        "id": "lblNote",
+        "isVisible": true,
+        "left": "143dp",
+        "skin": "sknLbl5e5050ClanProBook28pxKA",
+        "text": "Sign in using Google Account",
+        "textStyle": {
+            "letterSpacing": 0,
+            "strikeThrough": false
+        },
+        "top": "333dp",
+        "width": "200dp",
+        "zIndex": 1
+    }, {
+        "contentAlignment": constants.CONTENT_ALIGN_CENTER,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {
+        "textCopyable": false
+    });
+    flxMainScreen2KA.add(imgFish1KA, imgBird1KA, imgSelect, imgUnselect, BorderButtonRound, lblNote);
     frmHomeKA.add(flxMainScreen1KA, flxMainScreen2KA);
 };
 
@@ -222,6 +261,7 @@ function frmHomeKAGlobals() {
         "id": "frmHomeKA",
         "layoutType": kony.flex.FREE_FORM,
         "needAppMenu": true,
+        "postShow": AS_Form_da3185b308854cb68b1ab158a4b6818e,
         "skin": "slForm",
         "verticalScrollIndicator": false
     }, {

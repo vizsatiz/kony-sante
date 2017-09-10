@@ -1,7 +1,9 @@
 <properties>
     <attributes name="apmformExit" value="false"/>
+    <attributes name="cloud_web_xml_custom_filters" value=""/>
     <attributes name="wp81spublisherdisplaynamekey" value="KonyLabs"/>
     <attributes name="SET_WALLPAPER_HINTS" value="false"/>
+    <attributes name="cloud_web_xml_custom_listeners" value=""/>
     <attributes name="BIND_REMOTEVIEWS" value="false"/>
     <attributes name="mapkey" value=""/>
     <attributes name="wp10lockscreennotificationskey" value="Not set"/>
@@ -12,6 +14,7 @@
     <attributes name="wp8fliplargekey" value=""/>
     <attributes name="READ_SMS" value="false"/>
     <attributes name="DEVICE_POWER" value="false"/>
+    <attributes name="cloud_selected_ipaddress_list" value=""/>
     <attributes name="tcphoneformatindicator" value="false"/>
     <attributes name="antialiaseddrawing" value="false"/>
     <attributes name="enterpriseAuthentication" value="false"/>
@@ -81,6 +84,7 @@
     <attributes name="fgcolorkey" value="255,255,255"/>
     <attributes name="iosrespectimagesizecorrection" value="true"/>
     <attributes name="winmangotiletitlekey" value="Sample"/>
+    <attributes name="svcdocfromenvironment" value="true"/>
     <attributes name="windesktop_enableBackwardCompatibility" value="false"/>
     <attributes name="Removable_Storage" value="true"/>
     <attributes name="win10pfxkey" value=""/>
@@ -97,6 +101,7 @@
     <attributes name="wintaburlscheme" value=""/>
     <attributes name="extendTop" value="false"/>
     <attributes name="wp8tilestemplatekey" value="FLIP_TILE"/>
+    <attributes name="certs_trust_store_type" value="JKS"/>
     <attributes name="SET_ALARM" value="false"/>
     <attributes name="PROCESS_OUTGOING_CALLS" value="false"/>
     <attributes name="ID_RESOLUTION_WXGA" value="true"/>
@@ -119,8 +124,7 @@
     <attributes name="wp10pfxkey" value=""/>
     <attributes name="ACCESS_CHECKIN_PROPERTIES" value="false"/>
     <attributes name="MOUNT_FORMAT_FILESYSTEMS" value="false"/>
-    <attributes name="lastmodifiedtime" value="1504769967979"/>
-    <attributes name="hybridhttpsportkey" value=""/>
+    <attributes name="lastmodifiedtime" value="1504947775104"/>
     <attributes name="wp10microphone" value="false"/>
     <attributes name="wp10backgroundMediaPlayback" value="false"/>
     <attributes name="ID_REQ_NFC" value="false"/>
@@ -185,6 +189,7 @@
     <attributes name="wp81slockscreennotificationskey" value="Not set"/>
     <attributes name="winphn10bgagentnamespace" value=""/>
     <attributes name="DISABLE_KEYGUARD" value="false"/>
+    <attributes name="certs_ssl_algorithm" value="TLS"/>
     <attributes name="apmorientationchange" value="false"/>
     <attributes name="wp10bluetooth" value="false"/>
     <attributes name="tcbb360basefontsize" value="12"/>
@@ -255,7 +260,6 @@
     <attributes name="DUMP" value="false"/>
     <attributes name="userNotificationListener" value="false"/>
     <attributes name="WRITE_SYNC_SETTINGS" value="false"/>
-    <attributes name="hybridportkey" value=""/>
     <attributes name="WRITE_GSERVICES" value="false"/>
     <attributes name="iphoneurlscheme" value=""/>
     <attributes name="CLEAR_APP_CACHE" value="false"/>
@@ -263,6 +267,7 @@
     <attributes name="READ_FRAME_BUFFER" value="false"/>
     <attributes name="STATUS_BAR" value="false"/>
     <attributes name="spaandroidtab1024basefontsize" value="12"/>
+    <attributes name="cloud_web_xml_custom_mappings" value=""/>
     <attributes name="win8publisherdisplaynamekey" value="KonyLabs"/>
     <attributes name="RECEIVE_BOOT_COMPLETED" value="false"/>
     <attributes name="access_pimdomain_contacts" value="false"/>
@@ -314,12 +319,14 @@
     <attributes name="win8packagenamekey" value="Sample"/>
     <attributes name="mwcontextkey" value=""/>
     <attributes name="desktopwebwidthval" value="100"/>
+    <attributes name="certs_trust_store_pwd" value="kds/0eUc+i3BqFqSkpCk4g=="/>
     <attributes name="bb10description" value=""/>
     <attributes name="MODIFY_PHONE_STATE" value="false"/>
     <attributes name="DELETE_CACHE_FILES" value="false"/>
     <attributes name="wp8cycle1key" value=""/>
     <attributes name="Shared_User_Certificates" value="true"/>
     <attributes name="passwordkey" value="kds/0eUc+i3BqFqSkpCk4g=="/>
+    <attributes name="cloud_http_redirect" value="false"/>
     <attributes name="wp10removableStorage" value="false"/>
     <attributes name="phoneCall" value="false"/>
     <attributes name="wp8descriptionkey" value="Sample Test Application"/>
@@ -337,6 +344,7 @@
     <attributes name="GET_ACCOUNTS" value="false"/>
     <attributes name="winphn10bgagenttaskname" value=""/>
     <attributes name="ID_REQ_GYROSCOPE" value="false"/>
+    <attributes name="cloud_web_xml_custom_others" value=""/>
     <attributes name="SET_ORIENTATION" value="false"/>
     <attributes name="_sys_use_consumer_push" value="false"/>
     <attributes name="apptitle" value=""/>
@@ -363,6 +371,7 @@
     <attributes name="HARDWARE_TEST" value="false"/>
     <attributes name="tcandroid240basefontsize" value="12"/>
     <attributes name="post_notification" value="false"/>
+    <attributes name="certs_key_store_pwd" value="kds/0eUc+i3BqFqSkpCk4g=="/>
     <attributes name="spawindows320basefontsize" value="12"/>
     <attributes name="initialRotationPreferenceKey" value="landscape"/>
     <attributes name="wp8textnotificationkey" value="false"/>
@@ -378,6 +387,7 @@
     <attributes name="wp10userNotificationListener" value="false"/>
     <attributes name="wp10versionminorkey" value="0"/>
     <attributes name="Shared_User_Certificate" value="true"/>
+    <attributes name="log_level" value="ERROR"/>
     <attributes name="vendornamekey" value="KonyLabs"/>
     <attributes name="ID_CAP_WEBBROWSERCOMPONENT" value="true"/>
     <attributes name="wp8iconicsmallkey" value=""/>
@@ -397,6 +407,7 @@
     <attributes name="enablesearchbar" value="false"/>
     <attributes name="tcandroid480basefontsize" value="12"/>
     <attributes name="WRITE_SETTINGS" value="false"/>
+    <attributes name="cloud_account_guid" value="07d0fce3-809b-446f-a53c-5dba0a60fa24"/>
     <attributes name="statusBarHidden" value="false"/>
     <attributes name="andmaxsdkkey" value="7.1 (25)"/>
     <attributes name="wp10chat" value="false"/>
@@ -424,6 +435,7 @@
     <attributes name="wp8packagepublisheridkey" value=""/>
     <attributes name="location" value="false"/>
     <attributes name="winphn10bgagentclassname" value=""/>
+    <attributes name="cloud_url" value="https://test-800-sdk.sit2-konycloud.com"/>
     <attributes name="disablehttpskey" value="false"/>
     <attributes name="Music_Library" value="true"/>
     <attributes name="Location" value="true"/>
@@ -454,7 +466,6 @@
     <attributes name="enablepushnotifications" value="false"/>
     <attributes name="BROADCAST_WAP_PUSH" value="false"/>
     <attributes name="build_gradle_attrs_suffix" value=""/>
-    <attributes name="hybridaddrkey" value=""/>
     <attributes name="wp8lockscreenbackgroundkey" value="false"/>
     <attributes name="wp10packagelogokey" value=""/>
     <attributes name="wp10descriptionkey" value="Sample Test Application"/>
@@ -462,9 +473,11 @@
     <attributes name="win8bgagentpath" value=""/>
     <attributes name="ID_CAP_IDENTITY_USER" value="true"/>
     <attributes name="wp10voipCall" value="false"/>
+    <attributes name="cloud_env_GUID" value="0f4d35fe-0ac6-46f3-9972-cd6cfd666aea"/>
     <attributes name="androidInstallLocnPref" value="false"/>
     <attributes name="android_allowselfsignedcertificates" value="None"/>
     <attributes name="userAccountInformation" value="false"/>
+    <attributes name="cloud_env_name" value="Cloud Foundation Team-test-800-sdk"/>
     <attributes name="tcbb480basefontsize" value="12"/>
     <attributes name="SET_PREFERRED_APPLICATIONS" value="false"/>
     <attributes name="WP8_ID_CAP_MICROPHONE" value="true"/>
@@ -500,7 +513,6 @@
     <attributes name="wp10tilebackcolornamekey" value="128,128,128"/>
     <attributes name="tcbb320basefontsize" value="12"/>
     <attributes name="WP8_ID_CAP_WALLET" value="false"/>
-    <attributes name="hybdridcontextkey" value=""/>
     <attributes name="wp8iconicmediumkey" value=""/>
     <attributes name="wp8packageversionkey" value=""/>
     <attributes name="windows10guid" value=""/>
@@ -522,6 +534,7 @@
     <attributes name="remoteSystem" value="false"/>
     <attributes name="win8toastcapablekey" value="Not set"/>
     <attributes name="SET_PROCESS_LIMIT" value="false"/>
+    <attributes name="svcdocrefreshtime" value="-1"/>
     <attributes name="WP8_ID_CAP_CONTACTS" value="true"/>
     <attributes name="wp10contacts" value="false"/>
     <attributes name="musicLibrary" value="false"/>
@@ -534,10 +547,12 @@
     <attributes name="wp81spackagedisplaynamekey" value="Sample"/>
     <attributes name="windowsmapkey" value=""/>
     <attributes name="bb10keystorepassword" value=""/>
+    <attributes name="cloud_account_id" value="100000013"/>
     <attributes name="Enterprise_Authentication" value="true"/>
     <attributes name="BATTERY_STATS" value="false"/>
     <attributes name="internetClient" value="false"/>
     <attributes name="deeplinkkey" value="None"/>
+    <attributes name="svcdocrefreshdynamic" value="FALSE"/>
     <attributes name="wp10userAccountInformation" value="false"/>
     <attributes name="WRITE_CONTACTS" value="false"/>
     <attributes name="androidscreenanydensity" value="true"/>
@@ -551,6 +566,7 @@
     <attributes name="BRICK" value="false"/>
     <attributes name="WP8_ID_CAP_PUSH_NOTIFICATION" value="true"/>
     <attributes name="win10bgagentnamespace" value=""/>
+    <attributes name="cloud_config_ipaddress_list" value=""/>
     <attributes name="enablelocalnotifications" value="false"/>
     <attributes name="tcandroid320basefontsize" value="12"/>
     <attributes name="iostextboxpaddingcorrection" value="true"/>
@@ -561,11 +577,7 @@
     <attributes name="bluetooth" value="false"/>
     <attributes name="apmappload" value="false"/>
     <attributes name="build" value="debug"/>
+    <attributes name="certs_key_store_type" value="JKS"/>
     <attributes name="spaandroidtab800basefontsize" value="12"/>
-    <attributes name="cloud_url" value="http://10.10.33.35:8080/admin"/>
-    <attributes name="cloud_env_name" value="KonyAccount-sdk"/>
-    <attributes name="cloud_env_GUID" value="d74dc227-81ca-4899-8ca7-570476ff9ecd"/>
-    <attributes name="cloud_account_id" value="100000002"/>
-    <attributes name="cloud_account_guid" value="d85e638e-22b7-4dde-860b-aa791fa7a012"/>
     <attributes name="defaultlocalekey" value=""/>
 </properties>

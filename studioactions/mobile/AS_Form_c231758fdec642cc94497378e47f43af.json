@@ -1,0 +1,24 @@
+{
+    "AS_Form_c231758fdec642cc94497378e47f43af": {
+        "id": "AS_Form_c231758fdec642cc94497378e47f43af",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmSanteKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "de259bb4cf594af890014c2388b3225a"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__ib4d14dd4d354ca4b082b4187de3bb54",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "loginWithUsernamePassword(\"tester\", \"test\", \"SanteSapIdentity\");",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

@@ -35,7 +35,10 @@ public class N_KonyLogger extends JSLibrary {
  
 	public static final String activatePersistors = "activatePersistors";
  
-	String[] methods = { getLogLevel, flush, setConfig, setPersistorConfig, setLogLevel, activatePersistors };
+ 
+	public static final String deactivatePersistors = "deactivatePersistors";
+ 
+	String[] methods = { getLogLevel, flush, setConfig, setPersistorConfig, setLogLevel, activatePersistors, deactivatePersistors };
 
 
  Library libs[] = null;
@@ -101,6 +104,15 @@ public class N_KonyLogger extends JSLibrary {
  activatedList5 = (Double)params[0];
  }
  ret = this.activatePersistors( activatedList5 );
+ 
+ 			break;
+ 		case 6:
+ if (paramLen != 1){ return new Object[] {new Double(100),"Invalid Params"}; }
+ Double deactivatedList6 = null;
+ if(params[0] != null && params[0] != LuaNil.nil) {
+ deactivatedList6 = (Double)params[0];
+ }
+ ret = this.deactivatePersistors( deactivatedList6 );
  
  			break;
  		default:
@@ -181,6 +193,16 @@ public class N_KonyLogger extends JSLibrary {
  
 		Object[] ret = null;
  com.kony.logger.Core.KonyJSFacade.activatePersistors( inputKey0.intValue() );
+ 
+ ret = new Object[]{LuaNil.nil, new Double(0)};
+ 		return ret;
+	}
+ 
+ 
+ 	public final Object[] deactivatePersistors( Double inputKey0 ){
+ 
+		Object[] ret = null;
+ com.kony.logger.Core.KonyJSFacade.deactivatePersistors( inputKey0.intValue() );
  
  ret = new Object[]{LuaNil.nil, new Double(0)};
  		return ret;

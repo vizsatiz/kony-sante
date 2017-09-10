@@ -10,70 +10,50 @@ var appConfig = {
     secureServerPort: "443",
     isDebug: true,
     middlewareContext: "Sante",
-    isturlbase: "http://10.10.33.35:8080/services",
+    isturlbase: "https://test-800-sdk.sit2-konycloud.com/services",
     isMFApp: true,
-    appKey: "786785effa2f94629b1a6149f123acae",
-    appSecret: "dd812f47baf3819a8c7ce89fe85c0b2e",
-    serviceUrl: "http://10.10.33.35:8080/authService/100000002/appconfig",
+    appKey: "15df850603d64b7a7de6de728f830e5e",
+    appSecret: "887dfbfb962bd9959b7c57d4760b3ac1",
+    serviceUrl: "https://100000013.auth.sit2-konycloud.com/appconfig",
     svcDoc: {
-        "selflink": "http://10.10.33.35:8080/authService/100000002/appconfig",
+        "selflink": "https://100000013.auth.sit2-konycloud.com/appconfig",
         "identity_meta": {
-            "boxIdentity": {
-                "success_url": "allow_any"
-            },
             "SanteIdentity": {
                 "success_url": "allow_any"
             }
         },
-        "integsvc": {
-            "BinaryImage": "http://10.10.33.35:8080/services/BinaryImage"
-        },
-        "appId": "6bbb26d7-0533-4f52-b3f1-cbc0aa73f126",
-        "name": "Sante",
+        "appId": "bca66a96-4cb3-4223-bb65-30168c04effe",
+        "name": "Sante2",
         "reportingsvc": {
-            "session": "http://10.10.33.35:8080/services/IST",
-            "custom": "http://10.10.33.35:8080/services/CMS"
+            "session": "https://test-800-sdk.sit2-konycloud.com/services/IST",
+            "custom": "https://test-800-sdk.sit2-konycloud.com/services/CMS"
         },
-        "baseId": "622f1c7b-9630-4163-8288-22aece942df1",
+        "baseId": "8a2501e6-53b1-43d6-9198-f8ef8eb38e3c",
         "login": [{
-            "alias": "boxIdentity",
-            "type": "oauth2",
-            "prov": "boxIdentity",
-            "url": "http://10.10.33.35:8080/authService/100000002"
-        }, {
             "alias": "SanteIdentity",
             "type": "oauth2",
             "prov": "SanteIdentity",
-            "url": "http://10.10.33.35:8080/authService/100000002"
+            "url": "https://100000013.auth.sit2-konycloud.com"
         }, {
             "alias": "SanteSapIdentity",
             "type": "basic",
             "prov": "SanteSapIdentity",
-            "url": "http://10.10.33.35:8080/authService/100000002"
+            "url": "https://100000013.auth.sit2-konycloud.com"
         }],
         "services_meta": {
-            "BinaryOS": {
-                "metadata_url": "http://10.10.33.35:8080/services/metadata/v1/BinaryOS",
+            "SanteOS2": {
+                "metadata_url": "https://test-800-sdk.sit2-konycloud.com/services/metadata/v1/SanteOS2",
                 "type": "objectsvc",
                 "version": "1.0",
-                "url": "http://10.10.33.35:8080/services/data/v1/BinaryOS"
-            },
-            "SanteOS": {
-                "metadata_url": "http://10.10.33.35:8080/services/metadata/v1/SanteOS",
-                "type": "objectsvc",
-                "version": "1.0",
-                "url": "http://10.10.33.35:8080/services/data/v1/SanteOS"
-            },
-            "BinaryImage": {
-                "type": "integsvc",
-                "version": "1.0",
-                "url": "http://10.10.33.35:8080/services/BinaryImage"
+                "url": "https://test-800-sdk.sit2-konycloud.com/services/data/v1/SanteOS2"
             }
         }
     },
+    svcDocRefresh: false,
+    svcDocRefreshTimeSecs: -1,
     eventTypes: ["FormEntry", "ServiceRequest", "Error", "Crash"],
-    url: "http://10.10.33.35:8080/admin/Sante/MWServlet",
-    secureurl: "http://10.10.33.35:8080/admin/Sante/MWServlet"
+    url: "https://test-800-sdk.sit2-konycloud.com/Sante/MWServlet",
+    secureurl: "https://test-800-sdk.sit2-konycloud.com/Sante/MWServlet"
 };
 sessionID = "";
 
@@ -81,12 +61,16 @@ function appInit(params) {
     skinsInit();
     initializeMVCTemplates();
     initializeUserWidgets();
+    initializetmpConsumedItems();
     initializetmpSelectAssetKA();
+    initializetmpSelectItems();
     frmDietKAGlobals();
+    frmEditQuantityKAGlobals();
     frmFoodPreferenceKAGlobals();
     frmHomeKAGlobals();
     frmItemsKAGlobals();
     frmPlanKAGlobals();
+    frmSanteKAGlobals();
     frmSetGoalKAGlobals();
     frmUserDetailsKAGlobals();
     frmUserKAGlobals();

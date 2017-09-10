@@ -3,7 +3,7 @@ function addWidgetsfrmItemsKA() {
     var frmHeaderKA = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
-        "height": "50dp",
+        "height": "117dp",
         "id": "frmHeaderKA",
         "isVisible": true,
         "layoutType": kony.flex.FLOW_VERTICAL,
@@ -29,11 +29,11 @@ function addWidgetsfrmItemsKA() {
     }, {}, {});
     flxDateKA.setDefaultUnit(kony.flex.DP);
     var btnBack = new kony.ui.Button({
-        "focusSkin": "slButtonGlossRed",
+        "focusSkin": "sknBtnBack",
         "height": "23dp",
         "id": "btnBack",
         "isVisible": true,
-        "left": "8dp",
+        "left": "10dp",
         "onClick": AS_Button_af1d2a15bcd144e0a1074315ed97ac23,
         "skin": "sknBtnBack",
         "top": "13dp",
@@ -69,30 +69,28 @@ function addWidgetsfrmItemsKA() {
         "textCopyable": false
     });
     flxDateKA.add(btnBack, lblHeader);
-    frmHeaderKA.add(flxDateKA);
-    var flxItems = new kony.ui.FlexContainer({
+    var flxSearchKA = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
-        "height": "92%",
-        "id": "flxItems",
+        "height": "50dp",
+        "id": "flxSearchKA",
         "isVisible": true,
         "layoutType": kony.flex.FREE_FORM,
         "left": "0dp",
-        "skin": "sknFlxWhite",
+        "skin": "slFbox",
         "top": "0dp",
         "width": "100%",
         "zIndex": 1
     }, {}, {});
-    flxItems.setDefaultUnit(kony.flex.DP);
+    flxSearchKA.setDefaultUnit(kony.flex.DP);
     var imgSearch = new kony.ui.Image2({
         "height": "23dp",
         "id": "imgSearch",
         "isVisible": true,
         "left": "10dp",
-        "onTouchStart": AS_Image_i226ffdd2b0542b1998170e079b90f48,
         "skin": "slImage",
         "src": "zoomout.png",
-        "top": "10dp",
+        "top": "15dp",
         "width": "23dp",
         "zIndex": 1
     }, {
@@ -102,7 +100,7 @@ function addWidgetsfrmItemsKA() {
     }, {});
     var tbWhere = new kony.ui.TextBox2({
         "autoCapitalize": constants.TEXTBOX_AUTO_CAPITALIZE_NONE,
-        "height": "6%",
+        "height": "40dp",
         "id": "tbWhere",
         "isVisible": true,
         "keyBoardStyle": constants.TEXTBOX_KEY_BOARD_STYLE_DEFAULT,
@@ -125,10 +123,26 @@ function addWidgetsfrmItemsKA() {
         "placeholderSkin": "tbPlaceHolderSkin",
         "viewType": constants.TEXTBOX_VIEW_TYPE_DEFAULT
     });
+    flxSearchKA.add(imgSearch, tbWhere);
+    frmHeaderKA.add(flxDateKA, flxSearchKA);
+    var flxItems = new kony.ui.FlexContainer({
+        "autogrowMode": kony.flex.AUTOGROW_NONE,
+        "clipBounds": true,
+        "height": "81%",
+        "id": "flxItems",
+        "isVisible": true,
+        "layoutType": kony.flex.FREE_FORM,
+        "left": "0dp",
+        "skin": "sknFlxWhite",
+        "top": "0dp",
+        "width": "100%",
+        "zIndex": 1
+    }, {}, {});
+    flxItems.setDefaultUnit(kony.flex.DP);
     var lblLine = new kony.ui.Label({
         "height": "1dp",
         "id": "lblLine",
-        "isVisible": true,
+        "isVisible": false,
         "left": "0dp",
         "skin": "sknLbl5E5050LineKA",
         "textStyle": {
@@ -152,22 +166,22 @@ function addWidgetsfrmItemsKA() {
             "btnUpdateKA": "Update",
             "imgTask": "add_active.png",
             "lblidKA": "Label",
-            "segRecordsLbl": "Label"
+            "segRecordsLbl": "Milk with Boost and Sugar"
         }, {
             "btnDeleteKA": "",
             "btnUpdateKA": "Update",
             "imgTask": "add_active.png",
             "lblidKA": "Label",
-            "segRecordsLbl": "Label"
+            "segRecordsLbl": "Dosa (Plain)"
         }, {
             "btnDeleteKA": "",
             "btnUpdateKA": "Update",
             "imgTask": "add_active.png",
             "lblidKA": "Label",
-            "segRecordsLbl": "Label"
+            "segRecordsLbl": "Veg Biryani"
         }],
         "groupCells": false,
-        "height": "91%",
+        "height": "97%",
         "id": "segItems",
         "isVisible": true,
         "left": "0dp",
@@ -183,7 +197,7 @@ function addWidgetsfrmItemsKA() {
         "selectionBehavior": constants.SEGUI_DEFAULT_BEHAVIOR,
         "separatorRequired": false,
         "showScrollbars": false,
-        "top": "45dp",
+        "top": "5dp",
         "viewType": constants.SEGUI_VIEW_TYPE_TABLEVIEW,
         "widgetDataMap": {
             "btnDeleteKA": "btnDeleteKA",
@@ -203,7 +217,7 @@ function addWidgetsfrmItemsKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {});
-    flxItems.add(imgSearch, tbWhere, lblLine, segItems);
+    flxItems.add(lblLine, segItems);
     frmItemsKA.add(frmHeaderKA, flxItems);
 };
 
@@ -214,7 +228,7 @@ function frmItemsKAGlobals() {
         "id": "frmItemsKA",
         "layoutType": kony.flex.FLOW_VERTICAL,
         "needAppMenu": true,
-        "preShow": AS_Form_a691e86c93c34c2cb51e112833f240af,
+        "preShow": AS_Form_cc32892f85474dc2a4a06bdf568042b3,
         "skin": "slForm"
     }, {
         "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_PORTRAIT,

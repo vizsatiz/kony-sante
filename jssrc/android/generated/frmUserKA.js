@@ -1,5 +1,19 @@
 function addWidgetsfrmUserKA() {
     frmUserKA.setDefaultUnit(kony.flex.DP);
+    var flxForm = new kony.ui.FlexContainer({
+        "autogrowMode": kony.flex.AUTOGROW_NONE,
+        "clipBounds": true,
+        "height": "100%",
+        "id": "flxForm",
+        "isVisible": true,
+        "layoutType": kony.flex.FLOW_VERTICAL,
+        "left": "0dp",
+        "skin": "sknFlxF5D1E3",
+        "top": "0dp",
+        "width": "100%",
+        "zIndex": 1
+    }, {}, {});
+    flxForm.setDefaultUnit(kony.flex.DP);
     var frmHeaderKA = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
@@ -8,22 +22,22 @@ function addWidgetsfrmUserKA() {
         "isVisible": true,
         "layoutType": kony.flex.FREE_FORM,
         "left": "0dp",
-        "skin": "sknFlxF5D1E3",
+        "skin": "slFbox",
         "top": "0dp",
         "width": "100%",
         "zIndex": 1
     }, {}, {});
     frmHeaderKA.setDefaultUnit(kony.flex.DP);
     var btnBack = new kony.ui.Button({
-        "focusSkin": "slButtonGlossRed",
-        "height": "23dp",
+        "focusSkin": "sknBtnBackFilterKA",
+        "height": "35dp",
         "id": "btnBack",
         "isVisible": true,
-        "left": "8dp",
-        "onClick": AS_Button_e7b2306e5a494ba9b862c1a106de36e6,
-        "skin": "sknBtnBack",
+        "left": "10dp",
+        "onClick": AS_Button_aa7bf500ed4b47a289666543657c33f5,
+        "skin": "sknBtnBackFilterKA",
         "top": "13dp",
-        "width": "23dp",
+        "width": "35dp",
         "zIndex": 1
     }, {
         "contentAlignment": constants.CONTENT_ALIGN_CENTER,
@@ -111,14 +125,15 @@ function addWidgetsfrmUserKA() {
     var flxMainKA = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
-        "height": "457dp",
+        "height": "307dp",
         "id": "flxMainKA",
         "isVisible": true,
         "layoutType": kony.flex.FLOW_VERTICAL,
-        "left": "0dp",
+        "left": "5%",
+        "right": "5%",
         "skin": "sknFlxWhite",
-        "top": "0dp",
-        "width": "100%",
+        "top": "10dp",
+        "width": "90%",
         "zIndex": 1
     }, {}, {});
     flxMainKA.setDefaultUnit(kony.flex.DP);
@@ -131,19 +146,19 @@ function addWidgetsfrmUserKA() {
         "layoutType": kony.flex.FLOW_HORIZONTAL,
         "left": "0dp",
         "skin": "sknFlxWhite",
-        "top": "0dp",
+        "top": "30dp",
         "width": "100%",
         "zIndex": 1
     }, {}, {});
     flxDetail1.setDefaultUnit(kony.flex.DP);
     var imgDetail1 = new kony.ui.Image2({
-        "centerY": "50%",
+        "centerY": "49.84%",
         "height": "35dp",
         "id": "imgDetail1",
         "isVisible": true,
         "left": "10dp",
         "skin": "slImage",
-        "src": "imagedrag.png",
+        "src": "blueperson.png",
         "top": "16dp",
         "width": "35dp",
         "zIndex": 1
@@ -169,7 +184,7 @@ function addWidgetsfrmUserKA() {
         "skin": "slFSbox",
         "top": "0dp",
         "verticalScrollIndicator": true,
-        "width": "76.85%",
+        "width": "72%",
         "zIndex": 1
     }, {}, {});
     flxLabel1.setDefaultUnit(kony.flex.DP);
@@ -215,14 +230,14 @@ function addWidgetsfrmUserKA() {
     });
     flxLabel1.add(lbl1, lbl2);
     var imgNext1 = new kony.ui.Image2({
-        "centerY": "50%",
+        "centerY": "49.84%",
         "height": "25dp",
         "id": "imgNext1",
         "isVisible": true,
         "left": "0dp",
-        "onTouchStart": AS_Image_bb24eeb4ef7e4759ab4bd45819e596bc,
+        "onTouchStart": AS_Image_g00919c99de643e9a6b151f6f922f53e,
         "skin": "slImage",
-        "src": "imagedrag.png",
+        "src": "arrowright.png",
         "top": "3dp",
         "width": "25dp",
         "zIndex": 1
@@ -267,14 +282,14 @@ function addWidgetsfrmUserKA() {
         "zIndex": 1
     }, {}, {});
     flxDetail2.setDefaultUnit(kony.flex.DP);
-    var CopyimgDetail0h8ac16dfee8d45 = new kony.ui.Image2({
+    var imgDetail2 = new kony.ui.Image2({
         "centerY": "50%",
         "height": "35dp",
-        "id": "CopyimgDetail0h8ac16dfee8d45",
+        "id": "imgDetail2",
         "isVisible": true,
         "left": "10dp",
         "skin": "slImage",
-        "src": "imagedrag.png",
+        "src": "goalicon.png",
         "top": "16dp",
         "width": "35dp",
         "zIndex": 1
@@ -283,7 +298,7 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {});
-    var CopyflxLabel0c09c00f2e0994c = new kony.ui.FlexScrollContainer({
+    var flxLabel2 = new kony.ui.FlexScrollContainer({
         "allowHorizontalBounce": false,
         "allowVerticalBounce": true,
         "bounces": true,
@@ -291,7 +306,7 @@ function addWidgetsfrmUserKA() {
         "enableScrolling": true,
         "height": "100%",
         "horizontalScrollIndicator": true,
-        "id": "CopyflxLabel0c09c00f2e0994c",
+        "id": "flxLabel2",
         "isVisible": true,
         "layoutType": kony.flex.FLOW_VERTICAL,
         "left": "0dp",
@@ -300,10 +315,10 @@ function addWidgetsfrmUserKA() {
         "skin": "slFSbox",
         "top": "0dp",
         "verticalScrollIndicator": true,
-        "width": "76.85%",
+        "width": "72%",
         "zIndex": 1
     }, {}, {});
-    CopyflxLabel0c09c00f2e0994c.setDefaultUnit(kony.flex.DP);
+    flxLabel2.setDefaultUnit(kony.flex.DP);
     var Copylbl0bab13806d08a45 = new kony.ui.Label({
         "id": "Copylbl0bab13806d08a45",
         "isVisible": true,
@@ -344,16 +359,16 @@ function addWidgetsfrmUserKA() {
     }, {
         "textCopyable": false
     });
-    CopyflxLabel0c09c00f2e0994c.add(Copylbl0bab13806d08a45, Copylbl0ebd8fc5152764c);
-    var CopyimgNext0gcae3b76b8ba42 = new kony.ui.Image2({
+    flxLabel2.add(Copylbl0bab13806d08a45, Copylbl0ebd8fc5152764c);
+    var imgNext2 = new kony.ui.Image2({
         "centerY": "50%",
         "height": "25dp",
-        "id": "CopyimgNext0gcae3b76b8ba42",
+        "id": "imgNext2",
         "isVisible": true,
         "left": "0dp",
-        "onTouchStart": AS_Image_g9a27dc877dc42e1ba6a245e743dd686,
+        "onTouchStart": AS_Image_dbd032117f9c406dbf920cfaa5acb0d7,
         "skin": "slImage",
-        "src": "imagedrag.png",
+        "src": "arrowright.png",
         "top": "3dp",
         "width": "25dp",
         "zIndex": 1
@@ -362,7 +377,7 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {});
-    flxDetail2.add(CopyimgDetail0h8ac16dfee8d45, CopyflxLabel0c09c00f2e0994c, CopyimgNext0gcae3b76b8ba42);
+    flxDetail2.add(imgDetail2, flxLabel2, imgNext2);
     var lblLine2 = new kony.ui.Label({
         "height": "1dp",
         "id": "lblLine2",
@@ -398,14 +413,14 @@ function addWidgetsfrmUserKA() {
         "zIndex": 1
     }, {}, {});
     flxDetail3.setDefaultUnit(kony.flex.DP);
-    var CopyimgDetail0d5fb4cb9cd734e = new kony.ui.Image2({
+    var imgDetail3 = new kony.ui.Image2({
         "centerY": "50%",
         "height": "35dp",
-        "id": "CopyimgDetail0d5fb4cb9cd734e",
+        "id": "imgDetail3",
         "isVisible": true,
         "left": "10dp",
         "skin": "slImage",
-        "src": "imagedrag.png",
+        "src": "foodpreference.png",
         "top": "16dp",
         "width": "35dp",
         "zIndex": 1
@@ -414,7 +429,7 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {});
-    var CopyflxLabel0i5eff87c41ca42 = new kony.ui.FlexScrollContainer({
+    var flxLabel3 = new kony.ui.FlexScrollContainer({
         "allowHorizontalBounce": false,
         "allowVerticalBounce": true,
         "bounces": true,
@@ -422,7 +437,7 @@ function addWidgetsfrmUserKA() {
         "enableScrolling": true,
         "height": "100%",
         "horizontalScrollIndicator": true,
-        "id": "CopyflxLabel0i5eff87c41ca42",
+        "id": "flxLabel3",
         "isVisible": true,
         "layoutType": kony.flex.FLOW_VERTICAL,
         "left": "0dp",
@@ -431,10 +446,10 @@ function addWidgetsfrmUserKA() {
         "skin": "slFSbox",
         "top": "0dp",
         "verticalScrollIndicator": true,
-        "width": "76.85%",
+        "width": "72%",
         "zIndex": 1
     }, {}, {});
-    CopyflxLabel0i5eff87c41ca42.setDefaultUnit(kony.flex.DP);
+    flxLabel3.setDefaultUnit(kony.flex.DP);
     var Copylbl0cf9a100f581144 = new kony.ui.Label({
         "id": "Copylbl0cf9a100f581144",
         "isVisible": true,
@@ -475,16 +490,16 @@ function addWidgetsfrmUserKA() {
     }, {
         "textCopyable": false
     });
-    CopyflxLabel0i5eff87c41ca42.add(Copylbl0cf9a100f581144, Copylbl0c3ffe154e4b84d);
-    var CopyimgNext0ae63b8f92caa4b = new kony.ui.Image2({
+    flxLabel3.add(Copylbl0cf9a100f581144, Copylbl0c3ffe154e4b84d);
+    var imgNext3 = new kony.ui.Image2({
         "centerY": "50%",
         "height": "25dp",
-        "id": "CopyimgNext0ae63b8f92caa4b",
+        "id": "imgNext3",
         "isVisible": true,
         "left": "0dp",
         "onTouchStart": AS_Image_ac616a39eb5c47af921907b0cd6736c9,
         "skin": "slImage",
-        "src": "imagedrag.png",
+        "src": "arrowright.png",
         "top": "3dp",
         "width": "25dp",
         "zIndex": 1
@@ -493,7 +508,7 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {});
-    flxDetail3.add(CopyimgDetail0d5fb4cb9cd734e, CopyflxLabel0i5eff87c41ca42, CopyimgNext0ae63b8f92caa4b);
+    flxDetail3.add(imgDetail3, flxLabel3, imgNext3);
     var lblLine3 = new kony.ui.Label({
         "height": "1dp",
         "id": "lblLine3",
@@ -516,7 +531,8 @@ function addWidgetsfrmUserKA() {
         "textCopyable": false
     });
     flxMainKA.add(flxDetail1, lblLine1, flxDetail2, lblLine2, flxDetail3, lblLine3);
-    frmUserKA.add(frmHeaderKA, flxMainKA);
+    flxForm.add(frmHeaderKA, flxMainKA);
+    frmUserKA.add(flxForm);
 };
 
 function frmUserKAGlobals() {

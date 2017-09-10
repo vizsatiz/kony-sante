@@ -1,10 +1,19 @@
 function skinsInit() {
+    ButtonBorderActive = "ButtonBorderActive";
+    ButtonBorderNegativeActive = "ButtonBorderNegativeActive";
+    ButtonBorderNegativeNormal = "ButtonBorderNegativeNormal";
+    ButtonBorderNormal = "ButtonBorderNormal";
+    ButtonBorderPostiveActive = "ButtonBorderPostiveActive";
+    ButtonBorderPostiveNormal = "ButtonBorderPostiveNormal";
+    CopysknBtnBackKA0d186a05ca0c949 = "CopysknBtnBackKA0d186a05ca0c949";
+    CopysknTbxFFFFFFBorder0ab315c22832745 = "CopysknTbxFFFFFFBorder0ab315c22832745";
     CopyslFbox = "CopyslFbox";
     CopyslFbox0dd87ba2d5c034c = "CopyslFbox0dd87ba2d5c034c";
     CopyslForm = "CopyslForm";
     CopyslImage = "CopyslImage";
     CopyslTitleBar = "CopyslTitleBar";
     SkinBlue = "SkinBlue";
+    SknListboxNormal = "SknListboxNormal";
     SnkLblFFFFFFCN35KA = "SnkLblFFFFFFCN35KA";
     btntouchCancleSkinNormalKA = "btntouchCancleSkinNormalKA";
     flxTransSkinKA = "flxTransSkinKA";
@@ -260,6 +269,10 @@ function skinsInit() {
     sknLblValue = "sknLblValue";
     sknLineGrayKA = "sknLineGrayKA";
     sknLineWhiteKA = "sknLineWhiteKA";
+    sknListBox5E5050CB28KA = "sknListBox5E5050CB28KA";
+    sknListBoxFFFFFKA = "sknListBoxFFFFFKA";
+    sknListboxDefaultKA = "sknListboxDefaultKA";
+    sknListboxFocus = "sknListboxFocus";
     sknNewsAuthor = "sknNewsAuthor";
     sknNewsDetails = "sknNewsDetails";
     sknNewsText = "sknNewsText";
@@ -309,10 +322,14 @@ function skinsInit() {
     slButtonGlossRed = "slButtonGlossRed";
     slCalendar = "slCalendar";
     slCamera = "slCamera";
+    slCheckBoxGroup = "slCheckBoxGroup";
     slDynamicNotificationForm = "slDynamicNotificationForm";
     slFSbox = "slFSbox";
     slFbox = "slFbox";
     slFbox0aefa90a78e7849 = "slFbox0aefa90a78e7849";
+    slFbox0c0f4b80f57ce4d = "slFbox0c0f4b80f57ce4d";
+    slFbox0e28de830a2a64a = "slFbox0e28de830a2a64a";
+    slFbox0e36cc7c45bc94b = "slFbox0e36cc7c45bc94b";
     slFontAwesomeIcon = "slFontAwesomeIcon";
     slForm = "slForm";
     slHbox = "slHbox";
@@ -324,6 +341,7 @@ function skinsInit() {
     slPhone = "slPhone";
     slPickerView = "slPickerView";
     slPopup = "slPopup";
+    slRadioButtonGroup = "slRadioButtonGroup";
     slRichText = "slRichText";
     slSliderLeftBlue = "slSliderLeftBlue";
     slSliderRightBlue = "slSliderRightBlue";

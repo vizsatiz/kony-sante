@@ -1,5 +1,5 @@
 // -- SDK File : KonySyncLib.js 
-//  --Generated On Tue Sep 05 12:02:49 IST 2017******************* 
+//  --Generated On Sat Sep 09 09:19:05 IST 2017******************* 
 //  **************** Start jsonWriter.js*******************
 //#ifdef iphone
 	//#define KONYSYNC_IOS
@@ -3568,7 +3568,7 @@ kony.sync.downloadChunks = function(url, serviceParams, payloadId, chunkCount, h
 	var retries = kony.sync.currentSyncConfigParams[kony.sync.numberOfRetriesKey];
 	var serverParams = {};
 	serviceParams[kony.sync.payloadIdKey] = payloadId;
-	serviceParams[kony.sync.chunkCountKey] = chunkCount;
+	serviceParams[kony.sync.chunkCountKey] = chunkCount.toString();
 	sync.log.trace("kony.sync.downloadChunks chunkCount "+chunkCount+" and downloadedChunks ",downloadedChunks);
 	var noOfParallelCalls = 1;
 	//temporarily disabling parallel calls
@@ -3616,8 +3616,8 @@ kony.sync.downloadChunks = function(url, serviceParams, payloadId, chunkCount, h
 		for(callNo=1; callNo<=chunkCount; callNo++){
 			if(chunkMap[callNo]===0){
 				areAllChunksDownloaded = false; //all the chunks are not downloaded. Disabling the flag.
-				infoObj[kony.sync.chunkNoKey] = callNo;
-				serviceParams[kony.sync.chunkNoKey] = callNo;
+				infoObj[kony.sync.chunkNoKey] = callNo.toString();
+				serviceParams[kony.sync.chunkNoKey] = callNo.toString();
 				kony.sync.callOnChunkStart(chunkCount, payloadId, kony.sync.currentScope[kony.sync.scopeName], callNo, serviceParams);
 				sync.log.info("Hitting the service with URL :" + url + " with params:" + JSON.stringify(serviceParams));
 				retries = kony.sync.currentSyncConfigParams[kony.sync.numberOfRetriesKey];
@@ -3633,8 +3633,8 @@ kony.sync.downloadChunks = function(url, serviceParams, payloadId, chunkCount, h
 	else{
 		for(callNo=2; callNo<=chunkCount; callNo++){
 			areAllChunksDownloaded = false; //all the chunks are not downloaded. disabling the flag.
-			infoObj[kony.sync.chunkNoKey] = callNo;
-			serviceParams[kony.sync.chunkNoKey] = callNo;
+			infoObj[kony.sync.chunkNoKey] = callNo.toString();
+			serviceParams[kony.sync.chunkNoKey] = callNo.toString();
 			kony.sync.callOnChunkStart(chunkCount, payloadId, kony.sync.currentScope[kony.sync.scopeName], callNo, serviceParams);
 			sync.log.info("Hitting the service with URL :" + url + " with params:" + JSON.stringify(serviceParams));
 			retries = kony.sync.currentSyncConfigParams[kony.sync.numberOfRetriesKey];
@@ -3729,8 +3729,8 @@ kony.sync.downloadChunks = function(url, serviceParams, payloadId, chunkCount, h
 			if(callNo <= chunkCount){
 				if(!isResumed){
 					if(callNo !== 0){
-						infoObj[kony.sync.chunkNoKey] = callNo;
-						serviceParams[kony.sync.chunkNoKey] = callNo;
+						infoObj[kony.sync.chunkNoKey] = callNo.toString();
+						serviceParams[kony.sync.chunkNoKey] = callNo.toString();
 						kony.sync.callOnChunkStart(chunkCount, payloadId, kony.sync.currentScope[kony.sync.scopeName], callNo, serviceParams);
 						sync.log.info("Hitting the service with URL :" + url + " with params:", serviceParams);
 						retries = kony.sync.currentSyncConfigParams[kony.sync.numberOfRetriesKey];
@@ -3741,8 +3741,8 @@ kony.sync.downloadChunks = function(url, serviceParams, payloadId, chunkCount, h
 				else{
 					for(; callNo<=chunkCount; callNo++){
 						if(chunkMap[callNo]===0){
-							infoObj[kony.sync.chunkNoKey] = callNo;
-							serviceParams[kony.sync.chunkNoKey] = callNo;
+							infoObj[kony.sync.chunkNoKey] = callNo.toString();
+							serviceParams[kony.sync.chunkNoKey] = callNo.toString();
 							kony.sync.callOnChunkStart(chunkCount, payloadId, kony.sync.currentScope[kony.sync.scopeName], callNo, serviceParams);
 							sync.log.info("Hitting the service with URL :" + url + " with params:", serviceParams);
 							retries = kony.sync.currentSyncConfigParams[kony.sync.numberOfRetriesKey];
@@ -4155,7 +4155,7 @@ kony.sync.clearChunkForPayload = function(payloadId, scopeName, chunkError, call
 kony.sync.getChunkSize = function(){
 	sync.log.trace("Entering kony.sync.getChunkSize");
 	if(!kony.sync.isNull(kony.sync.currentSyncConfigParams[kony.sync.chunkSizeKey])){
-		return kony.sync.currentSyncConfigParams[kony.sync.chunkSizeKey];
+		return kony.sync.currentSyncConfigParams[kony.sync.chunkSizeKey].toString();
 	}	
 };
 
@@ -4383,7 +4383,7 @@ kony.sync.clearChunkMetaData = function(tx, scopeName){
 kony.sync.callOnChunkStart = function(chunkCount, payloadId, scope, chunkid, chunkRequest){
 	sync.log.trace("Entering kony.sync.callOnChunkStart");
 	var params = {};
-	params[kony.sync.chunkCountKey] = chunkCount;
+	params[kony.sync.chunkCountKey] = chunkCount.toString();
 	params[kony.sync.payloadIdKey] = payloadId;
 	params[kony.sync.metaTableScopeColumn] = scope;
 	params[kony.sync.chunkTableChunkId] = chunkid;
@@ -4395,7 +4395,7 @@ kony.sync.callOnChunkStart = function(chunkCount, payloadId, scope, chunkid, chu
 kony.sync.callOnChunkSuccess = function(chunkCount, payloadId, scope, chunkid, pendingChunks, chunksDownloaded, serverParams){
 	sync.log.trace("Entering kony.sync.callOnChunkSuccess");
 	var params = {};
-	params[kony.sync.chunkCountKey] = chunkCount;
+	params[kony.sync.chunkCountKey] = chunkCount.toString();
 	params[kony.sync.payloadIdKey] = payloadId;
 	params[kony.sync.metaTableScopeColumn] = scope;
 	params[kony.sync.chunkTableChunkId] = chunkid;
@@ -4409,7 +4409,7 @@ kony.sync.callOnChunkSuccess = function(chunkCount, payloadId, scope, chunkid, p
 kony.sync.callOnChunkError = function(chunkCount, payloadId, scope, chunkid, pendingChunks, chunksDownloaded, errorCode, errorMsg, serverParams, errorInfo){
 	sync.log.trace("Entering kony.sync.callOnChunkError");
 	var params = {};
-	params[kony.sync.chunkCountKey] = chunkCount;
+	params[kony.sync.chunkCountKey] = chunkCount.toString();
 	params[kony.sync.payloadIdKey] = payloadId;
 	params[kony.sync.metaTableScopeColumn] = scope;
 	params[kony.sync.chunkTableChunkId] = chunkid;

@@ -23,8 +23,21 @@ function AS_Form_a691e86c93c34c2cb51e112833f240af(eventobject) {
     populateItemInFrmItemsKA()
 }
 
+function AS_Form_abb2276bdee24b82b79c67f51c5034b7(eventobject) {
+    sante.constants.todaysCalories = 0;
+    populateConsumedItemsBreakFast();
+    populateConsumedItemsMorningSnacks();
+    populateConsumedItemsLunch();
+    populateConsumedItemsEveningSnack();
+    populateConsumedItemsDinner();
+}
+
 function AS_Form_c231758fdec642cc94497378e47f43af(eventobject) {
     loginWithUsernamePassword("tester", "test", "SanteSapIdentity");
+}
+
+function AS_Form_cc32892f85474dc2a4a06bdf568042b3(eventobject) {
+    populateItemInFrmItemsKA();
 }
 
 function AS_Form_da3185b308854cb68b1ab158a4b6818e(eventobject) {}
@@ -341,13 +354,4 @@ function AS_Label_b235dc47737a40f289ee3be74e3cef1a(eventobject, x, y) {
     } else {
         frmDietKA.segEveningSnack.isVisible = true;
     }
-}
-
-function AS_Form_cc32892f85474dc2a4a06bdf568042b3(eventobject) {
-    populateItemInFrmItemsKA();
-}
-
-function AS_Form_abb2276bdee24b82b79c67f51c5034b7(eventobject) {
-    populateConsumedItemsBreakFast();
-    populateConsumedItemsMorningSnacks();
 }

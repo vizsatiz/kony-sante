@@ -5,6 +5,7 @@ sante.current = {};
 sante.constants = {
     'isLoginRequired': true,
 };
+sante.constants.todaysCalories = 0;
 
 function getObjectServiceByName(objectServiceName) {
     if (sante.objectServices[objectServiceName]) {
@@ -161,9 +162,11 @@ function populateConsumedItemsBreakFast(options) {
                 var caloriesInt = parseInt(calories);
                 consumedCalories += caloriesInt;
             }
+            sante.constants.todaysCalories += consumedCalories;
+            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/1400 Cal";
             frmDietKA.segConsumedItems.removeAll();
             frmDietKA.segConsumedItems.data = data;
-            frmDietKA.lblTotalCal.text = consumedCalories + "/" + "1400 Cal";
+            frmDietKA.lblCalories1.text = consumedCalories + "/" + "300";
         }
 
         function onItemGetFailure(err) {
@@ -223,9 +226,11 @@ function populateConsumedItemsMorningSnacks(options) {
                 var caloriesInt = parseInt(calories);
                 consumedCalories += caloriesInt;
             }
+            sante.constants.todaysCalories += consumedCalories;
+            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/1400 Cal";
             frmDietKA.segMorningSnack.removeAll();
             frmDietKA.segMorningSnack.data = data;
-            frmDietKA.lblTotalCal.text = consumedCalories + "/" + "1400 Cal";
+            frmDietKA.CopylblCalories0a89328abee6640.text = consumedCalories + "/" + "300";
         }
 
         function onItemGetFailure(err) {
@@ -244,6 +249,198 @@ function populateConsumedItemsMorningSnacks(options) {
     }
     var filters = {
         'whereConditionAsAString': 'CATEGORY = 2'
+    }; // TODO fetch for only current user
+    var itemObject = getObjectByName("CONSUMED_ITEMS");
+    itemObject.get(filters, onSuccess, onFailure);
+}
+
+function populateConsumedItemsLunch(options) {
+    function onSuccess(records) {
+        var itemIdAsString = "(";
+        var noOfRecords = records.length;
+        for (var i = 0; i < noOfRecords; i++) {
+            var objRecord = records[i];
+            var itemID = objRecord.ITEM_ID;
+            itemIdAsString += itemID;
+            if (i + 1 < noOfRecords) {
+                itemIdAsString += ",";
+            }
+        }
+        itemIdAsString += ")";
+
+        function onItemGetSuccess(consumedItems) {
+            var data = [];
+            var consumedCalories = 0;
+            var noOfRecords = consumedItems.length;
+            for (var i = 0; i < noOfRecords; i++) {
+                var objRecord = consumedItems[i];
+                var itemName = objRecord.ITEM_NAME;
+                var quantity = objRecord.QUANTITY;
+                var calories = objRecord.CALORIES;
+                var finalItem = itemName + " (" + quantity + ")";
+                var calString = calories + " Cal";
+                data[i] = {
+                    segRecordsLbl: {
+                        text: finalItem ? finalItem : '',
+                    },
+                    segCalorieslbl: {
+                        text: calString
+                    }
+                };
+                var caloriesInt = parseInt(calories);
+                consumedCalories += caloriesInt;
+            }
+            sante.constants.todaysCalories += consumedCalories;
+            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/1400 Cal";
+            frmDietKA.segLunch.removeAll();
+            frmDietKA.segLunch.data = data;
+            frmDietKA.CopylblCalories0e2db4b45fec14e.text = consumedCalories + "/" + "300";
+        }
+
+        function onItemGetFailure(err) {
+            alert("Error in reading Sample Order records. " + JSON.stringify(err));
+        }
+        var whereCondition = "ITEM_ID IN " + itemIdAsString;
+        var itemFilter = {
+            "whereConditionAsAString": whereCondition
+        };
+        var itemObject = getObjectByName("ITEMS");
+        itemObject.get(itemFilter, onItemGetSuccess, onItemGetFailure);
+    }
+
+    function onFailure(err) {
+        alert("Error in reading Sample Order records. " + JSON.stringify(err));
+    }
+    var filters = {
+        'whereConditionAsAString': 'CATEGORY = 3'
+    }; // TODO fetch for only current user
+    var itemObject = getObjectByName("CONSUMED_ITEMS");
+    itemObject.get(filters, onSuccess, onFailure);
+}
+
+function populateConsumedItemsEveningSnack(options) {
+    function onSuccess(records) {
+        var itemIdAsString = "(";
+        var noOfRecords = records.length;
+        for (var i = 0; i < noOfRecords; i++) {
+            var objRecord = records[i];
+            var itemID = objRecord.ITEM_ID;
+            itemIdAsString += itemID;
+            if (i + 1 < noOfRecords) {
+                itemIdAsString += ",";
+            }
+        }
+        itemIdAsString += ")";
+
+        function onItemGetSuccess(consumedItems) {
+            var data = [];
+            var consumedCalories = 0;
+            var noOfRecords = consumedItems.length;
+            for (var i = 0; i < noOfRecords; i++) {
+                var objRecord = consumedItems[i];
+                var itemName = objRecord.ITEM_NAME;
+                var quantity = objRecord.QUANTITY;
+                var calories = objRecord.CALORIES;
+                var finalItem = itemName + " (" + quantity + ")";
+                var calString = calories + " Cal";
+                data[i] = {
+                    segRecordsLbl: {
+                        text: finalItem ? finalItem : '',
+                    },
+                    segCalorieslbl: {
+                        text: calString
+                    }
+                };
+                var caloriesInt = parseInt(calories);
+                consumedCalories += caloriesInt;
+            }
+            sante.constants.todaysCalories += consumedCalories;
+            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/1400 Cal";
+            frmDietKA.segEveningSnack.removeAll();
+            frmDietKA.segEveningSnack.data = data;
+            frmDietKA.CopylblCalories0h2492c889b2840.text = consumedCalories + "/" + "300";
+        }
+
+        function onItemGetFailure(err) {
+            alert("Error in reading Sample Order records. " + JSON.stringify(err));
+        }
+        var whereCondition = "ITEM_ID IN " + itemIdAsString;
+        var itemFilter = {
+            "whereConditionAsAString": whereCondition
+        };
+        var itemObject = getObjectByName("ITEMS");
+        itemObject.get(itemFilter, onItemGetSuccess, onItemGetFailure);
+    }
+
+    function onFailure(err) {
+        alert("Error in reading Sample Order records. " + JSON.stringify(err));
+    }
+    var filters = {
+        'whereConditionAsAString': 'CATEGORY = 4'
+    }; // TODO fetch for only current user
+    var itemObject = getObjectByName("CONSUMED_ITEMS");
+    itemObject.get(filters, onSuccess, onFailure);
+}
+
+function populateConsumedItemsDinner(options) {
+    function onSuccess(records) {
+        var itemIdAsString = "(";
+        var noOfRecords = records.length;
+        for (var i = 0; i < noOfRecords; i++) {
+            var objRecord = records[i];
+            var itemID = objRecord.ITEM_ID;
+            itemIdAsString += itemID;
+            if (i + 1 < noOfRecords) {
+                itemIdAsString += ",";
+            }
+        }
+        itemIdAsString += ")";
+
+        function onItemGetSuccess(consumedItems) {
+            var data = [];
+            var consumedCalories = 0;
+            var noOfRecords = consumedItems.length;
+            for (var i = 0; i < noOfRecords; i++) {
+                var objRecord = consumedItems[i];
+                var itemName = objRecord.ITEM_NAME;
+                var quantity = objRecord.QUANTITY;
+                var calories = objRecord.CALORIES;
+                var finalItem = itemName + " (" + quantity + ")";
+                var calString = calories + " Cal";
+                data[i] = {
+                    segRecordsLbl: {
+                        text: finalItem ? finalItem : '',
+                    },
+                    segCalorieslbl: {
+                        text: calString
+                    }
+                };
+                var caloriesInt = parseInt(calories);
+                consumedCalories += caloriesInt;
+            }
+            sante.constants.todaysCalories += consumedCalories;
+            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/1400 Cal";
+            frmDietKA.segDinner.removeAll();
+            frmDietKA.segDinner.data = data;
+            frmDietKA.CopylblCalories0d0e0368543b94d.text = consumedCalories + "/" + "300";
+        }
+
+        function onItemGetFailure(err) {
+            alert("Error in reading Sample Order records. " + JSON.stringify(err));
+        }
+        var whereCondition = "ITEM_ID IN " + itemIdAsString;
+        var itemFilter = {
+            "whereConditionAsAString": whereCondition
+        };
+        var itemObject = getObjectByName("ITEMS");
+        itemObject.get(itemFilter, onItemGetSuccess, onItemGetFailure);
+    }
+
+    function onFailure(err) {
+        alert("Error in reading Sample Order records. " + JSON.stringify(err));
+    }
+    var filters = {
+        'whereConditionAsAString': 'CATEGORY = 5'
     }; // TODO fetch for only current user
     var itemObject = getObjectByName("CONSUMED_ITEMS");
     itemObject.get(filters, onSuccess, onFailure);

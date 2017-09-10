@@ -16,7 +16,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__aa16a20b2c5a4c06978779c024d754de",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "populateConsumedItemsBreakFast();\npopulateConsumedItemsMorningSnacks();",
+            "codeSnippet": "sante.constants.todaysCalories = 0;\npopulateConsumedItemsBreakFast();\npopulateConsumedItemsMorningSnacks();\npopulateConsumedItemsLunch();\npopulateConsumedItemsEveningSnack();\npopulateConsumedItemsDinner();",
             "parentId": null,
             "callbackType": null
         }]

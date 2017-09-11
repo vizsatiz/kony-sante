@@ -1,0 +1,43 @@
+{
+    "AS_Segment_e5eea0916e3e4d489ddeaf625768c35c": {
+        "id": "AS_Segment_e5eea0916e3e4d489ddeaf625768c35c",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "number",
+            "name": "sectionNumber"
+        }, {
+            "datatype": "number",
+            "name": "rowNumber"
+        }],
+        "contextObj": {
+            "name": "frmItemsKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "a9bad7b9a1ec4714931c1337329f72c4"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___i4d5ba3203ad4d06a731e12e543b5a98",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "addItemsToCategory",
+            "display": "addItemsToCategory",
+            "inputparams": [{
+                "name": "eventobject",
+                "value": " eventobject"
+            }, {
+                "name": "sectionNumber",
+                "value": " sectionNumber"
+            }, {
+                "name": "rowNumber",
+                "value": " rowNumber"
+            }],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "module"
+        }]
+    }
+}

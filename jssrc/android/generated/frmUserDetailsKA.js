@@ -679,6 +679,7 @@ function frmUserDetailsKAGlobals() {
         "id": "frmUserDetailsKA",
         "layoutType": kony.flex.FREE_FORM,
         "needAppMenu": true,
+        "preShow": AS_Form_b10b0260748c46f580c578cf15ee652a,
         "skin": "slForm"
     }, {
         "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_PORTRAIT,

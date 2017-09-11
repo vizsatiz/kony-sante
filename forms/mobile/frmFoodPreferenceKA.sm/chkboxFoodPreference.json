@@ -4,7 +4,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "120dp"
+        "value": "63dp"
     },
     "_left_": {
         "type": "string",
@@ -52,10 +52,6 @@
         [
             "cbg1",
             ".        Vegetarian"
-        ],
-        [
-            "cbg2",
-            ".        Eggetarian"
         ],
         [
             "cbg3",

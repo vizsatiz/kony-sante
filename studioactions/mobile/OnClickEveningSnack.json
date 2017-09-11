@@ -23,7 +23,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__jefb78effb0e496e9f945ac1896901ad",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "frmItemsKA.lblHeader.text = \"What did you have for Evening Snack?\";",
+            "codeSnippet": "sante.current.category = 4;\nfrmItemsKA.lblHeader.text = \"What did you have for Evening Snack?\";",
             "parentId": null,
             "callbackType": null
         }, {

@@ -262,6 +262,7 @@ function frmHomeKAGlobals() {
         "layoutType": kony.flex.FREE_FORM,
         "needAppMenu": true,
         "postShow": AS_Form_da3185b308854cb68b1ab158a4b6818e,
+        "preShow": AS_Form_f4941228472d468c8ad991e34bd09d80,
         "skin": "slForm",
         "verticalScrollIndicator": false
     }, {

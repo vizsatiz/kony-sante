@@ -1,23 +1,22 @@
 {
-    "AS_Button_fc0e127b3016406a92ca83a27a76d680": {
-        "id": "AS_Button_fc0e127b3016406a92ca83a27a76d680",
+    "AS_Form_b10b0260748c46f580c578cf15ee652a": {
+        "id": "AS_Form_b10b0260748c46f580c578cf15ee652a",
         "type": "ACTION_SEQUENCE",
-        "name": "OnClickBtnLogin",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
         }],
         "contextObj": {
-            "name": "frmHomeKA",
+            "name": "frmUserDetailsKA",
             "type": "forms",
             "platform": "",
-            "KUID": "f2a1d30b0ab54c9fb9b5b2a5e66cc500"
+            "KUID": "dc256a5120e94277bdb93c78d06fe85f"
         },
         "language": "js",
         "actions": [{
-            "id": "ADD_SNIPPET__c4ec6e25f2d249348714adb12b5ede6d",
+            "id": "ADD_SNIPPET__j1d0de4aad374520804bc47607297adf",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "loginWithGoogle();",
+            "codeSnippet": "populateUserDetails();",
             "parentId": null,
             "callbackType": null
         }]

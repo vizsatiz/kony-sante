@@ -75,7 +75,7 @@
     <attributes name="bb10buildid" value=""/>
     <attributes name="apmerrorunhandledexception" value="true"/>
     <attributes name="READ_CONTACTS" value="false"/>
-    <attributes name="schemekey" value=""/>
+    <attributes name="schemekey" value="http"/>
     <attributes name="wintilebackcolornamekey" value="128,128,128"/>
     <attributes name="BROADCAST_SMS" value="false"/>
     <attributes name="REBOOT" value="false"/>
@@ -124,7 +124,7 @@
     <attributes name="wp10pfxkey" value=""/>
     <attributes name="ACCESS_CHECKIN_PROPERTIES" value="false"/>
     <attributes name="MOUNT_FORMAT_FILESYSTEMS" value="false"/>
-    <attributes name="lastmodifiedtime" value="1504947775104"/>
+    <attributes name="lastmodifiedtime" value="1505121708230"/>
     <attributes name="wp10microphone" value="false"/>
     <attributes name="wp10backgroundMediaPlayback" value="false"/>
     <attributes name="ID_REQ_NFC" value="false"/>
@@ -261,7 +261,7 @@
     <attributes name="userNotificationListener" value="false"/>
     <attributes name="WRITE_SYNC_SETTINGS" value="false"/>
     <attributes name="WRITE_GSERVICES" value="false"/>
-    <attributes name="iphoneurlscheme" value=""/>
+    <attributes name="iphoneurlscheme" value="santeios"/>
     <attributes name="CLEAR_APP_CACHE" value="false"/>
     <attributes name="enableIdForAutomation" value="false"/>
     <attributes name="READ_FRAME_BUFFER" value="false"/>
@@ -274,7 +274,7 @@
     <attributes name="SET_ACTIVITY_WATCHER" value="false"/>
     <attributes name="wp10blockedChatMessages" value="false"/>
     <attributes name="apmserviceresponse" value="false"/>
-    <attributes name="urlschemanameorder" value=""/>
+    <attributes name="urlschemanameorder" value="Scheme,Host"/>
     <attributes name="ID_CAP_NETWORKING" value="true"/>
     <attributes name="UseSQLCipherFIPS" value="false"/>
     <attributes name="tcandroid360basefontsize" value="12"/>
@@ -415,7 +415,7 @@
     <attributes name="thinwebcontextkey" value=""/>
     <attributes name="access_sms_mms" value="false"/>
     <attributes name="winmobiletileimagekey" value=""/>
-    <attributes name="hostkey" value=""/>
+    <attributes name="hostkey" value="santeandroid"/>
     <attributes name="AUTHENTICATE_ACCOUNTS" value="false"/>
     <attributes name="win8widelogokey" value=""/>
     <attributes name="privateNetworkClientServer" value="false"/>

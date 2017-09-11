@@ -22,7 +22,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__d0234b18c08e4050a01a1c31bb9f65af",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "var string = frmItemsKA.tbWhere.text; \nvar whereCondition = \"ITEM_NAME = '\" + string + \"'\";\npopulateItemInFrmItemsKA({\n  \"whereConditionAsAString\": whereCondition\n})",
+            "codeSnippet": "var string = frmItemsKA.tbWhere.text; \nvar whereCondition = \"ITEM_NAME LIKE '\" + string + \"%'\";\npopulateItemInFrmItemsKA({\n  \"whereConditionAsAString\": whereCondition\n})",
             "parentId": null,
             "callbackType": null
         }]

@@ -92,6 +92,7 @@ function themeCallBack() {
     callAppMenu();
     kony.application.setApplicationInitializationEvents({
         init: appInit,
+        appservice: AS_AppEvents_e639ed7065f64a72ba009a122df3d399,
         showstartupform: function() {
             frmHomeKA.show();
         }

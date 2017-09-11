@@ -101,13 +101,12 @@ function addWidgetsfrmFoodPreferenceKA() {
     }, {}, {});
     flxDetailsKA.setDefaultUnit(kony.flex.DP);
     var chkboxFoodPreference = new kony.ui.CheckBoxGroup({
-        "height": "120dp",
+        "height": "63dp",
         "id": "chkboxFoodPreference",
         "isVisible": true,
         "left": "17dp",
         "masterData": [
             ["cbg1", ".        Vegetarian"],
-            ["cbg2", ".        Eggetarian"],
             ["cbg3", ".        Non-Vegetarian"]
         ],
         "skin": "slCheckBoxGroup",

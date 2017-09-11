@@ -32,9 +32,7 @@ function AS_Form_abb2276bdee24b82b79c67f51c5034b7(eventobject) {
     populateConsumedItemsDinner();
 }
 
-function AS_Form_c231758fdec642cc94497378e47f43af(eventobject) {
-    loginWithUsernamePassword("tester", "test", "SanteSapIdentity");
-}
+function AS_Form_c231758fdec642cc94497378e47f43af(eventobject) {}
 
 function AS_Form_cc32892f85474dc2a4a06bdf568042b3(eventobject) {
     populateItemInFrmItemsKA();
@@ -127,6 +125,7 @@ function OnClickBreakfast(eventobject, x, y) {
 }
 
 function AS_Image_e564ba19014d4326afb66e732c69c385(eventobject, x, y) {
+    sante.current.category = 1;
     frmItemsKA.lblHeader.text = "What did you have for Breakfast?";
     frmItemsKA.show();
 }
@@ -136,7 +135,7 @@ function OnClickBtnLogin(eventobject) {
 }
 
 function AS_Button_fc0e127b3016406a92ca83a27a76d680(eventobject) {
-    frmSanteKA.show();
+    loginWithGoogle();
 }
 
 function OnClickDinner(eventobject, x, y) {
@@ -144,6 +143,7 @@ function OnClickDinner(eventobject, x, y) {
 }
 
 function AS_Image_f01517cfb503487591070583afca4f31(eventobject, x, y) {
+    sante.current.category = 5;
     frmItemsKA.lblHeader.text = "What did you have for Dinner?";
     frmItemsKA.show();
 }
@@ -153,6 +153,7 @@ function OnClickEveningSnack(eventobject, x, y) {
 }
 
 function AS_Image_f8185a11f8cd49819db9bdd04e959e78(eventobject, x, y) {
+    sante.current.category = 4;
     frmItemsKA.lblHeader.text = "What did you have for Evening Snack?";
     frmItemsKA.show();
 }
@@ -170,6 +171,7 @@ function OnClickLunch(eventobject, x, y) {
 }
 
 function AS_Image_j25522113ee243539ec31ce463fc8b1f(eventobject, x, y) {
+    sante.current.category = 3;
     frmItemsKA.lblHeader.text = "What did you have for Lunch?";
     frmItemsKA.show();
 }
@@ -179,6 +181,7 @@ function OnClickMorningSnack(eventobject, x, y) {
 }
 
 function AS_Image_e03e5b5b40d440569bab39d6edf31204(eventobject, x, y) {
+    sante.current.category = 2;
     frmItemsKA.lblHeader.text = "What did you have for Morning Snack?";
     frmItemsKA.show();
 }
@@ -354,4 +357,34 @@ function AS_Label_b235dc47737a40f289ee3be74e3cef1a(eventobject, x, y) {
     } else {
         frmDietKA.segEveningSnack.isVisible = true;
     }
+}
+
+function AS_Image_b2bbfbc152cb4794b6d4cc741897684c(eventobject, x, y) {
+    var string = frmItemsKA.tbWhere.text;
+    var whereCondition = "ITEM_NAME LIKE '" + string + "%'";
+    populateItemInFrmItemsKA({
+        "whereConditionAsAString": whereCondition
+    })
+}
+
+function AS_Form_b10b0260748c46f580c578cf15ee652a(eventobject) {
+    populateUserDetails();
+}
+
+function AS_Form_c55aacd3369e4ec0af64ef5498b6549c(eventobject) {
+    populateGoal();
+}
+
+function AS_Segment_e5eea0916e3e4d489ddeaf625768c35c(eventobject, sectionNumber, rowNumber) {
+    return addItemsToCategory.call(this, eventobject, sectionNumber, rowNumber);
+}
+
+function AS_Form_f4941228472d468c8ad991e34bd09d80(eventobject) {}
+
+function AS_Button_c24315c3a79547fbb09b086e32e8cba7(eventobject) {
+    performObjectServiceSync('SanteOS2');
+}
+
+function AS_AppEvents_e639ed7065f64a72ba009a122df3d399(eventobject) {
+    appservicereq(eventobject);
 }

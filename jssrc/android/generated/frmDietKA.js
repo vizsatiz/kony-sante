@@ -95,6 +95,7 @@ function addWidgetsfrmDietKA() {
         "height": "35dp",
         "id": "btnSync",
         "isVisible": true,
+        "onClick": AS_Button_c24315c3a79547fbb09b086e32e8cba7,
         "right": "10dp",
         "skin": "sknBtnCallKA",
         "top": "13dp",

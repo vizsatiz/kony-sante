@@ -274,6 +274,7 @@ function frmSetGoalKAGlobals() {
         "id": "frmSetGoalKA",
         "layoutType": kony.flex.FREE_FORM,
         "needAppMenu": true,
+        "preShow": AS_Form_c55aacd3369e4ec0af64ef5498b6549c,
         "skin": "slForm"
     }, {
         "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_PORTRAIT,

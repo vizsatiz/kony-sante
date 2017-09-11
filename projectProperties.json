@@ -204,6 +204,12 @@
     "createdVizVersion": "2.9.0",
     "mfappguid": {
         "d85e638e-22b7-4dde-860b-aa791fa7a012": "622f1c7b-9630-4163-8288-22aece942df1",
-        "07d0fce3-809b-446f-a53c-5dba0a60fa24": "8a2501e6-53b1-43d6-9198-f8ef8eb38e3c"
+        "07d0fce3-809b-446f-a53c-5dba0a60fa24": "8a2501e6-53b1-43d6-9198-f8ef8eb38e3c",
+        "3cdd116d-72be-4e5c-a59a-01f940560f3c": "3e687995-1c39-4998-b1a4-a9212e6e892a"
+    },
+    "ide_appEvents": {
+        "mobile": {
+            "appservice": "AS_AppEvents_e639ed7065f64a72ba009a122df3d399"
+        }
     }
 }

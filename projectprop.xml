@@ -124,7 +124,7 @@
     <attributes name="wp10pfxkey" value=""/>
     <attributes name="ACCESS_CHECKIN_PROPERTIES" value="false"/>
     <attributes name="MOUNT_FORMAT_FILESYSTEMS" value="false"/>
-    <attributes name="lastmodifiedtime" value="1505121708230"/>
+    <attributes name="lastmodifiedtime" value="1505125673438"/>
     <attributes name="wp10microphone" value="false"/>
     <attributes name="wp10backgroundMediaPlayback" value="false"/>
     <attributes name="ID_REQ_NFC" value="false"/>
@@ -301,7 +301,7 @@
     <attributes name="andtargetsdkkey" value="6.0 (23)"/>
     <attributes name="win8bgagentclassname" value=""/>
     <attributes name="wp81sdescriptionkey" value="Sample Test Application"/>
-    <attributes name="appversionkey" value="1.0.0"/>
+    <attributes name="appversionkey" value="1.0.1"/>
     <attributes name="WRITE_EXTERNAL_STORAGE" value="false"/>
     <attributes name="appointments" value="false"/>
     <attributes name="wp8tilestitlekey" value=""/>
@@ -407,7 +407,7 @@
     <attributes name="enablesearchbar" value="false"/>
     <attributes name="tcandroid480basefontsize" value="12"/>
     <attributes name="WRITE_SETTINGS" value="false"/>
-    <attributes name="cloud_account_guid" value="07d0fce3-809b-446f-a53c-5dba0a60fa24"/>
+    <attributes name="cloud_account_guid" value="27d17379-0ec1-4ada-9f37-8578e1b8ba09"/>
     <attributes name="statusBarHidden" value="false"/>
     <attributes name="andmaxsdkkey" value="7.1 (25)"/>
     <attributes name="wp10chat" value="false"/>
@@ -435,7 +435,7 @@
     <attributes name="wp8packagepublisheridkey" value=""/>
     <attributes name="location" value="false"/>
     <attributes name="winphn10bgagentclassname" value=""/>
-    <attributes name="cloud_url" value="https://test-800-sdk.sit2-konycloud.com"/>
+    <attributes name="cloud_url" value="https://cloud80.qa-konycloud.com"/>
     <attributes name="disablehttpskey" value="false"/>
     <attributes name="Music_Library" value="true"/>
     <attributes name="Location" value="true"/>
@@ -473,11 +473,11 @@
     <attributes name="win8bgagentpath" value=""/>
     <attributes name="ID_CAP_IDENTITY_USER" value="true"/>
     <attributes name="wp10voipCall" value="false"/>
-    <attributes name="cloud_env_GUID" value="0f4d35fe-0ac6-46f3-9972-cd6cfd666aea"/>
+    <attributes name="cloud_env_GUID" value="c1fb2b54-f7b3-4e94-b2a1-104a1741e4f5"/>
     <attributes name="androidInstallLocnPref" value="false"/>
     <attributes name="android_allowselfsignedcertificates" value="None"/>
     <attributes name="userAccountInformation" value="false"/>
-    <attributes name="cloud_env_name" value="Cloud Foundation Team-test-800-sdk"/>
+    <attributes name="cloud_env_name" value="Sync Team-cloud80"/>
     <attributes name="tcbb480basefontsize" value="12"/>
     <attributes name="SET_PREFERRED_APPLICATIONS" value="false"/>
     <attributes name="WP8_ID_CAP_MICROPHONE" value="true"/>
@@ -547,7 +547,7 @@
     <attributes name="wp81spackagedisplaynamekey" value="Sample"/>
     <attributes name="windowsmapkey" value=""/>
     <attributes name="bb10keystorepassword" value=""/>
-    <attributes name="cloud_account_id" value="100000013"/>
+    <attributes name="cloud_account_id" value="100000008"/>
     <attributes name="Enterprise_Authentication" value="true"/>
     <attributes name="BATTERY_STATS" value="false"/>
     <attributes name="internetClient" value="false"/>

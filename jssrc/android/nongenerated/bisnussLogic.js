@@ -582,7 +582,18 @@ function populateWorkoutDetails() {
     }
 
     function onSuccessWorkoutPlan(records) {
-        // TODO
+        var workout = '';
+        var noOfRecords = records.length;
+        var calroies = 0;
+        for (var i = 0; i < noOfRecords; i++) {
+            var objRecord = records[i];
+            var description = objRecord.DESCRIPTION;
+            workout += description;
+            workout += ".";
+            calroies += parseInt(objRecord.CALORIESTOBEBURN);
+        }
+        frmPlanKA.lbl2.text = workout;
+        frmPlanKA.Copylbl0ebd8fc5152764c.text = calroies + " Cal";
     }
 
     function onSuccessWorkout(records) {

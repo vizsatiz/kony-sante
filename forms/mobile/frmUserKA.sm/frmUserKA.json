@@ -26,7 +26,8 @@
     },
     "canUpdateUI": true,
     "children": [
-        "flxForm"
+        "flxForm",
+        "BorderButtonRoundSigned"
     ],
     "containerweight": 100,
     "currentLocale": "default",
@@ -37,6 +38,7 @@
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "id": "frmUserKA",
+    "ide_preShow": "AS_Form_cd121849ac4942c48a5d3a9aeeb152dd",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,

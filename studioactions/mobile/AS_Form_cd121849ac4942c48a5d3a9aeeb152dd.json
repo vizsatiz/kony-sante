@@ -1,0 +1,24 @@
+{
+    "AS_Form_cd121849ac4942c48a5d3a9aeeb152dd": {
+        "id": "AS_Form_cd121849ac4942c48a5d3a9aeeb152dd",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmUserKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "d9ad411b7f504a78be40a0840560be3a"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__bfec1196842b447db4b5abeae2ae2dc5",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "var name = sante.current.user.FIRST_NAME + \"\" + sante.current.user.LAST_NAME;\nvar email = sante.current.user.EMAIL;\nfrmUserKA.lblHeader.text = name;\nfrmUserKA.lblEmail.text = email;",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

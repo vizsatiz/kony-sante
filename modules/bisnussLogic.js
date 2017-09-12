@@ -641,7 +641,19 @@ function populateWorkoutDetails() {
     }
   
   	function onSuccessWorkoutPlan(records) {
-      	// TODO
+        var workout = '';
+      	var noOfRecords = records.length;
+        var calroies = 0;
+        for (var i = 0; i < noOfRecords; i++) {
+            var objRecord = records[i];
+            var description =  objRecord.DESCRIPTION;
+            workout += description;
+           	workout += ".";
+          	calroies += parseInt(objRecord.CALORIESTOBEBURN);
+        }
+      
+      	frmPlanKA.lbl2.text = workout;
+      	frmPlanKA.Copylbl0ebd8fc5152764c.text = calroies + " Cal";
     }
   
   	function onSuccessWorkout(records) {
@@ -685,13 +697,6 @@ function populateWorkoutDetails() {
     }
     userDetails.get(filters, onSuccess, onFailure);
 }
-
-
-
-
-
-
-
 
 
 // ---------------- LOGIN CODE -------------------
@@ -803,6 +808,102 @@ function populateUserProfile() {
 
 function populateCompleteUserDetails() {
   frmUserDetailsKA.tbxName.text = sante.current.google.user.firstname + " " + sante.current.google.user.lastname;
+}
+
+// ------------------ update code -----------------------
+
+function updateUserDetails() {
+  var userDetails = {};
+  userDetails.AGE = frmUserDetailsKA.tbxAge.text;
+  userDetails.WEIGHT = frmUserDetailsKA.tbxWeight.text;
+  userDetails.HEIGHT = frmUserDetailsKA.tbxHeight.text;
+  
+  if(sante.current.user) {
+    var options = {};
+    var orderByMap = [];
+    orderByMap[0] = {};  
+    orderByMap[0].EMAIL = sante.current.user.EMAIL;
+    options.OrderByMap = orderByMap;
+	var user = new kony.sdk.KNYObj("USER");
+    user.get(options, getUserSuccess, getUserFailure);
+  }
+             
+  function getUserSuccess(records) {
+    if(records.length > 0){
+	  kony.print("fetched the record for email " + sante.current.user.EMAIL + " with user id " + records[0].USER_ID);
+      //Update User Details table
+      var options = {};
+      var whereCondition = {};
+      whereCondition.USER_ID = records[0].USER_ID;
+      options.whereCondition = whereCondition;
+	  var uDetails = new kony.sdk.KNYObj("USER_DETAILS");
+	  uDetails.updateByPK(userDetails, options, updateUserDetailsSuccess, updateUserDetailsFailure);
+    } else {
+      kony.print("record doesn't exist with email " + sante.current.user.EMAIL); 
+    }
+    
+    function updateUserDetailsSuccess(result) {
+      kony.print("user details "+ JSON.stringify(userDetails) + " updated successfully ");
+    }
+    
+    function updateUserDetailsFailure(error) {
+      kony.print("error updating user details "+ JSON.stringify(error));
+    }
+  }
+  
+  function getUserFailure(error) {
+    kony.print("error in fetching the user with email " + JSON.stringify(error));
+  }
+}
+
+
+function updateGoalDetails() {
+  
+  if(sante.current.user) {
+    var options = {};
+    var orderByMap = [];
+    orderByMap[0] = {};  
+    orderByMap[0].EMAIL = sante.current.user.EMAIL;
+    options.OrderByMap = orderByMap;
+	var user = new kony.sdk.KNYObj("USER");
+    user.get(options, getUserSuccess, getUserFailure);
+  }
+  
+  function getUserSuccess(records) {
+    if(records.length > 0){
+	 kony.print("fetched the record for email " + sante.current.user.EMAIL + " with user id " + records[0].USER_ID);      
+     var setGoalWeight = frmSetGoalKA.tbxGoalWeight.text;
+     if(setGoalWeight < frmUserDetailsKA.tbxWeight.text) {
+       var weightDifference = frmUserDetailsKA.tbxWeight.text - setGoalWeight;
+       var totalCaloriesToBurn = weightDifference * 7700;
+       var options = {};
+       var whereCondition = {};
+       whereCondition.USER_ID = records[0].USER_ID;
+       options.whereCondition = whereCondition;
+       var userDetails = new kony.sdk.KNYObj("USER_DETAILS");
+       userDetails.updateByPK(
+         					  {"SETGOALWGT":setGoalWeight, 
+                              "TOTAL_CALORIRES":totalCaloriesToBurn}, 
+                              updateUserDetailsSuccess,
+                              updateUserDetailsFailure);
+     } else {
+      kony.print("please enter weight less than present body weight "); 
+     }
+    }
+    
+    function updateUserDetailsSuccess(result) {
+      kony.print("user details "+ JSON.stringify(userDetails) + " updated successfully ");
+    }
+    
+    function updateUserDetailsFailure(error) {
+      kony.print("error updating user details "+ JSON.stringify(error));
+    }
+ }
+  
+ function getUserFailure(error) {
+   kony.print("error in fetching the user with email " + JSON.stringify(error));
+ }
   
 }
+
 

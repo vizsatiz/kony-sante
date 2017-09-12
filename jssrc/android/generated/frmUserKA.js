@@ -3,7 +3,7 @@ function addWidgetsfrmUserKA() {
     var flxForm = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
-        "height": "100%",
+        "height": "100.00%",
         "id": "flxForm",
         "isVisible": true,
         "layoutType": kony.flex.FLOW_VERTICAL,
@@ -532,7 +532,56 @@ function addWidgetsfrmUserKA() {
     });
     flxMainKA.add(flxDetail1, lblLine1, flxDetail2, lblLine2, flxDetail3, lblLine3);
     flxForm.add(frmHeaderKA, flxMainKA);
-    frmUserKA.add(flxForm);
+    var BorderButtonRoundSigned = new kony.ui.FlexContainer({
+        "clipBounds": true,
+        "height": "43dp",
+        "id": "BorderButtonRoundSigned",
+        "isVisible": true,
+        "layoutType": kony.flex.FREE_FORM,
+        "left": "0dp",
+        "masterType": constants.MASTER_TYPE_USERWIDGET,
+        "skin": "slFbox0e28de830a2a64a",
+        "top": "-43dp",
+        "width": "100%",
+        "zIndex": 1
+    }, {}, {});
+    BorderButtonRoundSigned.setDefaultUnit(kony.flex.DP);
+    var ContainerButtonBorderPositive = new kony.ui.FlexContainer({
+        "autogrowMode": kony.flex.AUTOGROW_NONE,
+        "bottom": "0dp",
+        "clipBounds": true,
+        "id": "ContainerButtonBorderPositive",
+        "isVisible": true,
+        "layoutType": kony.flex.FREE_FORM,
+        "masterType": constants.MASTER_TYPE_USERWIDGET,
+        "onTouchStart": AS_FlexContainer_f752d13666e54572b16a3dc768b664ce,
+        "right": "0dp",
+        "skin": "slFbox0e28de830a2a64a",
+        "top": "0dp",
+        "width": "50%",
+        "zIndex": 1
+    }, {}, {});
+    ContainerButtonBorderPositive.setDefaultUnit(kony.flex.DP);
+    var btnDone = new kony.ui.Button({
+        "bottom": 5,
+        "focusSkin": "ButtonBorderPostiveActive",
+        "id": "btnDone",
+        "isVisible": true,
+        "left": "5dp",
+        "right": "10dp",
+        "skin": "ButtonBorderPostiveNormal",
+        "text": "Done",
+        "top": "5dp",
+        "zIndex": 1
+    }, {
+        "contentAlignment": constants.CONTENT_ALIGN_CENTER,
+        "displayText": true,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {});
+    ContainerButtonBorderPositive.add(btnDone);
+    BorderButtonRoundSigned.add(ContainerButtonBorderPositive);
+    frmUserKA.add(flxForm, BorderButtonRoundSigned);
 };
 
 function frmUserKAGlobals() {
@@ -542,6 +591,7 @@ function frmUserKAGlobals() {
         "id": "frmUserKA",
         "layoutType": kony.flex.FLOW_VERTICAL,
         "needAppMenu": true,
+        "preShow": AS_Form_cd121849ac4942c48a5d3a9aeeb152dd,
         "skin": "slForm"
     }, {
         "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_PORTRAIT,

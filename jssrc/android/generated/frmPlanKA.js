@@ -326,6 +326,7 @@ function frmPlanKAGlobals() {
         "id": "frmPlanKA",
         "layoutType": kony.flex.FREE_FORM,
         "needAppMenu": true,
+        "preShow": AS_Form_e5da246f38ce49f7871d8cf8fe8d7bbf,
         "skin": "slForm"
     }, {
         "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_PORTRAIT,

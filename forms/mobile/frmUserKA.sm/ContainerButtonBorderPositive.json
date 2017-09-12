@@ -1,11 +1,7 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_height_": {
-        "type": "string",
-        "value": "100.00%"
-    },
-    "_left_": {
+    "_bottom_": {
         "type": "string",
         "value": "0dp"
     },
@@ -23,32 +19,37 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s5d299b324184804ae94d0ad560e7c43",
+    "_right_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_skin_": "s3021573ea504565aa552b131f39cb59",
     "_top_": {
         "type": "string",
         "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "50%"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "frmHeaderKA",
-        "flxMainKA"
+        "btnDone"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxForm",
+    "id": "ContainerButtonBorderPositive",
+    "ide_onTouchStart": "AS_FlexContainer_f752d13666e54572b16a3dc768b664ce",
     "info": null,
     "isvisible": true,
-    "kuid": "j30798dbdeb84d80a7c8fd376ed2b9cb",
-    "layouttype": 4,
+    "kuid": "a0ea941207cb4e31b287d6e2f5858191",
+    "layouttype": 2,
+    "masterType": 1,
     "name": "kony.ui.FlexContainer",
-    "parent": "frmUserKA",
+    "parent": "BorderButtonRoundSigned",
     "pf": "frmUserKA",
     "snapgridsize": 10,
     "snaptogrid": true,

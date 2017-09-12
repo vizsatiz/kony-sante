@@ -4,12 +4,12 @@
     "__markedForDelete__": true,
     "__parentReadjusting__": false,
     "_bottom_": {
-        "type": "string",
-        "value": "5dp"
+        "type": "number",
+        "value": "5"
     },
     "_left_": {
         "type": "string",
-        "value": "10dp"
+        "value": "5dp"
     },
     "_margin_": [
         6,
@@ -25,10 +25,10 @@
     ],
     "_right_": {
         "type": "string",
-        "value": "5dp"
+        "value": "10dp"
     },
-    "_skin_": "sf51ae237b4d4246b47ad0af82b840ba",
-    "_text_": "Reset",
+    "_skin_": "s90d77420e4c402480ea79c655d51efe",
+    "_text_": "Done",
     "_top_": {
         "type": "string",
         "value": "5dp"
@@ -37,14 +37,14 @@
     "containerweight": 100,
     "contentalignment": 5,
     "displaytext": true,
-    "focusskin": "sa03b87b901d4fdba64d41e3fa0fcbcd",
-    "id": "btnReset",
+    "focusskin": "s26d16f2b04144509ac4e48837fd82a5",
+    "id": "btnDone",
     "info": null,
-    "isvisible": false,
-    "kuid": "hc39fecbed9a42dc8695fdd8cf19f5eb",
+    "isvisible": true,
+    "kuid": "g3dd3bfa41d243f68cd903f2e2ce88a8",
     "name": "kony.ui.Button",
-    "parent": "ContainerButtonBorderNegative",
-    "pf": "frmUserDetailsKA",
+    "parent": "ContainerButtonBorderPositive",
+    "pf": "frmUserKA",
     "wType": "Button",
     "zindex": 1
 }

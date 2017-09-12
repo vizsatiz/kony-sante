@@ -388,3 +388,18 @@ function AS_Button_c24315c3a79547fbb09b086e32e8cba7(eventobject) {
 function AS_AppEvents_e639ed7065f64a72ba009a122df3d399(eventobject) {
     appservicereq(eventobject);
 }
+
+function AS_Form_e5da246f38ce49f7871d8cf8fe8d7bbf(eventobject) {
+    populateWorkoutDetails();
+}
+
+function AS_FlexContainer_f752d13666e54572b16a3dc768b664ce(eventobject, x, y) {
+    frmSanteKA.show();
+}
+
+function AS_Form_cd121849ac4942c48a5d3a9aeeb152dd(eventobject) {
+    var name = sante.current.user.FIRST_NAME + "" + sante.current.user.LAST_NAME;
+    var email = sante.current.user.EMAIL;
+    frmUserKA.lblHeader.text = name;
+    frmUserKA.lblEmail.text = email;
+}

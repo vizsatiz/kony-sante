@@ -180,11 +180,6 @@ function populateItemInFrmItemsKA(options) {
 }
 
 function populateConsumedItemsBreakFast(options) {
-    var totalCal = parseInt(sante.current.user.TOTAL_CAL);
-    if (totalCal <= 0) {
-        totalCal = 1400;
-    }
-
     function onSuccess(records) {
         var itemIdAsString = "(";
         var noOfRecords = records.length;
@@ -221,10 +216,10 @@ function populateConsumedItemsBreakFast(options) {
                 consumedCalories += caloriesInt;
             }
             sante.constants.todaysCalories += consumedCalories;
-            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + "Cal";
+            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/1400 Cal";
             frmDietKA.segConsumedItems.removeAll();
             frmDietKA.segConsumedItems.data = data;
-            frmDietKA.lblCalories1.text = consumedCalories + "/" + Math.floor(totalCal / 5);
+            frmDietKA.lblCalories1.text = consumedCalories + "/" + "300";
         }
 
         function onItemGetFailure(err) {
@@ -249,11 +244,6 @@ function populateConsumedItemsBreakFast(options) {
 }
 
 function populateConsumedItemsMorningSnacks(options) {
-    var totalCal = parseInt(sante.current.user.TOTAL_CAL);
-    if (totalCal <= 0) {
-        totalCal = 1400;
-    }
-
     function onSuccess(records) {
         var itemIdAsString = "(";
         var noOfRecords = records.length;
@@ -290,10 +280,10 @@ function populateConsumedItemsMorningSnacks(options) {
                 consumedCalories += caloriesInt;
             }
             sante.constants.todaysCalories += consumedCalories;
-            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + " Cal";
+            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/1400 Cal";
             frmDietKA.segMorningSnack.removeAll();
             frmDietKA.segMorningSnack.data = data;
-            frmDietKA.CopylblCalories0a89328abee6640.text = consumedCalories + "/" + Math.floor(totalCal / 5);
+            frmDietKA.CopylblCalories0a89328abee6640.text = consumedCalories + "/" + "300";
         }
 
         function onItemGetFailure(err) {
@@ -318,11 +308,6 @@ function populateConsumedItemsMorningSnacks(options) {
 }
 
 function populateConsumedItemsLunch(options) {
-    var totalCal = parseInt(sante.current.user.TOTAL_CAL);
-    if (totalCal <= 0) {
-        totalCal = 1400;
-    }
-
     function onSuccess(records) {
         var itemIdAsString = "(";
         var noOfRecords = records.length;
@@ -359,10 +344,10 @@ function populateConsumedItemsLunch(options) {
                 consumedCalories += caloriesInt;
             }
             sante.constants.todaysCalories += consumedCalories;
-            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + " Cal";
+            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/1400 Cal";
             frmDietKA.segLunch.removeAll();
             frmDietKA.segLunch.data = data;
-            frmDietKA.CopylblCalories0e2db4b45fec14e.text = consumedCalories + "/" + Math.floor(totalCal / 5);
+            frmDietKA.CopylblCalories0e2db4b45fec14e.text = consumedCalories + "/" + "300";
         }
 
         function onItemGetFailure(err) {
@@ -387,11 +372,6 @@ function populateConsumedItemsLunch(options) {
 }
 
 function populateConsumedItemsEveningSnack(options) {
-    var totalCal = parseInt(sante.current.user.TOTAL_CAL);
-    if (totalCal <= 0) {
-        totalCal = 1400;
-    }
-
     function onSuccess(records) {
         var itemIdAsString = "(";
         var noOfRecords = records.length;
@@ -428,10 +408,10 @@ function populateConsumedItemsEveningSnack(options) {
                 consumedCalories += caloriesInt;
             }
             sante.constants.todaysCalories += consumedCalories;
-            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + " Cal";
+            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/1400 Cal";
             frmDietKA.segEveningSnack.removeAll();
             frmDietKA.segEveningSnack.data = data;
-            frmDietKA.CopylblCalories0h2492c889b2840.text = consumedCalories + "/" + Math.floor(totalCal / 5);
+            frmDietKA.CopylblCalories0h2492c889b2840.text = consumedCalories + "/" + "300";
         }
 
         function onItemGetFailure(err) {
@@ -456,11 +436,6 @@ function populateConsumedItemsEveningSnack(options) {
 }
 
 function populateConsumedItemsDinner(options) {
-    var totalCal = parseInt(sante.current.user.TOTAL_CAL);
-    if (totalCal <= 0) {
-        totalCal = 1400;
-    }
-
     function onSuccess(records) {
         var itemIdAsString = "(";
         var noOfRecords = records.length;
@@ -497,10 +472,10 @@ function populateConsumedItemsDinner(options) {
                 consumedCalories += caloriesInt;
             }
             sante.constants.todaysCalories += consumedCalories;
-            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + " Cal";
+            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/1400 Cal";
             frmDietKA.segDinner.removeAll();
             frmDietKA.segDinner.data = data;
-            frmDietKA.CopylblCalories0d0e0368543b94d.text = consumedCalories + "/" + Math.floor(totalCal / 5);
+            frmDietKA.CopylblCalories0d0e0368543b94d.text = consumedCalories + "/" + "300";
         }
 
         function onItemGetFailure(err) {
@@ -677,7 +652,7 @@ function loginWithGoogle() {
     //login
     var options = {};
     options.UseDeviceBrowser = true; // This parameter in options will open the login url in native browser.
-    options.success_url = "http://santeandroid";
+    options.success_url = "santeios://";
     authClient.login(options, loginSuccess, loginFailure);
 }
 
@@ -739,15 +714,8 @@ function getSuccess(records) {
         var email = sante.current.user.EMAIL;
         frmUserKA.lblHeader.text = name;
         frmUserKA.lblEmail.text = email;
-        var userDetails = new kony.sdk.KNYObj("USER_DETAILS");
-        // do nothing
-        var filters = {
-            'whereConditionAsAString': "USER_ID = '" + sante.current.user.USER_ID + "'"
-        };
-        userDetails.get(filters, getUserDetailsSuccess, userCreateFailure);
     }
 }
-var newUserDetails = {};
 
 function userCreateSuccess(result) {
     kony.print("user created with primary key " + JSON.stringify(result));
@@ -762,9 +730,9 @@ function userCreateSuccess(result) {
     };
 
     function onSuccess(records) {
-        var userDetails = new kony.sdk.KNYObj("USER_DETAILS");
         if (records.length === 0) {
             // create user details
+            var userDetails = new kony.sdk.KNYObj("USER_DETAILS");
             var newUserDetails = {};
             newUserDetails.USER_ID = newUser.USER_ID;
             newUserDetails.AGE = "0";
@@ -776,10 +744,6 @@ function userCreateSuccess(result) {
             userDetails.create(newUserDetails, {}, userDetailsSuccess, userCreateFailure);
         } else {
             // do nothing
-            var filters = {
-                'whereConditionAsAString': "USER_ID = '" + sante.current.user.USER_ID + "'"
-            };
-            userDetails.get(filters, getUserDetailsSuccess, userCreateFailure);
         }
     }
 
@@ -791,14 +755,6 @@ function userCreateSuccess(result) {
 
 function userDetailsSuccess() {
     kony.print("user details create success");
-    sante.current.user.TOTAL_CAL = newUserDetails.TOTAL_CALORIES;
-}
-
-function getUserDetailsSuccess(rec) {
-    kony.print("user details create success");
-    if (rec.length > 0) {
-        sante.current.user.TOTAL_CAL = rec[0].TOTAL_CALORIES;
-    }
 }
 
 function userCreateFailure(error) {
@@ -833,15 +789,6 @@ function updateUserDetails() {
     userDetails.AGE = frmUserDetailsKA.tbxAge.text;
     userDetails.WEIGHT = frmUserDetailsKA.tbxWeight.text;
     userDetails.HEIGHT = frmUserDetailsKA.tbxHeight.text;
-    userDetails.TOTAL_CALORIES = 1432;
-    try {
-        var wieght = parseInt(userDetails.WEIGHT);
-        var hieght = parseInt(userDetails.HEIGHT);
-        var totalCal = 0;
-        userDetails.TOTAL_CALORIES = totalCal;
-    } catch (e) {
-        // Igonore
-    }
     if (sante.current.user) {
         var options = {
             'whereConditionAsAString': "USER_DETAILSID = '" + sante.current.user.USER_ID + "'"
@@ -892,37 +839,27 @@ function updateGoalDetails() {
     function getUserSuccess(records) {
         if (records.length > 0) {
             kony.print("fetched the record for email " + sante.current.user.EMAIL + " with user id " + records[0].USER_ID);
-            var setGoalWeight = parseInt(frmSetGoalKA.tbxGoalWeight.text);
-            //if(setGoalWeight < parseInt(records[0].WEIGHT)) {
-            var weightDifference = parseInt(records[0].WEIGHT) - setGoalWeight;
-            var totalCal = 0;
-            try {
-                totalCal = 66 + (13 * parseInt(records[0].WEIGHT)) + (5 * parseInt(records[0].HEIGHT)) - (6 * parseInt(records[0].AGE));
-                if (weightDifference < 0) {
-                    totalCal += weightDifference * 2;
-                } else {
-                    totalCal -= weightDifference * 2;
-                }
-            } catch (e) {
-                // Ignore
+            var setGoalWeight = frmSetGoalKA.tbxGoalWeight.text;
+            if (setGoalWeight < frmUserDetailsKA.tbxWeight.text) {
+                var weightDifference = frmUserDetailsKA.tbxWeight.text - setGoalWeight;
+                var totalCaloriesToBurn = weightDifference * 7700;
+                //var options = {};
+                var whereCondition = {};
+                whereCondition.primaryKeys = {
+                    'USER_DETAILSID': records[0].USER_DETAILSID
+                };
+                var userDetails = new kony.sdk.KNYObj("USER_DETAILS");
+                userDetails.updateByPK({
+                    "SETGOALWGT": setGoalWeight,
+                    "TOTAL_CALORIES": totalCaloriesToBurn
+                }, whereCondition, updateUserDetailsSuccess, updateUserDetailsFailure);
+            } else {
+                kony.print("please enter weight less than present body weight ");
             }
-            var whereCondition = {};
-            whereCondition.primaryKeys = {
-                'USER_DETAILSID': records[0].USER_DETAILSID
-            };
-            var userDetails = new kony.sdk.KNYObj("USER_DETAILS");
-            userDetails.updateByPK({
-                "SETGOALWGT": setGoalWeight + '',
-                "TOTAL_CALORIES": totalCal + ''
-            }, whereCondition, updateUserDetailsSuccess, updateUserDetailsFailure);
-            //} else {
-            //alert("please enter weight less than present body weight "); 
-            //}
         }
 
         function updateUserDetailsSuccess(result) {
             kony.print("user details " + JSON.stringify(userDetails) + " updated successfully ");
-            sante.current.user.TOTAL_CAL = totalCal;
             frmUserKA.show();
         }
 
@@ -1039,8 +976,8 @@ function getDateFromCalender() {
     var dateC = parseInt(dateComponents[0]);
     var monthC = parseInt(dateComponents[1]);
     var yearC = parseInt(dateComponents[2]);
-    var date = dateC,
-        month = monthC;
+    var date = '01',
+        month = '01';
     if (dateC < 10) {
         date = '0' + dateC;
     }

@@ -45,7 +45,7 @@ function addWidgetsfrmFoodPreferenceKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "pressedSkin": "sknBtnBackKA"
+        "showProgressIndicator": true
     });
     var lblHeader = new kony.ui.Label({
         "centerX": "50%",
@@ -56,10 +56,6 @@ function addWidgetsfrmFoodPreferenceKA() {
         "left": "127dp",
         "skin": "sknCN1103a3f77KA",
         "text": "Food Preference",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "4dp",
         "width": "250dp",
         "zIndex": 1
@@ -68,7 +64,8 @@ function addWidgetsfrmFoodPreferenceKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var imgFood = new kony.ui.Image2({
         "centerX": "50%",
@@ -119,12 +116,13 @@ function addWidgetsfrmFoodPreferenceKA() {
         "paddingInPixel": false
     }, {
         "tickedImage": "bf_filter_checked.png",
-        "untickedImage": "bf_filter_unchecked.png"
+        "untickedImage": "bf_filter_unchecked.png",
+        "viewType": constants.CHECKBOX_VIEW_TYPE_ONOFFSWITCH
     });
     flxDetailsKA.add(chkboxFoodPreference);
     var BorderButtonRoundSigned = new kony.ui.FlexContainer({
         "clipBounds": true,
-        "height": "45dp",
+        "height": "60dp",
         "id": "BorderButtonRoundSigned",
         "isVisible": true,
         "layoutType": kony.flex.FREE_FORM,
@@ -167,7 +165,9 @@ function addWidgetsfrmFoodPreferenceKA() {
         "displayText": true,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
-    }, {});
+    }, {
+        "showProgressIndicator": true
+    });
     ContainerButtonBorderNegative.add(btnReset);
     var ContainerButtonBorderPositive = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
@@ -201,7 +201,9 @@ function addWidgetsfrmFoodPreferenceKA() {
         "displayText": true,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
-    }, {});
+    }, {
+        "showProgressIndicator": true
+    });
     ContainerButtonBorderPositive.add(btnDone);
     BorderButtonRoundSigned.add(ContainerButtonBorderNegative, ContainerButtonBorderPositive);
     frmMainKA.add(flxHeaderKA, flxDetailsKA, BorderButtonRoundSigned);
@@ -225,12 +227,25 @@ function frmFoodPreferenceKAGlobals() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
+        "bounces": false,
+        "configureExtendBottom": false,
+        "configureExtendTop": false,
+        "configureStatusBarStyle": false,
         "footerOverlap": false,
+        "formTransparencyDuringPostShow": "100",
         "headerOverlap": false,
-        "menuPosition": constants.FORM_MENU_POSITION_AFTER_APPMENU,
+        "inputAccessoryViewType": constants.FORM_INPUTACCESSORYVIEW_CANCEL,
+        "needsIndicatorDuringPostShow": false,
         "retainScrollPosition": false,
-        "titleBar": false,
-        "titleBarSkin": "slTitleBar",
-        "windowSoftInputMode": constants.FORM_ADJUST_PAN
+        "titleBar": true,
+        "titleBarConfig": {
+            "renderTitleText": true,
+            "prevFormTitle": false,
+            "titleBarLeftSideView": "button",
+            "labelLeftSideView": "Back",
+            "titleBarRightSideView": "button",
+            "labelRightSideView": "Edit"
+        },
+        "titleBarSkin": "slTitleBar"
     });
 };

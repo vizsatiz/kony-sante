@@ -1,22 +1,22 @@
 {
-    "AS_Button_c24315c3a79547fbb09b086e32e8cba7": {
-        "id": "AS_Button_c24315c3a79547fbb09b086e32e8cba7",
+    "AS_Button_c098055c0b2f464eb01b7b7bdab5ee3a": {
+        "id": "AS_Button_c098055c0b2f464eb01b7b7bdab5ee3a",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
         }],
         "contextObj": {
-            "name": "frmDietKA",
+            "name": "frmUserKA",
             "type": "forms",
             "platform": "",
-            "KUID": "b2da036e8558476da2a9d8dd65146f04"
+            "KUID": "d9ad411b7f504a78be40a0840560be3a"
         },
         "language": "js",
         "actions": [{
-            "id": "ADD_SNIPPET__g243a44787454a66b16979f7c52a6e5e",
+            "id": "ADD_SNIPPET__h203b638ec054606bb6f6dc9e618a613",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "performOSSync(\"Sante4\", true);",
+            "codeSnippet": "performOSSync(\"Sante4\");",
             "parentId": null,
             "callbackType": null
         }]

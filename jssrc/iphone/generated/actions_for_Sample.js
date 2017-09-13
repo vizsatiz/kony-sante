@@ -20,7 +20,7 @@ function AS_Button_bdc0a1796eef4ea8bd00165ebb553e66(eventobject) {
 }
 
 function AS_Button_c24315c3a79547fbb09b086e32e8cba7(eventobject) {
-    performOSSync("Sante4", true);
+    performOSSync("Sante4");
 }
 
 function AS_Button_db14b2adc7b1444cb83006cf0fba13b6(eventobject) {
@@ -436,13 +436,4 @@ function AS_Button_c00e8fe0a0364c0d888cf6cfe2c063de(eventobject) {
 
 function AS_Button_c098055c0b2f464eb01b7b7bdab5ee3a(eventobject) {
     performOSSync("Sante4");
-}
-
-function AS_Calendar_ife41a3c2b6e43d291a569fc5f05682f(eventobject, isValidDateSelected) {
-    sante.constants.todaysCalories = 0;
-    populateConsumedItemsBreakFast();
-    populateConsumedItemsMorningSnacks();
-    populateConsumedItemsLunch();
-    populateConsumedItemsEveningSnack();
-    populateConsumedItemsDinner();
 }

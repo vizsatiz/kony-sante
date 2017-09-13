@@ -39,7 +39,7 @@
     "focusskin": "sa03b87b901d4fdba64d41e3fa0fcbcd",
     "id": "btnReset",
     "info": null,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "c77c924c355141abb492242d3924f920",
     "name": "kony.ui.Button",
     "parent": "ContainerButtonBorderNegative",

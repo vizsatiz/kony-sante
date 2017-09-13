@@ -39,6 +39,7 @@
     "displaytext": true,
     "focusskin": "s26d16f2b04144509ac4e48837fd82a5",
     "id": "btnDone",
+    "ide_onClick": "AS_Button_c098055c0b2f464eb01b7b7bdab5ee3a",
     "info": null,
     "isvisible": true,
     "kuid": "g3dd3bfa41d243f68cd903f2e2ce88a8",

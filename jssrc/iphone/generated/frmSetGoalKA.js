@@ -1,5 +1,5 @@
-function addWidgetsfrmFoodPreferenceKA() {
-    frmFoodPreferenceKA.setDefaultUnit(kony.flex.DP);
+function addWidgetsfrmSetGoalKA() {
+    frmSetGoalKA.setDefaultUnit(kony.flex.DP);
     var frmMainKA = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
@@ -34,7 +34,7 @@ function addWidgetsfrmFoodPreferenceKA() {
         "id": "btnBack",
         "isVisible": true,
         "left": "8dp",
-        "onClick": AS_Button_ea79215043d34903969fb01564417234,
+        "onClick": AS_Button_hc3de3c13053477e8a5d8eec945d8662,
         "skin": "sknBtnBackKA",
         "top": "8dp",
         "width": "35dp",
@@ -45,7 +45,7 @@ function addWidgetsfrmFoodPreferenceKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "pressedSkin": "sknBtnBackKA"
+        "showProgressIndicator": true
     });
     var lblHeader = new kony.ui.Label({
         "centerX": "50%",
@@ -55,11 +55,7 @@ function addWidgetsfrmFoodPreferenceKA() {
         "isVisible": true,
         "left": "127dp",
         "skin": "sknCN1103a3f77KA",
-        "text": "Food Preference",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
+        "text": "My Goal",
         "top": "4dp",
         "width": "250dp",
         "zIndex": 1
@@ -68,7 +64,8 @@ function addWidgetsfrmFoodPreferenceKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var imgFood = new kony.ui.Image2({
         "centerX": "50%",
@@ -77,7 +74,7 @@ function addWidgetsfrmFoodPreferenceKA() {
         "id": "imgFood",
         "isVisible": true,
         "skin": "slImage",
-        "src": "foodpreference.png",
+        "src": "workout.png",
         "width": "80dp",
         "zIndex": 1
     }, {
@@ -89,10 +86,10 @@ function addWidgetsfrmFoodPreferenceKA() {
     var flxDetailsKA = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
-        "height": "63.96%",
+        "height": "65.63%",
         "id": "flxDetailsKA",
         "isVisible": true,
-        "layoutType": kony.flex.FREE_FORM,
+        "layoutType": kony.flex.FLOW_VERTICAL,
         "left": "0dp",
         "skin": "slFbox",
         "top": "0dp",
@@ -100,31 +97,101 @@ function addWidgetsfrmFoodPreferenceKA() {
         "zIndex": 1
     }, {}, {});
     flxDetailsKA.setDefaultUnit(kony.flex.DP);
-    var chkboxFoodPreference = new kony.ui.CheckBoxGroup({
-        "height": "63dp",
-        "id": "chkboxFoodPreference",
+    var flx1 = new kony.ui.FlexContainer({
+        "autogrowMode": kony.flex.AUTOGROW_NONE,
+        "clipBounds": true,
+        "height": "40dp",
+        "id": "flx1",
         "isVisible": true,
-        "left": "17dp",
-        "masterData": [
-            ["cbg1", ".        Vegetarian"],
-            ["cbg3", ".        Non-Vegetarian"]
-        ],
-        "skin": "slCheckBoxGroup",
-        "top": "47dp",
-        "width": "87.04%",
+        "layoutType": kony.flex.FREE_FORM,
+        "left": "0dp",
+        "skin": "slFbox",
+        "top": "10dp",
+        "width": "100%",
+        "zIndex": 1
+    }, {}, {});
+    flx1.setDefaultUnit(kony.flex.DP);
+    var lblGoalWeight = new kony.ui.Label({
+        "centerY": "43.06%",
+        "height": "35dp",
+        "id": "lblGoalWeight",
+        "isVisible": true,
+        "left": "20dp",
+        "skin": "sknLbl000000HB35KA",
+        "text": "Set Goal Weight",
+        "width": "150dp",
         "zIndex": 1
     }, {
-        "itemOrientation": constants.CHECKBOX_ITEM_ORIENTATION_VERTICAL,
+        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "tickedImage": "bf_filter_checked.png",
-        "untickedImage": "bf_filter_unchecked.png"
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
-    flxDetailsKA.add(chkboxFoodPreference);
+    var tbxGoalWeight = new kony.ui.TextBox2({
+        "autoCapitalize": constants.TEXTBOX_AUTO_CAPITALIZE_NONE,
+        "centerY": "50%",
+        "height": "30dp",
+        "id": "tbxGoalWeight",
+        "isVisible": true,
+        "keyBoardStyle": constants.TEXTBOX_KEY_BOARD_STYLE_DEFAULT,
+        "placeholder": "57 Kg",
+        "right": "20dp",
+        "secureTextEntry": false,
+        "skin": "skntbxFiltersKA",
+        "textInputMode": constants.TEXTBOX_INPUT_MODE_ANY,
+        "width": "167dp",
+        "zIndex": 1
+    }, {
+        "containerHeightMode": constants.TEXTBOX_FONT_METRICS_DRIVEN_HEIGHT,
+        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_RIGHT,
+        "padding": [3, 0, 0, 0],
+        "paddingInPixel": false
+    }, {
+        "autoCorrect": false,
+        "keyboardActionLabel": constants.TEXTBOX_KEYBOARD_LABEL_DONE,
+        "placeholderSkin": "sknTbxPlaceholder5B7A9ACB28KA",
+        "showClearButton": true,
+        "showCloseButton": true,
+        "showProgressIndicator": true,
+        "viewType": constants.TEXTBOX_VIEW_TYPE_DEFAULT
+    });
+    flx1.add(lblGoalWeight, tbxGoalWeight);
+    var radioBtnSetGoal = new kony.ui.RadioButtonGroup({
+        "height": "137dp",
+        "id": "radioBtnSetGoal",
+        "isVisible": true,
+        "left": "10dp",
+        "masterData": [
+            ["rbg1", "Loose Weight"],
+            ["rbg2", "Be Fitter"],
+            ["rbg3", "Gain Muscle"],
+            ["rbg4", "Run Better"]
+        ],
+        "selectedKey": "rbg1",
+        "selectedKeyValue": ["rbg1", "Loose Weight"],
+        "skin": "slRadioButtonGroup",
+        "top": "14dp",
+        "width": "333dp",
+        "zIndex": 1
+    }, {
+        "itemOrientation": constants.RADIOGROUP_ITEM_ORIENTATION_VERTICAL,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {
+        "groupCells": false,
+        "viewConfig": {
+            "toggleViewConfig": {
+                "viewStyle": constants.RADIOGROUP_TOGGLE_VIEW_STYLE_PLAIN
+            }
+        },
+        "viewType": constants.RADIOGROUP_VIEW_TYPE_LISTVIEW
+    });
+    flxDetailsKA.add(flx1, radioBtnSetGoal);
     var BorderButtonRoundSigned = new kony.ui.FlexContainer({
         "clipBounds": true,
-        "height": "45dp",
+        "height": "60dp",
         "id": "BorderButtonRoundSigned",
         "isVisible": true,
         "layoutType": kony.flex.FREE_FORM,
@@ -167,7 +234,9 @@ function addWidgetsfrmFoodPreferenceKA() {
         "displayText": true,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
-    }, {});
+    }, {
+        "showProgressIndicator": true
+    });
     ContainerButtonBorderNegative.add(btnReset);
     var ContainerButtonBorderPositive = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
@@ -190,7 +259,7 @@ function addWidgetsfrmFoodPreferenceKA() {
         "id": "btnDone",
         "isVisible": true,
         "left": "5dp",
-        "onClick": AS_Button_c00e8fe0a0364c0d888cf6cfe2c063de,
+        "onClick": AS_Button_i42809aebb96463eabe7cd390d8c39d6,
         "right": "10dp",
         "skin": "ButtonBorderPostiveNormal",
         "text": "Done",
@@ -201,23 +270,23 @@ function addWidgetsfrmFoodPreferenceKA() {
         "displayText": true,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
-    }, {});
+    }, {
+        "showProgressIndicator": true
+    });
     ContainerButtonBorderPositive.add(btnDone);
     BorderButtonRoundSigned.add(ContainerButtonBorderNegative, ContainerButtonBorderPositive);
     frmMainKA.add(flxHeaderKA, flxDetailsKA, BorderButtonRoundSigned);
-    frmFoodPreferenceKA.add(frmMainKA);
+    frmSetGoalKA.add(frmMainKA);
 };
 
-function frmFoodPreferenceKAGlobals() {
-    frmFoodPreferenceKA = new kony.ui.Form2({
-        "addWidgets": addWidgetsfrmFoodPreferenceKA,
-        "bounces": false,
-        "enableScrolling": false,
+function frmSetGoalKAGlobals() {
+    frmSetGoalKA = new kony.ui.Form2({
+        "addWidgets": addWidgetsfrmSetGoalKA,
         "enabledForIdleTimeout": false,
-        "id": "frmFoodPreferenceKA",
+        "id": "frmSetGoalKA",
         "layoutType": kony.flex.FREE_FORM,
         "needAppMenu": true,
-        "preShow": AS_Form_i7eea69580774e8c8c13fa46cb630519,
+        "preShow": AS_Form_c55aacd3369e4ec0af64ef5498b6549c,
         "skin": "slForm"
     }, {
         "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_PORTRAIT,
@@ -225,12 +294,24 @@ function frmFoodPreferenceKAGlobals() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
+        "configureExtendBottom": false,
+        "configureExtendTop": false,
+        "configureStatusBarStyle": false,
         "footerOverlap": false,
+        "formTransparencyDuringPostShow": "100",
         "headerOverlap": false,
-        "menuPosition": constants.FORM_MENU_POSITION_AFTER_APPMENU,
+        "inputAccessoryViewType": constants.FORM_INPUTACCESSORYVIEW_CANCEL,
+        "needsIndicatorDuringPostShow": false,
         "retainScrollPosition": false,
-        "titleBar": false,
-        "titleBarSkin": "slTitleBar",
-        "windowSoftInputMode": constants.FORM_ADJUST_PAN
+        "titleBar": true,
+        "titleBarConfig": {
+            "renderTitleText": true,
+            "prevFormTitle": false,
+            "titleBarLeftSideView": "button",
+            "labelLeftSideView": "Back",
+            "titleBarRightSideView": "button",
+            "labelRightSideView": "Edit"
+        },
+        "titleBarSkin": "slTitleBar"
     });
 };

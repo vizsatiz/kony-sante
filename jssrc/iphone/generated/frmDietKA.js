@@ -55,7 +55,6 @@ function addWidgetsfrmDietKA() {
         "isVisible": true,
         "minutes": 0,
         "month": 9,
-        "onSelection": AS_Calendar_ife41a3c2b6e43d291a569fc5f05682f,
         "seconds": 0,
         "skin": "sknCalenderDefaultKA",
         "top": "8dp",
@@ -90,7 +89,9 @@ function addWidgetsfrmDietKA() {
         "displayText": true,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
-    }, {});
+    }, {
+        "showProgressIndicator": true
+    });
     var btnSync = new kony.ui.Button({
         "focusSkin": "sknBtnCallKA",
         "height": "35dp",
@@ -107,7 +108,9 @@ function addWidgetsfrmDietKA() {
         "displayText": true,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
-    }, {});
+    }, {
+        "showProgressIndicator": true
+    });
     flxDateKA.add(Calendar0b0ad95e8760e43, btnBack, btnSync);
     var lblTotalCal = new kony.ui.Label({
         "centerX": "50%",
@@ -116,10 +119,6 @@ function addWidgetsfrmDietKA() {
         "isVisible": true,
         "skin": "sknLbl1F1C1BCN30KA",
         "text": "0/1300 Cal",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": 0,
         "width": "200dp",
         "zIndex": 1
@@ -128,7 +127,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var flxCategoryKA = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
@@ -151,10 +151,6 @@ function addWidgetsfrmDietKA() {
         "left": "10dp",
         "skin": "sknLbl1C3F64CN110KA",
         "text": "Suggestions",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "0",
         "width": "110dp",
         "zIndex": 1
@@ -163,7 +159,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var lblMeals = new kony.ui.Label({
         "centerY": "50%",
@@ -172,10 +169,6 @@ function addWidgetsfrmDietKA() {
         "left": "10dp",
         "skin": "sknLbl1C3F64CN110KA",
         "text": "Meals",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "0dp",
         "width": "100dp",
         "zIndex": 1
@@ -184,7 +177,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var lblAnalytics = new kony.ui.Label({
         "centerY": "50%",
@@ -193,10 +187,6 @@ function addWidgetsfrmDietKA() {
         "left": "20dp",
         "skin": "sknLbl1C3F64CN110KA",
         "text": "Analytics",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "0dp",
         "width": "100dp",
         "zIndex": 1
@@ -205,7 +195,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     flxCategoryKA.add(lblSuggestions, lblMeals, lblAnalytics);
     var lblHighlightKA = new kony.ui.Label({
@@ -216,10 +207,6 @@ function addWidgetsfrmDietKA() {
         "left": "0dp",
         "skin": "sknlblWhite",
         "text": "Label",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "0dp",
         "width": "30%",
         "zIndex": 1
@@ -228,7 +215,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     frmHeaderKA.add(flxDateKA, lblTotalCal, flxCategoryKA, lblHighlightKA);
     var flxScrollMainKA = new kony.ui.FlexScrollContainer({
@@ -289,10 +277,6 @@ function addWidgetsfrmDietKA() {
         "onTouchStart": AS_Label_h32f587b823b42379e6480e0672f7116,
         "skin": "sknLbl000000HB35KA",
         "text": "Breakfast",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "width": "150dp",
         "zIndex": 1
     }, {
@@ -300,7 +284,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var lblCalories1 = new kony.ui.Label({
         "centerY": "50.00%",
@@ -309,10 +294,6 @@ function addWidgetsfrmDietKA() {
         "left": "70dp",
         "skin": "sknLbl000000HB35KA",
         "text": "367/361",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "width": "70dp",
         "zIndex": 1
     }, {
@@ -320,7 +301,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var imgAdd1 = new kony.ui.Image2({
         "centerY": "50%",
@@ -410,7 +392,14 @@ function addWidgetsfrmDietKA() {
     }, {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
-    }, {});
+    }, {
+        "bounces": true,
+        "editStyle": constants.SEGUI_EDITING_STYLE_NONE,
+        "enableDictionary": false,
+        "indicator": constants.SEGUI_ROW_SELECT,
+        "progressIndicatorColor": constants.PROGRESS_INDICATOR_COLOR_WHITE,
+        "showProgressIndicator": true
+    });
     var flxFocus2 = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
@@ -448,10 +437,6 @@ function addWidgetsfrmDietKA() {
         "onTouchStart": AS_Label_e9eeea6f9a474ca690b9aad023a3c17f,
         "skin": "sknLbl000000HB35KA",
         "text": "Morning Snack",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "0dp",
         "width": "150dp",
         "zIndex": 1
@@ -460,7 +445,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var CopylblCalories0a89328abee6640 = new kony.ui.Label({
         "centerY": "50%",
@@ -469,10 +455,6 @@ function addWidgetsfrmDietKA() {
         "left": "70dp",
         "skin": "sknLbl000000HB35KA",
         "text": "0/136",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "width": "70dp",
         "zIndex": 1
     }, {
@@ -480,7 +462,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var CopyimgAdd0e1466c6a37844b = new kony.ui.Image2({
         "centerY": "50%",
@@ -563,7 +546,14 @@ function addWidgetsfrmDietKA() {
     }, {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
-    }, {});
+    }, {
+        "bounces": true,
+        "editStyle": constants.SEGUI_EDITING_STYLE_NONE,
+        "enableDictionary": false,
+        "indicator": constants.SEGUI_ROW_SELECT,
+        "progressIndicatorColor": constants.PROGRESS_INDICATOR_COLOR_WHITE,
+        "showProgressIndicator": true
+    });
     var flxFocus3 = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
@@ -601,10 +591,6 @@ function addWidgetsfrmDietKA() {
         "onTouchStart": AS_Label_f7952a807a4c470bb77cf29c622090b7,
         "skin": "sknLbl000000HB35KA",
         "text": "Lunch",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "0dp",
         "width": "150dp",
         "zIndex": 1
@@ -613,7 +599,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var CopylblCalories0e2db4b45fec14e = new kony.ui.Label({
         "centerY": "50%",
@@ -622,10 +609,6 @@ function addWidgetsfrmDietKA() {
         "left": "70dp",
         "skin": "sknLbl000000HB35KA",
         "text": "0/365",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "width": "70dp",
         "zIndex": 1
     }, {
@@ -633,7 +616,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var CopyimgAdd0dd61d6546d9a48 = new kony.ui.Image2({
         "centerY": "50%",
@@ -716,7 +700,14 @@ function addWidgetsfrmDietKA() {
     }, {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
-    }, {});
+    }, {
+        "bounces": true,
+        "editStyle": constants.SEGUI_EDITING_STYLE_NONE,
+        "enableDictionary": false,
+        "indicator": constants.SEGUI_ROW_SELECT,
+        "progressIndicatorColor": constants.PROGRESS_INDICATOR_COLOR_WHITE,
+        "showProgressIndicator": true
+    });
     var flxFocus4 = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
@@ -754,10 +745,6 @@ function addWidgetsfrmDietKA() {
         "onTouchStart": AS_Label_b235dc47737a40f289ee3be74e3cef1a,
         "skin": "sknLbl000000HB35KA",
         "text": "Evening Snack",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "0dp",
         "width": "150dp",
         "zIndex": 1
@@ -766,7 +753,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var CopylblCalories0h2492c889b2840 = new kony.ui.Label({
         "centerY": "50%",
@@ -775,10 +763,6 @@ function addWidgetsfrmDietKA() {
         "left": "70dp",
         "skin": "sknLbl000000HB35KA",
         "text": "0/135",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "width": "70dp",
         "zIndex": 1
     }, {
@@ -786,7 +770,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var CopyimgAdd0cd926065d3af4d = new kony.ui.Image2({
         "centerY": "50.00%",
@@ -869,7 +854,14 @@ function addWidgetsfrmDietKA() {
     }, {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
-    }, {});
+    }, {
+        "bounces": true,
+        "editStyle": constants.SEGUI_EDITING_STYLE_NONE,
+        "enableDictionary": false,
+        "indicator": constants.SEGUI_ROW_SELECT,
+        "progressIndicatorColor": constants.PROGRESS_INDICATOR_COLOR_WHITE,
+        "showProgressIndicator": true
+    });
     var flxFocus5 = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
@@ -907,10 +899,6 @@ function addWidgetsfrmDietKA() {
         "onTouchStart": AS_Label_cf64ff890a6d4a62b700f53786ef8302,
         "skin": "sknLbl000000HB35KA",
         "text": "Dinner",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "0dp",
         "width": "150dp",
         "zIndex": 1
@@ -919,7 +907,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var CopylblCalories0d0e0368543b94d = new kony.ui.Label({
         "centerY": "50%",
@@ -928,10 +917,6 @@ function addWidgetsfrmDietKA() {
         "left": "70dp",
         "skin": "sknLbl000000HB35KA",
         "text": "0/365",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "width": "70dp",
         "zIndex": 1
     }, {
@@ -939,7 +924,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var CopyimgAdd0af72f16209a94e = new kony.ui.Image2({
         "centerY": "50.00%",
@@ -1022,7 +1008,14 @@ function addWidgetsfrmDietKA() {
     }, {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
-    }, {});
+    }, {
+        "bounces": true,
+        "editStyle": constants.SEGUI_EDITING_STYLE_NONE,
+        "enableDictionary": false,
+        "indicator": constants.SEGUI_ROW_SELECT,
+        "progressIndicatorColor": constants.PROGRESS_INDICATOR_COLOR_WHITE,
+        "showProgressIndicator": true
+    });
     var lblConsumedItems = new kony.ui.Label({
         "height": "30dp",
         "id": "lblConsumedItems",
@@ -1030,10 +1023,6 @@ function addWidgetsfrmDietKA() {
         "left": "15dp",
         "skin": "sknLbl1C3F64CN110KA",
         "text": "Consumed Items:",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "10dp",
         "width": "150dp",
         "zIndex": 1
@@ -1042,7 +1031,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var lblLine = new kony.ui.Label({
         "height": "1dp",
@@ -1050,10 +1040,6 @@ function addWidgetsfrmDietKA() {
         "isVisible": false,
         "left": "0dp",
         "skin": "sknLbl5E5050LineKA",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "10dp",
         "width": "100%",
         "zIndex": 1
@@ -1062,7 +1048,8 @@ function addWidgetsfrmDietKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     flxScrollMainKA.add(flxFocus1, segConsumedItems, flxFocus2, segMorningSnack, flxFocus3, segLunch, flxFocus4, segEveningSnack, flxFocus5, segDinner, lblConsumedItems, lblLine);
     frmMainKA.add(frmHeaderKA, flxScrollMainKA);
@@ -1084,12 +1071,24 @@ function frmDietKAGlobals() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
+        "configureExtendBottom": false,
+        "configureExtendTop": false,
+        "configureStatusBarStyle": false,
         "footerOverlap": false,
+        "formTransparencyDuringPostShow": "100",
         "headerOverlap": false,
-        "menuPosition": constants.FORM_MENU_POSITION_AFTER_APPMENU,
+        "inputAccessoryViewType": constants.FORM_INPUTACCESSORYVIEW_CANCEL,
+        "needsIndicatorDuringPostShow": false,
         "retainScrollPosition": false,
         "titleBar": true,
-        "titleBarSkin": "slTitleBar",
-        "windowSoftInputMode": constants.FORM_ADJUST_PAN
+        "titleBarConfig": {
+            "renderTitleText": true,
+            "prevFormTitle": false,
+            "titleBarLeftSideView": "button",
+            "labelLeftSideView": "Back",
+            "titleBarRightSideView": "button",
+            "labelRightSideView": "Edit"
+        },
+        "titleBarSkin": "slTitleBar"
     });
 };

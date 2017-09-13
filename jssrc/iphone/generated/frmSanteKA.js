@@ -1,10 +1,10 @@
-function addWidgetsfrmUserKA() {
-    frmUserKA.setDefaultUnit(kony.flex.DP);
-    var flxForm = new kony.ui.FlexContainer({
+function addWidgetsfrmSanteKA() {
+    frmSanteKA.setDefaultUnit(kony.flex.DP);
+    var frmMainKA = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
-        "height": "100.00%",
-        "id": "flxForm",
+        "height": "100%",
+        "id": "frmMainKA",
         "isVisible": true,
         "layoutType": kony.flex.FLOW_VERTICAL,
         "left": "0dp",
@@ -13,12 +13,12 @@ function addWidgetsfrmUserKA() {
         "width": "100%",
         "zIndex": 1
     }, {}, {});
-    flxForm.setDefaultUnit(kony.flex.DP);
-    var frmHeaderKA = new kony.ui.FlexContainer({
+    frmMainKA.setDefaultUnit(kony.flex.DP);
+    var flxHeaderKA = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
-        "height": "157dp",
-        "id": "frmHeaderKA",
+        "height": "140dp",
+        "id": "flxHeaderKA",
         "isVisible": true,
         "layoutType": kony.flex.FREE_FORM,
         "left": "0dp",
@@ -27,51 +27,35 @@ function addWidgetsfrmUserKA() {
         "width": "100%",
         "zIndex": 1
     }, {}, {});
-    frmHeaderKA.setDefaultUnit(kony.flex.DP);
-    var btnBack = new kony.ui.Button({
-        "focusSkin": "sknBtnBackFilterKA",
-        "height": "35dp",
-        "id": "btnBack",
+    flxHeaderKA.setDefaultUnit(kony.flex.DP);
+    var btnMenu = new kony.ui.Button({
+        "focusSkin": "sknBtnMenuKA",
+        "height": "30dp",
+        "id": "btnMenu",
         "isVisible": true,
-        "left": "10dp",
-        "onClick": AS_Button_aa7bf500ed4b47a289666543657c33f5,
-        "skin": "sknBtnBackFilterKA",
+        "left": "15dp",
+        "onClick": AS_Button_a21489740f424d888410df3d344d96b2,
+        "skin": "sknBtnMenuKA",
         "top": "13dp",
-        "width": "35dp",
+        "width": "30dp",
         "zIndex": 1
     }, {
         "contentAlignment": constants.CONTENT_ALIGN_CENTER,
         "displayText": true,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
-    }, {});
-    var flxDetailsKA = new kony.ui.FlexContainer({
-        "autogrowMode": kony.flex.AUTOGROW_NONE,
-        "clipBounds": true,
-        "height": "63dp",
-        "id": "flxDetailsKA",
-        "isVisible": true,
-        "layoutType": kony.flex.FREE_FORM,
-        "left": "0dp",
-        "skin": "slFbox",
-        "top": "90dp",
-        "width": "100%",
-        "zIndex": 1
-    }, {}, {});
-    flxDetailsKA.setDefaultUnit(kony.flex.DP);
+    }, {
+        "showProgressIndicator": true
+    });
     var lblHeader = new kony.ui.Label({
-        "centerX": "49.97%",
-        "centerY": "31.75%",
-        "height": "35dp",
+        "centerX": "50.03%",
+        "centerY": "50.00%",
+        "height": "40dp",
         "id": "lblHeader",
         "isVisible": true,
         "left": "127dp",
-        "skin": "sknLbl736464CB110KA",
-        "text": "Username",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
+        "skin": "sknCN1103a3f77KA",
+        "text": "Santé",
         "top": "4dp",
         "width": "250dp",
         "zIndex": 1
@@ -80,52 +64,14 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
-    var lblEmail = new kony.ui.Label({
-        "centerX": "50%",
-        "centerY": "70%",
-        "height": "35dp",
-        "id": "lblEmail",
-        "isVisible": true,
-        "left": "127dp",
-        "skin": "sknLbl736464CB110KA",
-        "text": "user@kony.com",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
-        "top": "4dp",
-        "width": "250dp",
-        "zIndex": 1
-    }, {
-        "contentAlignment": constants.CONTENT_ALIGN_CENTER,
-        "padding": [0, 0, 0, 0],
-        "paddingInPixel": false
-    }, {
-        "textCopyable": false
-    });
-    flxDetailsKA.add(lblHeader, lblEmail);
-    var imgUserProfile = new kony.ui.Image2({
-        "centerX": "50%",
-        "height": "83dp",
-        "id": "imgUserProfile",
-        "isVisible": true,
-        "skin": "slImage",
-        "src": "persondetailpic.png",
-        "top": "13dp",
-        "width": "100dp",
-        "zIndex": 1
-    }, {
-        "imageScaleMode": constants.IMAGE_SCALE_MODE_MAINTAIN_ASPECT_RATIO,
-        "padding": [0, 0, 0, 0],
-        "paddingInPixel": false
-    }, {});
-    frmHeaderKA.add(btnBack, flxDetailsKA, imgUserProfile);
+    flxHeaderKA.add(btnMenu, lblHeader);
     var flxMainKA = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
-        "height": "307dp",
+        "height": "347dp",
         "id": "flxMainKA",
         "isVisible": true,
         "layoutType": kony.flex.FLOW_VERTICAL,
@@ -146,7 +92,7 @@ function addWidgetsfrmUserKA() {
         "layoutType": kony.flex.FLOW_HORIZONTAL,
         "left": "0dp",
         "skin": "sknFlxWhite",
-        "top": "30dp",
+        "top": "25dp",
         "width": "100%",
         "zIndex": 1
     }, {}, {});
@@ -158,7 +104,7 @@ function addWidgetsfrmUserKA() {
         "isVisible": true,
         "left": "10dp",
         "skin": "slImage",
-        "src": "blueperson.png",
+        "src": "diet.png",
         "top": "16dp",
         "width": "35dp",
         "zIndex": 1
@@ -193,11 +139,7 @@ function addWidgetsfrmUserKA() {
         "isVisible": true,
         "left": "30dp",
         "skin": "sknNewsAuthor",
-        "text": "Basic Information",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
+        "text": "Food... Its the biggest cause",
         "top": "15dp",
         "width": kony.flex.USE_PREFFERED_SIZE,
         "zIndex": 1
@@ -206,18 +148,15 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var lbl2 = new kony.ui.Label({
         "id": "lbl2",
         "isVisible": true,
         "left": "30dp",
         "skin": "sknLbl1F1C1BCN26KA",
-        "text": "Update your Basic information here",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
+        "text": "to gain weigth. Track it today!",
         "top": "5dp",
         "width": kony.flex.USE_PREFFERED_SIZE,
         "zIndex": 1
@@ -226,7 +165,8 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     flxLabel1.add(lbl1, lbl2);
     var imgNext1 = new kony.ui.Image2({
@@ -235,7 +175,7 @@ function addWidgetsfrmUserKA() {
         "id": "imgNext1",
         "isVisible": true,
         "left": "0dp",
-        "onTouchStart": AS_Image_g00919c99de643e9a6b151f6f922f53e,
+        "onTouchStart": AS_Image_bb24eeb4ef7e4759ab4bd45819e596bc,
         "skin": "slImage",
         "src": "arrowright.png",
         "top": "3dp",
@@ -254,10 +194,6 @@ function addWidgetsfrmUserKA() {
         "left": "0dp",
         "skin": "slLabel",
         "text": "Label",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "0dp",
         "width": "100%",
         "zIndex": 1
@@ -266,7 +202,8 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var flxDetail2 = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
@@ -277,7 +214,7 @@ function addWidgetsfrmUserKA() {
         "layoutType": kony.flex.FLOW_HORIZONTAL,
         "left": "0dp",
         "skin": "sknFlxWhite",
-        "top": "0dp",
+        "top": "5dp",
         "width": "100%",
         "zIndex": 1
     }, {}, {});
@@ -289,7 +226,7 @@ function addWidgetsfrmUserKA() {
         "isVisible": true,
         "left": "10dp",
         "skin": "slImage",
-        "src": "goalicon.png",
+        "src": "workout.png",
         "top": "16dp",
         "width": "35dp",
         "zIndex": 1
@@ -324,11 +261,7 @@ function addWidgetsfrmUserKA() {
         "isVisible": true,
         "left": "30dp",
         "skin": "sknNewsAuthor",
-        "text": "Goal",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
+        "text": "Track your workouts today !",
         "top": "15dp",
         "width": kony.flex.USE_PREFFERED_SIZE,
         "zIndex": 1
@@ -337,18 +270,15 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var Copylbl0ebd8fc5152764c = new kony.ui.Label({
         "id": "Copylbl0ebd8fc5152764c",
         "isVisible": true,
         "left": "30dp",
         "skin": "sknLbl1F1C1BCN26KA",
-        "text": "Update your Goal here",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
+        "text": "Walk, jog, jump... just burn",
         "top": "5dp",
         "width": kony.flex.USE_PREFFERED_SIZE,
         "zIndex": 1
@@ -357,7 +287,8 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     flxLabel2.add(Copylbl0bab13806d08a45, Copylbl0ebd8fc5152764c);
     var imgNext2 = new kony.ui.Image2({
@@ -366,7 +297,7 @@ function addWidgetsfrmUserKA() {
         "id": "imgNext2",
         "isVisible": true,
         "left": "0dp",
-        "onTouchStart": AS_Image_dbd032117f9c406dbf920cfaa5acb0d7,
+        "onTouchStart": AS_Image_g9a27dc877dc42e1ba6a245e743dd686,
         "skin": "slImage",
         "src": "arrowright.png",
         "top": "3dp",
@@ -385,10 +316,6 @@ function addWidgetsfrmUserKA() {
         "left": "0dp",
         "skin": "slLabel",
         "text": "Label",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "0dp",
         "width": "100%",
         "zIndex": 1
@@ -397,7 +324,8 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var flxDetail3 = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
@@ -408,7 +336,7 @@ function addWidgetsfrmUserKA() {
         "layoutType": kony.flex.FLOW_HORIZONTAL,
         "left": "0dp",
         "skin": "sknFlxWhite",
-        "top": "0dp",
+        "top": "5dp",
         "width": "100%",
         "zIndex": 1
     }, {}, {});
@@ -420,7 +348,7 @@ function addWidgetsfrmUserKA() {
         "isVisible": true,
         "left": "10dp",
         "skin": "slImage",
-        "src": "foodpreference.png",
+        "src": "water.png",
         "top": "16dp",
         "width": "35dp",
         "zIndex": 1
@@ -455,11 +383,7 @@ function addWidgetsfrmUserKA() {
         "isVisible": true,
         "left": "30dp",
         "skin": "sknNewsAuthor",
-        "text": "Food Preferences",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
+        "text": "Drink it up",
         "top": "15dp",
         "width": kony.flex.USE_PREFFERED_SIZE,
         "zIndex": 1
@@ -468,18 +392,15 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var Copylbl0c3ffe154e4b84d = new kony.ui.Label({
         "id": "Copylbl0c3ffe154e4b84d",
         "isVisible": true,
         "left": "30dp",
         "skin": "sknLbl1F1C1BCN26KA",
-        "text": "Update your Food Preferences here",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
+        "text": "Hydration is the key to loose weight",
         "top": "5dp",
         "width": kony.flex.USE_PREFFERED_SIZE,
         "zIndex": 1
@@ -488,7 +409,8 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     flxLabel3.add(Copylbl0cf9a100f581144, Copylbl0c3ffe154e4b84d);
     var imgNext3 = new kony.ui.Image2({
@@ -497,7 +419,6 @@ function addWidgetsfrmUserKA() {
         "id": "imgNext3",
         "isVisible": true,
         "left": "0dp",
-        "onTouchStart": AS_Image_ac616a39eb5c47af921907b0cd6736c9,
         "skin": "slImage",
         "src": "arrowright.png",
         "top": "3dp",
@@ -516,10 +437,6 @@ function addWidgetsfrmUserKA() {
         "left": "0dp",
         "skin": "slLabel",
         "text": "Label",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "0dp",
         "width": "100%",
         "zIndex": 1
@@ -528,84 +445,168 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
-    flxMainKA.add(flxDetail1, lblLine1, flxDetail2, lblLine2, flxDetail3, lblLine3);
-    flxForm.add(frmHeaderKA, flxMainKA);
-    var BorderButtonRoundSigned = new kony.ui.FlexContainer({
+    var flxDetail4 = new kony.ui.FlexContainer({
+        "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
-        "height": "43dp",
-        "id": "BorderButtonRoundSigned",
+        "height": "70dp",
+        "id": "flxDetail4",
         "isVisible": true,
-        "layoutType": kony.flex.FREE_FORM,
+        "layoutType": kony.flex.FLOW_HORIZONTAL,
         "left": "0dp",
-        "masterType": constants.MASTER_TYPE_USERWIDGET,
-        "skin": "slFbox0e28de830a2a64a",
-        "top": "-43dp",
+        "skin": "sknFlxWhite",
+        "top": "5dp",
         "width": "100%",
         "zIndex": 1
     }, {}, {});
-    BorderButtonRoundSigned.setDefaultUnit(kony.flex.DP);
-    var ContainerButtonBorderPositive = new kony.ui.FlexContainer({
-        "autogrowMode": kony.flex.AUTOGROW_NONE,
-        "bottom": "0dp",
-        "clipBounds": true,
-        "id": "ContainerButtonBorderPositive",
+    flxDetail4.setDefaultUnit(kony.flex.DP);
+    var imgCoach = new kony.ui.Image2({
+        "centerY": "50%",
+        "height": "35dp",
+        "id": "imgCoach",
         "isVisible": true,
-        "layoutType": kony.flex.FREE_FORM,
-        "masterType": constants.MASTER_TYPE_USERWIDGET,
-        "onTouchStart": AS_FlexContainer_f752d13666e54572b16a3dc768b664ce,
-        "right": "0dp",
-        "skin": "slFbox0e28de830a2a64a",
-        "top": "0dp",
-        "width": "50%",
-        "zIndex": 1
-    }, {}, {});
-    ContainerButtonBorderPositive.setDefaultUnit(kony.flex.DP);
-    var btnDone = new kony.ui.Button({
-        "bottom": 5,
-        "focusSkin": "ButtonBorderPostiveActive",
-        "id": "btnDone",
-        "isVisible": true,
-        "left": "5dp",
-        "onClick": AS_Button_c098055c0b2f464eb01b7b7bdab5ee3a,
-        "right": "10dp",
-        "skin": "ButtonBorderPostiveNormal",
-        "text": "Done",
-        "top": "5dp",
+        "left": "10dp",
+        "skin": "slImage",
+        "src": "coach.png",
+        "top": "16dp",
+        "width": "35dp",
         "zIndex": 1
     }, {
-        "contentAlignment": constants.CONTENT_ALIGN_CENTER,
-        "displayText": true,
+        "imageScaleMode": constants.IMAGE_SCALE_MODE_MAINTAIN_ASPECT_RATIO,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {});
-    ContainerButtonBorderPositive.add(btnDone);
-    BorderButtonRoundSigned.add(ContainerButtonBorderPositive);
-    frmUserKA.add(flxForm, BorderButtonRoundSigned);
-};
-
-function frmUserKAGlobals() {
-    frmUserKA = new kony.ui.Form2({
-        "addWidgets": addWidgetsfrmUserKA,
-        "enabledForIdleTimeout": false,
-        "id": "frmUserKA",
+    var flxLabel4 = new kony.ui.FlexScrollContainer({
+        "allowHorizontalBounce": false,
+        "allowVerticalBounce": true,
+        "bounces": true,
+        "clipBounds": true,
+        "enableScrolling": true,
+        "height": "100%",
+        "horizontalScrollIndicator": true,
+        "id": "flxLabel4",
+        "isVisible": true,
         "layoutType": kony.flex.FLOW_VERTICAL,
-        "needAppMenu": true,
-        "preShow": AS_Form_cd121849ac4942c48a5d3a9aeeb152dd,
-        "skin": "slForm"
+        "left": "0dp",
+        "pagingEnabled": false,
+        "scrollDirection": kony.flex.SCROLL_VERTICAL,
+        "skin": "slFSbox",
+        "top": "0dp",
+        "verticalScrollIndicator": true,
+        "width": "72%",
+        "zIndex": 1
+    }, {}, {});
+    flxLabel4.setDefaultUnit(kony.flex.DP);
+    var Copylbl0g878dcd215554d = new kony.ui.Label({
+        "id": "Copylbl0g878dcd215554d",
+        "isVisible": true,
+        "left": "30dp",
+        "skin": "sknNewsAuthor",
+        "text": "Get a personal Coach",
+        "top": "15dp",
+        "width": kony.flex.USE_PREFFERED_SIZE,
+        "zIndex": 1
     }, {
-        "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_PORTRAIT,
-        "layoutType": kony.flex.FLOW_VERTICAL,
+        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
+    });
+    var Copylbl0f66e990e9bc241 = new kony.ui.Label({
+        "id": "Copylbl0f66e990e9bc241",
+        "isVisible": true,
+        "left": "30dp",
+        "skin": "sknLbl1F1C1BCN26KA",
+        "text": "and loose weight like never before",
+        "top": "5dp",
+        "width": kony.flex.USE_PREFFERED_SIZE,
+        "zIndex": 1
+    }, {
+        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
+    });
+    flxLabel4.add(Copylbl0g878dcd215554d, Copylbl0f66e990e9bc241);
+    var imgNext4 = new kony.ui.Image2({
+        "centerY": "50%",
+        "height": "25dp",
+        "id": "imgNext4",
+        "isVisible": true,
+        "left": "0dp",
+        "skin": "slImage",
+        "src": "arrowright.png",
+        "top": "3dp",
+        "width": "25dp",
+        "zIndex": 1
+    }, {
+        "imageScaleMode": constants.IMAGE_SCALE_MODE_MAINTAIN_ASPECT_RATIO,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {});
+    flxDetail4.add(imgCoach, flxLabel4, imgNext4);
+    var lblLine4 = new kony.ui.Label({
+        "height": "1dp",
+        "id": "lblLine4",
+        "isVisible": true,
+        "left": "0dp",
+        "skin": "slLabel",
+        "text": "Label",
+        "top": "0dp",
+        "width": "100%",
+        "zIndex": 1
+    }, {
+        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
+    });
+    flxMainKA.add(flxDetail1, lblLine1, flxDetail2, lblLine2, flxDetail3, lblLine3, flxDetail4, lblLine4);
+    frmMainKA.add(flxHeaderKA, flxMainKA);
+    frmSanteKA.add(frmMainKA);
+};
+
+function frmSanteKAGlobals() {
+    frmSanteKA = new kony.ui.Form2({
+        "addWidgets": addWidgetsfrmSanteKA,
+        "enabledForIdleTimeout": false,
+        "id": "frmSanteKA",
+        "layoutType": kony.flex.FREE_FORM,
+        "needAppMenu": true,
+        "postShow": AS_Form_c231758fdec642cc94497378e47f43af,
+        "skin": "slForm"
+    }, {
+        "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_PORTRAIT,
+        "layoutType": kony.flex.FREE_FORM,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {
+        "configureExtendBottom": false,
+        "configureExtendTop": false,
+        "configureStatusBarStyle": false,
         "footerOverlap": false,
+        "formTransparencyDuringPostShow": "100",
         "headerOverlap": false,
-        "menuPosition": constants.FORM_MENU_POSITION_AFTER_APPMENU,
+        "inputAccessoryViewType": constants.FORM_INPUTACCESSORYVIEW_CANCEL,
+        "needsIndicatorDuringPostShow": false,
         "retainScrollPosition": false,
         "titleBar": true,
-        "titleBarSkin": "slTitleBar",
-        "windowSoftInputMode": constants.FORM_ADJUST_PAN
+        "titleBarConfig": {
+            "renderTitleText": true,
+            "prevFormTitle": false,
+            "titleBarLeftSideView": "button",
+            "labelLeftSideView": "Back",
+            "titleBarRightSideView": "button",
+            "labelRightSideView": "Edit"
+        },
+        "titleBarSkin": "slTitleBar"
     });
 };

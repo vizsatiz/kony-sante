@@ -44,7 +44,9 @@ function addWidgetsfrmUserKA() {
         "displayText": true,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
-    }, {});
+    }, {
+        "showProgressIndicator": true
+    });
     var flxDetailsKA = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,
@@ -68,10 +70,6 @@ function addWidgetsfrmUserKA() {
         "left": "127dp",
         "skin": "sknLbl736464CB110KA",
         "text": "Username",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "4dp",
         "width": "250dp",
         "zIndex": 1
@@ -80,7 +78,8 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var lblEmail = new kony.ui.Label({
         "centerX": "50%",
@@ -91,10 +90,6 @@ function addWidgetsfrmUserKA() {
         "left": "127dp",
         "skin": "sknLbl736464CB110KA",
         "text": "user@kony.com",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "4dp",
         "width": "250dp",
         "zIndex": 1
@@ -103,7 +98,8 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     flxDetailsKA.add(lblHeader, lblEmail);
     var imgUserProfile = new kony.ui.Image2({
@@ -194,10 +190,6 @@ function addWidgetsfrmUserKA() {
         "left": "30dp",
         "skin": "sknNewsAuthor",
         "text": "Basic Information",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "15dp",
         "width": kony.flex.USE_PREFFERED_SIZE,
         "zIndex": 1
@@ -206,7 +198,8 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var lbl2 = new kony.ui.Label({
         "id": "lbl2",
@@ -214,10 +207,6 @@ function addWidgetsfrmUserKA() {
         "left": "30dp",
         "skin": "sknLbl1F1C1BCN26KA",
         "text": "Update your Basic information here",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "5dp",
         "width": kony.flex.USE_PREFFERED_SIZE,
         "zIndex": 1
@@ -226,7 +215,8 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     flxLabel1.add(lbl1, lbl2);
     var imgNext1 = new kony.ui.Image2({
@@ -254,10 +244,6 @@ function addWidgetsfrmUserKA() {
         "left": "0dp",
         "skin": "slLabel",
         "text": "Label",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "0dp",
         "width": "100%",
         "zIndex": 1
@@ -266,7 +252,8 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var flxDetail2 = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
@@ -325,10 +312,6 @@ function addWidgetsfrmUserKA() {
         "left": "30dp",
         "skin": "sknNewsAuthor",
         "text": "Goal",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "15dp",
         "width": kony.flex.USE_PREFFERED_SIZE,
         "zIndex": 1
@@ -337,7 +320,8 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var Copylbl0ebd8fc5152764c = new kony.ui.Label({
         "id": "Copylbl0ebd8fc5152764c",
@@ -345,10 +329,6 @@ function addWidgetsfrmUserKA() {
         "left": "30dp",
         "skin": "sknLbl1F1C1BCN26KA",
         "text": "Update your Goal here",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "5dp",
         "width": kony.flex.USE_PREFFERED_SIZE,
         "zIndex": 1
@@ -357,7 +337,8 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     flxLabel2.add(Copylbl0bab13806d08a45, Copylbl0ebd8fc5152764c);
     var imgNext2 = new kony.ui.Image2({
@@ -385,10 +366,6 @@ function addWidgetsfrmUserKA() {
         "left": "0dp",
         "skin": "slLabel",
         "text": "Label",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "0dp",
         "width": "100%",
         "zIndex": 1
@@ -397,7 +374,8 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var flxDetail3 = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
@@ -456,10 +434,6 @@ function addWidgetsfrmUserKA() {
         "left": "30dp",
         "skin": "sknNewsAuthor",
         "text": "Food Preferences",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "15dp",
         "width": kony.flex.USE_PREFFERED_SIZE,
         "zIndex": 1
@@ -468,7 +442,8 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var Copylbl0c3ffe154e4b84d = new kony.ui.Label({
         "id": "Copylbl0c3ffe154e4b84d",
@@ -476,10 +451,6 @@ function addWidgetsfrmUserKA() {
         "left": "30dp",
         "skin": "sknLbl1F1C1BCN26KA",
         "text": "Update your Food Preferences here",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "5dp",
         "width": kony.flex.USE_PREFFERED_SIZE,
         "zIndex": 1
@@ -488,7 +459,8 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     flxLabel3.add(Copylbl0cf9a100f581144, Copylbl0c3ffe154e4b84d);
     var imgNext3 = new kony.ui.Image2({
@@ -516,10 +488,6 @@ function addWidgetsfrmUserKA() {
         "left": "0dp",
         "skin": "slLabel",
         "text": "Label",
-        "textStyle": {
-            "letterSpacing": 0,
-            "strikeThrough": false
-        },
         "top": "0dp",
         "width": "100%",
         "zIndex": 1
@@ -528,13 +496,14 @@ function addWidgetsfrmUserKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
-        "textCopyable": false
+        "textCopyable": false,
+        "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     flxMainKA.add(flxDetail1, lblLine1, flxDetail2, lblLine2, flxDetail3, lblLine3);
     flxForm.add(frmHeaderKA, flxMainKA);
     var BorderButtonRoundSigned = new kony.ui.FlexContainer({
         "clipBounds": true,
-        "height": "43dp",
+        "height": "60dp",
         "id": "BorderButtonRoundSigned",
         "isVisible": true,
         "layoutType": kony.flex.FREE_FORM,
@@ -579,7 +548,9 @@ function addWidgetsfrmUserKA() {
         "displayText": true,
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
-    }, {});
+    }, {
+        "showProgressIndicator": true
+    });
     ContainerButtonBorderPositive.add(btnDone);
     BorderButtonRoundSigned.add(ContainerButtonBorderPositive);
     frmUserKA.add(flxForm, BorderButtonRoundSigned);
@@ -600,12 +571,24 @@ function frmUserKAGlobals() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {
+        "configureExtendBottom": false,
+        "configureExtendTop": false,
+        "configureStatusBarStyle": false,
         "footerOverlap": false,
+        "formTransparencyDuringPostShow": "100",
         "headerOverlap": false,
-        "menuPosition": constants.FORM_MENU_POSITION_AFTER_APPMENU,
+        "inputAccessoryViewType": constants.FORM_INPUTACCESSORYVIEW_CANCEL,
+        "needsIndicatorDuringPostShow": false,
         "retainScrollPosition": false,
         "titleBar": true,
-        "titleBarSkin": "slTitleBar",
-        "windowSoftInputMode": constants.FORM_ADJUST_PAN
+        "titleBarConfig": {
+            "renderTitleText": true,
+            "prevFormTitle": false,
+            "titleBarLeftSideView": "button",
+            "labelLeftSideView": "Back",
+            "titleBarRightSideView": "button",
+            "labelRightSideView": "Edit"
+        },
+        "titleBarSkin": "slTitleBar"
     });
 };

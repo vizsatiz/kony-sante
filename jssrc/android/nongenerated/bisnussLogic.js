@@ -668,7 +668,6 @@ function getProfileSuccess(response) {
     sante.current.google.user = response;
     validateCurrentUserProfile();
     //Naviagte to frmDietKA form
-    frmUserKA.show();
 }
 
 function validateCurrentUserProfile() {
@@ -706,6 +705,10 @@ function getSuccess(records) {
         sante.current.user.FIRST_NAME = records[0].FIRST_NAME;
         sante.current.user.LAST_NAME = records[0].LAST_NAME;
         sante.current.user.METADATA = records[0].METADATA;
+        var name = sante.current.user.FIRST_NAME + "" + sante.current.user.LAST_NAME;
+        var email = sante.current.user.EMAIL;
+        frmUserKA.lblHeader.text = name;
+        frmUserKA.lblEmail.text = email;
     }
 }
 
@@ -863,4 +866,58 @@ function updateGoalDetails() {
     function getUserFailure(error) {
         kony.print("error in fetching the user with email " + JSON.stringify(error));
     }
+}
+// ------------ box login -----------
+function loginWithBox() {
+    var boxAuthClient = kony.sdk.getCurrentInstance().getIdentityService("SanteBoxIdentity");
+    var options = {};
+    boxAuthClient.login(options, boxLoginSuccess, boxLoginFailure);
+}
+
+function boxLoginSuccess(response) {
+    kony.print("box login success " + JSON.stringify(response));
+    //invoke the integration service for the image
+    getBinaryFromBox();
+}
+
+function boxLoginFailure(error) {
+    kony.print("login failure " + JSON.stringify(error));
+}
+
+function onFileDownloadStartedCallback(res) {
+    kony.print("file download started " + JSON.stringify(res));
+}
+
+function onChunkDownloadCompleteCallback(res) {
+    alert("file chunk download completed " + JSON.stringify(res));
+}
+
+function onFileDownloadCompleteCallback(res) {
+    kony.print("file download completed " + JSON.stringify(res));
+    try {
+        sante.constants.filePath = res.FilePath;
+        frmUserKA.show();
+    } catch (e) {
+        alert("exception " + JSON.stringify(e) + " while reading image file at location " + JSON.stringify(res));
+    }
+}
+
+function onFileDownloadFailureCallback(err) {
+    sante.constants.filePath = '/data/data/com.orgname.Sample/downloads/' + err.BlobID;
+    kony.print("file download failed with error : " + JSON.stringify(err));
+    frmUserKA.show();
+}
+
+function getBinaryFromBox() {
+    var integrationSvc = kony.sdk.getCurrentInstance().getIntegrationService("SanteBoxIntegration");
+    integrationSvc.getBinaryData("get_files_fileId_content", {
+        "fileId": "223318658418"
+    }, false, {}, onFileDownloadStartedCallback, onChunkDownloadCompleteCallback, onFileDownloadCompleteCallback, onFileDownloadFailureCallback);
+}
+
+function populateItemDetials() {
+    var filePath = sante.constants.filePath;
+    var imageFile = new kony.io.File(filePath);
+    var imgRawBytes = imageFile.read();
+    frmEditQuantityKA.imgFood.rawBytes = imgRawBytes;
 }

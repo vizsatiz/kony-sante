@@ -227,6 +227,40 @@ function addWidgetsfrmHomeKA() {
         "paddingInPixel": false
     }, {});
     BorderButtonRound.add(ButtonBorder);
+    var ButtonBoxLogin = new kony.ui.FlexContainer({
+        "centerX": "50%",
+        "centerY": "80%",
+        "clipBounds": true,
+        "height": "50dp",
+        "id": "ButtonBoxLogin",
+        "isVisible": true,
+        "layoutType": kony.flex.FREE_FORM,
+        "masterType": constants.MASTER_TYPE_USERWIDGET,
+        "skin": "slFbox0c0f4b80f57ce4d",
+        "top": 0,
+        "width": "70%",
+        "zIndex": 1
+    }, {}, {});
+    ButtonBoxLogin.setDefaultUnit(kony.flex.DP);
+    var BtnBoxLogin = new kony.ui.Button({
+        "bottom": "5dp",
+        "focusSkin": "ButtonBorderActive",
+        "id": "BtnBoxLogin",
+        "isVisible": true,
+        "left": "10dp",
+        "onClick": AS_Button_eae3c6d85ab8492e9ca55b5be7098ed5,
+        "right": "10dp",
+        "skin": "ButtonBorderNormal",
+        "text": "Login",
+        "top": "5dp",
+        "zIndex": 1
+    }, {
+        "contentAlignment": constants.CONTENT_ALIGN_CENTER,
+        "displayText": true,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {});
+    ButtonBoxLogin.add(BtnBoxLogin);
     var lblNote = new kony.ui.Label({
         "centerX": "50%",
         "height": "30dp",
@@ -249,7 +283,7 @@ function addWidgetsfrmHomeKA() {
     }, {
         "textCopyable": false
     });
-    flxMainScreen2KA.add(imgFish1KA, imgBird1KA, imgSelect, imgUnselect, BorderButtonRound, lblNote);
+    flxMainScreen2KA.add(imgFish1KA, imgBird1KA, imgSelect, imgUnselect, BorderButtonRound, ButtonBoxLogin, lblNote);
     frmHomeKA.add(flxMainScreen1KA, flxMainScreen2KA);
 };
 

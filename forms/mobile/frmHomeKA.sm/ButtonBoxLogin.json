@@ -3,11 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "100%"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "0dp"
+        "value": "60dp"
     },
     "_margin_": [
         0,
@@ -23,37 +19,45 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s5d299b324184804ae94d0ad560e7c43",
+    "_skin_": "s542d6517eb247c9887d96cd719310de",
     "_top_": {
-        "type": "string",
-        "value": "0dp"
+        "type": "number",
+        "value": "0"
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "70%"
     },
     "allboxes": [],
-    "autogrowmode": 0,
+    "android": {
+        "height": {
+            "type": "string",
+            "value": "50dp"
+        }
+    },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "80%"
+    },
     "children": [
-        "imgFish1KA",
-        "imgBird1KA",
-        "imgSelect",
-        "imgUnselect",
-        "BorderButtonRound",
-        "ButtonBoxLogin",
-        "lblNote"
+        "BtnBoxLogin"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxMainScreen2KA",
+    "id": "ButtonBoxLogin",
     "info": null,
-    "isvisible": false,
-    "kuid": "f79f5c97860d42f88c7c42bb710d347e",
+    "isvisible": true,
+    "kuid": "e7931faaef75482095d5b4dfd0dec60b",
     "layouttype": 2,
+    "masterType": 1,
     "name": "kony.ui.FlexContainer",
-    "parent": "frmHomeKA",
+    "parent": "flxMainScreen2KA",
     "pf": "frmHomeKA",
     "snapgridsize": 10,
     "snaptogrid": true,

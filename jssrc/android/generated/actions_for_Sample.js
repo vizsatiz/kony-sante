@@ -27,6 +27,14 @@ function AS_Button_db14b2adc7b1444cb83006cf0fba13b6(eventobject) {
     frmDietKA.show();
 }
 
+function AS_Button_dc818435e9a64418a73bd28cf89314a1(eventobject) {
+    frmDietKA.show();
+}
+
+function AS_Button_eae3c6d85ab8492e9ca55b5be7098ed5(eventobject) {
+    loginWithBox();
+}
+
 function AS_Button_f819fcb0c28149328b1a81a10917da59(eventobject) {
     frmUserKA.show();
 }
@@ -79,6 +87,10 @@ function AS_Form_e476d203b4614807abb9ab7cafccd260(eventobject) {}
 
 function AS_Form_e5da246f38ce49f7871d8cf8fe8d7bbf(eventobject) {
     populateWorkoutDetails();
+}
+
+function AS_Form_eeecf4d020384d5b8cdfe0ff8d6ac724(eventobject) {
+    return populateItemDetials.call(this);
 }
 
 function AS_Form_f4941228472d468c8ad991e34bd09d80(eventobject) {}
@@ -410,4 +422,8 @@ function AS_Label_b235dc47737a40f289ee3be74e3cef1a(eventobject, x, y) {
     } else {
         frmDietKA.segEveningSnack.isVisible = true;
     }
+}
+
+function AS_Button_i41b4720057a453f80af6b1279675970(eventobject) {
+    frmDietKA.show();
 }

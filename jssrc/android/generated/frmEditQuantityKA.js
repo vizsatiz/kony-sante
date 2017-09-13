@@ -456,9 +456,10 @@ function addWidgetsfrmEditQuantityKA() {
         "id": "btnReset",
         "isVisible": true,
         "left": "10dp",
+        "onClick": AS_Button_dc818435e9a64418a73bd28cf89314a1,
         "right": "5dp",
         "skin": "ButtonBorderNegativeNormal",
-        "text": "Reset",
+        "text": "Back",
         "top": "5dp",
         "zIndex": 1
     }, {
@@ -487,8 +488,9 @@ function addWidgetsfrmEditQuantityKA() {
         "bottom": 5,
         "focusSkin": "ButtonBorderPostiveActive",
         "id": "btnDone",
-        "isVisible": true,
+        "isVisible": false,
         "left": "5dp",
+        "onClick": AS_Button_i41b4720057a453f80af6b1279675970,
         "right": "10dp",
         "skin": "ButtonBorderPostiveNormal",
         "text": "Done",
@@ -513,6 +515,7 @@ function frmEditQuantityKAGlobals() {
         "id": "frmEditQuantityKA",
         "layoutType": kony.flex.FREE_FORM,
         "needAppMenu": true,
+        "preShow": AS_Form_eeecf4d020384d5b8cdfe0ff8d6ac724,
         "skin": "slForm"
     }, {
         "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_PORTRAIT,

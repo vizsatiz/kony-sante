@@ -1,0 +1,29 @@
+{
+    "AS_Button_dc818435e9a64418a73bd28cf89314a1": {
+        "id": "AS_Button_dc818435e9a64418a73bd28cf89314a1",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmEditQuantityKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "c2afdd0beb44446c85f8ab15cc310235"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___e32cc425b66e4489a191b8624811d118",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmDietKA",
+            "formKUID": "b2da036e8558476da2a9d8dd65146f04",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": ""
+        }]
+    }
+}

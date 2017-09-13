@@ -1,0 +1,28 @@
+{
+    "AS_Form_eeecf4d020384d5b8cdfe0ff8d6ac724": {
+        "id": "AS_Form_eeecf4d020384d5b8cdfe0ff8d6ac724",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmEditQuantityKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "c2afdd0beb44446c85f8ab15cc310235"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___e4d1450a0b3e45339a2ae89179d1f078",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "populateItemDetials",
+            "display": "populateItemDetials",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "module"
+        }]
+    }
+}

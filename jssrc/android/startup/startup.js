@@ -20,7 +20,13 @@ var appConfig = {
         "identity_meta": {
             "SanteIdentity": {
                 "success_url": "allow_any"
+            },
+            "SanteBoxIdentity": {
+                "success_url": "allow_any"
             }
+        },
+        "integsvc": {
+            "SanteBoxIntegration": "https://test-800-sdk.sit2-konycloud.com/services/SanteBoxIntegration"
         },
         "appId": "9e9b9dc4-c272-4f7b-b18e-6dfcc30db93a",
         "name": "Sante4",
@@ -35,12 +41,22 @@ var appConfig = {
             "prov": "SanteIdentity",
             "url": "https://100000013.auth.sit2-konycloud.com"
         }, {
+            "alias": "SanteBoxIdentity",
+            "type": "oauth2",
+            "prov": "SanteBoxIdentity",
+            "url": "https://100000013.auth.sit2-konycloud.com"
+        }, {
             "alias": "SanteSapIdentity",
             "type": "basic",
             "prov": "SanteSapIdentity",
             "url": "https://100000013.auth.sit2-konycloud.com"
         }],
         "services_meta": {
+            "SanteBoxIntegration": {
+                "type": "integsvc",
+                "version": "1.0",
+                "url": "https://test-800-sdk.sit2-konycloud.com/services/SanteBoxIntegration"
+            },
             "Sante4": {
                 "metadata_url": "https://test-800-sdk.sit2-konycloud.com/services/metadata/v1/Sante4",
                 "type": "objectsvc",

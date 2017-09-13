@@ -21,6 +21,12 @@
         },
         "language": "js",
         "actions": [{
+            "id": "ADD_SNIPPET__fecde76c5c634f29b2d70f136b4f173e",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "",
+            "parentId": null,
+            "callbackType": null
+        }, {
             "id": "NAVIGATE_TO_FORM___e2bd03c5428e4bd88fc95b054e90da25",
             "type": "NAVIGATE_TO_FORM",
             "formId": "frmEditQuantityKA",

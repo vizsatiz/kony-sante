@@ -3,5 +3,5 @@ function OnRowClickEveningSnack(eventobject, sectionNumber, rowNumber) {
 }
 
 function AS_Segment_ic2efcbe50684de6b7c2ba03599889fe(eventobject, sectionNumber, rowNumber) {
-    frmEditQuantityKA.show();
+    return onFrmDietKASegmentsRowClick.call(this, null, null, null, null);
 }

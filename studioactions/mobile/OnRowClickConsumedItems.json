@@ -21,22 +21,23 @@
         },
         "language": "js",
         "actions": [{
-            "id": "ADD_SNIPPET__fecde76c5c634f29b2d70f136b4f173e",
-            "type": "ADD_SNIPPET",
-            "codeSnippet": "",
+            "id": "INVOKE_FUNCTION___h885f181e9714a93882ac44ce915ec83",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "onFrmDietKASegmentsRowClick",
+            "display": "onFrmDietKASegmentsRowClick",
+            "inputparams": [{
+                "name": "seguiWidget"
+            }, {
+                "name": "sectionIndex"
+            }, {
+                "name": "rowIndex"
+            }, {
+                "name": "isSelected"
+            }],
             "parentId": null,
-            "callbackType": null
-        }, {
-            "id": "NAVIGATE_TO_FORM___e2bd03c5428e4bd88fc95b054e90da25",
-            "type": "NAVIGATE_TO_FORM",
-            "formId": "frmEditQuantityKA",
-            "formKUID": "c2afdd0beb44446c85f8ab15cc310235",
-            "mappings": {},
-            "mappingsOrder": [],
-            "parentId": "",
             "callbackType": null,
-            "enableMappingEditor": true,
-            "package": ""
+            "disabled": null,
+            "source": "module"
         }]
     }
 }

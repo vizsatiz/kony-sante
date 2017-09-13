@@ -21,16 +21,23 @@
         },
         "language": "js",
         "actions": [{
-            "id": "NAVIGATE_TO_FORM___bafe27cbabc3427ab78bad027658e1b1",
-            "type": "NAVIGATE_TO_FORM",
-            "formId": "frmEditQuantityKA",
-            "formKUID": "c2afdd0beb44446c85f8ab15cc310235",
-            "mappings": {},
-            "mappingsOrder": [],
-            "parentId": "",
+            "id": "INVOKE_FUNCTION___b5b78a25f31d424fba2c3ab7ee7ff087",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "onFrmDietKASegmentsRowClick",
+            "display": "onFrmDietKASegmentsRowClick",
+            "inputparams": [{
+                "name": "seguiWidget"
+            }, {
+                "name": "sectionIndex"
+            }, {
+                "name": "rowIndex"
+            }, {
+                "name": "isSelected"
+            }],
+            "parentId": null,
             "callbackType": null,
-            "enableMappingEditor": true,
-            "package": ""
+            "disabled": null,
+            "source": "module"
         }]
     }
 }

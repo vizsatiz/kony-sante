@@ -226,10 +226,13 @@ function populateConsumedItemsBreakFast(options) {
             var calString =  calories + " Cal";
             data[i] = {
               segRecordsLbl: {
-                  text: finalItem ? finalItem : '',
+                  text: finalItem ? finalItem : ''
               },
               segCalorieslbl: {
                   text: calString
+              },
+              metainfo: {
+                clickable:true
               }
            };
           
@@ -308,6 +311,9 @@ function populateConsumedItemsMorningSnacks(options) {
               },
               segCalorieslbl: {
                   text: calString
+              },
+              metainfo: {
+                clickable:true
               }
            };
           
@@ -385,6 +391,9 @@ function populateConsumedItemsLunch(options) {
               },
               segCalorieslbl: {
                   text: calString
+              },
+              metainfo: {
+                clickable:true
               }
            };
           
@@ -462,6 +471,9 @@ function populateConsumedItemsEveningSnack(options) {
               },
               segCalorieslbl: {
                   text: calString
+              },
+              metainfo: {
+                clickable:true
               }
            };
           
@@ -539,6 +551,9 @@ function populateConsumedItemsDinner(options) {
               },
               segCalorieslbl: {
                   text: calString
+              },
+              metainfo: {
+                clickable:true
               }
            };
           
@@ -1086,6 +1101,8 @@ function populateItemDetials()
    var imageFile = new kony.io.File(filePath);
    var imgRawBytes = imageFile.read();
    frmEditQuantityKA.imgFood.rawBytes = imgRawBytes;
+   frmEditQuantityKA.lblHeader.text = clickedSegmentRowDiet;
+   frmEditQuantityKA.CopylblHeader0i39dff53858547.text = clickedSegmentRowDietCalories;
 }
 
 function populateFoodPreference() {
@@ -1161,6 +1178,40 @@ function setCurrentDateToCalender() {
   var currYear = today.getYear(); 
   
   frmDietKA.Calendar0b0ad95e8760e43.dateComponents = [currDay, currMonth, currYear, 0 , 0, 0];
+}
+
+
+// --- Assigning item name in editquanity form ----
+
+var clickedSegmentRowDietCalories = null;
+var clickedSegmentRowDiet = null;
+
+function onFrmDietKASegmentsRowClick(seguiWidget, sectionIndex, rowIndex, isSelected) {
+  var selectedRowItems = null;
+  var selectedRowData = null;
+  if(this !== null) {
+	kony.print(" segui id "+ this.id );
+    if(this.id === "segConsumedItems") {
+      selectedRowItems = frmDietKA.segConsumedItems.selectedRowItems;
+    } else if(this.id === "segMorningSnack") {
+      selectedRowItems = frmDietKA.segMorningSnack.selectedRowItems;
+    } else if(this.id === "segLunch") {
+      selectedRowItems = frmDietKA.segLunch.selectedRowItems;
+    } else if(this.id === "segEveningSnack") {
+      selectedRowItems = frmDietKA.segEveningSnack.selectedRowItems;
+    } else if(this.id === "segDinner") {
+      selectedRowItems = frmDietKA.segDinner.selectedRowItems;
+    }
+    if((selectedRowItems !== null) && 
+       			(selectedRowItems.length > 0)) {
+      selectedRowData = selectedRowItems[0];
+      if(typeof selectedRowData === 'object'){
+        clickedSegmentRowDietCalories = selectedRowData.segCalorieslbl.text;
+        clickedSegmentRowDiet = selectedRowData.segRecordsLbl.text;
+      }
+    }
+  }
+  frmEditQuantityKA.show();
 }
 
 

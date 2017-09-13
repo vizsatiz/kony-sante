@@ -3,6 +3,10 @@ function AS_FlexContainer_b6286f3fd4c34102b00415e2fd683882(eventobject) {
     this.view.segImage.pageSkin = "sknNewsDetails";
 }
 
+function AS_AppEvents_e639ed7065f64a72ba009a122df3d399(eventobject) {
+    appservicereq(eventobject);
+}
+
 function AS_Button_a74b7af6ce3a42e29120492606694e02(eventobject) {
     frmUserKA.show();
 }
@@ -11,12 +15,28 @@ function AS_Button_b4c92a5966c84fa68cc5fb768333a5df(eventobject) {
     frmDietKA.show();
 }
 
+function AS_Button_bdc0a1796eef4ea8bd00165ebb553e66(eventobject) {
+    return updateUserDetails.call(this);
+}
+
+function AS_Button_c24315c3a79547fbb09b086e32e8cba7(eventobject) {
+    performObjectServiceSync('Sante4');
+}
+
 function AS_Button_db14b2adc7b1444cb83006cf0fba13b6(eventobject) {
     frmDietKA.show();
 }
 
 function AS_Button_f819fcb0c28149328b1a81a10917da59(eventobject) {
     frmUserKA.show();
+}
+
+function AS_Button_i42809aebb96463eabe7cd390d8c39d6(eventobject) {
+    return updateGoalDetails.call(this);
+}
+
+function AS_FlexContainer_f752d13666e54572b16a3dc768b664ce(eventobject, x, y) {
+    frmSanteKA.show();
 }
 
 function AS_Form_a691e86c93c34c2cb51e112833f240af(eventobject) {
@@ -32,18 +52,47 @@ function AS_Form_abb2276bdee24b82b79c67f51c5034b7(eventobject) {
     populateConsumedItemsDinner();
 }
 
+function AS_Form_b10b0260748c46f580c578cf15ee652a(eventobject) {
+    populateUserDetails();
+}
+
 function AS_Form_c231758fdec642cc94497378e47f43af(eventobject) {}
+
+function AS_Form_c55aacd3369e4ec0af64ef5498b6549c(eventobject) {
+    populateGoal();
+}
 
 function AS_Form_cc32892f85474dc2a4a06bdf568042b3(eventobject) {
     populateItemInFrmItemsKA();
+}
+
+function AS_Form_cd121849ac4942c48a5d3a9aeeb152dd(eventobject) {
+    var name = sante.current.user.FIRST_NAME + "" + sante.current.user.LAST_NAME;
+    var email = sante.current.user.EMAIL;
+    frmUserKA.lblHeader.text = name;
+    frmUserKA.lblEmail.text = email;
 }
 
 function AS_Form_da3185b308854cb68b1ab158a4b6818e(eventobject) {}
 
 function AS_Form_e476d203b4614807abb9ab7cafccd260(eventobject) {}
 
+function AS_Form_e5da246f38ce49f7871d8cf8fe8d7bbf(eventobject) {
+    populateWorkoutDetails();
+}
+
+function AS_Form_f4941228472d468c8ad991e34bd09d80(eventobject) {}
+
 function AS_Form_h998de6895dd42798982e8c2c0bee323(eventobject) {
     loginWithUsernamePassword("tester", "test", "SanteSapIdentity");
+}
+
+function AS_Image_b2bbfbc152cb4794b6d4cc741897684c(eventobject, x, y) {
+    var string = frmItemsKA.tbWhere.text;
+    var whereCondition = "ITEM_NAME LIKE '" + string + "%'";
+    populateItemInFrmItemsKA({
+        "whereConditionAsAString": whereCondition
+    })
 }
 
 function AS_Image_i226ffdd2b0542b1998170e079b90f48(eventobject, x, y) {
@@ -55,6 +104,10 @@ function AS_Image_i226ffdd2b0542b1998170e079b90f48(eventobject, x, y) {
 }
 
 function AS_Image_j86bbf9a08e343b59ff77286b49e384b(eventobject, imagesrc, issuccess) {}
+
+function AS_Segment_e5eea0916e3e4d489ddeaf625768c35c(eventobject, sectionNumber, rowNumber) {
+    return addItemsToCategory.call(this, eventobject, sectionNumber, rowNumber);
+}
 
 function OnBackClickEditQuantity(eventobject) {
     return AS_Button_h8ddb1f1327040308bc6859407b9e7ea(eventobject);
@@ -357,49 +410,4 @@ function AS_Label_b235dc47737a40f289ee3be74e3cef1a(eventobject, x, y) {
     } else {
         frmDietKA.segEveningSnack.isVisible = true;
     }
-}
-
-function AS_Image_b2bbfbc152cb4794b6d4cc741897684c(eventobject, x, y) {
-    var string = frmItemsKA.tbWhere.text;
-    var whereCondition = "ITEM_NAME LIKE '" + string + "%'";
-    populateItemInFrmItemsKA({
-        "whereConditionAsAString": whereCondition
-    })
-}
-
-function AS_Form_b10b0260748c46f580c578cf15ee652a(eventobject) {
-    populateUserDetails();
-}
-
-function AS_Form_c55aacd3369e4ec0af64ef5498b6549c(eventobject) {
-    populateGoal();
-}
-
-function AS_Segment_e5eea0916e3e4d489ddeaf625768c35c(eventobject, sectionNumber, rowNumber) {
-    return addItemsToCategory.call(this, eventobject, sectionNumber, rowNumber);
-}
-
-function AS_Form_f4941228472d468c8ad991e34bd09d80(eventobject) {}
-
-function AS_Button_c24315c3a79547fbb09b086e32e8cba7(eventobject) {
-    performObjectServiceSync('SanteOS2');
-}
-
-function AS_AppEvents_e639ed7065f64a72ba009a122df3d399(eventobject) {
-    appservicereq(eventobject);
-}
-
-function AS_Form_e5da246f38ce49f7871d8cf8fe8d7bbf(eventobject) {
-    populateWorkoutDetails();
-}
-
-function AS_FlexContainer_f752d13666e54572b16a3dc768b664ce(eventobject, x, y) {
-    frmSanteKA.show();
-}
-
-function AS_Form_cd121849ac4942c48a5d3a9aeeb152dd(eventobject) {
-    var name = sante.current.user.FIRST_NAME + "" + sante.current.user.LAST_NAME;
-    var email = sante.current.user.EMAIL;
-    frmUserKA.lblHeader.text = name;
-    frmUserKA.lblEmail.text = email;
 }

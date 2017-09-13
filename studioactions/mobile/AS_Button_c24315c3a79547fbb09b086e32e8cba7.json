@@ -16,7 +16,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__g243a44787454a66b16979f7c52a6e5e",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "performObjectServiceSync('SanteOS2');",
+            "codeSnippet": "performObjectServiceSync('Sante4');",
             "parentId": null,
             "callbackType": null
         }]

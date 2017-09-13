@@ -10,50 +10,50 @@ var appConfig = {
     secureServerPort: "443",
     isDebug: true,
     middlewareContext: "Sante",
-    isturlbase: "https://cloud80.qa-konycloud.com/services",
+    isturlbase: "https://test-800-sdk.sit2-konycloud.com/services",
     isMFApp: true,
-    appKey: "d8ea8abb2cc53a01d1a2516be7a0182b",
-    appSecret: "e598ac7fa594ba9d18eeee55e6c1e8f7",
-    serviceUrl: "https://100000008.auth.qa-konycloud.com/appconfig",
+    appKey: "59b59119d5a61ab5e00a7b050aab066f",
+    appSecret: "bb0bb5896013943c93cb4c3d2168b4ee",
+    serviceUrl: "https://100000013.auth.sit2-konycloud.com/appconfig",
     svcDoc: {
-        "selflink": "https://100000008.auth.qa-konycloud.com/appconfig",
+        "selflink": "https://100000013.auth.sit2-konycloud.com/appconfig",
         "identity_meta": {
             "SanteIdentity": {
                 "success_url": "allow_any"
             }
         },
-        "appId": "67f70b2f-4da6-41d1-ab61-20461f90ec66",
-        "name": "Sante2",
+        "appId": "9e9b9dc4-c272-4f7b-b18e-6dfcc30db93a",
+        "name": "Sante4",
         "reportingsvc": {
-            "session": "https://cloud80.qa-konycloud.com/services/IST",
-            "custom": "https://cloud80.qa-konycloud.com/services/CMS"
+            "session": "https://test-800-sdk.sit2-konycloud.com/services/IST",
+            "custom": "https://test-800-sdk.sit2-konycloud.com/services/CMS"
         },
-        "baseId": "d06cfd1d-f887-4294-a407-93eeed553c9d",
+        "baseId": "21c1c787-c003-43d4-8393-453903509d4b",
         "login": [{
             "alias": "SanteIdentity",
             "type": "oauth2",
             "prov": "SanteIdentity",
-            "url": "https://100000008.auth.qa-konycloud.com"
+            "url": "https://100000013.auth.sit2-konycloud.com"
         }, {
             "alias": "SanteSapIdentity",
             "type": "basic",
             "prov": "SanteSapIdentity",
-            "url": "https://100000008.auth.qa-konycloud.com"
+            "url": "https://100000013.auth.sit2-konycloud.com"
         }],
         "services_meta": {
-            "SanteOS2": {
-                "metadata_url": "https://cloud80.qa-konycloud.com/services/metadata/v1/SanteOS2",
+            "Sante4": {
+                "metadata_url": "https://test-800-sdk.sit2-konycloud.com/services/metadata/v1/Sante4",
                 "type": "objectsvc",
                 "version": "1.0",
-                "url": "https://cloud80.qa-konycloud.com/services/data/v1/SanteOS2"
+                "url": "https://test-800-sdk.sit2-konycloud.com/services/data/v1/Sante4"
             }
         }
     },
     svcDocRefresh: false,
     svcDocRefreshTimeSecs: -1,
     eventTypes: ["FormEntry", "ServiceRequest", "Error", "Crash"],
-    url: "https://cloud80.qa-konycloud.com/Sante/MWServlet",
-    secureurl: "https://cloud80.qa-konycloud.com/Sante/MWServlet"
+    url: "https://test-800-sdk.sit2-konycloud.com/Sante/MWServlet",
+    secureurl: "https://test-800-sdk.sit2-konycloud.com/Sante/MWServlet"
 };
 sessionID = "";
 

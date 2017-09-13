@@ -43,7 +43,7 @@ function getObjectByName(objectName) {
 function applicationSetup() {
     function onSuccess() {
         // kony.application.dismissLoadingScreen();
-        performObjectServiceSync("SanteOS2");
+        performObjectServiceSync("Sante4");
     }
 
     function onFailure() {
@@ -93,6 +93,13 @@ function performObjectServiceSync(objectServiceName) {
             // kony.application.dismissLoadingScreen();
             alert("OS Sync success :) ");
             //populateConsumedItems();
+            var user = new kony.sdk.KNYObj("USER");
+            var options = {};
+            var orderByMap = [];
+            orderByMap[0] = {};
+            orderByMap[0].EMAIL = sante.current.user.EMAIL;
+            options.OrderByMap = orderByMap;
+            user.get(options, getSuccess, getFailure);
         }
 
         function onSyncFailure(err) {
@@ -114,7 +121,7 @@ function performObjectServiceSync(objectServiceName) {
             var options = {};
             var orderByMap = [];
             orderByMap[0] = {};
-            orderByMap[0].EMAIL = currentUser.email;
+            orderByMap[0].EMAIL = sante.current.user.EMAIL;
             options.OrderByMap = orderByMap;
             user.get(options, getSuccess, getFailure);
         }
@@ -226,7 +233,7 @@ function populateConsumedItemsBreakFast(options) {
         alert("Error in reading Sample Order records. " + JSON.stringify(err));
     }
     var filters = {
-        'whereConditionAsAString': 'CATEGORY = 1'
+        'whereConditionAsAString': "CATEGORY = 1 and USER_ID = '" + sante.current.user.USER_ID + "'"
     }; // TODO fetch for only current user
     var itemObject = getObjectByName("CONSUMED_ITEMS");
     itemObject.get(filters, onSuccess, onFailure);
@@ -290,7 +297,7 @@ function populateConsumedItemsMorningSnacks(options) {
         alert("Error in reading Sample Order records. " + JSON.stringify(err));
     }
     var filters = {
-        'whereConditionAsAString': 'CATEGORY = 2'
+        'whereConditionAsAString': "CATEGORY = 2 and USER_ID = '" + sante.current.user.USER_ID + "'"
     }; // TODO fetch for only current user
     var itemObject = getObjectByName("CONSUMED_ITEMS");
     itemObject.get(filters, onSuccess, onFailure);
@@ -354,7 +361,7 @@ function populateConsumedItemsLunch(options) {
         alert("Error in reading Sample Order records. " + JSON.stringify(err));
     }
     var filters = {
-        'whereConditionAsAString': 'CATEGORY = 3'
+        'whereConditionAsAString': "CATEGORY = 3 and USER_ID = '" + sante.current.user.USER_ID + "'"
     }; // TODO fetch for only current user
     var itemObject = getObjectByName("CONSUMED_ITEMS");
     itemObject.get(filters, onSuccess, onFailure);
@@ -418,7 +425,7 @@ function populateConsumedItemsEveningSnack(options) {
         alert("Error in reading Sample Order records. " + JSON.stringify(err));
     }
     var filters = {
-        'whereConditionAsAString': 'CATEGORY = 4'
+        'whereConditionAsAString': "CATEGORY = 4 and USER_ID = '" + sante.current.user.USER_ID + "'"
     }; // TODO fetch for only current user
     var itemObject = getObjectByName("CONSUMED_ITEMS");
     itemObject.get(filters, onSuccess, onFailure);
@@ -482,7 +489,7 @@ function populateConsumedItemsDinner(options) {
         alert("Error in reading Item records. " + JSON.stringify(err));
     }
     var filters = {
-        'whereConditionAsAString': 'CATEGORY = 5 and USER_ID = ' + sante.current.user.USER_ID
+        'whereConditionAsAString': "CATEGORY = 5 and USER_ID = '" + sante.current.user.USER_ID + "'"
     };
     var itemObject = getObjectByName("CONSUMED_ITEMS");
     itemObject.get(filters, onSuccess, onFailure);
@@ -491,7 +498,7 @@ function populateConsumedItemsDinner(options) {
 function populateUserDetails() {
     var userDetails = getObjectByName("USER_DETAILS");
     var filters = {
-        'whereConditionAsAString': 'USER_ID = ' + sante.current.user.USER_ID
+        'whereConditionAsAString': "USER_ID = '" + sante.current.user.USER_ID + "'"
     };
 
     function onFailure(err) {
@@ -503,7 +510,7 @@ function populateUserDetails() {
             alert("No used details found for the user");
         } else {
             var wieght = records[0].WEIGHT;
-            var hieght = records[0].HIEGHT;
+            var hieght = records[0].HEIGHT;
             var bmi = "-";
             frmUserDetailsKA.tbxName.text = sante.current.user.FIRST_NAME + " " + sante.current.user.LAST_NAME;
             frmUserDetailsKA.tbxNumber.text = "091 - 44567388";
@@ -522,7 +529,7 @@ function populateUserDetails() {
 function populateGoal() {
     var userDetails = getObjectByName("USER_DETAILS");
     var filters = {
-        'whereConditionAsAString': 'USER_ID = ' + sante.current.user.USER_ID
+        'whereConditionAsAString': "USER_ID = '" + sante.current.user.USER_ID + "'"
     };
 
     function onFailure(err) {
@@ -666,50 +673,84 @@ function getProfileSuccess(response) {
 
 function validateCurrentUserProfile() {
     //check user table for email
-    KNYMobileFabric.OfflineObjects.setup(setUpSuccess, setUpFailure);
+    // KNYMobileFabric.OfflineObjects.setup(setUpSuccess, setUpFailure);
+    loginWithUsernamePassword("tester", "test", "SanteSapIdentity");
 }
 
 function setUpSuccess() {
     kony.print("setup success");
     //Do a Sync
-    loginWithUsernamePassword("tester", "test", "SanteSapIdentity");
+    //loginWithUsernamePassword("tester", "test", "SanteSapIdentity");
 }
 
 function getFailure(error) {
     kony.print("cannot find user " + error.errorCode);
 }
+var newUser = {};
 
 function getSuccess(records) {
     if (records.length === 0) {
         kony.print("cannot find user ");
         //create a record in user table with basic information
         var user = new kony.sdk.KNYObj("USER");
-        user.FIRST_NAME = sante.current.google.user.firstname;
-        user.LAST_NAME = sante.current.google.user.lastname;
-        user.EMAIL = sante.current.google.user.email;
-        user.create(user, {}, userCreateSuccess, userCreateFailure);
+        newUser = {};
+        newUser.USER_ID = sante.current.google.user.email.substring(0, 16);
+        newUser.FIRST_NAME = sante.current.google.user.firstname;
+        newUser.LAST_NAME = sante.current.google.user.lastname;
+        newUser.EMAIL = sante.current.google.user.email;
+        user.create(newUser, {}, userCreateSuccess, userCreateFailure);
     } else {
         kony.print("found user " + JSON.stringify(records));
-        sante.current.google.user.height = records[0].HEIGHT;
-        sante.current.google.user.weight = records[0].WEIGHT;
-        sante.current.google.user.age = records[0].AGE;
-        sante.current.google.user.weightDiff = records[0].WEIGHT_DIFF;
-        sante.current.google.user.totalCalories = records[0].TOTAL_CALORIES;
-        sante.current.google.user.imageUrl = records[0].IMAGEURL;
-        sante.current.google.user.userId = records[0].USER_ID;
-        sante.current.google.user.userDetailsId = records[0].USER_DETAILSID;
-        sante.current.google.user.setGoalWeight = records[0].SETGOALWGT;
-        sante.current.google.user.date = records[0].ZDATE;
+        sante.current.user.USER_ID = records[0].USER_ID;
+        sante.current.user.EMAIL = records[0].EMAIL;
+        sante.current.user.FIRST_NAME = records[0].FIRST_NAME;
+        sante.current.user.LAST_NAME = records[0].LAST_NAME;
+        sante.current.user.METADATA = records[0].METADATA;
     }
 }
 
 function userCreateSuccess(result) {
     kony.print("user created with primary key " + JSON.stringify(result));
-    //Create correspoding USER_DETAILS entry
+    sante.current.user = newUser;
+    var name = sante.current.user.FIRST_NAME + "" + sante.current.user.LAST_NAME;
+    var email = sante.current.user.EMAIL;
+    frmUserKA.lblHeader.text = name;
+    frmUserKA.lblEmail.text = email;
+    var userDetails = new kony.sdk.KNYObj("USER_DETAILS");
+    var filters = {
+        'whereConditionAsAString': 'USER_ID = ' + sante.current.user.USER_ID
+    };
+
+    function onSuccess(records) {
+        if (records.length === 0) {
+            // create user details
+            var userDetails = new kony.sdk.KNYObj("USER_DETAILS");
+            var newUserDetails = {};
+            newUserDetails.USER_ID = newUser.USER_ID;
+            newUserDetails.AGE = "0";
+            newUserDetails.HEIGHT = "0";
+            newUserDetails.IMAGEURL = "0";
+            newUserDetails.SETGOALWGT = "0";
+            newUserDetails.TOTAL_CALORIES = "0";
+            newUserDetails.USER_DETAILSID = newUser.USER_ID;
+            userDetails.create(newUserDetails, {}, userDetailsSuccess, userCreateFailure);
+        } else {
+            // do nothing
+        }
+    }
+
+    function onFailure(err) {
+        alert(JSON.stringify(err));
+    }
+    userDetails.get({}, onSuccess, onFailure);
+}
+
+function userDetailsSuccess() {
+    kony.print("user details create success");
 }
 
 function userCreateFailure(error) {
-    kony.print("user create failed with error " + JSON.stringify(error));
+    alert("user create failed with error " + JSON.stringify(error));
 }
 
 function setUpFailure() {
@@ -733,4 +774,93 @@ function populateUserProfile() {
 
 function populateCompleteUserDetails() {
     frmUserDetailsKA.tbxName.text = sante.current.google.user.firstname + " " + sante.current.google.user.lastname;
+}
+// ------------------ update code -----------------------
+function updateUserDetails() {
+    var userDetails = {};
+    userDetails.AGE = frmUserDetailsKA.tbxAge.text;
+    userDetails.WEIGHT = frmUserDetailsKA.tbxWeight.text;
+    userDetails.HEIGHT = frmUserDetailsKA.tbxHeight.text;
+    if (sante.current.user) {
+        var options = {
+            'whereConditionAsAString': "USER_DETAILSID = '" + sante.current.user.USER_ID + "'"
+        };
+        var userDetailsObj = new kony.sdk.KNYObj("USER_DETAILS");
+        userDetailsObj.get(options, getUserSuccess, getUserFailure);
+    }
+
+    function getUserSuccess(records) {
+        if (records.length > 0) {
+            kony.print("fetched the record for email " + sante.current.user.EMAIL + " with user id " + records[0].USER_ID);
+            //Update User Details table
+            //var options = {};
+            var whereCondition = {};
+            whereCondition.primaryKeys = {
+                'USER_DETAILSID': records[0].USER_DETAILSID
+            };
+            var uDetails = new kony.sdk.KNYObj("USER_DETAILS");
+            uDetails.updateByPK(userDetails, whereCondition, updateUserDetailsSuccess, updateUserDetailsFailure);
+        } else {
+            kony.print("record doesn't exist with email " + sante.current.user.EMAIL);
+        }
+
+        function updateUserDetailsSuccess(result) {
+            kony.print("user details " + JSON.stringify(userDetails) + " updated successfully ");
+            frmUserKA.show();
+        }
+
+        function updateUserDetailsFailure(error) {
+            kony.print("error updating user details " + JSON.stringify(error));
+        }
+    }
+
+    function getUserFailure(error) {
+        kony.print("error in fetching the user with email " + JSON.stringify(error));
+    }
+}
+
+function updateGoalDetails() {
+    if (sante.current.user) {
+        var options = {
+            'whereConditionAsAString': "USER_DETAILSID = '" + sante.current.user.USER_ID + "'"
+        };
+        var userDetailsObj = new kony.sdk.KNYObj("USER_DETAILS");
+        userDetailsObj.get(options, getUserSuccess, getUserFailure);
+    }
+
+    function getUserSuccess(records) {
+        if (records.length > 0) {
+            kony.print("fetched the record for email " + sante.current.user.EMAIL + " with user id " + records[0].USER_ID);
+            var setGoalWeight = frmSetGoalKA.tbxGoalWeight.text;
+            if (setGoalWeight < frmUserDetailsKA.tbxWeight.text) {
+                var weightDifference = frmUserDetailsKA.tbxWeight.text - setGoalWeight;
+                var totalCaloriesToBurn = weightDifference * 7700;
+                //var options = {};
+                var whereCondition = {};
+                whereCondition.primaryKeys = {
+                    'USER_DETAILSID': records[0].USER_DETAILSID
+                };
+                var userDetails = new kony.sdk.KNYObj("USER_DETAILS");
+                userDetails.updateByPK({
+                    "SETGOALWGT": setGoalWeight,
+                    "TOTAL_CALORIES": totalCaloriesToBurn
+                }, whereCondition, updateUserDetailsSuccess, updateUserDetailsFailure);
+            } else {
+                kony.print("please enter weight less than present body weight ");
+            }
+        }
+
+        function updateUserDetailsSuccess(result) {
+            kony.print("user details " + JSON.stringify(userDetails) + " updated successfully ");
+            frmUserKA.show();
+        }
+
+        function updateUserDetailsFailure(error) {
+            kony.print("error updating user details " + JSON.stringify(error));
+        }
+    }
+
+    function getUserFailure(error) {
+        kony.print("error in fetching the user with email " + JSON.stringify(error));
+    }
 }

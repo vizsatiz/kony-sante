@@ -4,7 +4,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "30dp"
+        "value": "20dp"
     },
     "_left_": {
         "type": "string",
@@ -22,11 +22,11 @@
         0,
         0
     ],
-    "_skin_": "s1002cf6769445939cd4d70629692b29",
+    "_skin_": "s08bc541ca1d47eea5e354f22c5b36e9",
     "_text_": "Sign in using Google Account",
     "_top_": {
         "type": "string",
-        "value": "333dp"
+        "value": "325dp"
     },
     "_width_": {
         "type": "string",

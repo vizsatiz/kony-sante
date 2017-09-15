@@ -124,7 +124,7 @@
     <attributes name="wp10pfxkey" value=""/>
     <attributes name="ACCESS_CHECKIN_PROPERTIES" value="false"/>
     <attributes name="MOUNT_FORMAT_FILESYSTEMS" value="false"/>
-    <attributes name="lastmodifiedtime" value="1505212048643"/>
+    <attributes name="lastmodifiedtime" value="1505384531381"/>
     <attributes name="wp10microphone" value="false"/>
     <attributes name="wp10backgroundMediaPlayback" value="false"/>
     <attributes name="ID_REQ_NFC" value="false"/>
@@ -302,7 +302,7 @@
     <attributes name="win8bgagentclassname" value=""/>
     <attributes name="wp81sdescriptionkey" value="Sample Test Application"/>
     <attributes name="appversionkey" value="1.0.1"/>
-    <attributes name="WRITE_EXTERNAL_STORAGE" value="false"/>
+    <attributes name="WRITE_EXTERNAL_STORAGE" value="true"/>
     <attributes name="appointments" value="false"/>
     <attributes name="wp8tilestitlekey" value=""/>
     <attributes name="wp10versionbuildkey" value="0"/>
@@ -456,7 +456,7 @@
     <attributes name="win8lockscreennotificationskey" value="Not set"/>
     <attributes name="WP8_ID_CAP_WALLET_PAYMENTINSTRUMENTS" value="false"/>
     <attributes name="ID_CAP_APPOINTMENTS" value="true"/>
-    <attributes name="applogokey" value="0=fatfish.png,1=,8=,50=,42=,16=,18=,48=,43=,1000=,1001=,1002=,9999=,21=,9998=,9997="/>
+    <attributes name="applogokey" value="0=logo.png,1=,8=,50=,42=,16=,18=,48=,43=,1000=,1001=,1002=,9999=,21=,9998=,9997="/>
     <attributes name="camerasettings" value=""/>
     <attributes name="WP8_ID_CAP_NETWORKING" value="true"/>
     <attributes name="appversioncode" value="1"/>

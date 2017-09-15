@@ -1,0 +1,29 @@
+{
+    "AS_Button_bdc0a1796eef4ea8bd00165ebb553e66": {
+        "id": "AS_Button_bdc0a1796eef4ea8bd00165ebb553e66",
+        "type": "ACTION_SEQUENCE",
+        "name": "UpdateUserDetails",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmUserDetailsKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "dc256a5120e94277bdb93c78d06fe85f"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___hf05e39967794f4190c09ba9972138e4",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "updateUserDetails",
+            "display": "updateUserDetails",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "module"
+        }]
+    }
+}

@@ -222,6 +222,7 @@ function populateConsumedItemsBreakFast(options) {
             var itemName =  objRecord.ITEM_NAME;
             var quantity = objRecord.QUANTITY;
             var calories = objRecord.CALORIES;
+            var imagePath = objRecord.IMAGE_PATH;
             var finalItem = itemName + " (" +  quantity + ")";
             var calString =  calories + " Cal";
             data[i] = {
@@ -231,8 +232,8 @@ function populateConsumedItemsBreakFast(options) {
               segCalorieslbl: {
                   text: calString
               },
-              metainfo: {
-                clickable:true
+              lblidKA:{
+                text:imagePath
               }
            };
           
@@ -303,6 +304,7 @@ function populateConsumedItemsMorningSnacks(options) {
             var itemName =  objRecord.ITEM_NAME;
             var quantity = objRecord.QUANTITY;
             var calories = objRecord.CALORIES;
+            var imagePath = objRecord.IMAGE_PATH;
             var finalItem = itemName + " (" +  quantity + ")";
             var calString =  calories + " Cal";
             data[i] = {
@@ -312,8 +314,8 @@ function populateConsumedItemsMorningSnacks(options) {
               segCalorieslbl: {
                   text: calString
               },
-              metainfo: {
-                clickable:true
+			  lblidKA:{
+                text:imagePath
               }
            };
           
@@ -383,6 +385,7 @@ function populateConsumedItemsLunch(options) {
             var itemName =  objRecord.ITEM_NAME;
             var quantity = objRecord.QUANTITY;
             var calories = objRecord.CALORIES;
+            var imagePath = objRecord.IMAGE_PATH;            
             var finalItem = itemName + " (" +  quantity + ")";
             var calString =  calories + " Cal";
             data[i] = {
@@ -392,8 +395,8 @@ function populateConsumedItemsLunch(options) {
               segCalorieslbl: {
                   text: calString
               },
-              metainfo: {
-                clickable:true
+              lblidKA:{
+                text:imagePath
               }
            };
           
@@ -463,6 +466,7 @@ function populateConsumedItemsEveningSnack(options) {
             var itemName =  objRecord.ITEM_NAME;
             var quantity = objRecord.QUANTITY;
             var calories = objRecord.CALORIES;
+            var imagePath = objRecord.IMAGE_PATH;
             var finalItem = itemName + " (" +  quantity + ")";
             var calString =  calories + " Cal";
             data[i] = {
@@ -472,8 +476,8 @@ function populateConsumedItemsEveningSnack(options) {
               segCalorieslbl: {
                   text: calString
               },
-              metainfo: {
-                clickable:true
+              lblidKA:{
+                text:imagePath
               }
            };
           
@@ -543,6 +547,7 @@ function populateConsumedItemsDinner(options) {
             var itemName =  objRecord.ITEM_NAME;
             var quantity = objRecord.QUANTITY;
             var calories = objRecord.CALORIES;
+            var imagePath = objRecord.IMAGE_PATH;
             var finalItem = itemName + " (" +  quantity + ")";
             var calString =  calories + " Cal";
             data[i] = {
@@ -552,8 +557,8 @@ function populateConsumedItemsDinner(options) {
               segCalorieslbl: {
                   text: calString
               },
-              metainfo: {
-                clickable:true
+              lblidKA:{
+                text:imagePath
               }
            };
           
@@ -1048,8 +1053,7 @@ function loginWithBox() {
  
 function boxLoginSuccess(response) {
   kony.print("box login success " + JSON.stringify(response));
-  //invoke the integration service for the image
-  getBinaryFromBox();
+  frmUserKA.show();
 }
  
 function boxLoginFailure(error) {
@@ -1068,24 +1072,25 @@ function onFileDownloadCompleteCallback(res){
 kony.print("file download completed " + JSON.stringify(res));
 try {
    sante.constants.filePath = res.FilePath;
-   frmUserKA.show();
+  populateItemDetials();
 }catch(e) {
    alert("exception " + JSON.stringify(e) + " while reading image file at location "+ JSON.stringify(res));
 }
 }
  
 function onFileDownloadFailureCallback(err){
-   sante.constants.filePath = '/data/data/com.orgname.Sample/downloads/' + err.BlobID;
-   kony.print("file download failed with error : "+ JSON.stringify(err));
-  setCurrentDateToCalender();
-  frmUserKA.show();
-   
+  if(err !== null && typeof err !== 'undefined' && typeof err.BlobID !== 'undefined') {
+	sante.constants.filePath = '/data/data/com.orgname.Sample/downloads/' + err.BlobID;
+    kony.print("file download failed with error : "+ JSON.stringify(err));
+    setCurrentDateToCalender();
+    populateItemDetials();
+  }
 }
  
-function getBinaryFromBox(){
+function getBinaryFromBox(fileId){
    var integrationSvc = kony.sdk.getCurrentInstance().getIntegrationService("SanteBoxIntegration");
    integrationSvc.getBinaryData("get_files_fileId_content",
-                               { "fileId": "223318658418"  },
+                               { "fileId": fileId  },
                                false,
                                {},
                                onFileDownloadStartedCallback,
@@ -1095,15 +1100,17 @@ function getBinaryFromBox(){
 }
 
 
-function populateItemDetials()
-{
-   var filePath = sante.constants.filePath;
-   var imageFile = new kony.io.File(filePath);
-   var imgRawBytes = imageFile.read();
-   frmEditQuantityKA.imgFood.rawBytes = imgRawBytes;
-   frmEditQuantityKA.lblHeader.text = clickedSegmentRowDiet;
-   frmEditQuantityKA.CopylblHeader0i39dff53858547.text = clickedSegmentRowDietCalories;
+function populateItemDetials() {
+  if((sante.constants.filePath !== null ) && (typeof sante.constants.filePath !== 'undefined')){
+    var imageFile = new kony.io.File(sante.constants.filePath);
+    var imgRawBytes = imageFile.read();
+    frmEditQuantityKA.imgFood.rawBytes = imgRawBytes;
+    sante.constants.filePath = null;
+  } else {
+    frmEditQuantityKA.imgFood.src = "food11.png";
+  }
 }
+
 
 function populateFoodPreference() {
   var user_metadata = sante.current.user.METADATA;
@@ -1183,9 +1190,6 @@ function setCurrentDateToCalender() {
 
 // --- Assigning item name in editquanity form ----
 
-var clickedSegmentRowDietCalories = null;
-var clickedSegmentRowDiet = null;
-
 function onFrmDietKASegmentsRowClick(seguiWidget, sectionIndex, rowIndex, isSelected) {
   var selectedRowItems = null;
   var selectedRowData = null;
@@ -1206,13 +1210,15 @@ function onFrmDietKASegmentsRowClick(seguiWidget, sectionIndex, rowIndex, isSele
        			(selectedRowItems.length > 0)) {
       selectedRowData = selectedRowItems[0];
       if(typeof selectedRowData === 'object'){
-        clickedSegmentRowDietCalories = selectedRowData.segCalorieslbl.text;
-        clickedSegmentRowDiet = selectedRowData.segRecordsLbl.text;
+	    frmEditQuantityKA.lblHeader.text = selectedRowData.segRecordsLbl.text;
+   	    frmEditQuantityKA.CopylblHeader0i39dff53858547.text = selectedRowData.segCalorieslbl.text;
+        getBinaryFromBox(selectedRowData.lblidKA.text);
       }
     }
   }
   frmEditQuantityKA.show();
 }
+
 
 
 

@@ -16,7 +16,15 @@
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "add_active.png"
             },
+            "lblidCalories": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
             "lblidKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblidQuantity": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             },
@@ -38,7 +46,15 @@
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "add_active.png"
             },
+            "lblidCalories": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
             "lblidKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblidQuantity": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             },
@@ -60,7 +76,15 @@
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "add_active.png"
             },
+            "lblidCalories": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
             "lblidKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblidQuantity": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             },
@@ -163,7 +187,9 @@
         "flxSwipeKA": "flxSwipeKA",
         "flxTmpAssetMainKA": "flxTmpAssetMainKA",
         "imgTask": "imgTask",
+        "lblidCalories": "lblidCalories",
         "lblidKA": "lblidKA",
+        "lblidQuantity": "lblidQuantity",
         "segRecordsLbl": "segRecordsLbl"
     },
     "zindex": 1

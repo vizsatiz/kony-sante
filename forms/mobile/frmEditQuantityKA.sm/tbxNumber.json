@@ -29,7 +29,9 @@
         "type": "string",
         "value": "167dp"
     },
-    "android": {},
+    "android": {
+        "ide_onEndEditing": "AS_TextField_ecbd6321de4d48ff9e8144d126e3d5cc"
+    },
     "autocapitalize": "none",
     "autocomplete": false,
     "autocorrect": false,
@@ -44,7 +46,11 @@
     "containerweight": 100,
     "contentalignment": 6,
     "id": "tbxNumber",
+    "ide_onTextChange": "AS_TextField_c081ba909c1143128449924ce85f48eb",
     "info": null,
+    "iphone": {
+        "ide_onEndEditing": "AS_TextField_bcd73b874e1c435ea89b699d7c85c6ae"
+    },
     "isvisible": true,
     "keyboardtype": "A",
     "kuid": "icb6c8fa150e4f3293d73ab0943fd6eb",

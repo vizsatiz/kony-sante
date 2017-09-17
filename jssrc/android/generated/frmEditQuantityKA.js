@@ -216,6 +216,7 @@ function addWidgetsfrmEditQuantityKA() {
         "id": "tbxNumber",
         "isVisible": true,
         "keyBoardStyle": constants.TEXTBOX_KEY_BOARD_STYLE_DEFAULT,
+        "onTextChange": AS_TextField_c081ba909c1143128449924ce85f48eb,
         "placeholder": "1",
         "right": "15dp",
         "secureTextEntry": false,
@@ -231,6 +232,7 @@ function addWidgetsfrmEditQuantityKA() {
     }, {
         "autoFilter": false,
         "keyboardActionLabel": constants.TEXTBOX_KEYBOARD_LABEL_DEFAULT,
+        "onEndEditing": AS_TextField_ecbd6321de4d48ff9e8144d126e3d5cc,
         "placeholderSkin": "sknTbxPlaceholder5B7A9ACB28KA",
         "viewType": constants.TEXTBOX_VIEW_TYPE_DEFAULT
     });
@@ -375,7 +377,7 @@ function addWidgetsfrmEditQuantityKA() {
     });
     var CopytbxNumber0cfed95668df849 = new kony.ui.TextBox2({
         "autoCapitalize": constants.TEXTBOX_AUTO_CAPITALIZE_NONE,
-        "centerY": "50%",
+        "centerY": "50.28%",
         "height": "30dp",
         "id": "CopytbxNumber0cfed95668df849",
         "isVisible": true,
@@ -502,7 +504,25 @@ function addWidgetsfrmEditQuantityKA() {
         "padding": [0, 0, 0, 0],
         "paddingInPixel": false
     }, {});
-    ContainerButtonBorderPositive.add(btnDone);
+    var btnSave = new kony.ui.Button({
+        "bottom": "5dp",
+        "focusSkin": "ButtonBorderNegativeActive",
+        "id": "btnSave",
+        "isVisible": true,
+        "left": "10dp",
+        "onClick": AS_Button_f634fd6a04da4a6cb0c5ac85585f1963,
+        "right": "5dp",
+        "skin": "ButtonBorderNegativeNormal",
+        "text": "Submit",
+        "top": "5dp",
+        "zIndex": 1
+    }, {
+        "contentAlignment": constants.CONTENT_ALIGN_CENTER,
+        "displayText": true,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {});
+    ContainerButtonBorderPositive.add(btnDone, btnSave);
     BorderButtonRoundSigned.add(ContainerButtonBorderNegative, ContainerButtonBorderPositive);
     frmMainKA.add(flxHeaderKA, flxDetailsKA, BorderButtonRoundSigned);
     frmEditQuantityKA.add(frmMainKA);

@@ -345,32 +345,12 @@ function addWidgetsfrmDietKA() {
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "data": [{
             "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
-        }, {
-            "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
-        }, {
-            "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
-        }, {
-            "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
+            "btnUpdateKA": "",
+            "imgTask": "",
+            "lblidKA": "",
+            "lblidKAItemId": "",
+            "segCalorieslbl": "",
+            "segRecordsLbl": ""
         }],
         "groupCells": false,
         "height": "44.85%",
@@ -402,6 +382,7 @@ function addWidgetsfrmDietKA() {
             "flxTmpAssetMain": "flxTmpAssetMain",
             "imgTask": "imgTask",
             "lblidKA": "lblidKA",
+            "lblidKAItemId": "lblidKAItemId",
             "segCalorieslbl": "segCalorieslbl",
             "segRecordsLbl": "segRecordsLbl"
         },
@@ -505,25 +486,12 @@ function addWidgetsfrmDietKA() {
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "data": [{
             "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
-        }, {
-            "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
-        }, {
-            "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
+            "btnUpdateKA": "",
+            "imgTask": "",
+            "lblidKA": "",
+            "lblidKAItemId": "",
+            "segCalorieslbl": "",
+            "segRecordsLbl": ""
         }],
         "groupCells": false,
         "height": "33.82%",
@@ -555,6 +523,7 @@ function addWidgetsfrmDietKA() {
             "flxTmpAssetMain": "flxTmpAssetMain",
             "imgTask": "imgTask",
             "lblidKA": "lblidKA",
+            "lblidKAItemId": "lblidKAItemId",
             "segCalorieslbl": "segCalorieslbl",
             "segRecordsLbl": "segRecordsLbl"
         },
@@ -658,25 +627,12 @@ function addWidgetsfrmDietKA() {
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "data": [{
             "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
-        }, {
-            "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
-        }, {
-            "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
+            "btnUpdateKA": "",
+            "imgTask": "",
+            "lblidKA": "",
+            "lblidKAItemId": "",
+            "segCalorieslbl": "",
+            "segRecordsLbl": ""
         }],
         "groupCells": false,
         "height": "43.38%",
@@ -708,6 +664,7 @@ function addWidgetsfrmDietKA() {
             "flxTmpAssetMain": "flxTmpAssetMain",
             "imgTask": "imgTask",
             "lblidKA": "lblidKA",
+            "lblidKAItemId": "lblidKAItemId",
             "segCalorieslbl": "segCalorieslbl",
             "segRecordsLbl": "segRecordsLbl"
         },
@@ -811,25 +768,12 @@ function addWidgetsfrmDietKA() {
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "data": [{
             "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
-        }, {
-            "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
-        }, {
-            "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
+            "btnUpdateKA": "",
+            "imgTask": "",
+            "lblidKA": "",
+            "lblidKAItemId": "",
+            "segCalorieslbl": "",
+            "segRecordsLbl": ""
         }],
         "groupCells": false,
         "height": "33.92%",
@@ -861,6 +805,7 @@ function addWidgetsfrmDietKA() {
             "flxTmpAssetMain": "flxTmpAssetMain",
             "imgTask": "imgTask",
             "lblidKA": "lblidKA",
+            "lblidKAItemId": "lblidKAItemId",
             "segCalorieslbl": "segCalorieslbl",
             "segRecordsLbl": "segRecordsLbl"
         },
@@ -964,25 +909,12 @@ function addWidgetsfrmDietKA() {
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "data": [{
             "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
-        }, {
-            "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
-        }, {
-            "btnDeleteKA": "",
-            "btnUpdateKA": "Update",
-            "imgTask": "add_active.png",
-            "lblidKA": "Label",
-            "segCalorieslbl": "Label",
-            "segRecordsLbl": "Label"
+            "btnUpdateKA": "",
+            "imgTask": "",
+            "lblidKA": "",
+            "lblidKAItemId": "",
+            "segCalorieslbl": "",
+            "segRecordsLbl": ""
         }],
         "groupCells": false,
         "height": "44.85%",
@@ -1014,6 +946,7 @@ function addWidgetsfrmDietKA() {
             "flxTmpAssetMain": "flxTmpAssetMain",
             "imgTask": "imgTask",
             "lblidKA": "lblidKA",
+            "lblidKAItemId": "lblidKAItemId",
             "segCalorieslbl": "segCalorieslbl",
             "segRecordsLbl": "segRecordsLbl"
         },

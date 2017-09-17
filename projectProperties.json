@@ -9,7 +9,7 @@
         "isModified": false,
         "isEnableJSContainer": true,
         "isEnableJSContainerAndroid": true,
-        "isEnableJSContaineriOS": false
+        "isEnableJSContaineriOS": true
     },
     "wap_android400_fontsize": "12",
     "wap_spaandroidtabhdpi_fontsize": "12",

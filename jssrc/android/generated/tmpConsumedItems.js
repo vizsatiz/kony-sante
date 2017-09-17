@@ -56,7 +56,6 @@ function initializetmpConsumedItems() {
         "isVisible": true,
         "left": "15dp",
         "skin": "sknLbl736464CB61KA",
-        "text": "Label",
         "textStyle": {
             "letterSpacing": 0,
             "strikeThrough": false
@@ -77,7 +76,6 @@ function initializetmpConsumedItems() {
         "isVisible": true,
         "left": "208dp",
         "skin": "sknLbl3A3F77CN22KA",
-        "text": "Label",
         "textStyle": {
             "letterSpacing": 0,
             "strikeThrough": false
@@ -126,7 +124,27 @@ function initializetmpConsumedItems() {
     }, {
         "textCopyable": false
     });
-    flxDetailsKA.add(segRecordsLbl, segCalorieslbl, imgTask, lblidKA);
+    var lblidKAItemId = new kony.ui.Label({
+        "bottom": "5dp",
+        "id": "lblidKAItemId",
+        "isVisible": false,
+        "left": "10dp",
+        "skin": "sknLbl5E5050CN26KA",
+        "text": "Label",
+        "textStyle": {
+            "letterSpacing": 0,
+            "strikeThrough": false
+        },
+        "width": kony.flex.USE_PREFFERED_SIZE,
+        "zIndex": 1
+    }, {
+        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {
+        "textCopyable": false
+    });
+    flxDetailsKA.add(segRecordsLbl, segCalorieslbl, imgTask, lblidKA, lblidKAItemId);
     var flxSwipeDetailsKA = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,

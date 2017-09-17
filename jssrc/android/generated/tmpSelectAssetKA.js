@@ -105,7 +105,47 @@ function initializetmpSelectAssetKA() {
     }, {
         "textCopyable": false
     });
-    flxDetailsKA.add(segRecordsLbl, imgTask, lblidKA);
+    var lblidCalories = new kony.ui.Label({
+        "bottom": "5dp",
+        "id": "lblidCalories",
+        "isVisible": false,
+        "left": "10dp",
+        "skin": "sknLbl5E5050CN26KA",
+        "text": "Label",
+        "textStyle": {
+            "letterSpacing": 0,
+            "strikeThrough": false
+        },
+        "width": kony.flex.USE_PREFFERED_SIZE,
+        "zIndex": 1
+    }, {
+        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {
+        "textCopyable": false
+    });
+    var lblidQuantity = new kony.ui.Label({
+        "bottom": "-5dp",
+        "id": "lblidQuantity",
+        "isVisible": false,
+        "left": "20dp",
+        "skin": "sknLbl5E5050CN26KA",
+        "text": "Label",
+        "textStyle": {
+            "letterSpacing": 0,
+            "strikeThrough": false
+        },
+        "width": kony.flex.USE_PREFFERED_SIZE,
+        "zIndex": 1
+    }, {
+        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
+    }, {
+        "textCopyable": false
+    });
+    flxDetailsKA.add(segRecordsLbl, imgTask, lblidKA, lblidCalories, lblidQuantity);
     var flxSwipeDetailsKA = new kony.ui.FlexContainer({
         "autogrowMode": kony.flex.AUTOGROW_NONE,
         "clipBounds": true,

@@ -246,9 +246,8 @@ function addWidgetsfrmHomeKA() {
         "bottom": "5dp",
         "focusSkin": "ButtonBorderActive",
         "id": "BtnBoxLogin",
-        "isVisible": true,
+        "isVisible": false,
         "left": "10dp",
-        "onClick": AS_Button_eae3c6d85ab8492e9ca55b5be7098ed5,
         "right": "10dp",
         "skin": "ButtonBorderNormal",
         "text": "Login",
@@ -263,17 +262,17 @@ function addWidgetsfrmHomeKA() {
     ButtonBoxLogin.add(BtnBoxLogin);
     var lblNote = new kony.ui.Label({
         "centerX": "50%",
-        "height": "30dp",
+        "height": "20dp",
         "id": "lblNote",
         "isVisible": true,
         "left": "143dp",
-        "skin": "sknLbl5e5050ClanProBook28pxKA",
+        "skin": "sknLbl5E5050ClanProBook30KA",
         "text": "Sign in using Google Account",
         "textStyle": {
             "letterSpacing": 0,
             "strikeThrough": false
         },
-        "top": "333dp",
+        "top": "325dp",
         "width": "200dp",
         "zIndex": 1
     }, {

@@ -51,7 +51,8 @@ function applicationSetup() {
     function onFailure() {
         alert("Setup Failed !!");
     }
-
+    kony.logger.activatePersistors(kony.logger.consolePersistor);
+    kony.logger.currentLogLevel = kony.logger.logLevel.TRACE;
     KNYMobileFabric.OfflineObjects.setup(onSuccess, onFailure);
 }
 
@@ -187,7 +188,13 @@ function populateItemInFrmItemsKA(options) {
                 },
                 lblItemID: {
                     text: itemId
-                }
+                },
+              	lblidCalories: {
+                	text: calories  
+                },
+              	lblidQuantity: {
+              		text: quantity
+            	}
             };
         }
 
@@ -206,423 +213,469 @@ function populateItemInFrmItemsKA(options) {
 }
 
 function populateConsumedItemsBreakFast(options) {
-    var totalCal = parseInt(sante.current.user.TOTAL_CAL);
-    if (totalCal <= 0) {
-        totalCal = 1400;
-    }
-
-    function onSuccess(records) {
-        var itemIdAsString = "(";
-
-        var noOfRecords = records.length;
-        for (var i = 0; i < noOfRecords; i++) {
-            var objRecord = records[i];
-            var itemID = objRecord.ITEM_ID;
-            itemIdAsString += itemID;
-            if (i + 1 < noOfRecords) {
-                itemIdAsString += ",";
-            }
+  var totalCal = parseInt(sante.current.user.TOTAL_CAL);
+  var items = {};  
+  
+  if (totalCal <= 0) {
+    totalCal = 1400;
+  }
+        
+  function onConsumedItemsSuccess(consumedItems) {
+  	if(consumedItems.length > 0) {
+      kony.print("records fetched successfully "+ JSON.stringify(consumedItems));
+      var data = [];
+      var consumedCalories = 0;
+      var noOfRecords = consumedItems.length;      
+      for (var i = 0; i < noOfRecords; i++) {
+        var objRecord = consumedItems[i];        
+        var quantity = objRecord.QUANTITY;
+        var calories = objRecord.CALORIES;
+        var calString = calories + " Cal";        
+        var itemId = objRecord.ITEM_ID;
+        var itemName = null;
+		var imagePath = null;
+        var finalItem = null;
+        if( (typeof items[itemId] !== 'undefined') && (items[itemId] !== null)) {
+          itemName = items[itemId].ITEM_NAME;
+          imagePath = items[itemId].IMAGE_PATH;
+		  finalItem = itemName + " (" + quantity + ")";          
         }
-
-        itemIdAsString += ")";
-
-        function onItemGetSuccess(consumedItems) {
-            var data = [];
-            var consumedCalories = 0;
-            var noOfRecords = consumedItems.length;
-            for (var i = 0; i < noOfRecords; i++) {
-                var objRecord = consumedItems[i];
-                var itemName = objRecord.ITEM_NAME;
-                var quantity = objRecord.QUANTITY;
-                var calories = objRecord.CALORIES;
-                var imagePath = objRecord.IMAGE_PATH;
-                var finalItem = itemName + " (" + quantity + ")";
-                var calString = calories + " Cal";
-                data[i] = {
-                    segRecordsLbl: {
-                        text: finalItem ? finalItem : ''
-                    },
-                    segCalorieslbl: {
-                        text: calString
-                    },
-                    lblidKA:{
-		                text: imagePath
-        	        }                     
-                };
-
-                var caloriesInt = parseInt(calories);
-                consumedCalories += caloriesInt;
-            }
-
-            sante.constants.todaysCalories += consumedCalories;
-            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + "Cal";
-
-            frmDietKA.segConsumedItems.removeAll();
-            frmDietKA.segConsumedItems.data = data;
-
-            frmDietKA.lblCalories1.text = consumedCalories + "/" + Math.floor(totalCal / 5);
-        }
-
-        function onItemGetFailure(err) {
-            alert("Error in reading Sample Order records. " + JSON.stringify(err));
-        }
-
-        var whereCondition = "ITEM_ID IN " + itemIdAsString;
-        var itemFilter = {
-            "whereConditionAsAString": whereCondition
+        
+        data[i] = {
+          segRecordsLbl: {
+            text: finalItem ? finalItem : '',
+            isVisible: true
+          },
+          segCalorieslbl: {
+            text: calString,
+            isVisible: true            
+          },
+          lblidKA:{
+            text: (imagePath !== null && typeof imagePath !== 'undefined')?imagePath:""
+          },
+          lblidKAItemId:{
+            text: (itemId !== null && typeof itemId !== 'undefined')?itemId:""
+          }
         };
 
-        var itemObject = getObjectByName("ITEMS");
-        itemObject.get(itemFilter, onItemGetSuccess, onItemGetFailure);
-    }
+        var caloriesInt = parseInt(calories);
+        consumedCalories += caloriesInt;		
+      }
+      sante.constants.todaysCalories += consumedCalories;
+      frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + "Cal";
 
-    function onFailure(err) {
-        alert("Error in reading Sample Order records. " + JSON.stringify(err));
-    }
+      frmDietKA.segConsumedItems.removeAll();
+      frmDietKA.segConsumedItems.data = data;
 
-    var filters = {
-        'whereConditionAsAString': "CATEGORY = 1 and USER_ID = '" + sante.current.user.USER_ID +
-            "' and ZDATE = '" + getDateFromCalender() + "'"
-    }; // TODO fetch for only current user
-    var itemObject = getObjectByName("CONSUMED_ITEMS");
-    itemObject.get(filters, onSuccess, onFailure);
+	  frmDietKA.lblCalories1.text = consumedCalories + "/" + Math.floor(totalCal / 5);      
+    } else {
+      kony.print("records doesn't exist ");
+    } 
+  }
+  
+  function onConsumedItemsFailure(err) {
+    alert("Error in reading Sample Order records. " + JSON.stringify(err));    
+  }
+  
+  function onSuccess(records) {
+    if(records.length > 0) {
+	  kony.print("records fetched successfully "+ JSON.stringify(records));
+      for(var i = 0; i < records.length; i++) {
+		items[records[i].ITEM_ID] = {};
+        items[records[i].ITEM_ID].ITEM_NAME = records[i].ITEM_NAME;
+        items[records[i].ITEM_ID].IMAGE_PATH = records[i].IMAGE_PATH;
+      }
+      var consumedItemsObject = getObjectByName("CONSUMED_ITEMS");
+      var filters = {
+          'whereConditionAsAString': "CATEGORY = 1 and USER_ID = '" + sante.current.user.USER_ID +
+              "' and ZDATE = '" + getDateFromCalender() + "'"
+      }; // TODO fetch for only current user
+      consumedItemsObject.get(filters, onConsumedItemsSuccess, onConsumedItemsFailure);
+	  
+    } else {
+      kony.print("records doesn't exist");
+    }
+  }
+  
+  function onFailure(err) {
+    kony.print("failure in fetching records "+ JSON.stringify(err));
+  }
+  
+  var filters = {}; 
+  var itemsObject = getObjectByName("ITEMS");
+  itemsObject.get(filters, onSuccess, onFailure);  
 }
-
 
 function populateConsumedItemsMorningSnacks(options) {
     var totalCal = parseInt(sante.current.user.TOTAL_CAL);
+	var items = {};    
     if (totalCal <= 0) {
         totalCal = 1400;
     }
-
-    function onSuccess(records) {
-        var itemIdAsString = "(";
-
-        var noOfRecords = records.length;
+  
+	function onConsumedItemsSuccess(consumedItems) {
+      if(consumedItems.length > 0) {
+        kony.print("records fetched successfully "+ JSON.stringify(consumedItems));
+        var data = [];
+        var consumedCalories = 0;
+        var noOfRecords = consumedItems.length;      
         for (var i = 0; i < noOfRecords; i++) {
-            var objRecord = records[i];
-            var itemID = objRecord.ITEM_ID;
-            itemIdAsString += itemID;
-            if (i + 1 < noOfRecords) {
-                itemIdAsString += ",";
+          var objRecord = consumedItems[i];        
+          var quantity = objRecord.QUANTITY;
+          var calories = objRecord.CALORIES;
+          var calString = calories + " Cal";        
+          var itemId = objRecord.ITEM_ID;
+          var itemName = null;
+          var imagePath = null;
+          var finalItem = null;
+          if( (typeof items[itemId] !== 'undefined') && (items[itemId] !== null)) {
+            itemName = items[itemId].ITEM_NAME;
+            imagePath = items[itemId].IMAGE_PATH;
+            finalItem = itemName + " (" + quantity + ")";          
+          }
+
+          data[i] = {
+            segRecordsLbl: {
+              text: finalItem ? finalItem : '',
+              isVisible: true
+            },
+            segCalorieslbl: {
+              text: calString,
+              isVisible: true              
+            },
+            lblidKA:{
+              text: (imagePath !== null && typeof imagePath !== 'undefined')?imagePath:""
+            },
+            lblidKAItemId:{
+              text: (itemId !== null && typeof itemId !== 'undefined')?itemId:""
             }
-        }
+          };
 
-        itemIdAsString += ")";
+          var caloriesInt = parseInt(calories);
+          consumedCalories += caloriesInt;		
+        }     
+        sante.constants.todaysCalories += consumedCalories;
+        frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + " Cal";
 
-        function onItemGetSuccess(consumedItems) {
-            var data = [];
-            var consumedCalories = 0;
-            var noOfRecords = consumedItems.length;
-            for (var i = 0; i < noOfRecords; i++) {
-                var objRecord = consumedItems[i];
-                var itemName = objRecord.ITEM_NAME;
-                var quantity = objRecord.QUANTITY;
-                var calories = objRecord.CALORIES;
-                var imagePath = objRecord.IMAGE_PATH;              
-                var finalItem = itemName + " (" + quantity + ")";
-                var calString = calories + " Cal";
-                data[i] = {
-                    segRecordsLbl: {
-                        text: finalItem ? finalItem : '',
-                    },
-                    segCalorieslbl: {
-                        text: calString
-                    },
-	                lblidKA:{
-      		          text: imagePath
-            	    }  
-                };
+        frmDietKA.segMorningSnack.removeAll();
+        frmDietKA.segMorningSnack.data = data;
 
-                var caloriesInt = parseInt(calories);
-                consumedCalories += caloriesInt;
-            }
-
-            sante.constants.todaysCalories += consumedCalories;
-            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + " Cal";
-
-            frmDietKA.segMorningSnack.removeAll();
-            frmDietKA.segMorningSnack.data = data;
-
-            frmDietKA.CopylblCalories0a89328abee6640.text = consumedCalories + "/" + Math.floor(totalCal /
-                5);
-        }
-
-        function onItemGetFailure(err) {
-            alert("Error in reading Sample Order records. " + JSON.stringify(err));
-        }
-
-        var whereCondition = "ITEM_ID IN " + itemIdAsString;
-        var itemFilter = {
-            "whereConditionAsAString": whereCondition
-        };
-
-        var itemObject = getObjectByName("ITEMS");
-        itemObject.get(itemFilter, onItemGetSuccess, onItemGetFailure);
+        frmDietKA.CopylblCalories0a89328abee6640.text = consumedCalories + "/" + Math.floor(totalCal / 5);        
+      } else {
+        kony.print("records doesn't exist ");
+      }       
     }
-
+  	
+    function onConsumedItemsFailure(err) {
+      alert("Error in reading Sample Order records. " + JSON.stringify(err));    
+    }  	
+    
+	function onSuccess(records) {
+      if(records.length > 0) {
+        kony.print("records fetched successfully "+ JSON.stringify(records));
+        for(var i = 0; i < records.length; i++) {
+              items[records[i].ITEM_ID] = {};
+          items[records[i].ITEM_ID].ITEM_NAME = records[i].ITEM_NAME;
+          items[records[i].ITEM_ID].IMAGE_PATH = records[i].IMAGE_PATH;
+        }
+        var consumedItemsObject = getObjectByName("CONSUMED_ITEMS");
+        var filters = {
+            'whereConditionAsAString': "CATEGORY = 2 and USER_ID = '" + sante.current.user.USER_ID +
+                "' and ZDATE = '" + getDateFromCalender() + "'"
+        }; // TODO fetch for only current user
+        consumedItemsObject.get(filters, onConsumedItemsSuccess, onConsumedItemsFailure);        
+      } else {
+        kony.print("records doesn't exist");        
+      }
+    }
+  	
     function onFailure(err) {
-        alert("Error in reading Sample Order records. " + JSON.stringify(err));
-    }
-
-    var filters = {
-        'whereConditionAsAString': "CATEGORY = 2 and USER_ID = '" + sante.current.user.USER_ID +
-            "' and ZDATE = '" + getDateFromCalender() + "'"
-    }; // TODO fetch for only current user
-    var itemObject = getObjectByName("CONSUMED_ITEMS");
-    itemObject.get(filters, onSuccess, onFailure);
+    	kony.print("failure in fetching records "+ JSON.stringify(err));
+  	}
+  	
+    var filters = {}; 
+    var itemsObject = getObjectByName("ITEMS");
+    itemsObject.get(filters, onSuccess, onFailure);  	  
 }
 
 function populateConsumedItemsLunch(options) {
-    var totalCal = parseInt(sante.current.user.TOTAL_CAL);
-    if (totalCal <= 0) {
-        totalCal = 1400;
-    }
-
-    function onSuccess(records) {
-        var itemIdAsString = "(";
-
-        var noOfRecords = records.length;
-        for (var i = 0; i < noOfRecords; i++) {
-            var objRecord = records[i];
-            var itemID = objRecord.ITEM_ID;
-            itemIdAsString += itemID;
-            if (i + 1 < noOfRecords) {
-                itemIdAsString += ",";
-            }
+  var totalCal = parseInt(sante.current.user.TOTAL_CAL);
+  var items = {};    
+  if (totalCal <= 0) {
+    totalCal = 1400;
+  }
+  
+  function onConsumedItemsSuccess(consumedItems) {
+  	if(consumedItems.length > 0) {
+      kony.print("records fetched successfully "+ JSON.stringify(consumedItems));
+      var data = [];
+      var consumedCalories = 0;
+      var noOfRecords = consumedItems.length;      
+      for (var i = 0; i < noOfRecords; i++) {
+        var objRecord = consumedItems[i];        
+        var quantity = objRecord.QUANTITY;
+        var calories = objRecord.CALORIES;
+        var calString = calories + " Cal";        
+        var itemId = objRecord.ITEM_ID;
+        var itemName = null;
+		var imagePath = null;
+        var finalItem = null;
+        if( (typeof items[itemId] !== 'undefined') && (items[itemId] !== null)) {
+          itemName = items[itemId].ITEM_NAME;
+          imagePath = items[itemId].IMAGE_PATH;
+		  finalItem = itemName + " (" + quantity + ")";          
         }
-
-        itemIdAsString += ")";
-
-        function onItemGetSuccess(consumedItems) {
-            var data = [];
-            var consumedCalories = 0;
-            var noOfRecords = consumedItems.length;
-            for (var i = 0; i < noOfRecords; i++) {
-                var objRecord = consumedItems[i];
-                var itemName = objRecord.ITEM_NAME;
-                var quantity = objRecord.QUANTITY;
-                var calories = objRecord.CALORIES;
-	            var imagePath = objRecord.IMAGE_PATH;              
-                var finalItem = itemName + " (" + quantity + ")";
-                var calString = calories + " Cal";
-                data[i] = {
-                    segRecordsLbl: {
-                        text: finalItem ? finalItem : '',
-                    },
-                    segCalorieslbl: {
-                        text: calString
-                    },
-                    lblidKA:{
-                        text: imagePath
-                    }                  
-                };
-
-                var caloriesInt = parseInt(calories);
-                consumedCalories += caloriesInt;
-            }
-
-            sante.constants.todaysCalories += consumedCalories;
-            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + " Cal";
-
-            frmDietKA.segLunch.removeAll();
-            frmDietKA.segLunch.data = data;
-
-            frmDietKA.CopylblCalories0e2db4b45fec14e.text = consumedCalories + "/" + Math.floor(totalCal /
-                5);
-        }
-
-        function onItemGetFailure(err) {
-            alert("Error in reading Sample Order records. " + JSON.stringify(err));
-        }
-
-        var whereCondition = "ITEM_ID IN " + itemIdAsString;
-        var itemFilter = {
-            "whereConditionAsAString": whereCondition
+        
+        data[i] = {
+          segRecordsLbl: {
+            text: finalItem ? finalItem : '',
+            isVisible: true            
+          },
+          segCalorieslbl: {
+            text: calString,
+            isVisible: true            
+          },
+          lblidKA:{
+            text: (imagePath !== null && typeof imagePath !== 'undefined')?imagePath:""
+          },
+          lblidKAItemId:{
+            text: (itemId !== null && typeof itemId !== 'undefined')?itemId:""
+          }
         };
 
-        var itemObject = getObjectByName("ITEMS");
-        itemObject.get(itemFilter, onItemGetSuccess, onItemGetFailure);
-    }
+        var caloriesInt = parseInt(calories);
+        consumedCalories += caloriesInt;		
+      }
+      sante.constants.todaysCalories += consumedCalories;
+      frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + " Cal";
 
-    function onFailure(err) {
-        alert("Error in reading Sample Order records. " + JSON.stringify(err));
-    }
+      frmDietKA.segLunch.removeAll();
+      frmDietKA.segLunch.data = data;
 
-    var filters = {
-        'whereConditionAsAString': "CATEGORY = 3 and USER_ID = '" + sante.current.user.USER_ID +
-            "' and ZDATE = '" + getDateFromCalender() + "'"
-    }; // TODO fetch for only current user
-    var itemObject = getObjectByName("CONSUMED_ITEMS");
-    itemObject.get(filters, onSuccess, onFailure);
+      frmDietKA.CopylblCalories0e2db4b45fec14e.text = consumedCalories + "/" + Math.floor(totalCal / 5);
+      
+    } else {
+      kony.print("records doesn't exist ");
+    } 
+  }
+  
+  function onConsumedItemsFailure(err) {
+    alert("Error in reading Sample Order records. " + JSON.stringify(err));    
+  }  
+  
+  function onSuccess(records) {
+    if(records.length > 0) {
+	  kony.print("records fetched successfully "+ JSON.stringify(records));
+      for(var i = 0; i < records.length; i++) {
+		    items[records[i].ITEM_ID] = {};
+        items[records[i].ITEM_ID].ITEM_NAME = records[i].ITEM_NAME;
+        items[records[i].ITEM_ID].IMAGE_PATH = records[i].IMAGE_PATH;
+      }
+      var consumedItemsObject = getObjectByName("CONSUMED_ITEMS");
+      var filters = {
+          'whereConditionAsAString': "CATEGORY = 3 and USER_ID = '" + sante.current.user.USER_ID +
+              "' and ZDATE = '" + getDateFromCalender() + "'"
+      }; // TODO fetch for only current user
+      consumedItemsObject.get(filters, onConsumedItemsSuccess, onConsumedItemsFailure);
+	  
+    } else {
+      kony.print("records doesn't exist");
+    }
+  }
+  
+  function onFailure(err) {
+    kony.print("failure in fetching records "+ JSON.stringify(err));
+  }  
+  
+  var filters = {}; 
+  var itemsObject = getObjectByName("ITEMS");
+  itemsObject.get(filters, onSuccess, onFailure);  
 }
 
 function populateConsumedItemsEveningSnack(options) {
-    var totalCal = parseInt(sante.current.user.TOTAL_CAL);
-    if (totalCal <= 0) {
-        totalCal = 1400;
-    }
-
-    function onSuccess(records) {
-        var itemIdAsString = "(";
-
-        var noOfRecords = records.length;
-        for (var i = 0; i < noOfRecords; i++) {
-            var objRecord = records[i];
-            var itemID = objRecord.ITEM_ID;
-            itemIdAsString += itemID;
-            if (i + 1 < noOfRecords) {
-                itemIdAsString += ",";
-            }
+  var totalCal = parseInt(sante.current.user.TOTAL_CAL);
+  var items = {};    
+  if (totalCal <= 0) {
+    totalCal = 1400;
+  }
+  
+  function onConsumedItemsSuccess(consumedItems) {
+  	if(consumedItems.length > 0) {
+      kony.print("records fetched successfully "+ JSON.stringify(consumedItems));
+      var data = [];
+      var consumedCalories = 0;
+      var noOfRecords = consumedItems.length;      
+      for (var i = 0; i < noOfRecords; i++) {
+        var objRecord = consumedItems[i];        
+        var quantity = objRecord.QUANTITY;
+        var calories = objRecord.CALORIES;
+        var calString = calories + " Cal";        
+        var itemId = objRecord.ITEM_ID;
+        var itemName = null;
+		var imagePath = null;
+        var finalItem = null;
+        if( (typeof items[itemId] !== 'undefined') && (items[itemId] !== null)) {
+          itemName = items[itemId].ITEM_NAME;
+          imagePath = items[itemId].IMAGE_PATH;
+		  finalItem = itemName + " (" + quantity + ")";          
         }
-
-        itemIdAsString += ")";
-
-        function onItemGetSuccess(consumedItems) {
-            var data = [];
-            var consumedCalories = 0;
-            var noOfRecords = consumedItems.length;
-            for (var i = 0; i < noOfRecords; i++) {
-                var objRecord = consumedItems[i];
-                var itemName = objRecord.ITEM_NAME;
-                var quantity = objRecord.QUANTITY;
-                var calories = objRecord.CALORIES;
-	            var imagePath = objRecord.IMAGE_PATH;              
-                var finalItem = itemName + " (" + quantity + ")";
-                var calString = calories + " Cal";
-                data[i] = {
-                    segRecordsLbl: {
-                        text: finalItem ? finalItem : '',
-                    },
-                    segCalorieslbl: {
-                        text: calString
-                    },
-              		lblidKA:{
-		                text: imagePath
-	                }					
-                };
-
-                var caloriesInt = parseInt(calories);
-                consumedCalories += caloriesInt;
-            }
-
-            sante.constants.todaysCalories += consumedCalories;
-            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + " Cal";
-
-            frmDietKA.segEveningSnack.removeAll();
-            frmDietKA.segEveningSnack.data = data;
-
-            frmDietKA.CopylblCalories0h2492c889b2840.text = consumedCalories + "/" + Math.floor(totalCal /
-                5);
-        }
-
-        function onItemGetFailure(err) {
-            alert("Error in reading Sample Order records. " + JSON.stringify(err));
-        }
-
-        var whereCondition = "ITEM_ID IN " + itemIdAsString;
-        var itemFilter = {
-            "whereConditionAsAString": whereCondition
+        
+        data[i] = {
+          segRecordsLbl: {
+            text: finalItem ? finalItem : '',
+            isVisible: true            
+          },
+          segCalorieslbl: {
+            text: calString,
+            isVisible: true            
+          },
+          lblidKA:{
+            text: (imagePath !== null && typeof imagePath !== 'undefined')?imagePath:""
+          },
+          lblidKAItemId:{
+            text: (itemId !== null && typeof itemId !== 'undefined')?itemId:""
+          }
         };
 
-        var itemObject = getObjectByName("ITEMS");
-        itemObject.get(itemFilter, onItemGetSuccess, onItemGetFailure);
-    }
+        var caloriesInt = parseInt(calories);
+        consumedCalories += caloriesInt;		
+      }
+      sante.constants.todaysCalories += consumedCalories;
+      frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + " Cal";
 
-    function onFailure(err) {
-        alert("Error in reading Sample Order records. " + JSON.stringify(err));
-    }
+      frmDietKA.segEveningSnack.removeAll();
+      frmDietKA.segEveningSnack.data = data;
 
-    var filters = {
-        'whereConditionAsAString': "CATEGORY = 4 and USER_ID = '" + sante.current.user.USER_ID +
-            "' and ZDATE = '" + getDateFromCalender() + "'"
-    }; // TODO fetch for only current user
-    var itemObject = getObjectByName("CONSUMED_ITEMS");
-    itemObject.get(filters, onSuccess, onFailure);
+      frmDietKA.CopylblCalories0h2492c889b2840.text = consumedCalories + "/" + Math.floor(totalCal / 5);
+    } else {
+      kony.print("records doesn't exist ");
+    } 
+  }
+  
+  function onConsumedItemsFailure(err) {
+    alert("Error in reading Sample Order records. " + JSON.stringify(err));    
+  }  
+  
+  function onSuccess(records) {
+    if(records.length > 0) {
+	  kony.print("records fetched successfully "+ JSON.stringify(records));
+      for(var i = 0; i < records.length; i++) {
+		    items[records[i].ITEM_ID] = {};
+        items[records[i].ITEM_ID].ITEM_NAME = records[i].ITEM_NAME;
+        items[records[i].ITEM_ID].IMAGE_PATH = records[i].IMAGE_PATH;
+      }
+      var consumedItemsObject = getObjectByName("CONSUMED_ITEMS");
+      var filters = {
+          'whereConditionAsAString': "CATEGORY = 4 and USER_ID = '" + sante.current.user.USER_ID +
+              "' and ZDATE = '" + getDateFromCalender() + "'"
+      }; // TODO fetch for only current user
+      consumedItemsObject.get(filters, onConsumedItemsSuccess, onConsumedItemsFailure);
+	  
+    } else {
+      kony.print("records doesn't exist");
+    }
+  }
+  
+  function onFailure(err) {
+    kony.print("failure in fetching records "+ JSON.stringify(err));
+  }  
+  
+  var filters = {}; 
+  var itemsObject = getObjectByName("ITEMS");
+  itemsObject.get(filters, onSuccess, onFailure);    
 }
 
 function populateConsumedItemsDinner(options) {
-    var totalCal = parseInt(sante.current.user.TOTAL_CAL);
-    if (totalCal <= 0) {
-        totalCal = 1400;
-    }
-
-    function onSuccess(records) {
-        var itemIdAsString = "(";
-
-        var noOfRecords = records.length;
-        for (var i = 0; i < noOfRecords; i++) {
-            var objRecord = records[i];
-            var itemID = objRecord.ITEM_ID;
-            itemIdAsString += itemID;
-            if (i + 1 < noOfRecords) {
-                itemIdAsString += ",";
-            }
+  var totalCal = parseInt(sante.current.user.TOTAL_CAL);
+  var items = {};    
+  if (totalCal <= 0) {
+    totalCal = 1400;
+  }
+  
+  function onConsumedItemsSuccess(consumedItems) {
+  	if(consumedItems.length > 0) {
+      kony.print("records fetched successfully "+ JSON.stringify(consumedItems));
+      var data = [];
+      var consumedCalories = 0;
+      var noOfRecords = consumedItems.length;      
+      for (var i = 0; i < noOfRecords; i++) {
+        var objRecord = consumedItems[i];        
+        var quantity = objRecord.QUANTITY;
+        var calories = objRecord.CALORIES;
+        var calString = calories + " Cal";        
+        var itemId = objRecord.ITEM_ID;
+        var itemName = null;
+		var imagePath = null;
+        var finalItem = null;
+        if( (typeof items[itemId] !== 'undefined') && (items[itemId] !== null)) {
+          itemName = items[itemId].ITEM_NAME;
+          imagePath = items[itemId].IMAGE_PATH;
+		  finalItem = itemName + " (" + quantity + ")";          
         }
-
-        itemIdAsString += ")";
-
-        function onItemGetSuccess(consumedItems) {
-            var data = [];
-            var consumedCalories = 0;
-            var noOfRecords = consumedItems.length;
-            for (var i = 0; i < noOfRecords; i++) {
-                var objRecord = consumedItems[i];
-                var itemName = objRecord.ITEM_NAME;
-                var quantity = objRecord.QUANTITY;
-                var calories = objRecord.CALORIES;
-	            var imagePath = objRecord.IMAGE_PATH;                
-                var finalItem = itemName + " (" + quantity + ")";
-                var calString = calories + " Cal";
-                data[i] = {
-                    segRecordsLbl: {
-                        text: finalItem ? finalItem : '',
-                    },
-                    segCalorieslbl: {
-                        text: calString
-                    },
-                    lblidKA:{
-                        text: imagePath
-         	        }                  
-                };
-
-                var caloriesInt = parseInt(calories);
-                consumedCalories += caloriesInt;
-            }
-
-            sante.constants.todaysCalories += consumedCalories;
-            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + " Cal";
-
-            frmDietKA.segDinner.removeAll();
-            frmDietKA.segDinner.data = data;
-
-            frmDietKA.CopylblCalories0d0e0368543b94d.text = consumedCalories + "/" + Math.floor(totalCal /
-                5);
-        }
-
-        function onItemGetFailure(err) {
-            alert("Error in reading Sample Order records. " + JSON.stringify(err));
-        }
-
-        var whereCondition = "ITEM_ID IN " + itemIdAsString;
-        var itemFilter = {
-            "whereConditionAsAString": whereCondition
+        
+        data[i] = {
+          segRecordsLbl: {
+            text: finalItem ? finalItem : '',
+            isVisible: true            
+          },
+          segCalorieslbl: {
+            text: calString,
+            isVisible: true            
+          },
+          lblidKA:{
+            text: (imagePath !== null && typeof imagePath !== 'undefined')?imagePath:""
+          },
+          lblidKAItemId:{
+            text: (itemId !== null && typeof itemId !== 'undefined')?itemId:""
+          }
         };
 
-        var itemObject = getObjectByName("ITEMS");
-        itemObject.get(itemFilter, onItemGetSuccess, onItemGetFailure);
-    }
+        var caloriesInt = parseInt(calories);
+        consumedCalories += caloriesInt;		
+      }
+      sante.constants.todaysCalories += consumedCalories;
+      frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + " Cal";
 
-    function onFailure(err) {
-        alert("Error in reading Item records. " + JSON.stringify(err));
-    }
+      frmDietKA.segDinner.removeAll();
+      frmDietKA.segDinner.data = data;
 
-    var filters = {
-        'whereConditionAsAString': "CATEGORY = 5 and USER_ID = '" + sante.current.user.USER_ID +
-            "' and ZDATE = '" + getDateFromCalender() + "'"
-    };
-    var itemObject = getObjectByName("CONSUMED_ITEMS");
-    itemObject.get(filters, onSuccess, onFailure);
+      frmDietKA.CopylblCalories0d0e0368543b94d.text = consumedCalories + "/" + Math.floor(totalCal / 5);
+    } else {
+      kony.print("records doesn't exist ");
+    } 
+  }
+  
+  function onConsumedItemsFailure(err) {
+    alert("Error in reading Sample Order records. " + JSON.stringify(err));    
+  }  
+  
+  function onSuccess(records) {
+    if(records.length > 0) {
+	  kony.print("records fetched successfully "+ JSON.stringify(records));
+      for(var i = 0; i < records.length; i++) {
+		    items[records[i].ITEM_ID] = {};
+        items[records[i].ITEM_ID].ITEM_NAME = records[i].ITEM_NAME;
+        items[records[i].ITEM_ID].IMAGE_PATH = records[i].IMAGE_PATH;
+      }
+      var consumedItemsObject = getObjectByName("CONSUMED_ITEMS");
+      var filters = {
+          'whereConditionAsAString': "CATEGORY = 5 and USER_ID = '" + sante.current.user.USER_ID +
+              "' and ZDATE = '" + getDateFromCalender() + "'"
+      }; // TODO fetch for only current user
+      consumedItemsObject.get(filters, onConsumedItemsSuccess, onConsumedItemsFailure);
+	  
+    } else {
+      kony.print("records doesn't exist");
+    }
+  }
+  
+  function onFailure(err) {
+    kony.print("failure in fetching records "+ JSON.stringify(err));
+  }
+  
+  var filters = {}; 
+  var itemsObject = getObjectByName("ITEMS");
+  itemsObject.get(filters, onSuccess, onFailure);    
 }
 
 function populateUserDetails() {
@@ -680,13 +733,29 @@ function populateGoal() {
     userDetails.get(filters, onSuccess, onFailure);
 }
 
+function randomString(length, chars) {
+  var result = '';
+  for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+  return result;
+}
+
+
 function addItemsToCategory(eventobject, sectionNumber, rowNumber) {
     var category = sante.current.category;
 
     var data = frmItemsKA.segItems.data;
     var orderItem = data[rowNumber];
     var itemID = orderItem.lblItemID.text;
-
+	var calories = orderItem.lblidCalories.text;
+  	var quantity = orderItem.lblidQuantity.text;
+  	if(quantity === null || typeof quantity === 'undefined') {
+      quantity = '1';
+    } else {
+ 	  if( (quantity = quantity.match(/\d+/g)) instanceof Array) {
+        quantity = quantity[0];
+      }
+    }
+        
     function onSuccess(records) {
         frmDietKA.show();
     }
@@ -695,22 +764,41 @@ function addItemsToCategory(eventobject, sectionNumber, rowNumber) {
         alert("Error in adding item record. " + JSON.stringify(err));
     }
 
-    var itemObject = getObjectByName("CONSUMED_ITEMS");
-
-    function randomString(length, chars) {
-        var result = '';
-        for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
-        return result;
+  	var itemObject = getObjectByName("CONSUMED_ITEMS");
+  
+  	function onGetSuccess(records) {
+      if(records.length > 0) {
+		kony.print("record exist with condition "+ whereCondition);
+		frmDietKA.show();        
+      } else {
+        kony.print("cannot find record with condition "+ whereCondition);
+		var rString = randomString(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ%343453553');
+        var consumedItem = {
+            'CONSUMED_ITEM_ID': rString, // TODO generate a item
+            'ITEM_ID': itemID + '',
+            'USER_ID': sante.current.user.USER_ID + '', // TODO current user id
+            'CATEGORY': category + '',
+          	'CALORIES': calories + '',
+          	'QUANTITY': quantity + '',
+            'ZDATE': getDateFromCalender() // TODO proper date
+        };
+        itemObject.create(consumedItem, {}, onSuccess, onFailure);
+      }
     }
-    var rString = randomString(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ%343453553');
-    var consumedItem = {
-        'CONSUMED_ITEM_ID': rString, // TODO generate a item
-        'ITEM_ID': itemID + '',
-        'USER_ID': sante.current.user.USER_ID + '', // TODO current user id
-        'CATEGORY': category + '',
-        'ZDATE': getDateFromCalender(), // TODO proper datae
+  
+  	function onGetFailure(err) {
+      kony.print("Error in getting the item "+ JSON.stringify(err));
+    }
+  
+  	var whereCondition = "USER_ID = '" + sante.current.user.USER_ID + "'" + 
+        				" and ZDATE = '" + getDateFromCalender() + "'" + 
+        				" and CATEGORY = '" + category + "'" +
+        				" and ITEM_ID = '" + itemID + "'";
+  	var filters = {
+      'whereConditionAsAString': whereCondition
     };
-    itemObject.create(consumedItem, {}, onSuccess, onFailure);
+  
+  	itemObject.get(filters, onGetSuccess, onGetFailure);	
 }
 
 function populateWorkoutDetails() {
@@ -941,7 +1029,6 @@ function getUserDetailsSuccess(rec) {
         sante.current.user.TOTAL_CAL = rec[0].TOTAL_CALORIES;
     }
   	kony.application.dismissLoadingScreen();
-  
   	loginWithBox();
 }
 
@@ -1101,9 +1188,9 @@ function updateGoalDetails() {
 // ------------ box login -----------
 
 function loginWithBox() {
-    var boxAuthClient = kony.sdk.getCurrentInstance().getIdentityService("SanteBoxIdentity");
-    var options = {};
-    boxAuthClient.login(options, boxLoginSuccess, boxLoginFailure);
+  var boxAuthClient = kony.sdk.getCurrentInstance().getIdentityService("SanteBoxIdentity");
+  var options = {};
+  boxAuthClient.login(options, boxLoginSuccess, boxLoginFailure);
 }
 
 function boxLoginSuccess(response) {
@@ -1112,35 +1199,35 @@ function boxLoginSuccess(response) {
 }
 
 function boxLoginFailure(error) {
-  	kony.application.dismissLoadingScreen();
-    kony.print("login failure " + JSON.stringify(error));
+  kony.application.dismissLoadingScreen();
+  kony.print("login failure " + JSON.stringify(error));
 }
 
 function onFileDownloadStartedCallback(res) {
-    kony.print("file download started " + JSON.stringify(res));
+  kony.print("file download started " + JSON.stringify(res));
 }
 
 function onChunkDownloadCompleteCallback(res) {
-    //alert("file chunk download completed " + JSON.stringify(res));
+  //alert("file chunk download completed " + JSON.stringify(res));
 }
 
 function onFileDownloadCompleteCallback(res) {
-    kony.print("file download completed " + JSON.stringify(res));
-    try {
-        sante.constants.filePath = res.FilePath;
-        populateItemDetials();
-    } catch (e) {
-        alert("Exception " + JSON.stringify(e) + " while reading image file at location " + JSON.stringify(res));
-    }
+  kony.print("file download completed " + JSON.stringify(res));
+  try {
+    sante.constants.filePath = res.FilePath;
+    populateItemDetials();
+  } catch (e) {
+    alert("Exception " + JSON.stringify(e) + " while reading image file at location " + JSON.stringify(res));
+  }
 }
 
 function onFileDownloadFailureCallback(err) {
-	if(err !== null && typeof err !== 'undefined' && typeof err.BlobID !== 'undefined') {  
-      sante.constants.filePath = '/data/data/com.orgname.Sample/downloads/' + err.BlobID;
-      kony.print("file download failed with error : " + JSON.stringify(err));
-      setCurrentDateToCalender();
-      populateItemDetials();
-    }
+  if(err !== null && typeof err !== 'undefined' && typeof err.BlobID !== 'undefined') {  
+    sante.constants.filePath = '/data/data/com.orgname.Sample/downloads/' + err.BlobID;
+    kony.print("file download failed with error : " + JSON.stringify(err));
+    setCurrentDateToCalender();
+    populateItemDetials();
+  }
 }
 
 function getBinaryFromBox(fileId) {
@@ -1154,10 +1241,8 @@ function getBinaryFromBox(fileId) {
         onChunkDownloadCompleteCallback,
         onFileDownloadCompleteCallback,
         onFileDownloadFailureCallback);
-  
   	kony.application.dismissLoadingScreen();
 }
-
 
 function populateItemDetials() {
   if((sante.constants.filePath !== null ) && (typeof sante.constants.filePath !== 'undefined')){  
@@ -1251,30 +1336,113 @@ function setCurrentDateToCalender() {
 
 // --- Assigning item name in editquanity form ----
 function onFrmDietKASegmentsRowClick(seguiWidget, sectionIndex, rowIndex, isSelected) {
-    var selectedRowItems = null;
-    var selectedRowData = null;
-    if (this !== null) {
-        kony.print(" segui id " + this.id);
-        if (this.id === "segConsumedItems") {
-            selectedRowItems = frmDietKA.segConsumedItems.selectedRowItems;
-        } else if (this.id === "segMorningSnack") {
-            selectedRowItems = frmDietKA.segMorningSnack.selectedRowItems;
-        } else if (this.id === "segLunch") {
-            selectedRowItems = frmDietKA.segLunch.selectedRowItems;
-        } else if (this.id === "segEveningSnack") {
-            selectedRowItems = frmDietKA.segEveningSnack.selectedRowItems;
-        } else if (this.id === "segDinner") {
-            selectedRowItems = frmDietKA.segDinner.selectedRowItems;
-        }
-        if ((selectedRowItems !== null) &&
-            (selectedRowItems.length > 0)) {
-            selectedRowData = selectedRowItems[0];
-            if (typeof selectedRowData === 'object') {
-			  frmEditQuantityKA.lblHeader.text = selectedRowData.segRecordsLbl.text;                
-              frmEditQuantityKA.CopylblHeader0i39dff53858547.text = selectedRowData.segCalorieslbl.text;
-			  getBinaryFromBox(selectedRowData.lblidKA.text);              
-            }
-        }
+  var selectedRowItems = null;
+  var selectedRowData = null;
+  kony.print(" segui id " + this.id);
+  if (this.id === "segConsumedItems") {
+    selectedRowItems = frmDietKA.segConsumedItems.selectedRowItems;
+  } else if (this.id === "segMorningSnack") {
+    selectedRowItems = frmDietKA.segMorningSnack.selectedRowItems;
+  } else if (this.id === "segLunch") {
+    selectedRowItems = frmDietKA.segLunch.selectedRowItems;
+  } else if (this.id === "segEveningSnack") {
+    selectedRowItems = frmDietKA.segEveningSnack.selectedRowItems;
+  } else if (this.id === "segDinner") {
+    selectedRowItems = frmDietKA.segDinner.selectedRowItems;
+  }
+  if ((selectedRowItems !== null) && (selectedRowItems.length > 0)) {
+    selectedRowData = selectedRowItems[0];
+    if (typeof selectedRowData === 'object') {
+      frmEditQuantityKA.lblHeader.text = selectedRowData.segRecordsLbl.text; 
+      frmEditQuantityKA.tbxNumber.text = selectedRowData.segRecordsLbl.text.match(/\d+/g)[0];      
+      frmEditQuantityKA.CopylblHeader0i39dff53858547.text = frmEditQuantityKA.CopytbxNumber0cfed95668df849.text = selectedRowData.segCalorieslbl.text;
+      sante.current.itemid = selectedRowData.lblidKAItemId.text;      
+      getBinaryFromBox(selectedRowData.lblidKA.text);
     }
-    frmEditQuantityKA.show();
+  }
+  frmEditQuantityKA.show();
+}
+
+// -- handling calories --
+function ontbxNumberTextChanging(txtBox) {
+  var quantity = this.text;  
+  function onGetSuccess(records) {
+    if(records.length > 0) {
+      kony.print("get success for item with id "+sante.current.itemid);
+      frmEditQuantityKA.lblHeader.text = records[0].ITEM_NAME + " (" + quantity + ")";          
+      frmEditQuantityKA.CopylblHeader0i39dff53858547.text = frmEditQuantityKA.CopytbxNumber0cfed95668df849.text = (quantity * records[0].CALORIES) + " cal";
+    } else {
+      kony.print("no records found for item with id "+sante.current.itemid);
+    }
+  }
+  
+  function onGetFailure(err) {
+    kony.print("get failed for item with id "+sante.current.itemid);
+  }
+  var consumedItems = getObjectByName("ITEMS"); 
+  var options = {};
+  options.whereConditionAsAString = "ITEM_ID = '" + sante.current.itemid + "'";
+  consumedItems.get(options, onGetSuccess, onGetFailure);
+}
+
+function updateConsumedItemsSuccess(res) {
+  kony.print("updated successfully CONSUMED_ITEMS "+ JSON.stringify(res));
+}
+
+function updateConsumedItemsFailure(err) {
+  kony.print("failed updating CONSUMED_ITEMS "+ JSON.stringify(err));
+}
+
+function updateQuantityAndCaloriesInConsumedItems() {
+  var quantity = frmEditQuantityKA.tbxNumber.text;
+  var calories = frmEditQuantityKA.CopytbxNumber0cfed95668df849.text.match(/\d+/g);
+  var consumedItems = getObjectByName("CONSUMED_ITEMS");  
+  var options = {}; 
+  if((calories instanceof Array) && (calories.length > 0)) {
+    calories = calories[0];
+    options.whereConditionAsAString = "USER_ID = '" + sante.current.user.USER_ID + "'" + 
+        				" and ZDATE = '" + getDateFromCalender() + "'" + 
+        				" and CATEGORY = '" + sante.current.category + "'" +
+        				" and ITEM_ID = '" + sante.current.itemid + "'";
+    //get the item if exists update else create
+    consumedItems.get(options, onGetSuccess, onGetFailure);
+  }
+                      
+  function onGetSuccess(records) {
+    if(records.length > 0) {
+      kony.print("records fetched successfully ");
+      var consumedItemId = records[0].CONSUMED_ITEM_ID;
+      options = {};
+      options.primaryKeys = {};
+      options.primaryKeys.CONSUMED_ITEM_ID = consumedItemId;
+      consumedItems.updateByPK({
+        "CALORIES": calories + '',
+        "QUANTITY": quantity + ''
+      }, options, updateConsumedItemsSuccess, updateConsumedItemsFailure);
+    } else {
+		var rString = randomString(10, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ%343453553');
+        var consumedItem = {
+            'CONSUMED_ITEM_ID': rString, // TODO generate a item
+            'ITEM_ID': sante.current.itemid + '',
+            'USER_ID': sante.current.user.USER_ID + '', // TODO current user id
+            'CATEGORY': sante.current.category + '',
+          	'CALORIES': calories + '',
+          	'QUANTITY': quantity + '',
+            'ZDATE': getDateFromCalender() // TODO proper date
+        };
+        consumedItems.create(consumedItem, {}, onCreateSuccess, onCreateFailure); 
+    }
+  }
+  
+  function onCreateSuccess(res) {
+    kony.print("consumeditem created successfully "+ JSON.stringify(res));
+  }
+  
+  function onCreateFailure(err) {
+    kony.print("consumeditem failed to create "+ JSON.stringify(err));
+  }
+  
+  function onGetFailure(err) {
+    kony.print("fail to fetch records "+ JSON.stringify(err));
+  }
 }

@@ -1,0 +1,21 @@
+{
+    "AS_TextField_ecbd6321de4d48ff9e8144d126e3d5cc": {
+        "id": "AS_TextField_ecbd6321de4d48ff9e8144d126e3d5cc",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "changedtext"
+        }],
+        "contextObj": {
+            "name": "frmEditQuantityKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "c2afdd0beb44446c85f8ab15cc310235"
+        },
+        "language": "js",
+        "actions": []
+    }
+}

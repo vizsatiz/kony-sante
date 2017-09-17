@@ -149,7 +149,7 @@ function addWidgetsfrmSetGoalKA() {
         "zIndex": 1
     }, {
         "containerHeightMode": constants.TEXTBOX_FONT_METRICS_DRIVEN_HEIGHT,
-        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_RIGHT,
+        "contentAlignment": constants.CONTENT_ALIGN_CENTER,
         "padding": [3, 0, 0, 0],
         "paddingInPixel": false
     }, {

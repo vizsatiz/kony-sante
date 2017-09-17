@@ -10,75 +10,27 @@
             },
             "btnUpdateKA": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Update"
+                "text": ""
             },
             "imgTask": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
-                "src": "add_active.png"
+                "src": ""
             },
             "lblidKA": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
-            },
-            "segCalorieslbl": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
-            },
-            "segRecordsLbl": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
-            }
-        },
-        {
-            "btnDeleteKA": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": ""
             },
-            "btnUpdateKA": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Update"
-            },
-            "imgTask": {
-                "@class": "com.viz.ide.model.segment.ImageSegmentData",
-                "src": "add_active.png"
-            },
-            "lblidKA": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
-            },
-            "segCalorieslbl": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
-            },
-            "segRecordsLbl": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
-            }
-        },
-        {
-            "btnDeleteKA": {
+            "lblidKAItemId": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": ""
             },
-            "btnUpdateKA": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Update"
-            },
-            "imgTask": {
-                "@class": "com.viz.ide.model.segment.ImageSegmentData",
-                "src": "add_active.png"
-            },
-            "lblidKA": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
-            },
             "segCalorieslbl": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
+                "text": ""
             },
             "segRecordsLbl": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Label"
+                "text": ""
             }
         }
     ],
@@ -115,7 +67,7 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "containerweight": 100,
-    "counter": "02",
+    "counter": "00",
     "focusedindex": null,
     "focuseditem": null,
     "groupcells": false,
@@ -147,7 +99,7 @@
     "pf": "frmDietKA",
     "retainselection": false,
     "rowTemplateId": "e2a3562ff33a42cbb80574a319879ddc",
-    "rowcounter": 2,
+    "rowcounter": 0,
     "rowfocusskin": "sf03a19cc3824c478a5162e28b20944f",
     "rowskin": "s9d8445af5a64490a136dfa835d9deeb",
     "rowtemplate": "flxTmpAssetMain",
@@ -160,7 +112,7 @@
     "selectedindex": null,
     "selectedindices": null,
     "selecteditems": null,
-    "selectedsectionindex": 0,
+    "selectedsectionindex": null,
     "selectionbehavior": "default",
     "separatorrequired": false,
     "showscrollbars": false,
@@ -177,6 +129,7 @@
         "flxTmpAssetMain": "flxTmpAssetMain",
         "imgTask": "imgTask",
         "lblidKA": "lblidKA",
+        "lblidKAItemId": "lblidKAItemId",
         "segCalorieslbl": "segCalorieslbl",
         "segRecordsLbl": "segRecordsLbl"
     },

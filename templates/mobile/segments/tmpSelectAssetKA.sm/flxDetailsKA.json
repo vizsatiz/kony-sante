@@ -38,7 +38,9 @@
     "children": [
         "segRecordsLbl",
         "imgTask",
-        "lblidKA"
+        "lblidKA",
+        "lblidCalories",
+        "lblidQuantity"
     ],
     "clipbounds": true,
     "containerId": true,

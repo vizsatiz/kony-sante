@@ -2,13 +2,17 @@
     "@class": "com.kony.gen.viz.model.component.KVizLabel",
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_height_": {
+    "_bottom_": {
         "type": "string",
-        "value": "30dp"
+        "value": "-5dp"
+    },
+    "_height_": {
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
-        "value": "15dp"
+        "value": "20dp"
     },
     "_margin_": [
         1,
@@ -22,11 +26,11 @@
         0,
         0
     ],
-    "_skin_": "s9cbc1e74a934fbea57291f8de66c666",
-    "_text_": "",
+    "_skin_": "sc54aebf3fac4215a1efd4c4d8f868b7",
+    "_text_": "Label",
     "_width_": {
-        "type": "string",
-        "value": "207dp"
+        "type": "ref",
+        "value": "preferred"
     },
     "_wrapping_": 2,
     "android": {
@@ -36,14 +40,10 @@
         }
     },
     "canUpdateUI": true,
-    "centery": {
-        "type": "string",
-        "value": "50%"
-    },
     "containerId": true,
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "segRecordsLbl",
+    "id": "lblidQuantity",
     "info": null,
     "ipad": {
         "psp": {
@@ -55,11 +55,11 @@
             "wrapping": 2
         }
     },
-    "isvisible": true,
-    "kuid": "h42752c6ab534c2f94e2bb681bf7ae86",
+    "isvisible": false,
+    "kuid": "j90856272d164e7a87265111a509d0e9",
     "name": "kony.ui.Label",
     "parent": "flxDetailsKA",
-    "pf": "tmpConsumedItems",
+    "pf": "tmpSelectAssetKA",
     "tooltip": "",
     "wType": "Label",
     "zindex": 1

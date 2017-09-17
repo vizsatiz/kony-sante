@@ -166,19 +166,25 @@ function addWidgetsfrmItemsKA() {
             "btnDeleteKA": "",
             "btnUpdateKA": "Update",
             "imgTask": "add_active.png",
+            "lblidCalories": "Label",
             "lblidKA": "Label",
+            "lblidQuantity": "Label",
             "segRecordsLbl": "Milk with Boost and Sugar"
         }, {
             "btnDeleteKA": "",
             "btnUpdateKA": "Update",
             "imgTask": "add_active.png",
+            "lblidCalories": "Label",
             "lblidKA": "Label",
+            "lblidQuantity": "Label",
             "segRecordsLbl": "Dosa (Plain)"
         }, {
             "btnDeleteKA": "",
             "btnUpdateKA": "Update",
             "imgTask": "add_active.png",
+            "lblidCalories": "Label",
             "lblidKA": "Label",
+            "lblidQuantity": "Label",
             "segRecordsLbl": "Veg Biryani"
         }],
         "groupCells": false,
@@ -210,7 +216,9 @@ function addWidgetsfrmItemsKA() {
             "flxSwipeKA": "flxSwipeKA",
             "flxTmpAssetMainKA": "flxTmpAssetMainKA",
             "imgTask": "imgTask",
+            "lblidCalories": "lblidCalories",
             "lblidKA": "lblidKA",
+            "lblidQuantity": "lblidQuantity",
             "segRecordsLbl": "segRecordsLbl"
         },
         "width": "100%",

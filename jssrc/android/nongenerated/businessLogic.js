@@ -4,6 +4,7 @@ sante.objects = {};
 sante.current = {};
 sante.constants = {
     'isLoginRequired': true,
+    'isLoadingEnabled': false
 };
 sante.current.category = 1;
 sante.constants.todaysCalories = 0;
@@ -60,7 +61,9 @@ function loginWithUsernamePassword(username, password, identityName) {
     kony.application.dismissLoadingScreen();
 
     function success() {
-        kony.application.showLoadingScreen(null, "Ready to launch..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+        if (sante.constants.isLoadingEnabled) {
+            kony.application.showLoadingScreen(null, "Ready to launch..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+        }
         applicationSetup();
     }
 
@@ -82,17 +85,18 @@ function loginWithUsernamePassword(username, password, identityName) {
 }
 
 function performUserUserDetailSync(objectServiceName) {
-    kony.application.showLoadingScreen(null, "Syncing ..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+    if (sante.constants.isLoadingEnabled) {
+        kony.application.showLoadingScreen(null, "Syncing ..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+    }
     var user = getObjectByName("USER");
     var userDetials = getObjectByName("USER_DETAILS");
 
     function successUserDetails(re) {
         kony.print('User and user details sync done');
         var options = {};
-        var orderByMap = [];
-        orderByMap[0] = {};
-        orderByMap[0].EMAIL = sante.current.user.EMAIL;
-        options.OrderByMap = orderByMap;
+        options = {
+            'whereConditionAsAString': "EMAIL = '" + sante.current.user.EMAIL + "'"
+        };
         user.get(options, getSuccess, getFailure);
     }
 
@@ -117,15 +121,15 @@ function performUserUserDetailSync(objectServiceName) {
 }
 
 function performOSSync(osName, doNotNavigate) {
-    kony.application.showLoadingScreen();
+    if (sante.constants.isLoadingEnabled) {
+        kony.application.showLoadingScreen();
+    }
     var objectService = getObjectServiceByName(osName);
     var metadata = sante.current.user.METADATA;
     var jsonMetadata = JSON.parse(metadata);
-    var fPre = '';
+    var fpre = null;
     if (jsonMetadata.Veg === 1) {
         fpre = 'FOOD_PREFERENCE eq 1';
-    } else {
-        fpre = null;
     }
 
     function onFailure(err) {
@@ -141,11 +145,14 @@ function performOSSync(osName, doNotNavigate) {
         kony.application.dismissLoadingScreen();
     }
     try {
-        var options = {
-            'filter': {
-                'ITEMS': fpre
-            }
-        };
+        var options = {};
+        if (fpre) {
+            options = {
+                'filter': {
+                    'ITEMS': fpre
+                }
+            };
+        }
         objectService.startSync(options, onSuccess.bind(this), onFailure.bind(this));
     } catch (e) {
         alert('OS Sync Failed !! ' + JSON.stringify(e));
@@ -245,6 +252,8 @@ function populateConsumedItemsBreakFast(options) {
             frmDietKA.lblCalories1.text = consumedCalories + "/" + Math.floor(totalCal / 5);
         } else {
             kony.print("records doesn't exist ");
+            frmDietKA.lblCalories1.text = 0 + "/" + Math.floor(totalCal / 5);
+            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + "Cal";
         }
     }
 
@@ -331,6 +340,8 @@ function populateConsumedItemsMorningSnacks(options) {
             frmDietKA.CopylblCalories0a89328abee6640.text = consumedCalories + "/" + Math.floor(totalCal / 5);
         } else {
             kony.print("records doesn't exist ");
+            frmDietKA.CopylblCalories0a89328abee6640.text = 0 + "/" + Math.floor(totalCal / 5);
+            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + "Cal";
         }
     }
 
@@ -417,6 +428,8 @@ function populateConsumedItemsLunch(options) {
             frmDietKA.CopylblCalories0e2db4b45fec14e.text = consumedCalories + "/" + Math.floor(totalCal / 5);
         } else {
             kony.print("records doesn't exist ");
+            frmDietKA.CopylblCalories0e2db4b45fec14e.text = 0 + "/" + Math.floor(totalCal / 5);
+            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + "Cal";
         }
     }
 
@@ -503,6 +516,8 @@ function populateConsumedItemsEveningSnack(options) {
             frmDietKA.CopylblCalories0h2492c889b2840.text = consumedCalories + "/" + Math.floor(totalCal / 5);
         } else {
             kony.print("records doesn't exist ");
+            frmDietKA.CopylblCalories0h2492c889b2840.text = 0 + "/" + Math.floor(totalCal / 5);
+            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + "Cal";
         }
     }
 
@@ -589,6 +604,8 @@ function populateConsumedItemsDinner(options) {
             frmDietKA.CopylblCalories0d0e0368543b94d.text = consumedCalories + "/" + Math.floor(totalCal / 5);
         } else {
             kony.print("records doesn't exist ");
+            frmDietKA.CopylblCalories0d0e0368543b94d.text = 0 + "/" + Math.floor(totalCal / 5);
+            frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + "Cal";
         }
     }
 
@@ -802,7 +819,9 @@ function loginSuccess(response) {
     kony.application.dismissLoadingScreen();
     kony.print("login success " + JSON.stringify(response));
     //getting the user profile
-    kony.application.showLoadingScreen(null, "Getting Profile..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+    if (sante.constants.isLoadingEnabled) {
+        kony.application.showLoadingScreen(null, "Getting Profile..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+    }
     authClient.getProfile(true, getProfileSuccess, getProfileError);
 }
 
@@ -812,7 +831,9 @@ function loginFailure(error) {
 
 function loginWithGoogle() {
     kony.print(" Init Success ");
-    kony.application.showLoadingScreen(null, "Connecting..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+    if (sante.constants.isLoadingEnabled) {
+        kony.application.showLoadingScreen(null, "Connecting..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+    }
     //get the identity service
     authClient = kony.sdk.getCurrentInstance().getIdentityService('SanteIdentity'); //client.getIdentityService(providerName);
     //login
@@ -831,6 +852,7 @@ function getProfileSuccess(response) {
     kony.print("User profile is " + JSON.stringify(response));
     sante.current.google = {};
     sante.current.google.user = response;
+    sante.current.user.EMAIL = response.email;
     //Get the profile picture of the user
     authClient.getUserAttributes(getProfilePictureSuccess, getProfileError);
     validateCurrentUserProfile();
@@ -892,7 +914,7 @@ function userCreateSuccess(result) {
     frmUserKA.lblEmail.text = email;
     var userDetails = new kony.sdk.KNYObj("USER_DETAILS");
     var filters = {
-        'whereConditionAsAString': 'USER_ID = ' + sante.current.user.USER_ID
+        'whereConditionAsAString': "USER_ID = '" + sante.current.user.USER_ID + "'"
     };
 
     function onSuccess(records) {
@@ -920,7 +942,7 @@ function userCreateSuccess(result) {
     function onFailure(err) {
         alert(JSON.stringify(err));
     }
-    userDetails.get({}, onSuccess, onFailure);
+    userDetails.get(filters, onSuccess, onFailure);
 }
 
 function userDetailsSuccess() {
@@ -1118,7 +1140,9 @@ function onFileDownloadFailureCallback(err) {
 }
 
 function getBinaryFromBox(fileId) {
-    kony.application.showLoadingScreen();
+    if (sante.constants.isLoadingEnabled) {
+        kony.application.showLoadingScreen();
+    }
     var integrationSvc = kony.sdk.getCurrentInstance().getIntegrationService("SanteBoxIntegration");
     integrationSvc.getBinaryData("get_files_fileId_content", {
         "fileId": fileId

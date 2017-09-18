@@ -16,7 +16,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__bfec1196842b447db4b5abeae2ae2dc5",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "var name = sante.current.user.FIRST_NAME + \"\" + sante.current.user.LAST_NAME;\nvar email = sante.current.user.EMAIL;\nfrmUserKA.lblHeader.text = name;\nfrmUserKA.lblEmail.text = email;",
+            "codeSnippet": "var name = sante.current.user.FIRST_NAME + \" \" + sante.current.user.LAST_NAME;\nvar email = sante.current.user.EMAIL;\nfrmUserKA.lblHeader.text = name;\nfrmUserKA.lblEmail.text = email;",
             "parentId": null,
             "callbackType": null
         }]

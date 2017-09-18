@@ -12,8 +12,8 @@ var appConfig = {
     middlewareContext: "Sante",
     isturlbase: "https://test-800-sdk.sit2-konycloud.com/services",
     isMFApp: true,
-    appKey: "59b59119d5a61ab5e00a7b050aab066f",
-    appSecret: "bb0bb5896013943c93cb4c3d2168b4ee",
+    appKey: "15df850603d64b7a7de6de728f830e5e",
+    appSecret: "887dfbfb962bd9959b7c57d4760b3ac1",
     serviceUrl: "https://100000013.auth.sit2-konycloud.com/appconfig",
     svcDoc: {
         "selflink": "https://100000013.auth.sit2-konycloud.com/appconfig",
@@ -28,13 +28,13 @@ var appConfig = {
         "integsvc": {
             "SanteBoxIntegration": "https://test-800-sdk.sit2-konycloud.com/services/SanteBoxIntegration"
         },
-        "appId": "9e9b9dc4-c272-4f7b-b18e-6dfcc30db93a",
-        "name": "Sante4",
+        "appId": "bca66a96-4cb3-4223-bb65-30168c04effe",
+        "name": "Sante2",
         "reportingsvc": {
             "session": "https://test-800-sdk.sit2-konycloud.com/services/IST",
             "custom": "https://test-800-sdk.sit2-konycloud.com/services/CMS"
         },
-        "baseId": "21c1c787-c003-43d4-8393-453903509d4b",
+        "baseId": "8a2501e6-53b1-43d6-9198-f8ef8eb38e3c",
         "login": [{
             "alias": "SanteIdentity",
             "type": "oauth2",
@@ -52,16 +52,16 @@ var appConfig = {
             "url": "https://100000013.auth.sit2-konycloud.com"
         }],
         "services_meta": {
+            "SanteOS2": {
+                "metadata_url": "https://test-800-sdk.sit2-konycloud.com/services/metadata/v1/SanteOS2",
+                "type": "objectsvc",
+                "version": "1.0",
+                "url": "https://test-800-sdk.sit2-konycloud.com/services/data/v1/SanteOS2"
+            },
             "SanteBoxIntegration": {
                 "type": "integsvc",
                 "version": "1.0",
                 "url": "https://test-800-sdk.sit2-konycloud.com/services/SanteBoxIntegration"
-            },
-            "Sante4": {
-                "metadata_url": "https://test-800-sdk.sit2-konycloud.com/services/metadata/v1/Sante4",
-                "type": "objectsvc",
-                "version": "1.0",
-                "url": "https://test-800-sdk.sit2-konycloud.com/services/data/v1/Sante4"
             }
         }
     },

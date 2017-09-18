@@ -6,6 +6,7 @@ sante.constants = {
     'isLoginRequired': true,
     'isLoadingEnabled': false
 };
+sante.constants.OS = "SanteOS2";
 sante.current.category = 1;
 sante.constants.todaysCalories = 0;
 sante.current.user = {
@@ -44,7 +45,7 @@ function getObjectByName(objectName) {
 function applicationSetup() {
     function onSuccess() {
         kony.application.dismissLoadingScreen();
-        performUserUserDetailSync("Sante4", true);
+        performUserUserDetailSync(sante.constants.OS, true);
     }
 
     function onFailure() {

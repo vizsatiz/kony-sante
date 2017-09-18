@@ -28,11 +28,11 @@ function AS_Button_c00e8fe0a0364c0d888cf6cfe2c063de(eventobject) {
 }
 
 function AS_Button_c098055c0b2f464eb01b7b7bdab5ee3a(eventobject) {
-    performOSSync("Sante4");
+    performOSSync(sante.constants.OS);
 }
 
 function AS_Button_c24315c3a79547fbb09b086e32e8cba7(eventobject) {
-    performOSSync("Sante4", true);
+    performOSSync(sante.constants.OS, true);
 }
 
 function AS_Button_db14b2adc7b1444cb83006cf0fba13b6(eventobject) {

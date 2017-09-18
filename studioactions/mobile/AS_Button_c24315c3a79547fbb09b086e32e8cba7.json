@@ -16,7 +16,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__g243a44787454a66b16979f7c52a6e5e",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "performOSSync(\"Sante4\", true);",
+            "codeSnippet": "performOSSync(sante.constants.OS, true);",
             "parentId": null,
             "callbackType": null
         }]

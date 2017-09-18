@@ -1157,7 +1157,8 @@ function updateGoalDetails() {
 
             userDetails.updateByPK({
                     "SETGOALWGT": setGoalWeight + '',
-                    "TOTAL_CALORIES": totalCal + ''
+                    "TOTAL_CALORIES": totalCal + '',
+              		"WEIGHT_DIFF": weightDifference + ''
                 }, whereCondition,
                 updateUserDetailsSuccess,
                 updateUserDetailsFailure);

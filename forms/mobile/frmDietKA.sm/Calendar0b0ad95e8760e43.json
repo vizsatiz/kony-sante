@@ -6,7 +6,11 @@
     "__input": "Calendar0b0ad95e8760e43",
     "__parentReadjusting__": false,
     "_data_": null,
-    "_date_": "7/9/2017",
+    "_date_": [
+        "13",
+        "9",
+        "2017"
+    ],
     "_height_": {
         "type": "string",
         "value": "40dp"
@@ -43,43 +47,39 @@
     "containerweight": 100,
     "contentalignment": 5,
     "datecomponents": [
-        7,
-        9,
-        2017,
-        0,
-        0,
-        0
+        "13",
+        "9",
+        "2017"
     ],
     "dateeditable": true,
     "dateformat": "dd/MM/yyyy",
     "datesGroup": [],
     "datesState": 0,
-    "day": 7,
+    "day": "13",
     "daytextalignmentincell": 5,
     "displayedMonths": [
         9,
         2017
     ],
-    "entereddate": [
-        7,
-        9,
-        2017,
-        0,
-        0,
-        0
-    ],
+    "entereddate": "13/09/2017",
     "format": "dd/MM/yyyy",
-    "formatteddate": "07/09/2017",
+    "formatteddate": "13/09/2017",
     "hidedaysheader": false,
     "hidemonthsheader": false,
     "hour": 0,
     "id": "Calendar0b0ad95e8760e43",
+    "ide_onSelection": "AS_Calendar_ife41a3c2b6e43d291a569fc5f05682f",
     "info": null,
     "invokedProperty": "rightNavigationImage",
     "isvisible": true,
     "kuid": "d7212fbb92114a99bf71e076d4cbf8a1",
+    "luadate": [
+        "13",
+        "9",
+        "2017"
+    ],
     "minutes": 0,
-    "month": 9,
+    "month": "9",
     "monthsinrow": 3,
     "name": "kony.ui.Calendar",
     "navigatorAlert": "Invalid Selection",
@@ -110,6 +110,6 @@
         "14.2857%;",
         "14.2857%;"
     ],
-    "year": 2017,
+    "year": "2017",
     "zindex": 1
 }

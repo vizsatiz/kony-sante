@@ -24,5 +24,5 @@
     <pluginInfo version-no="8.0.0.201709051747" plugin-id="com.kony.desktopweb" plugin-name="Kony Desktop Web"/>
     <pluginInfo version-no="8.0.0.201709051208" plugin-id="com.kony.webcommons" plugin-name="Kony Web Commons"/>
     <pluginInfo version-no="8.0.0.201709051808" plugin-id="com.kony.ios" plugin-name="iOS Plugin"/>
-    <pluginInfo version-no="8.0.0.TestDEV_v201709051202_r51" plugin-id="com.kony.mobile.fabric.client.sdk" plugin-name="MobileFabric Client SDK"/>
+    <pluginInfo version-no="8.0.0.v201709090919" plugin-id="com.kony.mobile.fabric.client.sdk" plugin-name="MobileFabric Client SDK"/>
 </plugins>

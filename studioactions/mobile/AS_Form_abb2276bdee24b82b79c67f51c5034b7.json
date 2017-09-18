@@ -1,0 +1,24 @@
+{
+    "AS_Form_abb2276bdee24b82b79c67f51c5034b7": {
+        "id": "AS_Form_abb2276bdee24b82b79c67f51c5034b7",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmDietKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "b2da036e8558476da2a9d8dd65146f04"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__aa16a20b2c5a4c06978779c024d754de",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "sante.constants.todaysCalories = 0;\npopulateConsumedItemsBreakFast();\npopulateConsumedItemsMorningSnacks();\npopulateConsumedItemsLunch();\npopulateConsumedItemsEveningSnack();\npopulateConsumedItemsDinner();",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

@@ -38,7 +38,10 @@ public class N_binarydata extends JSLibrary {
  
 	public static final String getBinaryDataFilePath = "getBinaryDataFilePath";
  
-	String[] methods = { deleteBinaryObject, startDownload, pauseDownload, resumeDownload, createDownloadTask, clearBinaryDataManagerState, getBinaryDataFilePath };
+ 
+	public static final String getOnlineBinaryData = "getOnlineBinaryData";
+ 
+	String[] methods = { deleteBinaryObject, startDownload, pauseDownload, resumeDownload, createDownloadTask, clearBinaryDataManagerState, getBinaryDataFilePath, getOnlineBinaryData };
 
 
  Library libs[] = null;
@@ -210,6 +213,39 @@ public class N_binarydata extends JSLibrary {
  ret = this.getBinaryDataFilePath( databaseName6, tableName6, binaryColumnName6, primaryKeyTable6, successCallback6, errorCallback6 );
  
  			break;
+ 		case 7:
+ if (paramLen != 7){ return new Object[] {new Double(100),"Invalid Params"}; }
+ com.konylabs.vm.LuaTable fileParams7 = null;
+ if(params[0] != null && params[0] != LuaNil.nil) {
+ fileParams7 = (com.konylabs.vm.LuaTable)params[0];
+ }
+ Boolean streaming7 = null;
+ if(params[1] != null && params[1] != LuaNil.nil) {
+ streaming7 = (Boolean)params[1];
+ }
+ com.konylabs.vm.LuaTable downloadConfig7 = null;
+ if(params[2] != null && params[2] != LuaNil.nil) {
+ downloadConfig7 = (com.konylabs.vm.LuaTable)params[2];
+ }
+ com.konylabs.vm.Function fileDownloadStartedCallback7 = null;
+ if(params[3] != null && params[3] != LuaNil.nil) {
+ fileDownloadStartedCallback7 = (com.konylabs.vm.Function)params[3];
+ }
+ com.konylabs.vm.Function chunkDownloadCompletedCallback7 = null;
+ if(params[4] != null && params[4] != LuaNil.nil) {
+ chunkDownloadCompletedCallback7 = (com.konylabs.vm.Function)params[4];
+ }
+ com.konylabs.vm.Function fileDownloadCompletedCallback7 = null;
+ if(params[5] != null && params[5] != LuaNil.nil) {
+ fileDownloadCompletedCallback7 = (com.konylabs.vm.Function)params[5];
+ }
+ com.konylabs.vm.Function downloadFailureCallback7 = null;
+ if(params[6] != null && params[6] != LuaNil.nil) {
+ downloadFailureCallback7 = (com.konylabs.vm.Function)params[6];
+ }
+ ret = this.getOnlineBinaryData( fileParams7, streaming7, downloadConfig7, fileDownloadStartedCallback7, chunkDownloadCompletedCallback7, fileDownloadCompletedCallback7, downloadFailureCallback7 );
+ 
+ 			break;
  		default:
 			break;
 		}
@@ -324,6 +360,22 @@ public class N_binarydata extends JSLibrary {
  , (java.util.Hashtable)TableLib.convertToHash(inputKey3)
  , (com.konylabs.vm.Function)inputKey4
  , (com.konylabs.vm.Function)inputKey5
+ );
+ 
+ ret = new Object[]{LuaNil.nil, new Double(0)};
+ 		return ret;
+	}
+ 
+ 
+ 	public final Object[] getOnlineBinaryData( com.konylabs.vm.LuaTable inputKey0, Boolean inputKey1, com.konylabs.vm.LuaTable inputKey2, com.konylabs.vm.Function inputKey3, com.konylabs.vm.Function inputKey4, com.konylabs.vm.Function inputKey5, com.konylabs.vm.Function inputKey6 ){
+ 
+		Object[] ret = null;
+ com.kony.binarydatamanager.ffi.BinaryDataFFI.getBinaryData( (java.util.Hashtable)TableLib.convertToHash(inputKey0)
+ , inputKey1.booleanValue() , (java.util.Hashtable)TableLib.convertToHash(inputKey2)
+ , (com.konylabs.vm.Function)inputKey3
+ , (com.konylabs.vm.Function)inputKey4
+ , (com.konylabs.vm.Function)inputKey5
+ , (com.konylabs.vm.Function)inputKey6
  );
  
  ret = new Object[]{LuaNil.nil, new Double(0)};

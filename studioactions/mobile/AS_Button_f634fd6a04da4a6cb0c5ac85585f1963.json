@@ -1,0 +1,22 @@
+{
+    "AS_Button_f634fd6a04da4a6cb0c5ac85585f1963": {
+        "id": "AS_Button_f634fd6a04da4a6cb0c5ac85585f1963",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___ac6e47c287d14b6b840ae86ff0099318",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "updateQuantityAndCaloriesInConsumedItems",
+            "display": "updateQuantityAndCaloriesInConsumedItems",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "module"
+        }]
+    }
+}

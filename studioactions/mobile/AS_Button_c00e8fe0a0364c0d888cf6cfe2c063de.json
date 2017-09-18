@@ -1,0 +1,28 @@
+{
+    "AS_Button_c00e8fe0a0364c0d888cf6cfe2c063de": {
+        "id": "AS_Button_c00e8fe0a0364c0d888cf6cfe2c063de",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmFoodPreferenceKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "adb8f8653931451f892c5fab204bb780"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___c6a84b7379d84fdfa13f945102bf489c",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "updateFoodPreference",
+            "display": "updateFoodPreference",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "module"
+        }]
+    }
+}

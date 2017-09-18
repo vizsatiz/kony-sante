@@ -3,77 +3,73 @@ var globalhttpheaders = {};
 var appConfig = {
     appId: "Sante",
     appName: "Sante",
-    appVersion: "1.0.0",
+    appVersion: "1.0.1",
     platformVersion: null,
     serverIp: "10.10.12.125",
     serverPort: "80",
     secureServerPort: "443",
     isDebug: true,
     middlewareContext: "Sante",
-    isturlbase: "http://10.10.33.35:8080/services",
+    isturlbase: "https://test-800-sdk.sit2-konycloud.com/services",
     isMFApp: true,
-    appKey: "786785effa2f94629b1a6149f123acae",
-    appSecret: "dd812f47baf3819a8c7ce89fe85c0b2e",
-    serviceUrl: "http://10.10.33.35:8080/authService/100000002/appconfig",
+    appKey: "59b59119d5a61ab5e00a7b050aab066f",
+    appSecret: "bb0bb5896013943c93cb4c3d2168b4ee",
+    serviceUrl: "https://100000013.auth.sit2-konycloud.com/appconfig",
     svcDoc: {
-        "selflink": "http://10.10.33.35:8080/authService/100000002/appconfig",
+        "selflink": "https://100000013.auth.sit2-konycloud.com/appconfig",
         "identity_meta": {
-            "boxIdentity": {
+            "SanteIdentity": {
                 "success_url": "allow_any"
             },
-            "SanteIdentity": {
+            "SanteBoxIdentity": {
                 "success_url": "allow_any"
             }
         },
         "integsvc": {
-            "BinaryImage": "http://10.10.33.35:8080/services/BinaryImage"
+            "SanteBoxIntegration": "https://test-800-sdk.sit2-konycloud.com/services/SanteBoxIntegration"
         },
-        "appId": "6bbb26d7-0533-4f52-b3f1-cbc0aa73f126",
-        "name": "Sante",
+        "appId": "9e9b9dc4-c272-4f7b-b18e-6dfcc30db93a",
+        "name": "Sante4",
         "reportingsvc": {
-            "session": "http://10.10.33.35:8080/services/IST",
-            "custom": "http://10.10.33.35:8080/services/CMS"
+            "session": "https://test-800-sdk.sit2-konycloud.com/services/IST",
+            "custom": "https://test-800-sdk.sit2-konycloud.com/services/CMS"
         },
-        "baseId": "622f1c7b-9630-4163-8288-22aece942df1",
+        "baseId": "21c1c787-c003-43d4-8393-453903509d4b",
         "login": [{
-            "alias": "boxIdentity",
-            "type": "oauth2",
-            "prov": "boxIdentity",
-            "url": "http://10.10.33.35:8080/authService/100000002"
-        }, {
             "alias": "SanteIdentity",
             "type": "oauth2",
             "prov": "SanteIdentity",
-            "url": "http://10.10.33.35:8080/authService/100000002"
+            "url": "https://100000013.auth.sit2-konycloud.com"
+        }, {
+            "alias": "SanteBoxIdentity",
+            "type": "oauth2",
+            "prov": "SanteBoxIdentity",
+            "url": "https://100000013.auth.sit2-konycloud.com"
         }, {
             "alias": "SanteSapIdentity",
             "type": "basic",
             "prov": "SanteSapIdentity",
-            "url": "http://10.10.33.35:8080/authService/100000002"
+            "url": "https://100000013.auth.sit2-konycloud.com"
         }],
         "services_meta": {
-            "BinaryOS": {
-                "metadata_url": "http://10.10.33.35:8080/services/metadata/v1/BinaryOS",
-                "type": "objectsvc",
-                "version": "1.0",
-                "url": "http://10.10.33.35:8080/services/data/v1/BinaryOS"
-            },
-            "SanteOS": {
-                "metadata_url": "http://10.10.33.35:8080/services/metadata/v1/SanteOS",
-                "type": "objectsvc",
-                "version": "1.0",
-                "url": "http://10.10.33.35:8080/services/data/v1/SanteOS"
-            },
-            "BinaryImage": {
+            "SanteBoxIntegration": {
                 "type": "integsvc",
                 "version": "1.0",
-                "url": "http://10.10.33.35:8080/services/BinaryImage"
+                "url": "https://test-800-sdk.sit2-konycloud.com/services/SanteBoxIntegration"
+            },
+            "Sante4": {
+                "metadata_url": "https://test-800-sdk.sit2-konycloud.com/services/metadata/v1/Sante4",
+                "type": "objectsvc",
+                "version": "1.0",
+                "url": "https://test-800-sdk.sit2-konycloud.com/services/data/v1/Sante4"
             }
         }
     },
+    svcDocRefresh: false,
+    svcDocRefreshTimeSecs: -1,
     eventTypes: ["FormEntry", "ServiceRequest", "Error", "Crash"],
-    url: "http://10.10.33.35:8080/admin/Sante/MWServlet",
-    secureurl: "http://10.10.33.35:8080/admin/Sante/MWServlet"
+    url: "https://test-800-sdk.sit2-konycloud.com/Sante/MWServlet",
+    secureurl: "https://test-800-sdk.sit2-konycloud.com/Sante/MWServlet"
 };
 sessionID = "";
 
@@ -81,12 +77,16 @@ function appInit(params) {
     skinsInit();
     initializeMVCTemplates();
     initializeUserWidgets();
+    initializetmpConsumedItems();
     initializetmpSelectAssetKA();
+    initializetmpSelectItems();
     frmDietKAGlobals();
+    frmEditQuantityKAGlobals();
     frmFoodPreferenceKAGlobals();
     frmHomeKAGlobals();
     frmItemsKAGlobals();
     frmPlanKAGlobals();
+    frmSanteKAGlobals();
     frmSetGoalKAGlobals();
     frmUserDetailsKAGlobals();
     frmUserKAGlobals();
@@ -108,6 +108,7 @@ function themeCallBack() {
     callAppMenu();
     kony.application.setApplicationInitializationEvents({
         init: appInit,
+        appservice: AS_AppEvents_e639ed7065f64a72ba009a122df3d399,
         showstartupform: function() {
             frmHomeKA.show();
         }

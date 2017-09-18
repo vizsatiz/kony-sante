@@ -1,0 +1,28 @@
+{
+    "AS_Form_i7eea69580774e8c8c13fa46cb630519": {
+        "id": "AS_Form_i7eea69580774e8c8c13fa46cb630519",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmFoodPreferenceKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "adb8f8653931451f892c5fab204bb780"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___jdc0d62a12ac43f2b3ae5b10b719a1e6",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "populateFoodPreference",
+            "display": "populateFoodPreference",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "module"
+        }]
+    }
+}

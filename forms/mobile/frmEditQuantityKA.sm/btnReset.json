@@ -28,7 +28,7 @@
         "value": "5dp"
     },
     "_skin_": "sf51ae237b4d4246b47ad0af82b840ba",
-    "_text_": "Reset",
+    "_text_": "Back",
     "_top_": {
         "type": "string",
         "value": "5dp"
@@ -39,6 +39,7 @@
     "displaytext": true,
     "focusskin": "sa03b87b901d4fdba64d41e3fa0fcbcd",
     "id": "btnReset",
+    "ide_onClick": "AS_Button_dc818435e9a64418a73bd28cf89314a1",
     "info": null,
     "isvisible": true,
     "kuid": "c4a543ac2f824c8481ff412e4bb09494",

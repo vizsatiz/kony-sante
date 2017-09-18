@@ -1,0 +1,24 @@
+{
+    "AS_Form_c55aacd3369e4ec0af64ef5498b6549c": {
+        "id": "AS_Form_c55aacd3369e4ec0af64ef5498b6549c",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmSetGoalKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "eb705e04571040b881c76a3517bb5d66"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__i8fe915714de4a53beea73695d47cefd",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "populateGoal();",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

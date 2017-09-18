@@ -36,7 +36,8 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "btnDone"
+        "btnDone",
+        "btnSave"
     ],
     "clipbounds": true,
     "containerweight": 100,

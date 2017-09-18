@@ -1,0 +1,30 @@
+{
+    "AS_Image_b2bbfbc152cb4794b6d4cc741897684c": {
+        "id": "AS_Image_b2bbfbc152cb4794b6d4cc741897684c",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmItemsKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "a9bad7b9a1ec4714931c1337329f72c4"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__d0234b18c08e4050a01a1c31bb9f65af",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "var string = frmItemsKA.tbWhere.text; \nvar whereCondition = \"ITEM_NAME LIKE '\" + string + \"%'\";\npopulateItemInFrmItemsKA({\n  \"whereConditionAsAString\": whereCondition\n})",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

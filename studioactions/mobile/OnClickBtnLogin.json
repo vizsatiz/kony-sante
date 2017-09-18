@@ -15,16 +15,11 @@
         },
         "language": "js",
         "actions": [{
-            "id": "NAVIGATE_TO_FORM___a45f93ee16e84210a70dd99539963c48",
-            "type": "NAVIGATE_TO_FORM",
-            "formId": "frmSanteKA",
-            "formKUID": "de259bb4cf594af890014c2388b3225a",
-            "mappings": {},
-            "mappingsOrder": [],
-            "parentId": "",
-            "callbackType": null,
-            "enableMappingEditor": true,
-            "package": ""
+            "id": "ADD_SNIPPET__c4ec6e25f2d249348714adb12b5ede6d",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "loginWithGoogle();",
+            "parentId": null,
+            "callbackType": null
         }]
     }
 }

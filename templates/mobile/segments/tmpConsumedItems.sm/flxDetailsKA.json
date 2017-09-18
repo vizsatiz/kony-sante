@@ -39,7 +39,8 @@
         "segRecordsLbl",
         "segCalorieslbl",
         "imgTask",
-        "lblidKA"
+        "lblidKA",
+        "lblidKAItemId"
     ],
     "clipbounds": true,
     "containerId": true,

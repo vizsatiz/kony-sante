@@ -38,6 +38,7 @@
     "displaytext": true,
     "focusskin": "sf557914f0b64e2c93c14daca7154934",
     "id": "btnSync",
+    "ide_onClick": "AS_Button_c24315c3a79547fbb09b086e32e8cba7",
     "info": null,
     "isvisible": true,
     "kuid": "gc10123af5284fecb7d32939178a2a5a",

@@ -41,6 +41,7 @@
         "imgSelect",
         "imgUnselect",
         "BorderButtonRound",
+        "ButtonBoxLogin",
         "lblNote"
     ],
     "clipbounds": true,

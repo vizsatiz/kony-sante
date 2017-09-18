@@ -1,0 +1,24 @@
+{
+    "AS_Button_c098055c0b2f464eb01b7b7bdab5ee3a": {
+        "id": "AS_Button_c098055c0b2f464eb01b7b7bdab5ee3a",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmUserKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "d9ad411b7f504a78be40a0840560be3a"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__h203b638ec054606bb6f6dc9e618a613",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "performOSSync(\"Sante4\");",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

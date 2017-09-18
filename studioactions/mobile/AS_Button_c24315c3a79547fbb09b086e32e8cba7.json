@@ -1,0 +1,24 @@
+{
+    "AS_Button_c24315c3a79547fbb09b086e32e8cba7": {
+        "id": "AS_Button_c24315c3a79547fbb09b086e32e8cba7",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmDietKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "b2da036e8558476da2a9d8dd65146f04"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__g243a44787454a66b16979f7c52a6e5e",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "performOSSync(\"Sante4\", true);",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

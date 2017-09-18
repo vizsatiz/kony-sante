@@ -16,7 +16,15 @@
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "add_active.png"
             },
+            "lblidCalories": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
             "lblidKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblidQuantity": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             },
@@ -38,7 +46,15 @@
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "add_active.png"
             },
+            "lblidCalories": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
             "lblidKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblidQuantity": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             },
@@ -60,7 +76,15 @@
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "add_active.png"
             },
+            "lblidCalories": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
             "lblidKA": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblidQuantity": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             },
@@ -109,6 +133,7 @@
     "groupcells": false,
     "hasSections": false,
     "id": "segItems",
+    "ide_onRowClick": "AS_Segment_e5eea0916e3e4d489ddeaf625768c35c",
     "info": null,
     "ipad": {
         "psp": {
@@ -162,7 +187,9 @@
         "flxSwipeKA": "flxSwipeKA",
         "flxTmpAssetMainKA": "flxTmpAssetMainKA",
         "imgTask": "imgTask",
+        "lblidCalories": "lblidCalories",
         "lblidKA": "lblidKA",
+        "lblidQuantity": "lblidQuantity",
         "segRecordsLbl": "segRecordsLbl"
     },
     "zindex": 1

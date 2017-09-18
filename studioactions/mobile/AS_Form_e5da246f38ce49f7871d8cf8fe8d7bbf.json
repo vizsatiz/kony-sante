@@ -1,0 +1,24 @@
+{
+    "AS_Form_e5da246f38ce49f7871d8cf8fe8d7bbf": {
+        "id": "AS_Form_e5da246f38ce49f7871d8cf8fe8d7bbf",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmPlanKA",
+            "type": "forms",
+            "platform": "",
+            "KUID": "ad180a1aca9c4c558e4a3388b13298ae"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__f06005f6f0034954b9ea4d5ce90845b1",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "populateWorkoutDetails();",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

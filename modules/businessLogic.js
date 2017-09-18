@@ -137,13 +137,11 @@ function performOSSync(osName, doNotNavigate) {
     var objectService = getObjectServiceByName(osName);
     var metadata = sante.current.user.METADATA;
     var jsonMetadata = JSON.parse(metadata);
-    var fPre = '';
+    var fpre = null;
 
     if (jsonMetadata.Veg === 1) {
         fpre = 'FOOD_PREFERENCE eq 1';
-    } else {
-        fpre = null;
-    }
+    } 
 
 
     function onFailure(err) {
@@ -161,11 +159,14 @@ function performOSSync(osName, doNotNavigate) {
     }
 
     try {
-        var options = {
-            'filter': {
-                'ITEMS': fpre
-            }
-        };
+      	var options = {};
+        if (fpre) {
+          options = {
+              'filter': {
+                  'ITEMS': fpre
+              }
+          };
+    	}
         objectService.startSync(options,
             onSuccess.bind(this),
             onFailure.bind(this));
@@ -276,6 +277,8 @@ function populateConsumedItemsBreakFast(options) {
 	  frmDietKA.lblCalories1.text = consumedCalories + "/" + Math.floor(totalCal / 5);      
     } else {
       kony.print("records doesn't exist ");
+      frmDietKA.lblCalories1.text = 0 + "/" + Math.floor(totalCal / 5);  
+      frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + "Cal";
     } 
   }
   
@@ -369,6 +372,8 @@ function populateConsumedItemsMorningSnacks(options) {
         frmDietKA.CopylblCalories0a89328abee6640.text = consumedCalories + "/" + Math.floor(totalCal / 5);        
       } else {
         kony.print("records doesn't exist ");
+        frmDietKA.CopylblCalories0a89328abee6640.text = 0 + "/" + Math.floor(totalCal / 5);  
+      	frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + "Cal";
       }       
     }
   	
@@ -462,6 +467,8 @@ function populateConsumedItemsLunch(options) {
       
     } else {
       kony.print("records doesn't exist ");
+      frmDietKA.CopylblCalories0e2db4b45fec14e.text = 0 + "/" + Math.floor(totalCal / 5);  
+      frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + "Cal";
     } 
   }
   
@@ -555,6 +562,8 @@ function populateConsumedItemsEveningSnack(options) {
       frmDietKA.CopylblCalories0h2492c889b2840.text = consumedCalories + "/" + Math.floor(totalCal / 5);
     } else {
       kony.print("records doesn't exist ");
+      frmDietKA.CopylblCalories0h2492c889b2840.text = 0 + "/" + Math.floor(totalCal / 5);  
+      frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + "Cal";
     } 
   }
   
@@ -648,6 +657,8 @@ function populateConsumedItemsDinner(options) {
       frmDietKA.CopylblCalories0d0e0368543b94d.text = consumedCalories + "/" + Math.floor(totalCal / 5);
     } else {
       kony.print("records doesn't exist ");
+      frmDietKA.CopylblCalories0d0e0368543b94d.text = 0 + "/" + Math.floor(totalCal / 5);  
+      frmDietKA.lblTotalCal.text = sante.constants.todaysCalories + "/" + totalCal + "Cal";
     } 
   }
   
@@ -992,7 +1003,7 @@ function userCreateSuccess(result) {
 
     var userDetails = new kony.sdk.KNYObj("USER_DETAILS");
     var filters = {
-        'whereConditionAsAString': 'USER_ID = ' + sante.current.user.USER_ID
+        'whereConditionAsAString': "USER_ID = '" + sante.current.user.USER_ID + "'"
     };
 
     function onSuccess(records) {
@@ -1022,7 +1033,7 @@ function userCreateSuccess(result) {
     function onFailure(err) {
         alert(JSON.stringify(err));
     }
-    userDetails.get({}, onSuccess, onFailure);
+    userDetails.get(filters, onSuccess, onFailure);
 }
 
 function userDetailsSuccess() {

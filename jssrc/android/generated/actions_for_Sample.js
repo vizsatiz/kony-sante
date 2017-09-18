@@ -15,8 +15,20 @@ function AS_Button_b4c92a5966c84fa68cc5fb768333a5df(eventobject) {
     frmDietKA.show();
 }
 
+function UpdateUserDetails(eventobject) {
+    return AS_Button_bdc0a1796eef4ea8bd00165ebb553e66(eventobject);
+}
+
 function AS_Button_bdc0a1796eef4ea8bd00165ebb553e66(eventobject) {
     return updateUserDetails.call(this);
+}
+
+function AS_Button_c00e8fe0a0364c0d888cf6cfe2c063de(eventobject) {
+    return updateFoodPreference.call(this);
+}
+
+function AS_Button_c098055c0b2f464eb01b7b7bdab5ee3a(eventobject) {
+    performOSSync("Sante4");
 }
 
 function AS_Button_c24315c3a79547fbb09b086e32e8cba7(eventobject) {
@@ -35,12 +47,29 @@ function AS_Button_eae3c6d85ab8492e9ca55b5be7098ed5(eventobject) {
     loginWithBox();
 }
 
+function AS_Button_f634fd6a04da4a6cb0c5ac85585f1963(eventobject) {
+    return updateQuantityAndCaloriesInConsumedItems.call(this);
+}
+
 function AS_Button_f819fcb0c28149328b1a81a10917da59(eventobject) {
     frmUserKA.show();
 }
 
+function AS_Button_i41b4720057a453f80af6b1279675970(eventobject) {
+    frmDietKA.show();
+}
+
 function AS_Button_i42809aebb96463eabe7cd390d8c39d6(eventobject) {
     return updateGoalDetails.call(this);
+}
+
+function AS_Calendar_ife41a3c2b6e43d291a569fc5f05682f(eventobject, isValidDateSelected) {
+    sante.constants.todaysCalories = 0;
+    populateConsumedItemsBreakFast();
+    populateConsumedItemsMorningSnacks();
+    populateConsumedItemsLunch();
+    populateConsumedItemsEveningSnack();
+    populateConsumedItemsDinner();
 }
 
 function AS_FlexContainer_f752d13666e54572b16a3dc768b664ce(eventobject, x, y) {}
@@ -97,6 +126,10 @@ function AS_Form_h998de6895dd42798982e8c2c0bee323(eventobject) {
     loginWithUsernamePassword("tester", "test", "SanteSapIdentity");
 }
 
+function AS_Form_i7eea69580774e8c8c13fa46cb630519(eventobject) {
+    return populateFoodPreference.call(this);
+}
+
 function AS_Image_b2bbfbc152cb4794b6d4cc741897684c(eventobject, x, y) {
     var string = frmItemsKA.tbWhere.text;
     var whereCondition = "ITEM_NAME LIKE '" + string + "%'";
@@ -118,6 +151,14 @@ function AS_Image_j86bbf9a08e343b59ff77286b49e384b(eventobject, imagesrc, issucc
 function AS_Segment_e5eea0916e3e4d489ddeaf625768c35c(eventobject, sectionNumber, rowNumber) {
     return addItemsToCategory.call(this, eventobject, sectionNumber, rowNumber);
 }
+
+function AS_TextField_bcd73b874e1c435ea89b699d7c85c6ae(eventobject, changedtext) {}
+
+function AS_TextField_c081ba909c1143128449924ce85f48eb(eventobject, changedtext) {
+    return ontbxNumberTextChanging.call(this, null);
+}
+
+function AS_TextField_ecbd6321de4d48ff9e8144d126e3d5cc(eventobject, changedtext) {}
 
 function OnBackClickEditQuantity(eventobject) {
     return AS_Button_h8ddb1f1327040308bc6859407b9e7ea(eventobject);
@@ -303,7 +344,7 @@ function OnRowClickConsumedItems(eventobject, sectionNumber, rowNumber) {
 }
 
 function AS_Segment_c2e06565346b40f989ecb6100d349c6c(eventobject, sectionNumber, rowNumber) {
-    frmEditQuantityKA.show();
+    return onFrmDietKASegmentsRowClick.call(this, null, null, null, null);
 }
 
 function OnRowClickDinner(eventobject, sectionNumber, rowNumber) {
@@ -311,7 +352,7 @@ function OnRowClickDinner(eventobject, sectionNumber, rowNumber) {
 }
 
 function AS_Segment_ea62bb33a66c455b80f50c1b4baa8fdb(eventobject, sectionNumber, rowNumber) {
-    frmEditQuantityKA.show();
+    return onFrmDietKASegmentsRowClick.call(this, null, null, null, null);
 }
 
 function OnRowClickEveningSnack(eventobject, sectionNumber, rowNumber) {
@@ -319,7 +360,7 @@ function OnRowClickEveningSnack(eventobject, sectionNumber, rowNumber) {
 }
 
 function AS_Segment_ic2efcbe50684de6b7c2ba03599889fe(eventobject, sectionNumber, rowNumber) {
-    frmEditQuantityKA.show();
+    return onFrmDietKASegmentsRowClick.call(this, null, null, null, null);
 }
 
 function OnRowClickLunch(eventobject, sectionNumber, rowNumber) {
@@ -327,7 +368,7 @@ function OnRowClickLunch(eventobject, sectionNumber, rowNumber) {
 }
 
 function AS_Segment_e9a0bbb98a5049ea859cc4a4104a58f8(eventobject, sectionNumber, rowNumber) {
-    frmEditQuantityKA.show();
+    return onFrmDietKASegmentsRowClick.call(this, null, null, null, null);
 }
 
 function OnRowClickMorningSnack(eventobject, sectionNumber, rowNumber) {
@@ -335,7 +376,7 @@ function OnRowClickMorningSnack(eventobject, sectionNumber, rowNumber) {
 }
 
 function AS_Segment_accaa00509bb4fee9b8bc5511b27dee9(eventobject, sectionNumber, rowNumber) {
-    frmEditQuantityKA.show();
+    return onFrmDietKASegmentsRowClick.call(this, null, null, null, null);
 }
 
 function OnTouchTrackDiet(eventobject, x, y) {
@@ -420,29 +461,4 @@ function AS_Label_b235dc47737a40f289ee3be74e3cef1a(eventobject, x, y) {
     } else {
         frmDietKA.segEveningSnack.isVisible = true;
     }
-}
-
-function AS_Button_i41b4720057a453f80af6b1279675970(eventobject) {
-    frmDietKA.show();
-}
-
-function AS_Form_i7eea69580774e8c8c13fa46cb630519(eventobject) {
-    return populateFoodPreference.call(this);
-}
-
-function AS_Button_c00e8fe0a0364c0d888cf6cfe2c063de(eventobject) {
-    return updateFoodPreference.call(this);
-}
-
-function AS_Button_c098055c0b2f464eb01b7b7bdab5ee3a(eventobject) {
-    performOSSync("Sante4");
-}
-
-function AS_Calendar_ife41a3c2b6e43d291a569fc5f05682f(eventobject, isValidDateSelected) {
-    sante.constants.todaysCalories = 0;
-    populateConsumedItemsBreakFast();
-    populateConsumedItemsMorningSnacks();
-    populateConsumedItemsLunch();
-    populateConsumedItemsEveningSnack();
-    populateConsumedItemsDinner();
 }

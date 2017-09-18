@@ -4,6 +4,7 @@ sante.objects = {};
 sante.current = {};
 sante.constants = {
     'isLoginRequired': true,
+    'isLoadingEnabled': false
 };
 sante.current.category = 1;
 sante.constants.todaysCalories = 0;
@@ -60,7 +61,9 @@ function loginWithUsernamePassword(username, password, identityName) {
     kony.application.dismissLoadingScreen();
 
     function success() {
-        kony.application.showLoadingScreen(null, "Ready to launch..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+        if (sante.constants.isLoadingEnabled) {
+            kony.application.showLoadingScreen(null, "Ready to launch..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+        }
         applicationSetup();
     }
 
@@ -82,17 +85,18 @@ function loginWithUsernamePassword(username, password, identityName) {
 }
 
 function performUserUserDetailSync(objectServiceName) {
-    kony.application.showLoadingScreen(null, "Syncing ..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+    if (sante.constants.isLoadingEnabled) {
+        kony.application.showLoadingScreen(null, "Syncing ..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+    }
     var user = getObjectByName("USER");
     var userDetials = getObjectByName("USER_DETAILS");
 
     function successUserDetails(re) {
         kony.print('User and user details sync done');
         var options = {};
-        var orderByMap = [];
-        orderByMap[0] = {};
-        orderByMap[0].EMAIL = sante.current.user.EMAIL;
-        options.OrderByMap = orderByMap;
+        options = {
+            'whereConditionAsAString': "EMAIL = '" + sante.current.user.EMAIL + "'"
+        };
         user.get(options, getSuccess, getFailure);
     }
 
@@ -117,7 +121,9 @@ function performUserUserDetailSync(objectServiceName) {
 }
 
 function performOSSync(osName, doNotNavigate) {
-    kony.application.showLoadingScreen();
+    if (sante.constants.isLoadingEnabled) {
+        kony.application.showLoadingScreen();
+    }
     var objectService = getObjectServiceByName(osName);
     var metadata = sante.current.user.METADATA;
     var jsonMetadata = JSON.parse(metadata);
@@ -802,7 +808,9 @@ function loginSuccess(response) {
     kony.application.dismissLoadingScreen();
     kony.print("login success " + JSON.stringify(response));
     //getting the user profile
-    kony.application.showLoadingScreen(null, "Getting Profile..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+    if (sante.constants.isLoadingEnabled) {
+        kony.application.showLoadingScreen(null, "Getting Profile..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+    }
     authClient.getProfile(true, getProfileSuccess, getProfileError);
 }
 
@@ -812,7 +820,9 @@ function loginFailure(error) {
 
 function loginWithGoogle() {
     kony.print(" Init Success ");
-    kony.application.showLoadingScreen(null, "Connecting..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+    if (sante.constants.isLoadingEnabled) {
+        kony.application.showLoadingScreen(null, "Connecting..", constants.LOADING_SCREEN_POSITION_ONLY_CENTER);
+    }
     //get the identity service
     authClient = kony.sdk.getCurrentInstance().getIdentityService('SanteIdentity'); //client.getIdentityService(providerName);
     //login
@@ -831,6 +841,7 @@ function getProfileSuccess(response) {
     kony.print("User profile is " + JSON.stringify(response));
     sante.current.google = {};
     sante.current.google.user = response;
+    sante.current.user.EMAIL = response.email;
     //Get the profile picture of the user
     authClient.getUserAttributes(getProfilePictureSuccess, getProfileError);
     validateCurrentUserProfile();
@@ -1118,7 +1129,9 @@ function onFileDownloadFailureCallback(err) {
 }
 
 function getBinaryFromBox(fileId) {
-    kony.application.showLoadingScreen();
+    if (sante.constants.isLoadingEnabled) {
+        kony.application.showLoadingScreen();
+    }
     var integrationSvc = kony.sdk.getCurrentInstance().getIntegrationService("SanteBoxIntegration");
     integrationSvc.getBinaryData("get_files_fileId_content", {
         "fileId": fileId

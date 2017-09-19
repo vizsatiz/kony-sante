@@ -3,5 +3,5 @@ function OnRowClickLunch(eventobject, sectionNumber, rowNumber) {
 }
 
 function AS_Segment_e9a0bbb98a5049ea859cc4a4104a58f8(eventobject, sectionNumber, rowNumber) {
-    return onFrmDietKASegmentsRowClick.call(this, null, null, null, null);
+    return onFrmDietKASegmentsRowClick.call(this, null, null, null);
 }

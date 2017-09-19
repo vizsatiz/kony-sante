@@ -3,5 +3,5 @@ function OnRowClickConsumedItems(eventobject, sectionNumber, rowNumber) {
 }
 
 function AS_Segment_c2e06565346b40f989ecb6100d349c6c(eventobject, sectionNumber, rowNumber) {
-    return onFrmDietKASegmentsRowClick.call(this, null, null, null, null);
+    return onFrmDietKASegmentsRowClick.call(this, eventobject, sectionNumber, rowNumber);
 }

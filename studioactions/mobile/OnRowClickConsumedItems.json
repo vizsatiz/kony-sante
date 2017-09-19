@@ -26,13 +26,14 @@
             "sequenceKUID": "onFrmDietKASegmentsRowClick",
             "display": "onFrmDietKASegmentsRowClick",
             "inputparams": [{
-                "name": "seguiWidget"
+                "name": "eventobject",
+                "value": "eventobject"
             }, {
-                "name": "sectionIndex"
+                "name": "sectionNumber",
+                "value": "sectionNumber"
             }, {
-                "name": "rowIndex"
-            }, {
-                "name": "isSelected"
+                "name": "rowNumber",
+                "value": "rowNumber"
             }],
             "parentId": null,
             "callbackType": null,

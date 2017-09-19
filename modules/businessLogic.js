@@ -1181,7 +1181,8 @@ function updateGoalDetails() {
 
             userDetails.updateByPK({
                     "SETGOALWGT": setGoalWeight + '',
-                    "TOTAL_CALORIES": totalCal + ''
+                    "TOTAL_CALORIES": totalCal + '',
+              		"WEIGHT_DIFF": weightDifference + ''
                 }, whereCondition,
                 updateUserDetailsSuccess,
                 updateUserDetailsFailure);
@@ -1361,21 +1362,11 @@ function setCurrentDateToCalender() {
 
 
 // --- Assigning item name in editquanity form ----
-function onFrmDietKASegmentsRowClick(seguiWidget, sectionIndex, rowIndex, isSelected) {
-  var selectedRowItems = null;
+
+function onFrmDietKASegmentsRowClick(eventobject, sectionNumber, rowNumber) {
+  kony.print(" segui id " + eventobject.id);  
+  var selectedRowItems = eventobject.selectedRowItems;
   var selectedRowData = null;
-  kony.print(" segui id " + this.id);
-  if (this.id === "segConsumedItems") {
-    selectedRowItems = frmDietKA.segConsumedItems.selectedRowItems;
-  } else if (this.id === "segMorningSnack") {
-    selectedRowItems = frmDietKA.segMorningSnack.selectedRowItems;
-  } else if (this.id === "segLunch") {
-    selectedRowItems = frmDietKA.segLunch.selectedRowItems;
-  } else if (this.id === "segEveningSnack") {
-    selectedRowItems = frmDietKA.segEveningSnack.selectedRowItems;
-  } else if (this.id === "segDinner") {
-    selectedRowItems = frmDietKA.segDinner.selectedRowItems;
-  }
   if ((selectedRowItems !== null) && (selectedRowItems.length > 0)) {
     selectedRowData = selectedRowItems[0];
     if (typeof selectedRowData === 'object') {
@@ -1390,8 +1381,9 @@ function onFrmDietKASegmentsRowClick(seguiWidget, sectionIndex, rowIndex, isSele
 }
 
 // -- handling calories --
-function ontbxNumberTextChanging(txtBox) {
-  var quantity = this.text;  
+
+function ontbxNumberTextChanging(eventobject, changedtext) {
+  var quantity = changedtext;  
   function onGetSuccess(records) {
     if(records.length > 0) {
       kony.print("get success for item with id "+sante.current.itemid);

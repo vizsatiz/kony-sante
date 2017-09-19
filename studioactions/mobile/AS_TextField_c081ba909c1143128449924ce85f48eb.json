@@ -22,7 +22,11 @@
             "sequenceKUID": "ontbxNumberTextChanging",
             "display": "ontbxNumberTextChanging",
             "inputparams": [{
-                "name": "txtBox"
+                "name": "eventobject",
+                "value": "eventobject"
+            }, {
+                "name": "changedtext",
+                "value": "changedtext"
             }],
             "parentId": null,
             "callbackType": null,

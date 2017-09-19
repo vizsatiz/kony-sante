@@ -12,8 +12,8 @@ var appConfig = {
     middlewareContext: "Sante",
     isturlbase: "https://test-800-sdk.sit2-konycloud.com/services",
     isMFApp: true,
-    appKey: "15df850603d64b7a7de6de728f830e5e",
-    appSecret: "887dfbfb962bd9959b7c57d4760b3ac1",
+    appKey: "704a24db7e58c527282665167a3bb5e6",
+    appSecret: "76c877fd2c081c47aab361cc7b0abafd",
     serviceUrl: "https://100000013.auth.sit2-konycloud.com/appconfig",
     svcDoc: {
         "selflink": "https://100000013.auth.sit2-konycloud.com/appconfig",
@@ -28,14 +28,19 @@ var appConfig = {
         "integsvc": {
             "SanteBoxIntegration": "https://test-800-sdk.sit2-konycloud.com/services/SanteBoxIntegration"
         },
-        "appId": "bca66a96-4cb3-4223-bb65-30168c04effe",
-        "name": "Sante2",
+        "appId": "85ad40f2-880a-4e52-b4eb-5851cf83285a",
+        "name": "Sante5",
         "reportingsvc": {
             "session": "https://test-800-sdk.sit2-konycloud.com/services/IST",
             "custom": "https://test-800-sdk.sit2-konycloud.com/services/CMS"
         },
-        "baseId": "8a2501e6-53b1-43d6-9198-f8ef8eb38e3c",
+        "baseId": "69337718-64e8-4125-ab1d-31f1b2c0ccc4",
         "login": [{
+            "alias": "SanteSapIdentity",
+            "type": "basic",
+            "prov": "SanteSapIdentity",
+            "url": "https://100000013.auth.sit2-konycloud.com"
+        }, {
             "alias": "SanteIdentity",
             "type": "oauth2",
             "prov": "SanteIdentity",
@@ -45,18 +50,13 @@ var appConfig = {
             "type": "oauth2",
             "prov": "SanteBoxIdentity",
             "url": "https://100000013.auth.sit2-konycloud.com"
-        }, {
-            "alias": "SanteSapIdentity",
-            "type": "basic",
-            "prov": "SanteSapIdentity",
-            "url": "https://100000013.auth.sit2-konycloud.com"
         }],
         "services_meta": {
-            "SanteOS2": {
-                "metadata_url": "https://test-800-sdk.sit2-konycloud.com/services/metadata/v1/SanteOS2",
+            "SanteOS5": {
+                "metadata_url": "https://test-800-sdk.sit2-konycloud.com/services/metadata/v1/SanteOS5",
                 "type": "objectsvc",
                 "version": "1.0",
-                "url": "https://test-800-sdk.sit2-konycloud.com/services/data/v1/SanteOS2"
+                "url": "https://test-800-sdk.sit2-konycloud.com/services/data/v1/SanteOS5"
             },
             "SanteBoxIntegration": {
                 "type": "integsvc",

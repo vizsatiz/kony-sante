@@ -6,7 +6,7 @@ sante.constants = {
     'isLoginRequired': true,
     'isLoadingEnabled': false
 };
-sante.constants.OS = "SanteOS2";
+sante.constants.OS = "SanteOS5";
 sante.current.category = 1;
 sante.constants.todaysCalories = 0;
 sante.current.user = {
@@ -929,6 +929,7 @@ function userCreateSuccess(result) {
             newUserDetails.IMAGEURL = "0";
             newUserDetails.SETGOALWGT = "0";
             newUserDetails.TOTAL_CALORIES = "0";
+            newUserDetails.ZDATE = '1975';
             newUserDetails.USER_DETAILSID = newUser.USER_ID;
             userDetails.create(newUserDetails, {}, userDetailsSuccess, userCreateFailure);
         } else {

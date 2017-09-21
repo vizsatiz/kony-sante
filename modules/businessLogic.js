@@ -4,7 +4,7 @@ sante.objects = {};
 sante.current = {};
 sante.constants = {
     'isLoginRequired': true,
-  	'isLoadingEnabled': false
+  	'isLoadingEnabled': true
 };
 
 sante.constants.OS = "SanteOS5";
@@ -95,6 +95,19 @@ function performUserUserDetailSync(objectServiceName) {
   
     var user = getObjectByName("USER");
     var userDetials = getObjectByName("USER_DETAILS");
+    var workout = getObjectByName("WORKOUT");
+  
+  	var options = {
+      'BatchSize': 20000
+    };
+            workout.startSync(options,
+                workoutSyncSucess.bind(this),
+                onFailure.bind(this));
+  
+    function workoutSyncSucess()
+ 	 {
+      kony.print("workoutr sync success");
+  	}
 
     function successUserDetails(re) {
         kony.print('User and user details sync done');
@@ -111,7 +124,9 @@ function performUserUserDetailSync(objectServiceName) {
 
     function onSuccess(result) {
         try {
-            var options = {};
+            var options = {
+              'BatchSize': 20000
+            };
             userDetials.startSync(options,
                 successUserDetails.bind(this),
                 onFailure.bind(this));
@@ -121,7 +136,9 @@ function performUserUserDetailSync(objectServiceName) {
     }
 
     try {
-        var options = {};
+        options = {
+          'BatchSize': 20000
+        };
         user.startSync(options,
             onSuccess.bind(this),
             onFailure.bind(this));
@@ -169,6 +186,7 @@ function performOSSync(osName, doNotNavigate) {
               }
           };
     	}
+      options.BatchSize = 20000;
         objectService.startSync(options,
             onSuccess.bind(this),
             onFailure.bind(this));
@@ -1176,6 +1194,7 @@ function updateGoalDetails() {
             whereCondition.primaryKeys = {
                 'USER_DETAILSID': records[0].USER_DETAILSID
             };
+            whereCondition.skipValidation = true;
             var userDetails = new kony.sdk.KNYObj("USER_DETAILS");
 
 
